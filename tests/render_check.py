@@ -76,6 +76,35 @@ def check_deck(page, deck):
     return errors
 
 
+PHONE_WIDTH = 400
+
+
+def check_phone(page, deck):
+    """Handybreite: jede Karte geflippt mit offenen Details – die Seite darf nicht breiter als der
+    Viewport werden, und keine Formelbox darf horizontal überlaufen (abgeschnittene Formel)."""
+    errors = []
+    page.goto(f"file:///{ROOT.as_posix()}/trainer.html?deck={deck}&niveau=ea")
+    page.wait_for_function("window.REPETITIO && window.REPETITIO.state === 'ready'")
+    n = page.evaluate("window.REPETITIO.deck.cards.length")
+    for i in range(n):
+        res = page.evaluate(f"""() => {{
+            window.REPETITIO.showCard({i});
+            const card = document.getElementById('flashcard');
+            if (!card.classList.contains('flipped')) window.flipCard();
+            card.querySelectorAll('details').forEach(d => d.open = true);
+            return {{ id: window.REPETITIO.filteredCards[{i}].id,
+                     sw: document.documentElement.scrollWidth,
+                     over: [...card.querySelectorAll('.formula-box, .katex-display')]
+                        .map(el => el.scrollWidth - el.clientWidth).filter(d => d > 2) }};
+        }}""")
+        if res["sw"] > PHONE_WIDTH:
+            errors.append(f"{deck}/{res['id']}: Seite bei {PHONE_WIDTH} px zu breit: scrollWidth {res['sw']}")
+        for d in res["over"]:
+            errors.append(f"{deck}/{res['id']}: Formel läuft bei {PHONE_WIDTH} px über: {d} px")
+    print(f"{deck} @{PHONE_WIDTH}px: {n} Karten geprüft, {len(errors)} Mängel")
+    return errors
+
+
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     errors = []
@@ -84,6 +113,9 @@ def main():
         page = b.new_page(viewport={"width": 1000, "height": 900})
         for d in DECKS:
             errors += check_deck(page, d)
+        page = b.new_page(viewport={"width": PHONE_WIDTH, "height": 900})
+        for d in DECKS:
+            errors += check_phone(page, d)
         b.close()
     for e in errors:
         print("  !", e)

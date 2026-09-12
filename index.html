@@ -32,7 +32,7 @@
         function apply() {
             document.querySelectorAll("#niveauSwitch button").forEach(b => {
                 const on = b.dataset.niveau === niveau;
-                b.classList.toggle("active", on); b.setAttribute("aria-pressed", on);
+                b.setAttribute("aria-pressed", on);
             });
             document.querySelectorAll(".deck-card").forEach(a => a.href = `trainer.html?deck=${a.dataset.deck}&niveau=${niveau}`);
         }

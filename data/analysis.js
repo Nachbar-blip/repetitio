@@ -905,12 +905,12 @@ window.REPETITIO_DECKS["analysis"] = {
         question: "Wie leite ich die Umkehrfunktion ab (einfache Fälle)?",
         answer: `
             <h4>Ableitung der Umkehrfunktion</h4>
-            <div class="formula-box">$$\\left(f^{-1}\\right)'(y_0) = \\frac{1}{f'(x_0)} \\quad \\text{mit } y_0 = f(x_0),\\ f'(x_0) \\neq 0$$</div>
+            <div class="formula-box">$$\\begin{gathered} \\left(f^{-1}\\right)'(y_0) = \\frac{1}{f'(x_0)} \\\\[4pt] \\text{mit } y_0 = f(x_0),\\ f'(x_0) \\neq 0 \\end{gathered}$$</div>
             <p><strong>Merksatz:</strong> Der Graph der Umkehrfunktion ist die Spiegelung an \\( y = x \\); dabei wird die Tangentensteigung zum Kehrwert. Man muss die Umkehrfunktion also nicht explizit kennen – es genügt, die Stelle \\( x_0 \\) mit \\( f(x_0) = y_0 \\) zu finden.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$f(x) = x^3 + x \\quad (\\text{streng monoton steigend, also umkehrbar})$$<br>
+                    $$\\begin{gathered} f(x) = x^3 + x \\\\[4pt] (\\text{streng monoton steigend,} \\\\[2pt] \\text{also umkehrbar}) \\end{gathered}$$<br>
                     Gesucht: \\( (f^{-1})'(2) \\). Wegen \\( f(1) = 1 + 1 = 2 \\) ist \\( x_0 = 1 \\).<br>
                     $$f'(x) = 3x^2 + 1 \\Rightarrow f'(1) = 4 \\Rightarrow (f^{-1})'(2) = \\frac{1}{4}$$<br><br>
                     <strong>Bekannter Spezialfall:</strong> \\( f(x) = e^x \\), \\( f^{-1}(y) = \\ln(y) \\):
@@ -965,7 +965,7 @@ window.REPETITIO_DECKS["analysis"] = {
         question: "Wie untersuche ich eine Funktionenschar \\( f_a(x) \\)?",
         answer: `
             <h4>Funktionenschar mit Parameter \\( a \\)</h4>
-            <div class="formula-box">$$f_a(x) = x \\cdot e^{-ax}, \\quad a > 0 \\qquad \\text{(Parameter wie eine Zahl behandeln)}$$</div>
+            <div class="formula-box">$$\\begin{gathered} f_a(x) = x \\cdot e^{-ax}, \\quad a > 0 \\\\[4pt] \\text{(Parameter wie eine Zahl behandeln)} \\end{gathered}$$</div>
             <p><strong>Merksatz:</strong> Der Parameter ist eine feste, aber unbekannte Zahl. Alle Schritte der Kurvendiskussion (Ableiten, Nullsetzen, Vorzeichen prüfen) laufen wie gewohnt – die Ergebnisse hängen dann von \\( a \\) ab. Immer angeben, für welche \\( a \\) ein Schritt gilt (z. B. Division durch \\( a \\) nur für \\( a \\neq 0 \\)).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>

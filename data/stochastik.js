@@ -671,7 +671,7 @@ window.REPETITIO_DECKS["stochastik"] = {
         answer: `
             <h4>Normalverteilung</h4>
             <div class="formula-box">
-                $$X \\sim N(\\mu, \\sigma^2): \\quad \\text{Erwartungswert } \\mu, \\; \\text{Standardabweichung } \\sigma$$<br><br>
+                $$\\begin{gathered} X \\sim N(\\mu, \\sigma^2): \\\\[4pt] \\text{Erwartungswert } \\mu, \\\\[2pt] \\text{Standardabweichung } \\sigma \\end{gathered}$$<br><br>
                 $$P(\\mu - \\sigma \\leq X \\leq \\mu + \\sigma) \\approx 0{,}683$$<br>
                 $$P(\\mu - 2\\sigma \\leq X \\leq \\mu + 2\\sigma) \\approx 0{,}954$$<br>
                 $$P(\\mu - 3\\sigma \\leq X \\leq \\mu + 3\\sigma) \\approx 0{,}997$$

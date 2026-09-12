@@ -45,7 +45,7 @@ function applyNiveau() {
     cards = deck.cards.filter(c => niveau === "ea" || c.niveau !== "ea");
     document.querySelectorAll("#niveauSwitch button").forEach(b => {
         const on = b.dataset.niveau === niveau;
-        b.classList.toggle("active", on); b.setAttribute("aria-pressed", on);
+        b.setAttribute("aria-pressed", on);
     });
     filterByCategory(activeCategory);
 }

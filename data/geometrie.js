@@ -732,8 +732,8 @@ window.REPETITIO_DECKS["geometrie"] = {
         answer: `
             <h4>Abstand bei Parallelität</h4>
             <div class="formula-box">
-                $$d(E_1, E_2) = d(P, E_2) \\quad \\text{für ein beliebiges } P \\in E_1$$<br><br>
-                $$d(g, E) = d(A, E) \\quad \\text{für den Stützpunkt } A \\text{ von } g, \\text{ falls } \\vec{u} \\cdot \\vec{n} = 0$$
+                $$\\begin{gathered} d(E_1, E_2) = d(P, E_2) \\\\[4pt] \\text{für ein beliebiges } P \\in E_1 \\end{gathered}$$<br><br>
+                $$\\begin{gathered} d(g, E) = d(A, E) \\\\[4pt] \\text{für den Stützpunkt } A \\text{ von } g, \\\\[2pt] \\text{falls } \\vec{u} \\cdot \\vec{n} = 0 \\end{gathered}$$
             </div>
             <p><strong>Merksatz:</strong> Bei parallelen Objekten haben alle Punkte des einen denselben Abstand zum anderen – also einen Punkt wählen und in die HNF der Ebene einsetzen. Vorher Parallelität nachweisen: Normalenvektoren kollinear bzw. \\( \\vec{u} \\perp \\vec{n} \\). Schneidet die Gerade die Ebene, ist der Abstand 0.</p>
             <details class="example">

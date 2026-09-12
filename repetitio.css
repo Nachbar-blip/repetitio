@@ -486,6 +486,9 @@ details.example[open] summary::before {
     }
 
     .card-answer .katex { font-size: 1.05em; }
+    .formula-box { font-size: 1rem; padding: 12px 10px; }
+    /* Display-Formeln dürfen an KaTeX-Basisgruppen umbrechen statt abgeschnitten zu werden */
+    .card-answer .katex-display > .katex { white-space: normal; }
 }
 /* Niveau */
 .niveau-switch { display:flex; justify-content:center; gap:6px; margin-bottom:14px; }
@@ -502,5 +505,6 @@ details.example[open] summary::before {
 footer { text-align:center; color:rgba(255,255,255,0.8); font-size:0.8rem; margin-top:30px; }
 footer a { color:white; }
 /* Tabellen in Antworten */
-.card-answer table { border-collapse: collapse; margin: 10px auto; display: block; width: fit-content; max-width: 100%; overflow-x: auto; }
+.card-answer table { border-collapse: collapse; margin: 10px auto; table-layout: fixed; width: 100%; max-width: 100%; }
+.card-answer td, .card-answer th { overflow-wrap: anywhere; word-break: break-word; }
 .card-answer td, .card-answer th { border: 1px solid #ccc; padding: 4px 8px; text-align: center; }
