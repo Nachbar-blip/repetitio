@@ -547,7 +547,7 @@ window.REPETITIO_DECKS["geometrie"] = {
             <h4>Kollinear und komplanar</h4>
             <div class="formula-box">
                 $$\\vec{a}, \\vec{b} \\text{ kollinear} \\Leftrightarrow \\vec{b} = k \\cdot \\vec{a}$$<br><br>
-                $$\\vec{a}, \\vec{b}, \\vec{c} \\text{ komplanar} \\Leftrightarrow \\vec{c} = r \\cdot \\vec{a} + s \\cdot \\vec{b}$$
+                $$\\vec{a}, \\vec{b}, \\vec{c} \\text{ komplanar} \\Leftrightarrow \\vec{c} = r \\cdot \\vec{a} + s \\cdot \\vec{b} \\quad (\\vec{a}, \\vec{b} \\text{ nicht kollinear})$$
             </div>
             <p><strong>Merksatz:</strong> Kollineare Vektoren liegen auf einer Geraden (Vielfache voneinander), komplanare Vektoren in einer Ebene (einer ist Linearkombination der anderen). Ist das LGS für \\( r, s \\) lösbar, sind die Vektoren komplanar; alternativ: Spatprodukt \\( (\\vec{a} \\times \\vec{b}) \\cdot \\vec{c} = 0 \\).</p>
             <details class="example">
@@ -606,7 +606,7 @@ window.REPETITIO_DECKS["geometrie"] = {
                     $$\\vec{u} = \\begin{pmatrix} 1 \\\\ 1 \\\\ 1 \\end{pmatrix} \\times \\begin{pmatrix} 1 \\\\ -1 \\\\ 2 \\end{pmatrix} = \\begin{pmatrix} 1 \\cdot 2 - 1 \\cdot (-1) \\\\ 1 \\cdot 1 - 1 \\cdot 2 \\\\ 1 \\cdot (-1) - 1 \\cdot 1 \\end{pmatrix} = \\begin{pmatrix} 3 \\\\ -1 \\\\ -2 \\end{pmatrix}$$<br>
                     Stützpunkt: \\( x_2 = 0 \\) setzen → \\( x_1 + x_3 = 3 \\) und \\( x_1 + 2x_3 = 2 \\) → \\( x_3 = -1, \\; x_1 = 4 \\)<br>
                     $$g: \\vec{x} = \\begin{pmatrix} 4 \\\\ 0 \\\\ -1 \\end{pmatrix} + t \\cdot \\begin{pmatrix} 3 \\\\ -1 \\\\ -2 \\end{pmatrix}$$<br>
-                    Probe mit \\( t = 1 \\): \\( (7 \\,|\\, -1 \\,|\\, -3) \\): \\( 7 - 1 - 3 = 3 \\) ✓ und \\( 7 + 1 - 6 = 2 \\) ✓
+                    Probe mit \\( t = 1 \\): \\( (7 \\,|\\, {-1} \\,|\\, {-3}) \\): \\( 7 - 1 - 3 = 3 \\) ✓ und \\( 7 + 1 - 6 = 2 \\) ✓
                 </div>
             </details>
         `
@@ -711,7 +711,7 @@ window.REPETITIO_DECKS["geometrie"] = {
             <div class="formula-box">
                 $$d(g, h) = \\frac{|(\\vec{b} - \\vec{a}) \\cdot \\vec{n}|}{|\\vec{n}|} \\quad \\text{mit} \\quad \\vec{n} = \\vec{u} \\times \\vec{v}$$
             </div>
-            <p><strong>Merksatz:</strong> Der gemeinsame Lotvektor steht senkrecht auf beiden Richtungsvektoren, also \\( \\vec{n} = \\vec{u} \\times \\vec{v} \\). Der Verbindungsvektor der Stützpunkte wird auf \\( \\vec{n} \\) projiziert – das ist die HNF der Hilfsebene durch \\( g \\) parallel zu \\( h \\). Vorher prüfen: Richtungsvektoren nicht kollinear (sonst parallel).</p>
+            <p><strong>Merksatz:</strong> Der gemeinsame Lotvektor steht senkrecht auf beiden Richtungsvektoren, also \\( \\vec{n} = \\vec{u} \\times \\vec{v} \\). Der Verbindungsvektor der Stützpunkte wird auf \\( \\vec{n} \\) projiziert – das ist die HNF der Hilfsebene durch \\( g \\) parallel zu \\( h \\). Vorher prüfen: Richtungsvektoren nicht kollinear (sonst parallel); ergibt sich \\( d = 0 \\), schneiden sich die Geraden.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -763,13 +763,13 @@ window.REPETITIO_DECKS["geometrie"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    <strong>Aufstellen:</strong> \\( M(3 \\,|\\, -2) \\), \\( r = 5 \\):
+                    <strong>Aufstellen:</strong> \\( M(3 \\,|\\, {-2}) \\), \\( r = 5 \\):
                     $$k: (x - 3)^2 + (y + 2)^2 = 25$$<br>
                     <strong>Ablesen aus</strong> \\( x^2 + y^2 - 6x + 4y - 12 = 0 \\):<br>
                     $$x^2 - 6x + y^2 + 4y = 12$$<br>
                     $$(x^2 - 6x + 9) + (y^2 + 4y + 4) = 12 + 9 + 4$$<br>
                     $$(x - 3)^2 + (y + 2)^2 = 25$$<br>
-                    → \\( M(3 \\,|\\, -2) \\), \\( r = \\sqrt{25} = 5 \\)
+                    → \\( M(3 \\,|\\, {-2}) \\), \\( r = \\sqrt{25} = 5 \\)
                 </div>
             </details>
         `
@@ -788,14 +788,14 @@ window.REPETITIO_DECKS["geometrie"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    \\( k: (x - 3)^2 + (y + 2)^2 = 25 \\), also \\( M(3 \\,|\\, -2) \\), \\( r = 5 \\)<br><br>
+                    \\( k: (x - 3)^2 + (y + 2)^2 = 25 \\), also \\( M(3 \\,|\\, {-2}) \\), \\( r = 5 \\)<br><br>
                     <strong>Punkte:</strong> \\( P(6 \\,|\\, 2) \\): \\( 3^2 + 4^2 = 25 \\) → auf dem Kreis.<br>
                     \\( Q(0 \\,|\\, 0) \\): \\( (-3)^2 + 2^2 = 13 < 25 \\) → innerhalb.<br><br>
                     <strong>Gerade</strong> \\( g: y = x + 2 \\), also \\( x - y + 2 = 0 \\):
                     $$d(M, g) = \\frac{|3 - (-2) + 2|}{\\sqrt{2}} = \\frac{7}{\\sqrt{2}} \\approx 4{,}95 < 5 \\;\\Rightarrow\\; \\text{Sekante}$$<br>
                     Schnittpunkte: \\( (x - 3)^2 + (x + 4)^2 = 25 \\)
                     $$2x^2 + 2x + 25 = 25 \\;\\Rightarrow\\; 2x(x + 1) = 0 \\;\\Rightarrow\\; x = 0 \\text{ oder } x = -1$$<br>
-                    → \\( S_1(0 \\,|\\, 2) \\), \\( S_2(-1 \\,|\\, 1) \\)
+                    → \\( S_1(0 \\,|\\, 2) \\), \\( S_2({-1} \\,|\\, 1) \\)
                 </div>
             </details>
         `
@@ -824,7 +824,8 @@ window.REPETITIO_DECKS["geometrie"] = {
                     $$d = \\sqrt{6^2 + 8^2} = 10$$<br>
                     <strong>Fall</strong> \\( r_2 = 5 \\): \\( r_1 + r_2 = 10 = d \\) → Berührung von außen.<br>
                     <strong>Fall</strong> \\( r_2 = 7 \\): \\( |r_1 - r_2| = 2 < 10 < 12 = r_1 + r_2 \\) → zwei Schnittpunkte.<br>
-                    <strong>Fall</strong> \\( r_2 = 3 \\): \\( r_1 + r_2 = 8 < 10 \\) → die Kreise liegen getrennt.
+                    <strong>Fall</strong> \\( r_2 = 3 \\): \\( r_1 + r_2 = 8 < 10 \\) → die Kreise liegen getrennt.<br>
+                    <strong>Fall</strong> \\( r_2 = 15 \\): \\( |r_1 - r_2| = |5 - 15| = 10 = d \\) → Berührung von innen (\\( k_1 \\) liegt in \\( k_2 \\)).
                 </div>
             </details>
         `
@@ -859,17 +860,18 @@ window.REPETITIO_DECKS["geometrie"] = {
             <div class="formula-box">
                 $$t: y = m(x - p_1) + p_2 \\quad \\text{und} \\quad d(M, t) = r$$
             </div>
-            <p><strong>Merksatz:</strong> Ansatz: Geradenbüschel durch \\( P \\) mit unbekannter Steigung \\( m \\). Die Berührbedingung „Abstand des Mittelpunkts von der Geraden gleich Radius" (HNF) liefert eine quadratische Gleichung in \\( m \\) mit zwei Lösungen – den beiden Tangenten. Senkrechte Tangenten (\\( x = \\text{const} \\)) müssen gesondert geprüft werden.</p>
+            <p><strong>Merksatz:</strong> Zuerst prüfen: \\( |\\vec{MP}| > r \\), sonst gibt es 0 (innen) bzw. 1 Tangente (auf dem Kreis). Ansatz: Geradenbüschel durch \\( P \\) mit unbekannter Steigung \\( m \\). Die Berührbedingung „Abstand des Mittelpunkts von der Geraden gleich Radius" (HNF) liefert eine quadratische Gleichung in \\( m \\) mit zwei Lösungen – den beiden Tangenten. Senkrechte Tangenten (\\( x = \\text{const} \\)) müssen gesondert geprüft werden.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     \\( k: x^2 + y^2 = 25 \\) (\\( M(0 \\,|\\, 0) \\), \\( r = 5 \\)), \\( P(7 \\,|\\, 1) \\)<br>
+                    Außen-Check: \\( |\\vec{MP}|^2 = 7^2 + 1^2 = 50 > 25 = r^2 \\) → \\( P \\) liegt außerhalb, zwei Tangenten.<br>
                     Ansatz: \\( t: y = m(x - 7) + 1 \\), also \\( mx - y + (1 - 7m) = 0 \\)<br>
                     $$d(M, t) = \\frac{|1 - 7m|}{\\sqrt{m^2 + 1}} = 5$$<br>
                     $$(1 - 7m)^2 = 25(m^2 + 1) \\;\\Rightarrow\\; 24m^2 - 14m - 24 = 0 \\;\\Rightarrow\\; 12m^2 - 7m - 12 = 0$$<br>
                     $$m = \\frac{7 \\pm \\sqrt{49 + 576}}{24} = \\frac{7 \\pm 25}{24} \\;\\Rightarrow\\; m_1 = \\frac{4}{3}, \\; m_2 = -\\frac{3}{4}$$<br>
                     $$t_1: y = \\frac{4}{3}x - \\frac{25}{3}, \\quad t_2: y = -\\frac{3}{4}x + \\frac{25}{4}$$<br>
-                    Berührpunkte (Einsetzen in \\( k \\), jeweils Doppellösung): \\( B_1(4 \\,|\\, -3) \\), \\( B_2(3 \\,|\\, 4) \\)
+                    Berührpunkte (Einsetzen in \\( k \\), jeweils Doppellösung): \\( B_1(4 \\,|\\, {-3}) \\), \\( B_2(3 \\,|\\, 4) \\)
                 </div>
             </details>
         `
