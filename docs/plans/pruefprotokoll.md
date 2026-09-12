@@ -55,3 +55,28 @@ Status: ✔ = Kartenwert stimmt mit Wolfram überein, „korrigiert" = Karte nac
 | geo-115 | LGS mit a² z = …, Reduce/Solve | a=2: y=3−2x, z=x (∞ viele); a=−2: keine Lösung; sonst x=z=1/(a+2), y=(3a+4)/(a+2) | ✔ |
 
 **Ergebnis:** 19 Teilbeispiele geprüft, 19 ✔, 0 korrigiert.
+
+
+# Prüfprotokoll – eA-Karten Stochastik (sto-101 … sto-112)
+
+Fachprüfung der Zahlenbeispiele mit Wolfram Language (Kernel-Auswertung), Stand 2026-09-12.
+Status: ✔ = Kartenwert stimmt mit Wolfram überein, „korrigiert" = Karte nach Prüfung geändert.
+
+| ID | Beispiel | Wolfram-Ergebnis | Status |
+|---|---|---|---|
+| sto-101 | Würfel A={2;4;6}, B={1;2;3}: P(A∪B) = 1/2+1/2−1/6 | 5/6 ≈ 0,8333 | ✔ |
+| sto-102 | N(500,20²): P(480≤X≤520), P(460≤X≤540), P(440≤X≤560) | 0,6827; 0,9545; 0,9973 | ✔ |
+| sto-103 | N(500,20²): P(X≤530); P(X>530); P(X≤470); P(470≤X≤530) | 0,9332; 0,0668; 0,0668; 0,8664 (Φ(1,5)=0,93319) | ✔ |
+| sto-104 | B(1000;0,5): P(X=500); N(500,20²): P(499,5≤X≤500,5) | 0,02523; 0,019945 | ✔ |
+| sto-105 | φ(500), φ(520) für N(500,20²); φ(0) standardisiert | 0,019947; 0,012099; 0,39894 | ✔ |
+| sto-106 | Φ⁻¹(0,9); μ = 530−20z; σ = 30/z | 1,28155; 504,37; 23,41 | ✔ |
+| sto-107 | h = 12/50; Hochrechnung 500·h | 0,24; 120 | ✔ |
+| sto-108 | B(200;0,3): μ, σ, 60±1,96σ; exakt P(48≤X≤72); Anteil 0,3±1,96√(0,21/200) | 60; 6,4807; [47,30; 72,70]; 0,9466; [0,2365; 0,3635] | ✔ |
+| sto-109 | h=0,3, n=400: √(h(1−h)/n), 1,96·…, Intervall | 0,022913; 0,044909; [0,2551; 0,3449] | ✔ |
+| sto-110 | σ für B(50;0,1), B(200;0,1); 20±√18; exakt P(16≤X≤24), P(12≤X≤28) | 2,121; 4,243; [15,76; 24,24]; 0,7120; 0,9561 | ✔ |
+| sto-111 | h=0,4, n=500: Intervall; Hochrechnung ×20000 | [0,3571; 0,4429]; 7141 … 8859 | ✔ |
+| sto-112 | (1,96/0,02)²·0,25; ·0,21; Probe 1,96·√(0,25/2401) | 2401; 2016,84 → 2017; 0,02 | ✔ |
+
+**Ergebnis:** 30 Teilbeispiele geprüft, 30 ✔, 0 korrigiert. Die Karten wurden nach der Wolfram-Rechnung
+verfasst, sodass alle Kartenwerte direkt auf den geprüften Zahlen beruhen.
+
