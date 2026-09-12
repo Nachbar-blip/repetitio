@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetitio</title>
+    <link rel="stylesheet" href="vendor/katex/katex.min.css">
+    <link rel="stylesheet" href="repetitio.css">
+    <script src="vendor/katex/katex.min.js"></script>
+    <script src="vendor/katex/contrib/auto-render.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="deckTitle">Repetitio</h1>
+            <p id="deckSubtitle"></p>
+        </header>
+
+        <div class="niveau-switch" id="niveauSwitch">
+            <button data-niveau="ga">gA · Grundkurs</button>
+            <button data-niveau="ea">eA · Leistungskurs</button>
+        </div>
+
+        <div class="category-tabs" id="categoryTabs"></div>
+
+        <div style="text-align: center;">
+            <button class="shuffle-btn" onclick="shuffleCards()">🔀 Mischen</button>
+            <button class="reset-btn" onclick="resetProgress()">Fortschritt zurücksetzen</button>
+        </div>
+
+        <div class="progress-bar"><div class="progress-fill" id="progressFill">0%</div></div>
+
+        <div class="card-container">
+            <div class="card" id="flashcard">
+                <div class="card-front">
+                    <div class="card-category" id="cardCategory"></div>
+                    <div class="card-question" id="cardQuestion"></div>
+                </div>
+                <div class="card-back">
+                    <div class="card-category" id="cardCategoryBack"></div>
+                    <div class="card-answer" id="cardAnswer"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-nav" id="prevBtn" onclick="prevCard()">← Zurück</button>
+            <button class="btn btn-flip" id="flipBtn" onclick="flipCard()">Aufdecken</button>
+            <button class="btn btn-nav" id="nextBtn" onclick="nextCard()">Weiter →</button>
+        </div>
+
+        <div class="rating-buttons" id="ratingButtons">
+            <button class="btn btn-again" onclick="rateCard(1)">Nochmal</button>
+            <button class="btn btn-hard" onclick="rateCard(3)">Schwer</button>
+            <button class="btn btn-good" onclick="rateCard(4)">Gut</button>
+            <button class="btn btn-easy" onclick="rateCard(5)">Leicht</button>
+        </div>
+        <div class="next-review" id="nextReview"></div>
+        <div class="card-counter" id="cardCounter"></div>
+
+        <div class="stats">
+            <div class="stat"><div class="stat-value" id="knownCount">0</div><div class="stat-label">Gewusst</div></div>
+            <div class="stat"><div class="stat-value" id="unknownCount">0</div><div class="stat-label">Üben</div></div>
+            <div class="stat"><div class="stat-value" id="remainingCount">0</div><div class="stat-label">Offen</div></div>
+        </div>
+
+        <nav class="nav-links"><a href="index.html">← Alle Decks</a></nav>
+        <footer>Repetitio · <a href="index.html">Startseite</a> · erstellt mit KI-Unterstützung (Anthropic Claude)</footer>
+    </div>
+    <script src="repetitio-engine.js"></script>
+</body>
+</html>
