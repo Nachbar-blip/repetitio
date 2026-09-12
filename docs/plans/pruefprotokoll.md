@@ -26,3 +26,32 @@ Status: ✔ = Kartenwert stimmt mit Wolfram überein, „korrigiert" = Karte nac
 | ana-116 | Z(x)=x(40−2x), 0<x<20 | Z'=0 bei x=10, Z''=−4, Maximum 200 | ✔ |
 
 **Ergebnis:** 24 Teilbeispiele geprüft, 24 ✔, 0 korrigiert.
+
+
+# Prüfprotokoll – eA-Karten Geometrie (geo-101 … geo-115)
+
+Fachprüfung der Zahlenbeispiele mit Wolfram Language (Kernel-Auswertung), Stand 2026-09-12.
+Status: ✔ = Kartenwert stimmt mit Wolfram überein, „korrigiert" = Karte nach Prüfung geändert.
+
+| ID | Beispiel | Wolfram-Ergebnis | Status |
+|---|---|---|---|
+| geo-101 | (2\|−1\|4), (−4\|2\|−8) kollinear? | b = −2a, Det = 0 | ✔ |
+| geo-101 | (1\|0\|1), (0\|1\|1), (1\|1\|2) komplanar? | Det = 0, c = a + b | ✔ |
+| geo-102 | n₁=(2\|−1\|2), n₂=(−4\|2\|−4); P(2\|0\|0) in E₂ | n₁×n₂ = 0 (parallel); −8 ≠ 6 → echt parallel | ✔ |
+| geo-103 | E₁: x₁+x₂+x₃=3, E₂: x₁−x₂+2x₃=2 | n₁×n₂ = (3\|−1\|−2); Stützpunkt (4\|0\|−1); Probe (7\|−1\|−3) in beiden Ebenen | ✔ |
+| geo-104 | Winkel n₁=(1\|1\|0), n₂=(1\|0\|0) | 45° | ✔ |
+| geo-105 | Winkel u=(1\|0\|−1), v=(1\|−1\|0) | 60° | ✔ |
+| geo-106 | d(P,E), P(3\|1\|4), E: 2x₁−x₂+2x₃=6 | 7/3 | ✔ |
+| geo-106 | d(P,g), P(4\|5), g: 3x+4y=12 | 4 | ✔ |
+| geo-106 | (1\|1\|0)×(0\|1\|1) | (1\|−1\|1) | ✔ |
+| geo-107 | Lotfußpunkt von P(4\|1\|1) auf g | t = 1, F(3\|1\|0), d = √2 | ✔ |
+| geo-108 | Abstand g, h windschief | n = (−1\|−1\|1), d = 5/√3 ≈ 2,887; kein Schnittpunkt | ✔ |
+| geo-109 | d(E₁,E₂) mit P(0\|3\|0); u·n; d(g,E₁) | 3; 0; 1 | ✔ |
+| geo-110 | (x−3)²+(y+2)²−25 ausmultipliziert | x²+y²−6x+4y−12 | ✔ |
+| geo-111 | P(6\|2), Q(0\|0); g: y=x+2 mit k | 25 (auf k), 13 (innen); S(0\|2), S(−1\|1); d(M,g) ≈ 4,95 | ✔ |
+| geo-112 | \|M₁M₂\| für M₂(6\|8) | 10 | ✔ |
+| geo-113 | Tangente in B(6\|2): 3x+4y=26; d(M,t) | 26; 5 = r | ✔ |
+| geo-114 | (1−7m)² = 25(m²+1) | m = 4/3, m = −3/4; Berührpunkte (4\|−3), (3\|4) (je Doppellösung) | ✔ |
+| geo-115 | LGS mit a² z = …, Reduce/Solve | a=2: y=3−2x, z=x (∞ viele); a=−2: keine Lösung; sonst x=z=1/(a+2), y=(3a+4)/(a+2) | ✔ |
+
+**Ergebnis:** 19 Teilbeispiele geprüft, 19 ✔, 0 korrigiert.
