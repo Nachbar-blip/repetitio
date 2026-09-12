@@ -358,7 +358,7 @@ window.REPETITIO = {
     get deck() { return deck; }, get cards() { return cards; },
     get filteredCards() { return filteredCards; }, get niveau() { return niveau; },
     get state() { return document.querySelector('.error-box') ? 'error' : deck ? 'ready' : 'loading'; },
-    showCard(i) { if (i < 0 || i >= filteredCards.length) return; currentIndex = i; displayCard(); }, setNiveau,
+    showCard(i) { if (i < 0 || i >= filteredCards.length) return; currentIndex = i; displayCard(); }, setNiveau, filterByCategory,
 };
 
 loadDeck();

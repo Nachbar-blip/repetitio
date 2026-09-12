@@ -9,12 +9,19 @@ URL = f"file:///{ROOT.as_posix()}/trainer.html"
 
 
 @pytest.fixture(scope="module")
-def page():
+def browser():
     with sync_playwright() as p:
         b = p.chromium.launch()
-        pg = b.new_page()
-        yield pg
+        yield b
         b.close()
+
+
+@pytest.fixture
+def page(browser):
+    # frischer Kontext pro Test: localStorage leakt nicht zwischen Tests
+    ctx = browser.new_context()
+    yield ctx.new_page()
+    ctx.close()
 
 
 def ready(page):
@@ -25,27 +32,40 @@ def counts(page):
     return page.evaluate("[window.REPETITIO.cards.length, window.REPETITIO.deck.cards.length]")
 
 
+def inject_ea_card(page):
+    """Die Daten enthalten derzeit keine eA-Karten – ohne Injektion wären die Tests Tautologien."""
+    page.evaluate("window.REPETITIO.deck.cards.push({id:'x-ea', niveau:'ea', category:'ableitung', question:'q', answer:'a'})")
+    return page.evaluate("window.REPETITIO.deck.cards.filter(c => c.niveau === 'ea').length")
+
+
 def test_ga_hides_ea_cards(page):
     page.goto(URL + "?deck=analysis&niveau=ga"); ready(page)
+    ea = inject_ea_card(page)
+    assert ea > 0
+    page.evaluate("window.REPETITIO.setNiveau('ga')")
     shown, total = counts(page)
-    ea = page.evaluate("window.REPETITIO.deck.cards.filter(c => c.niveau === 'ea').length")
     assert shown == total - ea
+    assert not page.evaluate("window.REPETITIO.cards.some(c => c.id === 'x-ea')")
 
 
 def test_ea_shows_all_and_persists(page):
     page.goto(URL + "?deck=analysis&niveau=ga"); ready(page)
+    ea = inject_ea_card(page)
+    assert ea > 0
     page.click("#niveauSwitch button[data-niveau=ea]")
     shown, total = counts(page)
     assert shown == total
+    assert page.evaluate("window.REPETITIO.cards.some(c => c.id === 'x-ea')")
     assert page.evaluate("localStorage.getItem('repetitio:niveau')") == "ea"
 
 
 def test_rating_saves_progress(page):
     page.goto(URL + "?deck=geometrie"); ready(page)
-    page.evaluate("localStorage.removeItem('repetitio:geometrie')")
+    assert page.evaluate("localStorage.getItem('repetitio:geometrie')") is None
+    cid = page.evaluate("window.REPETITIO.filteredCards[0].id")
     page.click("#flipBtn"); page.click(".btn-good")
     saved = page.evaluate("JSON.parse(localStorage.getItem('repetitio:geometrie'))")
-    assert list(saved.values())[0]["repetitions"] == 1
+    assert saved[cid]["repetitions"] == 1
 
 
 def test_unknown_deck_shows_error(page):
@@ -64,7 +84,7 @@ def test_empty_category_state(page):
         window.REPETITIO.setNiveau('ga');
     }""")
     assert page.evaluate("window.REPETITIO.cards.some(c => c.id === 'x-1')") is False
-    page.evaluate("filterByCategory('nurea')")
+    page.evaluate("window.REPETITIO.filterByCategory('nurea')")
     assert page.evaluate("window.REPETITIO.filteredCards.length") == 0
     assert page.inner_text("#cardCounter") == "Keine Karten"
     assert page.evaluate("document.getElementById('nextBtn').disabled")

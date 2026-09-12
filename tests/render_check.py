@@ -7,10 +7,14 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parent.parent
 DECKS = sys.argv[1:] or ["analysis", "geometrie", "stochastik"]
+# Kürzer als das ist keine Frage, sondern ein leerer/abgeschnittener String (z. B. nur ein "?").
+MIN_QUESTION_CHARS = 3
 
 
 def check_deck(page, deck):
     errors = []
+    handler = lambda e: errors.append(f"{deck}: JS-Fehler: {e}")
+    page.on("pageerror", handler)
     page.goto(f"file:///{ROOT.as_posix()}/trainer.html?deck={deck}&niveau=ea")
     page.wait_for_function("window.REPETITIO && window.REPETITIO.state !== 'loading'")
     if page.evaluate("window.REPETITIO.state") != "ready":
@@ -37,10 +41,13 @@ def check_deck(page, deck):
         cid = meta["cards"][i]["id"]
         page.evaluate(f"window.REPETITIO.showCard({i})")
         qtext = page.evaluate("document.getElementById('cardQuestion').innerText.trim()")
-        if len(qtext) <= 3:
+        if len(qtext) <= MIN_QUESTION_CHARS:
             errors.append(f"{deck}/{cid}: Frage leer/abgeschnitten: {qtext!r}")
         bad = page.evaluate("""() => [...document.querySelectorAll('#flashcard .katex-error')]
                                         .map(e => e.getAttribute('title') || e.textContent)""")
+        # Unbekannte Makros (arc) erzeugen keinen .katex-error, nur rot gefärbten Text
+        bad += page.evaluate("""() => [...document.querySelectorAll('#flashcard .katex-mathml mstyle[mathcolor="#cc0000"]')]
+                                        .map(e => 'unbekanntes Makro: ' + e.textContent)""")
         for b in bad:
             errors.append(f"{deck}/{cid}: KaTeX: {b[:120]}")
         # auto-render lässt Formeln mit unbalancierten Klammern als Rohtext stehen (kein .katex-error):
@@ -54,6 +61,7 @@ def check_deck(page, deck):
         }""")
         if rest:
             errors.append(f"{deck}/{cid}: unverarbeitete Formel-Delimiter im Text: {' '.join(rest)}")
+    page.remove_listener("pageerror", handler)
     print(f"{deck}: {meta['n']} Karten geprüft, {len([e for e in errors if e.startswith(deck)])} Mängel")
     return errors
 
@@ -64,7 +72,6 @@ def main():
     with sync_playwright() as p:
         b = p.chromium.launch()
         page = b.new_page()
-        page.on("pageerror", lambda e: errors.append(f"JS-Fehler: {e}"))
         for d in DECKS:
             errors += check_deck(page, d)
         b.close()
