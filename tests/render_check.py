@@ -61,6 +61,16 @@ def check_deck(page, deck):
         }""")
         if rest:
             errors.append(f"{deck}/{cid}: unverarbeitete Formel-Delimiter im Text: {' '.join(rest)}")
+        # Formel-Overflow: Karte aufdecken, alle <details> öffnen, dann Breite jeder Formelbox prüfen (Viewport 1000 px)
+        over = page.evaluate("""() => {
+            const card = document.getElementById('flashcard');
+            if (!card.classList.contains('flipped')) window.flipCard();
+            card.querySelectorAll('details').forEach(d => d.open = true);
+            return [...card.querySelectorAll('.formula-box, .katex-display')]
+                .map(el => el.scrollWidth - el.clientWidth).filter(d => d > 2);
+        }""")
+        for d in over:
+            errors.append(f"{deck}/{cid}: Formel läuft über: {d} px")
     page.remove_listener("pageerror", handler)
     print(f"{deck}: {meta['n']} Karten geprüft, {len([e for e in errors if e.startswith(deck)])} Mängel")
     return errors
@@ -71,7 +81,7 @@ def main():
     errors = []
     with sync_playwright() as p:
         b = p.chromium.launch()
-        page = b.new_page()
+        page = b.new_page(viewport={"width": 1000, "height": 900})
         for d in DECKS:
             errors += check_deck(page, d)
         b.close()

@@ -194,7 +194,9 @@ header p {
     margin: 15px 0;
     font-size: 1.2rem;
     text-align: center;
+    overflow-x: auto;
 }
+.card-answer .katex-display { overflow-x: auto; overflow-y: hidden; }
 
 details.example {
     margin-top: 15px;

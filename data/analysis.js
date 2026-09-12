@@ -1012,7 +1012,8 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Gemeinsame Punkte einer Schar</h4>
             <div class="formula-box">
-                $$f_a(x) = a \\cdot T(x) + R(x) \\quad \\Rightarrow \\quad T(x) = 0 \\text{ liefert die gemeinsamen Stellen}$$
+                $$f_a(x) = a \\cdot T(x) + R(x)$$<br>
+                $$T(x) = 0 \; \\text{ liefert die gemeinsamen Stellen}$$
             </div>
             <p><strong>Merksatz:</strong> Ein Punkt gehört zu allen Kurven, wenn sein Funktionswert nicht von \\( a \\) abhängt. Dazu den Funktionsterm nach dem Parameter ordnen: Der Faktor vor \\( a \\) muss null werden. Alternativ zwei verschiedene Parameterwerte \\( a \\neq b \\) gleichsetzen (\\( f_a(x) = f_b(x) \\)) und die Lösung für beliebige \\( a, b \\) prüfen.</p>
             <details class="example">
@@ -1112,7 +1113,8 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Extremwertaufgabe</h4>
             <div class="formula-box">
-                $$\\text{Hauptbedingung} + \\text{Nebenbedingung} \\Rightarrow \\text{Zielfunktion } Z(x) \\text{ mit einer Variablen}$$
+                $$\\text{Hauptbedingung} + \\text{Nebenbedingung}$$<br>
+                $$\\Rightarrow \\text{Zielfunktion } Z(x) \\text{ mit einer Variablen}$$
             </div>
             <ol>
                 <li>Hauptbedingung: Was soll extremal werden? (z. B. Flächeninhalt)</li>

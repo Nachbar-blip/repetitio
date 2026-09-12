@@ -644,7 +644,7 @@ window.REPETITIO_DECKS["stochastik"] = {
             <table>
                 <tr><th>Menge</th><th>Sprechweise</th><th>Wahrscheinlichkeit</th></tr>
                 <tr><td>\\( A \\cup B \\)</td><td>A <em>oder</em> B (mindestens eines)</td><td>\\( P(A) + P(B) - P(A \\cap B) \\)</td></tr>
-                <tr><td>\\( A \\cap B \\)</td><td>A <em>und</em> B (beide)</td><td>\\( P(A) \\cdot P_A(B) \\)</td></tr>
+                <tr><td>\\( A \\cap B \\)</td><td>A <em>und</em> B (beide)</td><td>\\( P(A) \\cdot P(B \\,|\\, A) \\)</td></tr>
                 <tr><td>\\( A \\setminus B \\)</td><td>A, aber <em>nicht</em> B</td><td>\\( P(A) - P(A \\cap B) \\)</td></tr>
                 <tr><td>\\( \\bar{A} \\)</td><td><em>nicht</em> A (Gegenereignis)</td><td>\\( 1 - P(A) \\)</td></tr>
             </table>
@@ -672,7 +672,9 @@ window.REPETITIO_DECKS["stochastik"] = {
             <h4>Normalverteilung</h4>
             <div class="formula-box">
                 $$X \\sim N(\\mu, \\sigma^2): \\quad \\text{Erwartungswert } \\mu, \\; \\text{Standardabweichung } \\sigma$$<br><br>
-                $$P(\\mu - \\sigma \\leq X \\leq \\mu + \\sigma) \\approx 0{,}683, \\quad P(\\mu - 2\\sigma \\leq X \\leq \\mu + 2\\sigma) \\approx 0{,}954, \\quad P(\\mu - 3\\sigma \\leq X \\leq \\mu + 3\\sigma) \\approx 0{,}997$$
+                $$P(\\mu - \\sigma \\leq X \\leq \\mu + \\sigma) \\approx 0{,}683$$<br>
+                $$P(\\mu - 2\\sigma \\leq X \\leq \\mu + 2\\sigma) \\approx 0{,}954$$<br>
+                $$P(\\mu - 3\\sigma \\leq X \\leq \\mu + 3\\sigma) \\approx 0{,}997$$
             </div>
             <p><strong>Wann normalverteilt?</strong></p>
             <ul>
@@ -742,7 +744,8 @@ window.REPETITIO_DECKS["stochastik"] = {
                 <tr><td>Grenzen</td><td>\\( \\leq \\) und \\( < \\) verschieden!</td><td>\\( \\leq \\) und \\( < \\) gleichwertig</td></tr>
             </table>
             <div class="formula-box">
-                $$\\text{diskret: } P(a \\leq X \\leq b) = \\sum_{k=a}^{b} P(X = k) \\qquad \\text{stetig: } P(a \\leq X \\leq b) = \\int_a^b \\varphi(x)\\,dx$$
+                $$\\text{diskret: } P(a \\leq X \\leq b) = \\sum_{k=a}^{b} P(X = k)$$<br>
+                $$\\text{stetig: } P(a \\leq X \\leq b) = \\int_a^b \\varphi(x)\\,dx$$
             </div>
             <p><strong>Merksatz:</strong> Bei stetigen Zufallsgrößen sind Wahrscheinlichkeiten Flächen unter der Dichte. Ein einzelner Punkt hat keine Fläche, deshalb ist \\( P(X = a) = 0 \\) – die Dichte \\( \\varphi(a) \\) selbst ist <em>keine</em> Wahrscheinlichkeit, sondern nur „Wahrscheinlichkeit pro Längeneinheit".</p>
             <details class="example">
@@ -751,9 +754,9 @@ window.REPETITIO_DECKS["stochastik"] = {
                     <strong>Diskret:</strong> 1000 Münzwürfe, \\( X \\sim B(1000; 0{,}5) \\):
                     $$P(X = 500) = \\binom{1000}{500} \\cdot 0{,}5^{1000} \\approx 0{,}0252$$
                     → „genau 500 Treffer" hat eine positive (kleine) Wahrscheinlichkeit.<br><br>
-                    <strong>Stetig:</strong> Füllmenge \\( X \\sim N(500, 20^2) \\):
-                    $$P(X = 500) = 0, \\quad \\text{aber} \\quad P(499{,}5 \\leq X \\leq 500{,}5) \\approx 0{,}0199$$
-                    → Nur ein Intervall um 500 ml hat eine Wahrscheinlichkeit; sie entspricht etwa \\( \\varphi(500) \\cdot 1 \\approx 0{,}0199 \\) (Dichte mal Intervallbreite).
+                    <strong>Stetig:</strong> Passende Normalverteilung \\( Y \\sim N(500, 250) \\) mit \\( \\mu = np = 500 \\), \\( \\sigma^2 = np(1-p) = 250 \\), also \\( \\sigma \\approx 15{,}81 \\):
+                    $$P(Y = 500) = 0, \\quad \\text{aber} \\quad P(499{,}5 \\leq Y \\leq 500{,}5) \\approx 0{,}0252$$
+                    → Nur ein Intervall um 500 hat eine Wahrscheinlichkeit; sie entspricht etwa \\( \\varphi(500) \\cdot 1 \\) (Dichte mal Intervallbreite) und stimmt mit dem Binomialwert überein. Das ist die <strong>Stetigkeitskorrektur</strong>: \\( P(X = k) \\approx P(k - 0{,}5 \\leq Y \\leq k + 0{,}5) \\).
                 </div>
             </details>
         `
@@ -866,6 +869,7 @@ window.REPETITIO_DECKS["stochastik"] = {
                 <tr><th>Sicherheit</th><th>90 %</th><th>95 %</th><th>99 %</th></tr>
                 <tr><td>c</td><td>1,64</td><td>1,96</td><td>2,58</td></tr>
             </table>
+            <p>(gerundete c-Werte; genauer 1,6449 / 1,9600 / 2,5758)</p>
             <p><strong>Merksatz:</strong> Die Binomialverteilung \\( B(n; p) \\) wird für \\( \\sigma > 3 \\) durch \\( N(np, \\sigma^2) \\) genähert; das 95-%-Intervall reicht dann 1,96σ nach beiden Seiten. Das Anteilsintervall ist dasselbe Intervall, nur durch n geteilt. Bei Trefferzahlen auf ganze Zahlen <em>nach innen</em> runden.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -889,7 +893,8 @@ window.REPETITIO_DECKS["stochastik"] = {
         answer: `
             <h4>Konfidenzintervall (Stichprobe bekannt → p schätzen)</h4>
             <div class="formula-box">
-                $$h - c \\cdot \\sqrt{\\frac{h(1-h)}{n}} \\;\\leq\\; p \\;\\leq\\; h + c \\cdot \\sqrt{\\frac{h(1-h)}{n}}, \\qquad h = \\frac{k}{n}, \\; c = 1{,}96 \\text{ für } 95\\,\\%$$
+                $$h - c \\cdot \\sqrt{\\frac{h(1-h)}{n}} \\;\\leq\\; p \\;\\leq\\; h + c \\cdot \\sqrt{\\frac{h(1-h)}{n}}$$<br>
+                $$h = \\frac{k}{n}, \\qquad c = 1{,}96 \\text{ für } 95\\,\\%$$
             </div>
             <p><strong>Vorgehen:</strong></p>
             <ol>
@@ -936,7 +941,7 @@ window.REPETITIO_DECKS["stochastik"] = {
                     <strong>n = 50:</strong> \\( \\sigma = \\sqrt{50 \\cdot 0{,}1 \\cdot 0{,}9} = \\sqrt{4{,}5} \\approx 2{,}12 \\leq 3 \\) → σ-Regeln <em>nicht</em> anwendbar, binomial rechnen.<br><br>
                     <strong>n = 200:</strong> \\( \\mu = 20, \\; \\sigma = \\sqrt{18} \\approx 4{,}24 > 3 \\) ✓<br>
                     1σ-Intervall: \\( 20 \\pm 4{,}24 \\Rightarrow [15{,}76;\\, 24{,}24] \\), also \\( 16 \\leq X \\leq 24 \\)<br>
-                    2σ-Intervall: \\( 20 \\pm 8{,}49 \\Rightarrow [11{,}5;\\, 28{,}5] \\), also \\( 12 \\leq X \\leq 28 \\)<br><br>
+                    2σ-Intervall: \\( 20 \\pm 8{,}49 \\Rightarrow [11{,}51;\\, 28{,}49] \\), also \\( 12 \\leq X \\leq 28 \\)<br><br>
                     Exakt binomial: \\( P(16 \\leq X \\leq 24) \\approx 0{,}712 \\) (Regel: 0,683), \\( P(12 \\leq X \\leq 28) \\approx 0{,}956 \\) (Regel: 0,954) – die Näherung ist brauchbar; die Abweichung beim 1σ-Intervall zeigt, dass die Faustregel nur eine Näherung liefert.
                 </div>
             </details>
@@ -949,7 +954,8 @@ window.REPETITIO_DECKS["stochastik"] = {
         answer: `
             <h4>Schluss von h auf p</h4>
             <div class="formula-box">
-                $$\\text{Punktschätzung: } p \\approx h \\qquad \\text{Intervallschätzung: } p \\in \\left[h - c\\sqrt{\\tfrac{h(1-h)}{n}};\\; h + c\\sqrt{\\tfrac{h(1-h)}{n}}\\right]$$
+                $$\\text{Punktschätzung: } p \\approx h$$<br>
+                $$\\text{Konfidenzintervall für } p: \\; \\left[h - c\\sqrt{\\tfrac{h(1-h)}{n}};\\; h + c\\sqrt{\\tfrac{h(1-h)}{n}}\\right]$$
             </div>
             <p><strong>Die beiden Richtungen:</strong></p>
             <table>
