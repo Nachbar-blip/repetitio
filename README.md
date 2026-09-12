@@ -64,7 +64,7 @@ Repetitio/
 │   ├── test_engine.py      Engine-Tests (pytest + Playwright)
 │   ├── screenshots.py      Screenshots für die Sichtprüfung
 │   └── reports/            erzeugte Screenshots
-└── docs/plans/             Design, Implementierungsplan, Prüfprotokoll
+└── docs/plans/             Prüfprotokoll (Wolfram-Nachrechnung der eA-Beispiele)
 ```
 
 ### Deck-Format
