@@ -96,3 +96,19 @@ def test_index_niveau_links(page):
     hrefs = page.evaluate("[...document.querySelectorAll('.deck-card')].map(a => a.getAttribute('href'))")
     assert len(hrefs) == 3 and all("niveau=ea" in h for h in hrefs)
     assert page.evaluate("localStorage.getItem('repetitio:niveau')") == "ea"
+
+
+def test_flipped_card_no_overlap(page):
+    """Lange Rückseite (Beispiel offen): Karte endet oberhalb der Steuerleiste."""
+    page.goto(URL + "?deck=analysis&niveau=ea"); ready(page)
+    page.evaluate("window.REPETITIO.filterByCategory('scharen')")
+    ea = page.evaluate("window.REPETITIO.filteredCards.findIndex(c => c.niveau === 'ea')")
+    assert ea >= 0
+    page.evaluate(f"window.REPETITIO.showCard({ea})")
+    page.click("#flipBtn"); page.wait_for_timeout(800)
+    page.evaluate("document.querySelectorAll('#flashcard details').forEach(d => d.open = true)")
+    page.wait_for_timeout(200)
+    card_bottom, controls_top = page.evaluate(
+        "[document.getElementById('flashcard').getBoundingClientRect().bottom,"
+        " document.querySelector('.controls').getBoundingClientRect().top]")
+    assert card_bottom <= controls_top

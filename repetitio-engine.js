@@ -43,8 +43,10 @@ function loadProgress() {
 
 function applyNiveau() {
     cards = deck.cards.filter(c => niveau === "ea" || c.niveau !== "ea");
-    document.querySelectorAll("#niveauSwitch button").forEach(b =>
-        b.classList.toggle("active", b.dataset.niveau === niveau));
+    document.querySelectorAll("#niveauSwitch button").forEach(b => {
+        const on = b.dataset.niveau === niveau;
+        b.classList.toggle("active", on); b.setAttribute("aria-pressed", on);
+    });
     filterByCategory(activeCategory);
 }
 
@@ -179,7 +181,8 @@ function displayCard() {
 
     const card = filteredCards[currentIndex];
     const label = deck.categories[categoryOf(card)] || "Sonstiges";
-    document.getElementById('cardQuestion').innerHTML = card.question + (card.niveau === 'ea' ? ' <span class="badge-ea">eA</span>' : '');
+    // Wrapper-Span: Frage, Formeln und Badge bleiben ein Textfluss (kein Flex-Item pro Knoten)
+    document.getElementById('cardQuestion').innerHTML = '<span>' + card.question + (card.niveau === 'ea' ? ' <span class="badge-ea">eA</span>' : '') + '</span>';
     document.getElementById('cardAnswer').innerHTML = card.answer;
     document.getElementById('cardCategory').textContent = label;
     document.getElementById('cardCategoryBack').textContent = label;

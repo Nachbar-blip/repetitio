@@ -12,9 +12,9 @@
             <h1>Repetitio</h1>
             <p><em>repetitio est mater studiorum</em> · Methodentrainer Mathematik Abitur</p>
         </header>
-        <div class="niveau-switch" id="niveauSwitch">
-            <button data-niveau="ga">gA · Grundkurs</button>
-            <button data-niveau="ea">eA · Leistungskurs</button>
+        <div class="niveau-switch" id="niveauSwitch" role="group" aria-label="Anforderungsniveau">
+            <button data-niveau="ga" aria-pressed="false">gA · Grundkurs</button>
+            <button data-niveau="ea" aria-pressed="false">eA · Leistungskurs</button>
         </div>
         <div class="deck-grid">
             <a class="deck-card" data-deck="analysis" href="trainer.html?deck=analysis"><h2>Analysis</h2><p>Ableiten, Kurvendiskussion, Integrieren</p></a>
@@ -30,7 +30,10 @@
         }
         let niveau = readNiveau();
         function apply() {
-            document.querySelectorAll("#niveauSwitch button").forEach(b => b.classList.toggle("active", b.dataset.niveau === niveau));
+            document.querySelectorAll("#niveauSwitch button").forEach(b => {
+                const on = b.dataset.niveau === niveau;
+                b.classList.toggle("active", on); b.setAttribute("aria-pressed", on);
+            });
             document.querySelectorAll(".deck-card").forEach(a => a.href = `trainer.html?deck=${a.dataset.deck}&niveau=${niveau}`);
         }
         document.querySelectorAll("#niveauSwitch button").forEach(b => b.addEventListener("click", () => {

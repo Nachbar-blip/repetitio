@@ -756,7 +756,7 @@ window.REPETITIO_DECKS["stochastik"] = {
                     → „genau 500 Treffer" hat eine positive (kleine) Wahrscheinlichkeit.<br><br>
                     <strong>Stetig:</strong> Passende Normalverteilung \\( Y \\sim N(500, 250) \\) mit \\( \\mu = np = 500 \\), \\( \\sigma^2 = np(1-p) = 250 \\), also \\( \\sigma \\approx 15{,}81 \\):
                     $$P(Y = 500) = 0, \\quad \\text{aber} \\quad P(499{,}5 \\leq Y \\leq 500{,}5) \\approx 0{,}0252$$
-                    → Nur ein Intervall um 500 hat eine Wahrscheinlichkeit; sie entspricht etwa \\( \\varphi(500) \\cdot 1 \\) (Dichte mal Intervallbreite) und stimmt mit dem Binomialwert überein. Das ist die <strong>Stetigkeitskorrektur</strong>: \\( P(X = k) \\approx P(k - 0{,}5 \\leq Y \\leq k + 0{,}5) \\).
+                    → Nur ein Intervall um 500 hat eine Wahrscheinlichkeit; sie entspricht etwa \\( \\varphi(500) \\cdot 1 \\) (Dichte mal Intervallbreite) und stimmt mit dem Binomialwert überein. Das ist die <strong>Stetigkeitskorrektur</strong>: \\( P(X = k) \\approx P(k - 0{,}5 \\leq Y \\leq k + 0{,}5) \\)
                 </div>
             </details>
         `
