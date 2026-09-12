@@ -509,3 +509,8 @@ footer a { color:white; }
 .card-answer table { border-collapse: collapse; margin: 10px auto; table-layout: fixed; width: 100%; max-width: 100%; }
 .card-answer td, .card-answer th { hyphens: auto; overflow-wrap: anywhere; }
 .card-answer td, .card-answer th { border: 1px solid #ccc; padding: 4px 8px; text-align: center; }
+/* Nutzungs-/Datenschutzhinweis (Startseite) */
+details.hinweis { margin-top:2rem; padding:0.75rem 1rem; border-top:1px solid rgba(255,255,255,0.25); font-size:0.85rem; color:rgba(255,255,255,0.85); line-height:1.5; }
+details.hinweis summary { cursor:pointer; font-weight:600; padding:0.4em 0; }
+details.hinweis p { margin:0.5em 0; }
+details.hinweis strong { color:white; }
