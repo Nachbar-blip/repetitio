@@ -4,6 +4,7 @@ const DECK_ID = params.get("deck") || "";
 const NIVEAU_KEY = "repetitio:niveau";
 let niveau = params.get("niveau") || localStorage.getItem(NIVEAU_KEY) || "ga";
 if (niveau !== "ea") niveau = "ga";
+if (params.get("niveau")) localStorage.setItem(NIVEAU_KEY, niveau);
 
 let deck = null;        // { title, subtitle, categories, cards }
 let cards = [];         // nach Niveau gefilterte Karten
@@ -25,7 +26,10 @@ function loadDeck() {
     s.src = "data/" + DECK_ID + ".js";
     s.onload = () => {
         deck = (window.REPETITIO_DECKS || {})[DECK_ID];
-        if (!deck) { showError(`Die Datei data/${DECK_ID}.js enthält kein Deck „${DECK_ID}".`); return; }
+        if (!deck) {
+            console.error(`data/${DECK_ID}.js geladen, aber window.REPETITIO_DECKS['${DECK_ID}'] fehlt – Syntaxfehler in der Deckdatei?`);
+            showError(`Die Datei data/${DECK_ID}.js enthält kein Deck „${DECK_ID}".`); return;
+        }
         initTrainer();
     };
     s.onerror = () => showError(`Das Deck „${DECK_ID}" gibt es nicht.`);
@@ -46,16 +50,16 @@ function applyNiveau() {
 
 function setNiveau(n) {
     niveau = n; localStorage.setItem(NIVEAU_KEY, n);
-    const u = new URL(location); u.searchParams.set("niveau", n); history.replaceState(null, "", u);
+    try { const u = new URL(location); u.searchParams.set("niveau", n); history.replaceState(null, "", u); } catch (e) {}
     applyNiveau();
 }
 
-function categoryOf(card) { return card.category in deck.categories ? card.category : "sonstiges"; }
+function categoryOf(card) { return Object.hasOwn(deck.categories, card.category) ? card.category : "sonstiges"; }
 
 function buildTabs() {
     const tabs = document.getElementById("categoryTabs");
     const cats = { all: "Alle", ...deck.categories };
-    for (const c of deck.cards) if (!(c.category in deck.categories)) {
+    for (const c of deck.cards) if (!Object.hasOwn(deck.categories, c.category)) {
         console.warn("Unbekannte Kategorie", c.category, "bei Karte", c.id);
         cats.sonstiges = cats.sonstiges || "Sonstiges";
     }
@@ -69,7 +73,7 @@ function initTrainer() {
     document.body.dataset.deck = DECK_ID;
     document.title = "Repetitio · " + deck.title;
     document.getElementById("deckTitle").textContent = deck.title;
-    document.getElementById("deckSubtitle").textContent = deck.subtitle;
+    document.getElementById("deckSubtitle").textContent = deck.subtitle || "";
     document.querySelectorAll("#niveauSwitch button").forEach(b =>
         b.addEventListener("click", () => setNiveau(b.dataset.niveau)));
     buildTabs();
@@ -161,6 +165,15 @@ function displayCard() {
         document.getElementById('cardAnswer').innerHTML = '';
         document.getElementById('cardCategory').textContent = '';
         document.getElementById('cardCategoryBack').textContent = '';
+        document.getElementById('cardCounter').textContent = 'Keine Karten';
+        document.getElementById('prevBtn').disabled = true;
+        document.getElementById('nextBtn').disabled = true;
+        document.getElementById('nextReview').textContent = '';
+        document.getElementById('flashcard').classList.remove('flipped');
+        document.getElementById('flipBtn').textContent = 'Aufdecken';
+        document.getElementById('ratingButtons').classList.remove('visible');
+        updateStats();
+        updateProgressBar();
         return;
     }
 
@@ -175,6 +188,7 @@ function displayCard() {
     document.getElementById('flashcard').classList.remove('flipped');
     document.getElementById('flipBtn').textContent = 'Aufdecken';
     document.getElementById('ratingButtons').classList.remove('visible');
+    document.getElementById('nextReview').textContent = '';
 
     updateCounter();
     updateStats();
@@ -183,6 +197,7 @@ function displayCard() {
 
 // Flip card
 function flipCard() {
+    if (!document.getElementById('flashcard')) return;
     const card = document.getElementById('flashcard');
     const btn = document.getElementById('flipBtn');
     const rating = document.getElementById('ratingButtons');
@@ -219,6 +234,7 @@ function prevCard() {
 
 // Rate card with spaced repetition
 function rateCard(quality) {
+    if (!filteredCards.length) return;
     const card = filteredCards[currentIndex];
     const interval = updateCardProgress(card.id, quality);
 
@@ -326,6 +342,7 @@ function updateProgressBar() {
 
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
+    if (!deck || e.target.tagName === 'BUTTON') return;
     if (e.key === 'ArrowRight') nextCard();
     if (e.key === 'ArrowLeft') prevCard();
     if (e.key === ' ' || e.key === 'Enter') {
@@ -340,7 +357,8 @@ document.addEventListener('keydown', (e) => {
 window.REPETITIO = {
     get deck() { return deck; }, get cards() { return cards; },
     get filteredCards() { return filteredCards; }, get niveau() { return niveau; },
-    showCard(i) { currentIndex = i; displayCard(); }, setNiveau,
+    get state() { return document.querySelector('.error-box') ? 'error' : deck ? 'ready' : 'loading'; },
+    showCard(i) { if (i < 0 || i >= filteredCards.length) return; currentIndex = i; displayCard(); }, setNiveau,
 };
 
 loadDeck();
