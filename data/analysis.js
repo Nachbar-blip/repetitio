@@ -1,11 +1,13 @@
-// Repetitio-Deck: Analysis — gA-Karten aus dem GK-Trainer; eA-Karten werden ergänzt
+// Repetitio-Deck: Analysis — gA-Karten aus dem GK-Trainer, eA-Karten ana-101 bis ana-116
 window.REPETITIO_DECKS = window.REPETITIO_DECKS || {};
 window.REPETITIO_DECKS["analysis"] = {
     title: "Analysis",
     subtitle: "Ableiten, Kurvendiskussion, Integrieren",
     categories: {
         ableitung: "Ableitung",
+        grenzwerte: "Grenzwerte",
         kurvendiskussion: "Kurvendisk.",
+        scharen: "Scharen",
         integral: "Integral",
         sonstiges: "Sonstiges"
     },
@@ -783,6 +785,350 @@ window.REPETITIO_DECKS["analysis"] = {
                     $$= \\ln(e) - \\ln(1) = 1 - 0 = 1$$<br><br>
                     $$\\int \\frac{2x}{x^2+1}\\,dx = \\ln(x^2+1) + C$$<br>
                     (weil $$\\frac{d}{dx}(x^2+1) = 2x$$)
+                </div>
+            </details>
+        `
+    },
+    // ===== eA-Karten =====
+    // Grenzwerte
+    {
+        id: "ana-101", niveau: "ea",
+        category: "grenzwerte",
+        question: "Wie berechne ich Grenzwerte mit den Grenzwertsätzen?",
+        answer: `
+            <h4>Grenzwertsätze</h4>
+            <div class="formula-box">
+                $$\\lim (f \\pm g) = \\lim f \\pm \\lim g, \\quad \\lim (f \\cdot g) = \\lim f \\cdot \\lim g$$<br><br>
+                $$\\lim \\frac{f}{g} = \\frac{\\lim f}{\\lim g} \\quad (\\lim g \\neq 0)$$
+            </div>
+            <p><strong>Merksatz:</strong> Grenzwerte dürfen gliedweise gebildet werden, solange alle Einzelgrenzwerte existieren und kein Nenner gegen 0 geht. Beim Typ „0/0" zuerst kürzen, bei \\( x \\to \\pm\\infty \\) Zähler und Nenner durch die höchste Potenz teilen.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    <strong>Beispiel 1 (Typ „0/0", kürzen):</strong><br>
+                    $$\\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1} = \\lim_{x \\to 1} \\frac{(x-1)(x+1)}{x-1} = \\lim_{x \\to 1} (x+1) = 2$$<br><br>
+                    <strong>Beispiel 2 (Verhalten im Unendlichen):</strong><br>
+                    $$\\lim_{x \\to \\infty} \\frac{3x^2 + 1}{x^2 - 4} = \\lim_{x \\to \\infty} \\frac{3 + \\frac{1}{x^2}}{1 - \\frac{4}{x^2}} = \\frac{3 + 0}{1 - 0} = 3$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "ana-102", niveau: "ea",
+        category: "grenzwerte",
+        question: "Wie untersuche ich das Verhalten an einer Stelle (Polstelle / Lücke)?",
+        answer: `
+            <h4>Definitionslücken gebrochenrationaler Funktionen</h4>
+            <div class="formula-box">
+                $$f(x) = \\frac{z(x)}{n(x)}, \\quad n(x_0) = 0$$<br><br>
+                $$z(x_0) \\neq 0 \\Rightarrow \\text{Polstelle} \\qquad z(x_0) = 0 \\text{ und kürzbar} \\Rightarrow \\text{hebbare Lücke}$$
+            </div>
+            <p><strong>Vorgehen:</strong> Zähler und Nenner faktorisieren. Kürzt sich der Faktor \\( (x - x_0) \\) vollständig weg, ist \\( x_0 \\) eine hebbare Lücke (Grenzwert der gekürzten Funktion einsetzen). Bleibt er im Nenner, liegt eine Polstelle vor; das Vorzeichen links und rechts entscheidet über einen Vorzeichenwechsel.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$f(x) = \\frac{x^2 - 4}{x^2 - 2x} = \\frac{(x-2)(x+2)}{x(x-2)}, \\quad D = \\mathbb{R} \\setminus \\{0;\\, 2\\}$$<br><br>
+                    <strong>Stelle \\( x = 2 \\):</strong> Faktor kürzt sich:
+                    $$\\lim_{x \\to 2} \\frac{x+2}{x} = \\frac{4}{2} = 2$$
+                    → hebbare Lücke bei \\( (2 \\,|\\, 2) \\).<br><br>
+                    <strong>Stelle \\( x = 0 \\):</strong> Nenner bleibt 0, Zähler \\( \\to 2 \\):
+                    $$\\lim_{x \\to 0^-} \\frac{x+2}{x} = -\\infty, \\qquad \\lim_{x \\to 0^+} \\frac{x+2}{x} = +\\infty$$
+                    → Polstelle mit Vorzeichenwechsel, senkrechte Asymptote \\( x = 0 \\).
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "ana-103", niveau: "ea",
+        category: "grenzwerte",
+        question: "Wie prüfe ich Stetigkeit an einer Stelle?",
+        answer: `
+            <h4>Stetigkeit an der Stelle \\( x_0 \\)</h4>
+            <div class="formula-box">
+                $$f \\text{ stetig in } x_0 \\Leftrightarrow \\lim_{x \\to x_0^-} f(x) = \\lim_{x \\to x_0^+} f(x) = f(x_0)$$
+            </div>
+            <p><strong>Merksatz:</strong> Drei Werte vergleichen – linksseitiger Grenzwert, rechtsseitiger Grenzwert und Funktionswert. Stimmen alle drei überein, hat der Graph an dieser Stelle keinen Sprung. Typisch bei abschnittsweise definierten Funktionen: die Nahtstelle prüfen.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$f(x) = \\begin{cases} x^2 + 1 & \\text{für } x < 1 \\\\ 3x - 1 & \\text{für } x \\geq 1 \\end{cases}$$<br><br>
+                    Linksseitig: \\( \\lim_{x \\to 1^-} (x^2 + 1) = 2 \\)<br>
+                    Rechtsseitig: \\( \\lim_{x \\to 1^+} (3x - 1) = 2 \\)<br>
+                    Funktionswert: \\( f(1) = 3 \\cdot 1 - 1 = 2 \\)<br><br>
+                    Alle drei Werte sind gleich → \\( f \\) ist bei \\( x_0 = 1 \\) stetig.<br><br>
+                    <strong>Variante mit Parameter:</strong> Für \\( g(x) = x^2 \\) (\\( x < 2 \\)) und \\( g(x) = ax + 1 \\) (\\( x \\geq 2 \\)) muss gelten
+                    $$4 = 2a + 1 \\Rightarrow a = \\frac{3}{2}$$
+                </div>
+            </details>
+        `
+    },
+    // Ableitung (eA)
+    {
+        id: "ana-104", niveau: "ea",
+        category: "ableitung",
+        question: "Wie leite ich verkettete Funktionen wie \\( \\sin(x^2) \\) oder \\( e^{-x^2} \\) ab?",
+        answer: `
+            <h4>Kettenregel</h4>
+            <div class="formula-box">$$f(x) = u(v(x)) \\Rightarrow f'(x) = u'(v(x)) \\cdot v'(x)$$</div>
+            <p><strong>Merksatz:</strong> „Äußere Ableitung mal innere Ableitung." Zuerst die äußere Funktion ableiten und die innere unverändert einsetzen, dann mit der Ableitung der inneren Funktion multiplizieren.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$f(x) = \\sin(x^2): \\quad f'(x) = \\cos(x^2) \\cdot 2x = 2x \\cos(x^2)$$<br><br>
+                    $$g(x) = e^{-x^2}: \\quad g'(x) = e^{-x^2} \\cdot (-2x) = -2x \\, e^{-x^2}$$<br><br>
+                    $$h(x) = (2x + 1)^5: \\quad h'(x) = 5(2x+1)^4 \\cdot 2 = 10(2x+1)^4$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "ana-105", niveau: "ea",
+        category: "ableitung",
+        question: "Wie wende ich die Quotientenregel an?",
+        answer: `
+            <h4>Quotientenregel</h4>
+            <div class="formula-box">$$f(x) = \\frac{u(x)}{v(x)} \\Rightarrow f'(x) = \\frac{u'(x) \\cdot v(x) - u(x) \\cdot v'(x)}{[v(x)]^2}$$</div>
+            <p><strong>Merksatz:</strong> „NAZ minus ZAN durch Nenner-Quadrat" (Nenner · Ableitung Zähler − Zähler · Ableitung Nenner). Die Reihenfolge im Zähler ist wichtig, da subtrahiert wird. Nach dem Ableiten den Zähler vereinfachen, den Nenner meist faktorisiert lassen.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$f(x) = \\frac{x^2}{x + 1}, \\quad u = x^2,\\ u' = 2x,\\ v = x + 1,\\ v' = 1$$<br>
+                    $$f'(x) = \\frac{2x(x+1) - x^2 \\cdot 1}{(x+1)^2} = \\frac{x^2 + 2x}{(x+1)^2}$$<br><br>
+                    $$g(x) = \\frac{e^x}{x}: \\quad g'(x) = \\frac{e^x \\cdot x - e^x \\cdot 1}{x^2} = \\frac{e^x (x - 1)}{x^2}$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "ana-106", niveau: "ea",
+        category: "ableitung",
+        question: "Wie leite ich die Umkehrfunktion ab (einfache Fälle)?",
+        answer: `
+            <h4>Ableitung der Umkehrfunktion</h4>
+            <div class="formula-box">$$\\left(f^{-1}\\right)'(y_0) = \\frac{1}{f'(x_0)} \\quad \\text{mit } y_0 = f(x_0),\\ f'(x_0) \\neq 0$$</div>
+            <p><strong>Merksatz:</strong> Der Graph der Umkehrfunktion ist die Spiegelung an \\( y = x \\); dabei wird die Tangentensteigung zum Kehrwert. Man muss die Umkehrfunktion also nicht explizit kennen – es genügt, die Stelle \\( x_0 \\) mit \\( f(x_0) = y_0 \\) zu finden.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$f(x) = x^3 + x \\quad (\\text{streng monoton steigend, also umkehrbar})$$<br>
+                    Gesucht: \\( (f^{-1})'(2) \\). Wegen \\( f(1) = 1 + 1 = 2 \\) ist \\( x_0 = 1 \\).<br>
+                    $$f'(x) = 3x^2 + 1 \\Rightarrow f'(1) = 4 \\Rightarrow (f^{-1})'(2) = \\frac{1}{4}$$<br><br>
+                    <strong>Bekannter Spezialfall:</strong> \\( f(x) = e^x \\), \\( f^{-1}(y) = \\ln(y) \\):
+                    $$(\\ln)'(y) = \\frac{1}{e^{x_0}} = \\frac{1}{y}$$
+                </div>
+            </details>
+        `
+    },
+    // Kurvendiskussion (eA)
+    {
+        id: "ana-107", niveau: "ea",
+        category: "kurvendiskussion",
+        question: "Wie funktioniert das Newton-Verfahren?",
+        answer: `
+            <h4>Newton-Verfahren (Nullstellen näherungsweise)</h4>
+            <div class="formula-box">$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$</div>
+            <p><strong>Idee:</strong> An der Stelle \\( x_n \\) wird die Tangente gelegt; ihre Nullstelle ist die nächste Näherung \\( x_{n+1} \\). Der Startwert sollte nahe an der gesuchten Nullstelle liegen und \\( f'(x_n) \\neq 0 \\) sein. Abbruch, wenn sich die Näherungen bis zur gewünschten Stelle nicht mehr ändern.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$f(x) = x^3 - 2x - 5, \\quad f'(x) = 3x^2 - 2, \\quad x_0 = 2$$<br><br>
+                    $$x_1 = 2 - \\frac{f(2)}{f'(2)} = 2 - \\frac{8 - 4 - 5}{12 - 2} = 2 - \\frac{-1}{10} = 2{,}1$$<br><br>
+                    $$x_2 = 2{,}1 - \\frac{f(2{,}1)}{f'(2{,}1)} = 2{,}1 - \\frac{0{,}061}{11{,}23} \\approx 2{,}0946$$<br><br>
+                    Die Nullstelle liegt bei \\( x \\approx 2{,}0946 \\) (bereits nach zwei Schritten auf vier Nachkommastellen genau).
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "ana-108", niveau: "ea",
+        category: "kurvendiskussion",
+        question: "Wie stelle ich eine Normalengleichung auf?",
+        answer: `
+            <h4>Normale im Punkt \\( P(x_0 \\,|\\, f(x_0)) \\)</h4>
+            <div class="formula-box">$$n(x) = -\\frac{1}{f'(x_0)} \\cdot (x - x_0) + f(x_0) \\quad (f'(x_0) \\neq 0)$$</div>
+            <p><strong>Merksatz:</strong> Die Normale steht senkrecht auf der Tangente. Für senkrechte Geraden gilt \\( m_t \\cdot m_n = -1 \\), also ist die Normalensteigung der negative Kehrwert der Tangentensteigung. Danach wie bei der Tangente den Punkt einsetzen (Punkt-Steigungs-Form).</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$f(x) = x^2, \\quad P(1 \\,|\\, 1)$$<br>
+                    $$f'(x) = 2x \\Rightarrow m_t = f'(1) = 2 \\Rightarrow m_n = -\\frac{1}{2}$$<br><br>
+                    $$n(x) = -\\frac{1}{2}(x - 1) + 1 = -\\frac{1}{2}x + \\frac{3}{2}$$<br><br>
+                    Probe: \\( n(1) = -0{,}5 + 1{,}5 = 1 = f(1) \\) ✓ und \\( 2 \\cdot \\left(-\\frac{1}{2}\\right) = -1 \\) ✓
+                </div>
+            </details>
+        `
+    },
+    // Scharen
+    {
+        id: "ana-109", niveau: "ea",
+        category: "scharen",
+        question: "Wie untersuche ich eine Funktionenschar \\( f_a(x) \\)?",
+        answer: `
+            <h4>Funktionenschar mit Parameter \\( a \\)</h4>
+            <div class="formula-box">$$f_a(x) = x \\cdot e^{-ax}, \\quad a > 0 \\qquad \\text{(Parameter wie eine Zahl behandeln)}$$</div>
+            <p><strong>Merksatz:</strong> Der Parameter ist eine feste, aber unbekannte Zahl. Alle Schritte der Kurvendiskussion (Ableiten, Nullsetzen, Vorzeichen prüfen) laufen wie gewohnt – die Ergebnisse hängen dann von \\( a \\) ab. Immer angeben, für welche \\( a \\) ein Schritt gilt (z. B. Division durch \\( a \\) nur für \\( a \\neq 0 \\)).</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$f_a(x) = x \\, e^{-ax}, \\quad a > 0$$<br>
+                    <strong>Nullstelle:</strong> \\( x \\, e^{-ax} = 0 \\Rightarrow x = 0 \\) (da \\( e^{-ax} > 0 \\)).<br><br>
+                    <strong>Ableitung (Produkt- und Kettenregel):</strong>
+                    $$f_a'(x) = 1 \\cdot e^{-ax} + x \\cdot (-a) e^{-ax} = e^{-ax}(1 - ax)$$<br>
+                    <strong>Extremum:</strong> \\( 1 - ax = 0 \\Rightarrow x = \\frac{1}{a} \\), Vorzeichenwechsel von + nach − → Hochpunkt
+                    $$H\\left(\\frac{1}{a} \\,\\Big|\\, \\frac{1}{a \\cdot e}\\right)$$<br>
+                    <strong>Verhalten:</strong> \\( x \\to \\infty: f_a(x) \\to 0 \\) (e-Funktion dominiert); \\( x \\to -\\infty: f_a(x) \\to -\\infty \\).<br><br>
+                    Je größer \\( a \\), desto weiter rückt der Hochpunkt nach links und nach unten.
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "ana-110", niveau: "ea",
+        category: "scharen",
+        question: "Wie bestimme ich die Ortskurve der Extrempunkte?",
+        answer: `
+            <h4>Ortskurve (Ortslinie) der Extrempunkte</h4>
+            <div class="formula-box">
+                $$E_a\\big(x(a) \\,|\\, y(a)\\big): \\quad x = x(a) \\text{ nach } a \\text{ auflösen, in } y(a) \\text{ einsetzen}$$
+            </div>
+            <p><strong>Merksatz:</strong> Die Ortskurve ist die Kurve, auf der alle Extrempunkte der Schar liegen. Man eliminiert den Parameter: aus der x-Koordinate \\( a \\) ausdrücken und in die y-Koordinate einsetzen – so entsteht eine Gleichung \\( y = g(x) \\) ohne \\( a \\).</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$f_a(x) = x^2 - 2ax + a$$<br>
+                    $$f_a'(x) = 2x - 2a = 0 \\Rightarrow x = a$$<br>
+                    $$y = f_a(a) = a^2 - 2a^2 + a = -a^2 + a$$<br><br>
+                    Tiefpunkt \\( T_a(a \\,|\\, -a^2 + a) \\). Parameter eliminieren: \\( a = x \\) einsetzen:
+                    $$y = -x^2 + x$$<br>
+                    Alle Tiefpunkte liegen auf der Parabel \\( g(x) = -x^2 + x \\). Probe für \\( a = 2 \\): \\( T_2(2 \\,|\\, -2) \\) und \\( g(2) = -4 + 2 = -2 \\) ✓
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "ana-111", niveau: "ea",
+        category: "scharen",
+        question: "Wie finde ich gemeinsame Punkte aller Scharkurven?",
+        answer: `
+            <h4>Gemeinsame Punkte einer Schar</h4>
+            <div class="formula-box">
+                $$f_a(x) = a \\cdot T(x) + R(x) \\quad \\Rightarrow \\quad T(x) = 0 \\text{ liefert die gemeinsamen Stellen}$$
+            </div>
+            <p><strong>Merksatz:</strong> Ein Punkt gehört zu allen Kurven, wenn sein Funktionswert nicht von \\( a \\) abhängt. Dazu den Funktionsterm nach dem Parameter ordnen: Der Faktor vor \\( a \\) muss null werden. Alternativ zwei verschiedene Parameterwerte \\( a \\neq b \\) gleichsetzen (\\( f_a(x) = f_b(x) \\)) und die Lösung für beliebige \\( a, b \\) prüfen.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$f_a(x) = a x^2 + (1 - a) x = a(x^2 - x) + x$$<br><br>
+                    Faktor vor \\( a \\) nullsetzen:
+                    $$x^2 - x = 0 \\Rightarrow x(x - 1) = 0 \\Rightarrow x = 0 \\text{ oder } x = 1$$<br>
+                    Funktionswerte (unabhängig von \\( a \\)): \\( f_a(0) = 0 \\), \\( f_a(1) = a + 1 - a = 1 \\).<br><br>
+                    Gemeinsame Punkte aller Scharkurven: \\( P_1(0 \\,|\\, 0) \\) und \\( P_2(1 \\,|\\, 1) \\).
+                </div>
+            </details>
+        `
+    },
+    // Integral (eA)
+    {
+        id: "ana-112", niveau: "ea",
+        category: "integral",
+        question: "Wie integriere ich mit linearer Substitution?",
+        answer: `
+            <h4>Lineare Substitution (innere Funktion \\( mx + n \\))</h4>
+            <div class="formula-box">$$\\int f(mx + n) \\, dx = \\frac{1}{m} \\cdot F(mx + n) + C \\quad (m \\neq 0)$$</div>
+            <p><strong>Merksatz:</strong> Ist die innere Funktion linear, entsteht beim Ableiten der Stammfunktion nach der Kettenregel der Faktor \\( m \\) – deshalb muss man durch \\( m \\) teilen, um ihn auszugleichen. Bei nichtlinearer innerer Funktion funktioniert das nicht!</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\int (2x + 3)^4 \\, dx = \\frac{1}{2} \\cdot \\frac{(2x+3)^5}{5} + C = \\frac{(2x+3)^5}{10} + C$$<br><br>
+                    $$\\int \\cos(2x - 1) \\, dx = \\frac{1}{2} \\sin(2x - 1) + C$$<br><br>
+                    $$\\int_0^1 e^{3x} \\, dx = \\left[\\frac{1}{3} e^{3x}\\right]_0^1 = \\frac{e^3 - 1}{3} \\approx 6{,}362$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "ana-113", niveau: "ea",
+        category: "integral",
+        question: "Wie integriere ich \\( \\frac{1}{ax+b} \\)?",
+        answer: `
+            <h4>Stammfunktion von \\( \\frac{1}{ax + b} \\)</h4>
+            <div class="formula-box">$$\\int \\frac{1}{ax + b} \\, dx = \\frac{1}{a} \\ln|ax + b| + C \\quad (a \\neq 0)$$</div>
+            <p><strong>Merksatz:</strong> Kombination aus \\( \\int \\frac{1}{x}\\,dx = \\ln|x| + C \\) und linearer Substitution: durch den inneren Faktor \\( a \\) teilen. Der Betrag sichert, dass die Stammfunktion auch für negative Argumente definiert ist. Probe durch Ableiten: \\( \\frac{1}{a} \\cdot \\frac{a}{ax+b} = \\frac{1}{ax+b} \\).</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\int \\frac{1}{2x + 3} \\, dx = \\frac{1}{2} \\ln|2x + 3| + C$$<br><br>
+                    $$\\int_0^1 \\frac{1}{2x + 3} \\, dx = \\frac{1}{2}\\big[\\ln|2x+3|\\big]_0^1 = \\frac{1}{2}\\left(\\ln 5 - \\ln 3\\right) = \\frac{1}{2}\\ln\\frac{5}{3} \\approx 0{,}2554$$<br><br>
+                    $$\\int \\frac{4}{1 - 3x} \\, dx = 4 \\cdot \\frac{1}{-3} \\ln|1 - 3x| + C = -\\frac{4}{3}\\ln|1 - 3x| + C$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "ana-114", niveau: "ea",
+        category: "integral",
+        question: "Was ist eine Integralfunktion \\( I_a(x) \\) und wie leite ich sie ab?",
+        answer: `
+            <h4>Integralfunktion</h4>
+            <div class="formula-box">
+                $$I_a(x) = \\int_a^x f(t) \\, dt \\qquad I_a'(x) = f(x) \\qquad I_a(a) = 0$$
+            </div>
+            <p><strong>Merksatz:</strong> Die Integralfunktion ordnet der oberen Grenze \\( x \\) den orientierten Flächeninhalt ab der festen unteren Grenze \\( a \\) zu. Nach dem Hauptsatz ist sie eine Stammfunktion von \\( f \\) – nämlich genau die mit der Nullstelle bei \\( x = a \\). Extrema von \\( I_a \\) liegen also bei Nullstellen von \\( f \\) mit Vorzeichenwechsel.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$f(t) = 2t, \\quad I_1(x) = \\int_1^x 2t \\, dt = \\big[t^2\\big]_1^x = x^2 - 1$$<br><br>
+                    Ableitung: \\( I_1'(x) = 2x = f(x) \\) ✓, und \\( I_1(1) = 1 - 1 = 0 \\) ✓<br><br>
+                    Nullstellen von \\( I_1 \\): \\( x^2 - 1 = 0 \\Rightarrow x = 1 \\) (untere Grenze) und \\( x = -1 \\).<br>
+                    Konkret: \\( I_1(3) = 9 - 1 = 8 \\) ist die Fläche unter \\( f \\) zwischen 1 und 3.
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "ana-115", niveau: "ea",
+        category: "integral",
+        question: "Wie berechne ich ein uneigentliches Integral?",
+        answer: `
+            <h4>Uneigentliches Integral (unbeschränkter Bereich)</h4>
+            <div class="formula-box">$$\\int_a^{\\infty} f(x) \\, dx = \\lim_{z \\to \\infty} \\int_a^{z} f(x) \\, dx$$</div>
+            <p><strong>Merksatz:</strong> Unendlich ist keine Zahl – deshalb zuerst mit einer variablen Grenze \\( z \\) integrieren und anschließend den Grenzwert \\( z \\to \\infty \\) bilden. Existiert der Grenzwert, hat die ins Unendliche reichende Fläche einen endlichen Inhalt (konvergent), sonst ist das Integral divergent.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\int_1^{\\infty} \\frac{1}{x^2} \\, dx = \\lim_{z \\to \\infty} \\left[-\\frac{1}{x}\\right]_1^{z} = \\lim_{z \\to \\infty} \\left(-\\frac{1}{z} + 1\\right) = 1$$<br><br>
+                    $$\\int_0^{\\infty} e^{-2x} \\, dx = \\lim_{z \\to \\infty} \\left[-\\frac{1}{2} e^{-2x}\\right]_0^{z} = 0 + \\frac{1}{2} = \\frac{1}{2}$$<br><br>
+                    <strong>Gegenbeispiel:</strong>
+                    $$\\int_1^{\\infty} \\frac{1}{x} \\, dx = \\lim_{z \\to \\infty} \\ln(z) \\to \\infty \\quad \\text{(divergent)}$$
+                </div>
+            </details>
+        `
+    },
+    // Sonstiges (eA)
+    {
+        id: "ana-116", niveau: "ea",
+        category: "sonstiges",
+        question: "Wie löse ich eine Extremwertaufgabe mit Nebenbedingung?",
+        answer: `
+            <h4>Extremwertaufgabe</h4>
+            <div class="formula-box">
+                $$\\text{Hauptbedingung} + \\text{Nebenbedingung} \\Rightarrow \\text{Zielfunktion } Z(x) \\text{ mit einer Variablen}$$
+            </div>
+            <ol>
+                <li>Hauptbedingung: Was soll extremal werden? (z. B. Flächeninhalt)</li>
+                <li>Nebenbedingung: Zusammenhang der Variablen aufstellen, nach einer Variablen auflösen</li>
+                <li>In die Hauptbedingung einsetzen → Zielfunktion \\( Z(x) \\) mit Definitionsbereich</li>
+                <li>\\( Z'(x) = 0 \\) lösen, Art des Extremums prüfen (\\( Z'' \\) oder Vorzeichenwechsel)</li>
+                <li>Randwerte des Definitionsbereichs vergleichen, Antwortsatz</li>
+            </ol>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    Ein rechteckiges Gehege wird an einer Mauer mit 40 m Zaun eingezäunt (drei Seiten). Wann ist die Fläche maximal?<br><br>
+                    Hauptbedingung: \\( A = x \\cdot y \\), Nebenbedingung: \\( 2x + y = 40 \\Rightarrow y = 40 - 2x \\)<br>
+                    $$Z(x) = x(40 - 2x) = 40x - 2x^2, \\quad 0 < x < 20$$<br>
+                    $$Z'(x) = 40 - 4x = 0 \\Rightarrow x = 10, \\qquad Z''(x) = -4 < 0 \\Rightarrow \\text{Maximum}$$<br><br>
+                    \\( y = 40 - 20 = 20 \\), also \\( A_{\\max} = 10 \\cdot 20 = 200\\ \\text{m}^2 \\). An den Rändern (\\( x \\to 0 \\), \\( x \\to 20 \\)) geht \\( A \\to 0 \\).
                 </div>
             </details>
         `
