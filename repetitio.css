@@ -1,14 +1,14 @@
 :root, body[data-deck="analysis"] {
-    --accent: #667eea; --accent2: #764ba2;
+    --accent: #667eea; --accent2: #764ba2; --accent-ink: #667eea;
     --accent-soft: rgba(102,126,234,0.05); --accent-shadow: rgba(102,126,234,0.4);
     --back1: #f0fdf4; --back2: #dcfce7; --back-heading: #166534;
 }
 body[data-deck="geometrie"] {
-    --accent: #11998e; --accent2: #38ef7d;
+    --accent: #11998e; --accent2: #38ef7d; --accent-ink: #11998e;
     --accent-soft: rgba(17,153,142,0.05); --accent-shadow: rgba(17,153,142,0.4);
 }
 body[data-deck="stochastik"] {
-    --accent: #f093fb; --accent2: #f5576c;
+    --accent: #f093fb; --accent2: #f5576c; --accent-ink: #f5576c;
     --accent-soft: rgba(245,87,108,0.05); --accent-shadow: rgba(240,147,251,0.4);
     --back1: #fdf2f8; --back2: #fce7f3; --back-heading: #be185d;
 }
@@ -72,7 +72,7 @@ header p {
 
 .category-tab.active {
     background: white;
-    color: var(--accent);
+    color: var(--accent-ink);
     font-weight: bold;
 }
 
@@ -146,7 +146,7 @@ header p {
 
 .card-category {
     font-size: 0.8rem;
-    color: var(--accent);
+    color: var(--accent-ink);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 15px;
@@ -207,7 +207,7 @@ details.example {
 details.example summary {
     padding: 12px 15px;
     cursor: pointer;
-    color: var(--accent);
+    color: var(--accent-ink);
     font-weight: 600;
     list-style: none;
     transition: background 0.2s;
@@ -283,12 +283,12 @@ details.example[open] summary::before {
 
 .btn-nav {
     background: white;
-    color: var(--accent);
-    border: 2px solid var(--accent);
+    color: var(--accent-ink);
+    border: 2px solid var(--accent-ink);
 }
 
 .btn-nav:hover {
-    background: var(--accent);
+    background: var(--accent-ink);
     color: white;
 }
 
@@ -482,14 +482,17 @@ details.example[open] summary::before {
 /* Niveau */
 .niveau-switch { display:flex; justify-content:center; gap:6px; margin-bottom:14px; }
 .niveau-switch button { padding:6px 14px; border-radius:16px; border:2px solid rgba(255,255,255,0.7); background:transparent; color:white; cursor:pointer; font-weight:600; }
-.niveau-switch button.active { background:white; color:var(--accent); }
-.badge-ea { display:inline-block; margin-left:8px; padding:2px 8px; border-radius:10px; background:var(--accent); color:white; font-size:0.7rem; font-weight:700; vertical-align:middle; }
+.niveau-switch button.active { background:white; color:var(--accent-ink); }
+.badge-ea { display:inline-block; margin-left:8px; padding:2px 8px; border-radius:10px; background:var(--accent-ink); color:white; font-size:0.7rem; font-weight:700; vertical-align:middle; }
 /* Startseite */
 .deck-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
-.deck-card { display:block; background:white; border-radius:16px; padding:24px; text-decoration:none; color:#1f2937; box-shadow:0 10px 30px rgba(0,0,0,0.15); border-top:8px solid var(--accent); transition:transform .2s; }
+.deck-card { display:block; background:white; border-radius:16px; padding:24px; text-decoration:none; color:#1f2937; box-shadow:0 10px 30px rgba(0,0,0,0.15); border-top:8px solid var(--accent-ink); transition:transform .2s; }
 .deck-card:hover { transform:translateY(-4px); }
 .deck-card h2 { margin-bottom:6px; }
 .deck-card p { color:#6b7280; font-size:0.95rem; }
 .error-box { background:white; border-radius:16px; padding:30px; text-align:center; }
 footer { text-align:center; color:rgba(255,255,255,0.8); font-size:0.8rem; margin-top:30px; }
 footer a { color:white; }
+/* Tabellen in Antworten */
+.card-answer table { border-collapse: collapse; margin: 10px auto; }
+.card-answer td, .card-answer th { border: 1px solid #ccc; padding: 4px 8px; text-align: center; }

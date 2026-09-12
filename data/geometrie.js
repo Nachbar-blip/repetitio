@@ -1,4 +1,4 @@
-// Repetitio-Deck: Analytische Geometrie (gA-Karten aus dem GK-Trainer, eA-Karten ergänzt)
+// Repetitio-Deck: Analytische Geometrie — gA-Karten aus dem GK-Trainer; eA-Karten werden ergänzt
 window.REPETITIO_DECKS = window.REPETITIO_DECKS || {};
 window.REPETITIO_DECKS["geometrie"] = {
     title: "Analytische Geometrie",

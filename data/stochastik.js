@@ -1,4 +1,4 @@
-// Repetitio-Deck: Stochastik (gA-Karten aus dem GK-Trainer, eA-Karten ergänzt)
+// Repetitio-Deck: Stochastik — gA-Karten aus dem GK-Trainer; eA-Karten werden ergänzt
 window.REPETITIO_DECKS = window.REPETITIO_DECKS || {};
 window.REPETITIO_DECKS["stochastik"] = {
     title: "Stochastik",
