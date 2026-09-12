@@ -611,7 +611,7 @@ window.REPETITIO_DECKS["analysis"] = {
             </details>
         `
     },
-    // Neue Karten basierend auf IQB 2025
+    // gA-Ergänzungen 2025
     {
         id: "ana-026", niveau: "ga",
         category: "ableitung",

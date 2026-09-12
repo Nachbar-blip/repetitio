@@ -2,9 +2,12 @@
 const params = new URLSearchParams(location.search);
 const DECK_ID = params.get("deck") || "";
 const NIVEAU_KEY = "repetitio:niveau";
-let niveau = params.get("niveau") || localStorage.getItem(NIVEAU_KEY) || "ga";
+// localStorage kann werfen (Private-Mode, blockierte Site-Daten) -> Helfer mit try/catch
+function lsGet(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
+function lsSet(key, val) { try { localStorage.setItem(key, val); } catch (e) { /* nur Session-weit */ } }
+let niveau = params.get("niveau") || lsGet(NIVEAU_KEY) || "ga";
 if (niveau !== "ea") niveau = "ga";
-if (params.get("niveau")) localStorage.setItem(NIVEAU_KEY, niveau);
+if (params.get("niveau")) lsSet(NIVEAU_KEY, niveau);
 
 let deck = null;        // { title, subtitle, categories, cards }
 let cards = [];         // nach Niveau gefilterte Karten
@@ -37,7 +40,7 @@ function loadDeck() {
 }
 
 function loadProgress() {
-    try { progress = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+    try { progress = JSON.parse(lsGet(STORAGE_KEY)) || {}; }
     catch (e) { progress = {}; }
 }
 
@@ -51,7 +54,7 @@ function applyNiveau() {
 }
 
 function setNiveau(n) {
-    niveau = n; localStorage.setItem(NIVEAU_KEY, n);
+    niveau = n; lsSet(NIVEAU_KEY, n);
     try { const u = new URL(location); u.searchParams.set("niveau", n); history.replaceState(null, "", u); } catch (e) {}
     applyNiveau();
 }
@@ -146,7 +149,7 @@ function formatInterval(days) {
 
 // Save progress to localStorage
 function saveProgress() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    lsSet(STORAGE_KEY, JSON.stringify(progress));
 }
 
 // Render KaTeX
@@ -345,15 +348,24 @@ function updateProgressBar() {
 
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
-    if (!deck || e.target.tagName === 'BUTTON') return;
+    if (!deck) return;
+    if (e.target.closest('summary, a, input, textarea')) return;
     if (e.key === 'ArrowRight') nextCard();
     if (e.key === 'ArrowLeft') prevCard();
     if (e.key === ' ' || e.key === 'Enter') {
+        // Fokussierter Button löst per Space/Enter selbst aus -> keine Doppelauslösung
+        if (e.target.tagName === 'BUTTON') return;
         e.preventDefault();
         flipCard();
     }
-    if (e.key === '1') markCard(false);
-    if (e.key === '2') markCard(true);
+    const flipped = document.getElementById('flashcard').classList.contains('flipped');
+    if (e.key === '1' && flipped) markCard(false);
+    if (e.key === '2' && flipped) markCard(true);
+});
+
+// Klick auf die Karte deckt auf (nicht bei Beispiel-Details, Links, Buttons)
+document.getElementById('flashcard').addEventListener('click', e => {
+    if (!e.target.closest('details, a, button')) flipCard();
 });
 
 // Prüf-API (Render-Check, Tests)

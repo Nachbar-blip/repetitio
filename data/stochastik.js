@@ -487,7 +487,7 @@ window.REPETITIO_DECKS["stochastik"] = {
             </details>
         `
     },
-    // Neue Karten basierend auf IQB 2025
+    // gA-Ergänzungen 2025
     {
         id: "sto-021", niveau: "ga",
         category: "grundlagen",

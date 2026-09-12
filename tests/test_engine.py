@@ -33,7 +33,7 @@ def counts(page):
 
 
 def inject_ea_card(page):
-    """Die Daten enthalten derzeit keine eA-Karten – ohne Injektion wären die Tests Tautologien."""
+    """Injiziert eine zusätzliche eA-Karte mit bekannter ID, damit der Test nicht vom Datenbestand abhängt."""
     page.evaluate("window.REPETITIO.deck.cards.push({id:'x-ea', niveau:'ea', category:'ableitung', question:'q', answer:'a'})")
     return page.evaluate("window.REPETITIO.deck.cards.filter(c => c.niveau === 'ea').length")
 
@@ -112,3 +112,14 @@ def test_flipped_card_no_overlap(page):
         "[document.getElementById('flashcard').getBoundingClientRect().bottom,"
         " document.querySelector('.controls').getBoundingClientRect().top]")
     assert card_bottom <= controls_top
+
+
+def test_keyboard_after_button_click(page):
+    """Tastatur bleibt nach Button-Klick aktiv (Fokus auf Button); 1/2 bewerten nur aufgedeckt."""
+    page.goto(URL + "?deck=analysis&niveau=ga"); ready(page)
+    page.click("#nextBtn")
+    page.wait_for_timeout(450)
+    page.keyboard.press("ArrowRight")
+    assert page.inner_text("#cardCounter").startswith("Karte 3 von")
+    page.keyboard.press("1")
+    assert page.evaluate("localStorage.getItem('repetitio:analysis')") is None

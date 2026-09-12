@@ -487,7 +487,7 @@ window.REPETITIO_DECKS["geometrie"] = {
             </details>
         `
     },
-    // Neue Karten basierend auf IQB 2025
+    // gA-Ergänzungen 2025
     {
         id: "geo-022", niveau: "ga",
         category: "geraden",

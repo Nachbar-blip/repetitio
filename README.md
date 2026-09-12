@@ -64,7 +64,6 @@ Repetitio/
 │   ├── test_engine.py      Engine-Tests (pytest + Playwright)
 │   ├── screenshots.py      Screenshots für die Sichtprüfung
 │   └── reports/            erzeugte Screenshots
-├── tools/convert_gk.py     Konvertierung der ursprünglichen GK-Karten
 └── docs/plans/             Design, Implementierungsplan, Prüfprotokoll
 ```
 
@@ -124,10 +123,10 @@ Voraussetzungen: Python 3, `pip install playwright pytest`, `playwright install 
   KaTeX-Fehler, unbekannte Makros, übrig gebliebene Delimiter, doppelte IDs, unbekannte
   Kategorien sowie Formeln, die bei 1000 px oder 400 px Breite über die Karte hinauslaufen.
   Ziel: 0 Mängel pro Deck.
-- `python -m pytest tests -q` — sieben Playwright-Tests: gA blendet eA-Karten aus, eA zeigt
+- `python -m pytest tests -q` — acht Playwright-Tests: gA blendet eA-Karten aus, eA zeigt
   alle Karten und bleibt gespeichert, Bewertung schreibt Fortschritt in `localStorage`,
   unbekanntes Deck zeigt die Fehlerseite, leere Kategorie, Niveau-Links der Startseite,
-  aufgedeckte Karte ohne Überlappung.
+  aufgedeckte Karte ohne Überlappung, Tastatur nach Button-Klick.
 - `python tests/screenshots.py` — erzeugt Screenshots unter `tests/reports/` (Startseite und
   Karten, Desktop und Phone) für die Sichtprüfung. Screenshots werden angesehen, nicht nur
   erzeugt.
@@ -136,6 +135,7 @@ Voraussetzungen: Python 3, `pip install playwright pytest`, `playwright install 
 
 ## Hinweise
 
+- Die gA-Karten wurden einmalig aus den ursprünglichen GK-Trainern übernommen.
 - Die Karteninhalte sind eigene Formulierungen. Sie wurden mit KI-Unterstützung
   (Anthropic Claude) erstellt und fachlich geprüft.
 - KaTeX (MIT-Lizenz) liegt unter `vendor/katex/`, es werden keine externen Ressourcen geladen.
