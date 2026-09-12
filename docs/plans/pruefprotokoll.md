@@ -76,3 +76,9 @@ Status: ✔ = Kartenwert stimmt mit Wolfram überein, „korrigiert" = Karte nac
 
 **Ergebnis:** 31 Teilbeispiele geprüft, 31 ✔ nach Korrektur; 1 Karte (sto-104) nach Review korrigiert.
 
+
+## Veröffentlichung
+
+- 2026-09-12: Repo `github.com/Nachbar-blip/repetitio`, Live-URL https://nachbar-blip.github.io/repetitio/
+- Kartenbestand: Analysis 48 (32 gA + 16 eA), Geometrie 38 (23 + 15), Stochastik 37 (25 + 12) = 123
+- Live-Sichtprüfung: Startseite → eA → Geometrie/Kreis → Karte aufgedeckt, KaTeX gerendert, keine Konsolen-/Request-Fehler
