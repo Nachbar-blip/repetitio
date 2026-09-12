@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetitio · Methodentrainer Mathematik</title>
+    <link rel="stylesheet" href="repetitio.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Repetitio</h1>
+            <p><em>repetitio est mater studiorum</em> · Methodentrainer Mathematik Abitur</p>
+        </header>
+        <div class="niveau-switch" id="niveauSwitch">
+            <button data-niveau="ga">gA · Grundkurs</button>
+            <button data-niveau="ea">eA · Leistungskurs</button>
+        </div>
+        <div class="deck-grid">
+            <a class="deck-card" data-deck="analysis" href="trainer.html?deck=analysis"><h2>Analysis</h2><p>Ableiten, Kurvendiskussion, Integrieren</p></a>
+            <a class="deck-card" data-deck="geometrie" href="trainer.html?deck=geometrie" style="--accent-ink:#11998e"><h2>Analytische Geometrie</h2><p>Vektoren, Geraden, Ebenen, Abstände</p></a>
+            <a class="deck-card" data-deck="stochastik" href="trainer.html?deck=stochastik" style="--accent-ink:#f5576c"><h2>Stochastik</h2><p>Wahrscheinlichkeit, Verteilungen, Statistik</p></a>
+        </div>
+        <footer>Karteikarten mit Spaced Repetition (SM-2). Fortschritt bleibt im Browser. · erstellt mit KI-Unterstützung (Anthropic Claude)</footer>
+    </div>
+    <script>
+        // localStorage kann im Private-Mode werfen -> Fallback "ga"
+        function readNiveau() {
+            try { return localStorage.getItem("repetitio:niveau") || "ga"; } catch (e) { return "ga"; }
+        }
+        let niveau = readNiveau();
+        function apply() {
+            document.querySelectorAll("#niveauSwitch button").forEach(b => b.classList.toggle("active", b.dataset.niveau === niveau));
+            document.querySelectorAll(".deck-card").forEach(a => a.href = `trainer.html?deck=${a.dataset.deck}&niveau=${niveau}`);
+        }
+        document.querySelectorAll("#niveauSwitch button").forEach(b => b.addEventListener("click", () => {
+            niveau = b.dataset.niveau;
+            try { localStorage.setItem("repetitio:niveau", niveau); } catch (e) { /* Private-Mode: nur Session-weit */ }
+            apply();
+        }));
+        apply();
+    </script>
+</body>
+</html>

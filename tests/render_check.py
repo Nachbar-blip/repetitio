@@ -45,7 +45,7 @@ def check_deck(page, deck):
             errors.append(f"{deck}/{cid}: Frage leer/abgeschnitten: {qtext!r}")
         bad = page.evaluate("""() => [...document.querySelectorAll('#flashcard .katex-error')]
                                         .map(e => e.getAttribute('title') || e.textContent)""")
-        # Unbekannte Makros (arc) erzeugen keinen .katex-error, nur rot gefärbten Text
+        # Unbekannte Makros (z. B. farc statt frac) erzeugen keinen .katex-error, nur rot gefärbten Text
         bad += page.evaluate("""() => [...document.querySelectorAll('#flashcard .katex-mathml mstyle[mathcolor="#cc0000"]')]
                                         .map(e => 'unbekanntes Makro: ' + e.textContent)""")
         for b in bad:
