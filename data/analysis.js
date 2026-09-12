@@ -831,7 +831,7 @@ window.REPETITIO_DECKS["analysis"] = {
                     <strong>Stelle \\( x = 2 \\):</strong> Faktor kürzt sich:
                     $$\\lim_{x \\to 2} \\frac{x+2}{x} = \\frac{4}{2} = 2$$
                     → hebbare Lücke bei \\( (2 \\,|\\, 2) \\).<br><br>
-                    <strong>Stelle \\( x = 0 \\):</strong> Nenner bleibt 0, Zähler \\( \\to 2 \\):
+                    <strong>Stelle \\( x = 0 \\):</strong> Nenner bleibt 0, ursprünglicher Zähler \\( z(0) = -4 \\neq 0 \\) (gekürzte Form: Zähler \\( x + 2 \\to 2 \\)):
                     $$\\lim_{x \\to 0^-} \\frac{x+2}{x} = -\\infty, \\qquad \\lim_{x \\to 0^+} \\frac{x+2}{x} = +\\infty$$
                     → Polstelle mit Vorzeichenwechsel, senkrechte Asymptote \\( x = 0 \\).
                 </div>
@@ -927,7 +927,7 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Newton-Verfahren (Nullstellen näherungsweise)</h4>
             <div class="formula-box">$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$</div>
-            <p><strong>Idee:</strong> An der Stelle \\( x_n \\) wird die Tangente gelegt; ihre Nullstelle ist die nächste Näherung \\( x_{n+1} \\). Der Startwert sollte nahe an der gesuchten Nullstelle liegen und \\( f'(x_n) \\neq 0 \\) sein. Abbruch, wenn sich die Näherungen bis zur gewünschten Stelle nicht mehr ändern.</p>
+            <p><strong>Merksatz:</strong> An der Stelle \\( x_n \\) wird die Tangente gelegt; ihre Nullstelle ist die nächste Näherung \\( x_{n+1} \\). Der Startwert sollte nahe an der gesuchten Nullstelle liegen und \\( f'(x_n) \\neq 0 \\) sein. Abbruch, wenn sich die Näherungen bis zur gewünschten Stelle nicht mehr ändern.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
