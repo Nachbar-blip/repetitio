@@ -4,9 +4,10 @@ Aufruf: python tests/render_check.py [deck ...]   -> Exit 1 bei Mängeln."""
 import sys
 from pathlib import Path
 from playwright.sync_api import sync_playwright
+from playwright.sync_api import TimeoutError as PWTimeout
 
 ROOT = Path(__file__).resolve().parent.parent
-DECKS = sys.argv[1:] or ["analysis", "geometrie", "stochastik", "klasse10", "klasse9"]
+DECKS = sys.argv[1:] or ["analysis", "geometrie", "stochastik", "klasse10", "klasse9", "klasse8"]
 # Kürzer als das ist keine Frage, sondern ein leerer/abgeschnittener String (z. B. nur ein "?").
 MIN_QUESTION_CHARS = 3
 
@@ -16,7 +17,10 @@ def check_deck(page, deck):
     handler = lambda e: errors.append(f"{deck}: JS-Fehler: {e}")
     page.on("pageerror", handler)
     page.goto(f"file:///{ROOT.as_posix()}/trainer.html?deck={deck}&niveau=ea")
-    page.wait_for_function("window.REPETITIO && window.REPETITIO.state !== 'loading'")
+    try:
+        page.wait_for_function("window.REPETITIO && window.REPETITIO.state !== 'loading'", timeout=10000)
+    except PWTimeout:
+        return [f"{deck}: Deck laedt nicht (Syntaxfehler in data/{deck}.js? `node --check` hilft)"]
     if page.evaluate("window.REPETITIO.state") != "ready":
         return [f"{deck}: Deck konnte nicht geladen werden"]
     meta = page.evaluate("""() => {
@@ -84,7 +88,12 @@ def check_phone(page, deck):
     Viewport werden, und keine Formelbox darf horizontal überlaufen (abgeschnittene Formel)."""
     errors = []
     page.goto(f"file:///{ROOT.as_posix()}/trainer.html?deck={deck}&niveau=ea")
-    page.wait_for_function("window.REPETITIO && window.REPETITIO.state === 'ready'")
+    try:
+        # Syntaxfehler in der Deckdatei -> das Deck wird nie "ready". Als Mangel melden,
+        # nicht in den Playwright-Timeout laufen.
+        page.wait_for_function("window.REPETITIO && window.REPETITIO.state === 'ready'", timeout=10000)
+    except PWTimeout:
+        return [f"{deck}: Deck laedt nicht (Syntaxfehler in data/{deck}.js? `node --check` hilft)"]
     n = page.evaluate("window.REPETITIO.deck.cards.length")
     for i in range(n):
         res = page.evaluate(f"""() => {{
