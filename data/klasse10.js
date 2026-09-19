@@ -701,6 +701,263 @@ window.REPETITIO_DECKS["klasse10"] = {
                 </div>
             </details>
         `
+    },
+    // ── Trigonometrische Funktionen ─────────────────────────────────────────
+    {
+        id: "k10-033", niveau: "ga",
+        category: "trigo",
+        question: "Wie sind Sinus und Kosinus am Einheitskreis definiert?",
+        answer: `
+            <h4>Einheitskreis</h4>
+            <div class="formula-box">
+                $$P(\\cos \\alpha \\mid \\sin \\alpha)$$
+            </div>
+            <p>Der Punkt \\( P \\) liegt auf dem Kreis mit Radius 1, der Winkel \\( \\alpha \\) wird von der positiven \\( x \\)-Achse aus gegen den Uhrzeigersinn gemessen. Der Kosinus ist die \\( x \\)-Koordinate, der Sinus die \\( y \\)-Koordinate.</p>
+            <p>So sind Sinus und Kosinus für <em>alle</em> Winkel erklärt, nicht nur für spitze Winkel im rechtwinkligen Dreieck.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\alpha = 90^\\circ: \\; P(0 \\mid 1) \\Rightarrow \\cos 90^\\circ = 0,\\; \\sin 90^\\circ = 1$$
+                    $$\\alpha = 180^\\circ: \\; P(-1 \\mid 0)$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-034", niveau: "ga",
+        category: "trigo",
+        question: "Wie rechne ich zwischen Gradmaß und Bogenmaß um?",
+        answer: `
+            <h4>Bogenmaß</h4>
+            <div class="formula-box">
+                $$\\frac{x}{\\pi} = \\frac{\\alpha}{180^\\circ}$$
+                $$x = \\frac{\\alpha \\cdot \\pi}{180^\\circ}, \\qquad \\alpha = \\frac{x \\cdot 180^\\circ}{\\pi}$$
+            </div>
+            <p>Das Bogenmaß ist die Länge des Kreisbogens am Einheitskreis; der volle Kreis misst \\( 2\\pi \\).</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$90^\\circ = \\frac{\\pi}{2}, \\quad 60^\\circ = \\frac{\\pi}{3}, \\quad 45^\\circ = \\frac{\\pi}{4}$$
+                    $$180^\\circ = \\pi, \\qquad \\frac{3\\pi}{2} = 270^\\circ$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-035", niveau: "ga",
+        category: "trigo",
+        question: "Welche Sinus- und Kosinuswerte muss ich auswendig können?",
+        answer: `
+            <h4>Charakteristische Werte</h4>
+            <div class="formula-box">
+                $$\\sin 0^\\circ = 0, \\; \\sin 30^\\circ = \\tfrac{1}{2}, \\; \\sin 45^\\circ = \\tfrac{\\sqrt{2}}{2}$$
+                $$\\sin 60^\\circ = \\tfrac{\\sqrt{3}}{2}, \\; \\sin 90^\\circ = 1$$
+            </div>
+            <p>Für den Kosinus dieselbe Reihe rückwärts: \\( \\cos 0^\\circ = 1 \\), \\( \\cos 30^\\circ = \\frac{\\sqrt{3}}{2} \\), …, \\( \\cos 90^\\circ = 0 \\).</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\sin 45^\\circ = \\cos 45^\\circ = \\frac{\\sqrt{2}}{2} \\approx 0{,}7071$$
+                    $$\\tan 45^\\circ = \\frac{\\sin 45^\\circ}{\\cos 45^\\circ} = 1$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-036", niveau: "ga",
+        category: "trigo",
+        question: "Welches Vorzeichen haben Sinus und Kosinus in den vier Quadranten?",
+        answer: `
+            <h4>Quadranten</h4>
+            <div class="formula-box">
+                $$\\text{I}: +\\,/\\,+ \\qquad \\text{II}: +\\,/\\,- \\qquad \\text{III}: -\\,/\\,- \\qquad \\text{IV}: -\\,/\\,+$$
+            </div>
+            <p>Erst der Sinus (\\( y \\)-Koordinate), dann der Kosinus (\\( x \\)-Koordinate). Beziehungen:</p>
+            <div class="formula-box">
+                $$\\sin(180^\\circ - \\alpha) = \\sin \\alpha, \\qquad \\cos(360^\\circ - \\alpha) = \\cos \\alpha$$
+            </div>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\sin 150^\\circ = \\sin 30^\\circ = 0{,}5$$
+                    $$\\cos 150^\\circ = -\\cos 30^\\circ \\approx -0{,}8660$$
+                    $$\\sin 310^\\circ \\approx -0{,}7660 \\quad (\\text{IV. Quadrant})$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-037", niveau: "ga",
+        category: "trigo",
+        question: "Welche Beziehungen verbinden Sinus, Kosinus und Tangens?",
+        answer: `
+            <h4>Grundbeziehungen</h4>
+            <div class="formula-box">
+                $$\\sin^2 \\alpha + \\cos^2 \\alpha = 1$$
+                $$\\tan \\alpha = \\frac{\\sin \\alpha}{\\cos \\alpha}, \\quad \\cos \\alpha \\neq 0$$
+            </div>
+            <p>Die erste Beziehung ist der Satz des Pythagoras am Einheitskreis.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    Gegeben \\( \\sin \\alpha = 0{,}6 \\) im I. Quadranten:
+                    $$\\cos \\alpha = \\sqrt{1 - 0{,}36} = 0{,}8$$
+                    $$\\tan \\alpha = \\frac{0{,}6}{0{,}8} = 0{,}75$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-038", niveau: "ga",
+        category: "trigo",
+        question: "Welche Eigenschaften hat die Sinusfunktion?",
+        answer: `
+            <h4>Sinusfunktion \\( f(x) = \\sin x \\)</h4>
+            <ul>
+                <li>Periode \\( 2\\pi \\) bzw. \\( 360^\\circ \\)</li>
+                <li>Wertebereich \\( -1 \\le y \\le 1 \\), Amplitude 1</li>
+                <li>Nullstellen bei \\( x = k \\cdot \\pi \\)</li>
+                <li>Maximum bei \\( \\frac{\\pi}{2} \\), Minimum bei \\( \\frac{3\\pi}{2} \\)</li>
+                <li>Punktsymmetrisch zum Ursprung: \\( \\sin(-x) = -\\sin x \\)</li>
+            </ul>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\sin 0 = 0, \\; \\sin \\tfrac{\\pi}{2} = 1, \\; \\sin \\pi = 0$$
+                    $$\\sin \\tfrac{3\\pi}{2} = -1, \\; \\sin 2\\pi = 0$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-039", niveau: "ga",
+        category: "trigo",
+        question: "Wie hängen Sinus- und Kosinusfunktion zusammen?",
+        answer: `
+            <h4>Kosinusfunktion</h4>
+            <div class="formula-box">
+                $$\\cos x = \\sin\\left(x + \\frac{\\pi}{2}\\right)$$
+            </div>
+            <p>Der Kosinusgraph ist der um \\( \\frac{\\pi}{2} \\) nach links verschobene Sinusgraph. Gleiche Periode \\( 2\\pi \\), gleiche Amplitude, aber achsensymmetrisch zur \\( y \\)-Achse: \\( \\cos(-x) = \\cos x \\).</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\cos 0 = 1, \\; \\cos \\tfrac{\\pi}{2} = 0, \\; \\cos \\pi = -1$$
+                    Nullstellen des Kosinus: \\( x = \\frac{\\pi}{2} + k \\cdot \\pi \\).
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-040", niveau: "ga",
+        category: "trigo",
+        question: "Welche Eigenschaften hat die Tangensfunktion?",
+        answer: `
+            <h4>Tangensfunktion \\( f(x) = \\tan x \\)</h4>
+            <ul>
+                <li>Periode \\( \\pi \\) (nicht \\( 2\\pi \\))</li>
+                <li>Definitionslücken bei \\( x = \\frac{\\pi}{2} + k \\cdot \\pi \\)</li>
+                <li>Dort senkrechte Asymptoten</li>
+                <li>Wertebereich: alle reellen Zahlen</li>
+                <li>Nullstellen bei \\( x = k \\cdot \\pi \\), punktsymmetrisch zum Ursprung</li>
+            </ul>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\tan 0 = 0, \\quad \\tan \\tfrac{\\pi}{4} = 1$$
+                    Für \\( x \\to \\frac{\\pi}{2} \\) von links wächst \\( \\tan x \\) über alle Grenzen.
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-041", niveau: "ga",
+        category: "trigo",
+        question: "Wie wirken Amplitude und Periode in \\( y = a \\cdot \\sin(b \\cdot x) \\)?",
+        answer: `
+            <h4>Parameter \\( a \\) und \\( b \\)</h4>
+            <div class="formula-box">
+                $$\\text{Amplitude} = |a|, \\qquad \\text{Periode} = \\frac{2\\pi}{|b|}$$
+            </div>
+            <ul>
+                <li>\\( |a| > 1 \\) streckt in \\( y \\)-Richtung, \\( a < 0 \\) spiegelt an der \\( x \\)-Achse</li>
+                <li>\\( |b| > 1 \\) staucht in \\( x \\)-Richtung, die Schwingung wird schneller</li>
+            </ul>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    \\( y = 3 \\sin(2x) \\):
+                    $$\\text{Amplitude } 3, \\quad \\text{Periode } \\frac{2\\pi}{2} = \\pi$$
+                    Wertebereich \\( -3 \\le y \\le 3 \\).
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-042", niveau: "ga",
+        category: "trigo",
+        question: "Wie wirken Verschiebungen in \\( y = a \\cdot \\sin(b(x+d)) + e \\)?",
+        answer: `
+            <h4>Alle vier Parameter</h4>
+            <ul>
+                <li>\\( a \\): Amplitude</li>
+                <li>\\( b \\): Periode \\( \\frac{2\\pi}{|b|} \\)</li>
+                <li>\\( d \\): Verschiebung um \\( d \\) nach links (Phasenverschiebung)</li>
+                <li>\\( e \\): Verschiebung um \\( e \\) nach oben, die Mittellinie ist \\( y = e \\)</li>
+            </ul>
+            <p>Wichtig: \\( b \\) muss ausgeklammert sein, sonst liest man \\( d \\) falsch ab.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    \\( y = 2\\sin\\left(3\\left(x - \\tfrac{\\pi}{6}\\right)\\right) + 1 \\):
+                    $$\\text{Amplitude } 2, \\; \\text{Periode } \\tfrac{2\\pi}{3}$$
+                    um \\( \\frac{\\pi}{6} \\) nach rechts, Mittellinie \\( y = 1 \\), Wertebereich \\( -1 \\le y \\le 3 \\).
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-043", niveau: "ga",
+        category: "trigo",
+        question: "Wie stelle ich aus einem Graphen die Sinusgleichung auf?",
+        answer: `
+            <h4>Ablesen und aufstellen</h4>
+            <ol>
+                <li>Mittellinie ablesen: \\( e = \\frac{y_{\\max} + y_{\\min}}{2} \\)</li>
+                <li>Amplitude: \\( a = \\frac{y_{\\max} - y_{\\min}}{2} \\)</li>
+                <li>Periode \\( p \\) ablesen, daraus \\( b = \\frac{2\\pi}{p} \\)</li>
+                <li>Verschiebung \\( d \\) am ersten aufsteigenden Nulldurchgang der Mittellinie ablesen</li>
+            </ol>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    \\( y_{\\max} = 7 \\), \\( y_{\\min} = 1 \\), Periode \\( 4 \\):
+                    $$e = 4, \\quad a = 3, \\quad b = \\frac{2\\pi}{4} = \\frac{\\pi}{2}$$
+                    $$y = 3\\sin\\left(\\tfrac{\\pi}{2}x\\right) + 4$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-044", niveau: "ga",
+        category: "trigo",
+        question: "Wie finde ich alle Lösungen von \\( \\sin x = c \\)?",
+        answer: `
+            <h4>Trigonometrische Gleichung</h4>
+            <div class="formula-box">
+                $$x_1 = \\arcsin c, \\qquad x_2 = \\pi - x_1$$
+                $$\\text{alle Lösungen}: x_{1,2} + k \\cdot 2\\pi$$
+            </div>
+            <p>Der Taschenrechner gibt nur eine Lösung; die zweite liegt symmetrisch dazu. Beim Kosinus lautet die zweite Lösung \\( -x_1 \\).</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    \\( \\sin \\alpha = 0{,}5 \\) im Bereich \\( 0^\\circ \\le \\alpha < 360^\\circ \\):
+                    $$\\alpha_1 = 30^\\circ, \\quad \\alpha_2 = 180^\\circ - 30^\\circ = 150^\\circ$$
+                    Im Bereich \\( -360^\\circ \\le \\alpha \\le 360^\\circ \\) zusätzlich \\( -210^\\circ \\) und \\( -330^\\circ \\).
+                </div>
+            </details>
+        `
     }
     ]
 };
