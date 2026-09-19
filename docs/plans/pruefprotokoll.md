@@ -82,3 +82,65 @@ Status: ✔ = Kartenwert stimmt mit Wolfram überein, „korrigiert" = Karte nac
 - 2026-09-12: Repo `github.com/Nachbar-blip/repetitio`, Live-URL https://nachbar-blip.github.io/repetitio/
 - Kartenbestand: Analysis 48 (32 gA + 16 eA), Geometrie 38 (23 + 15), Stochastik 37 (25 + 12) = 123
 - Live-Sichtprüfung: Startseite → eA → Geometrie/Kreis → Karte aufgedeckt, KaTeX gerendert, keine Konsolen-/Request-Fehler
+
+## Klasse-10-Karten (k10-001 … k10-076)
+
+Fachprüfung der Zahlenbeispiele mit Wolfram Language (Kernel-Auswertung), Stand 2026-09-19.
+Status: ✔ = Kartenwert stimmt mit Wolfram überein.
+
+| ID | Beispiel | Wolfram-Ergebnis | Status |
+|---|---|---|---|
+| k10-001 | 2³·2⁵; x⁷/x³ | 256; x⁴ | ✔ |
+| k10-002 | (3²)⁴ | 6561 | ✔ |
+| k10-003 | 6³/2³ | 27 | ✔ |
+| k10-004 | (2/3)⁻² | 9/4 | ✔ |
+| k10-006 | √x·∛x | x^(5/6) | ✔ |
+| k10-011 | 1/x² bei x=0,5 und x=10 | 4; 0,01 | ✔ |
+| k10-015 | x⁴=16 | x = ±2 | ✔ |
+| k10-016 | √(2x+7)=x+2; x²+2x−3=0 | x=1 (Scheinlösung x=−3) | ✔ |
+| k10-017 | 2(x−1)³+5 bei x=1; 2 | 5; 7 | ✔ |
+| k10-018 | 3/2 − 2 − 1/4 | −3/4 | ✔ |
+| k10-019 | log₂8; lg1000 | 3; 3 | ✔ |
+| k10-020 | log₂8+log₂4; lg500−lg5 | 5; 2 | ✔ |
+| k10-022 | log₂20 | 4,3219 | ✔ |
+| k10-023 | 3·2ˣ=96 | x = 5 | ✔ |
+| k10-024 | 2^(2x)−6·2ˣ+8=0 | x = 1; x = 2 | ✔ |
+| k10-025 | lg x + lg(x−3) = 1 | x = 5 | ✔ |
+| k10-026 | 3·2ˣ bei x=0; 1; −2 | 3; 6; 0,75 | ✔ |
+| k10-027 | P(1\|12), Q(3\|48) | a = 2, c = 6 | ✔ |
+| k10-029 | 100·0,95¹⁰ | 59,87 | ✔ |
+| k10-030 | lg0,5/lg0,95; lg2/lg1,08 | 13,51; 9,01 | ✔ |
+| k10-031 | lg0,2/lg0,95 | 31,38 | ✔ |
+| k10-032 | 100·1,2^t für t=0…3 | 100; 120; 144; 172,8 | ✔ |
+| k10-035 | sin45°; tan45° | 0,7071; 1 | ✔ |
+| k10-036 | sin150°; cos150°; sin310° | 0,5; −0,8660; −0,7660 | ✔ |
+| k10-037 | sinα=0,6 → cosα, tanα | 0,8; 0,75 | ✔ |
+| k10-041 | y=3sin(2x): Periode, Wertebereich | π; [−3; 3] | ✔ |
+| k10-042 | y=2sin(3(x−π/6))+1 | Periode 2π/3; [−1; 3] | ✔ |
+| k10-043 | y_max=7, y_min=1, p=4 | e=4; a=3; b=π/2; [1; 7] | ✔ |
+| k10-044 | sinα=0,5 in [−360°; 360°] | 30°; 150°; −210°; −330° | ✔ |
+| k10-045 | x+y=5, x−y=1 | (3\|2) | ✔ |
+| k10-046 | 2x+y=8, x−y=1 | (3\|2) | ✔ |
+| k10-047 | y=2x−1, 3x+y=9 | (2\|3) | ✔ |
+| k10-048 | 3x+2y=16, 2x−3y=2 | x=4, y=2 | ✔ |
+| k10-049 | 3x+1 = −x+9 | x=2, y=7 | ✔ |
+| k10-051 | 3×3-System | (1\|2\|3) | ✔ |
+| k10-052 | 3h+2s=11, h+4s=12 | h=2, s=2,50 | ✔ |
+| k10-055 | AB und BA für A(2\|−5\|−4), B(5\|3\|−6) | (3\|8\|−2); (−3\|−8\|2) | ✔ |
+| k10-056 | \|(2\|3\|6)\| | 7 | ✔ |
+| k10-057 | Summe; 3·(2\|0\|−1) | (0\|6\|15); (6\|0\|−3) | ✔ |
+| k10-058 | P(−5\|2\|0) + (3\|−3\|7) | Q(−2\|−1\|7) | ✔ |
+| k10-059 | (−4\|2\|−8) : (2\|−1\|4) | r = −2 (kollinear) | ✔ |
+| k10-060 | (1\|0\|1)+(0\|1\|1) | (1\|1\|2) = c (komplanar) | ✔ |
+| k10-061 | (1\|2\|3)∘(4\|−1\|2) | 8 | ✔ |
+| k10-062 | Winkel (1\|1\|0), (1\|0\|0) | 45° | ✔ |
+| k10-063 | (2\|−3\|1)∘(1\|1\|1) | 0 (orthogonal) | ✔ |
+| k10-064 | (1\|1\|0)×(0\|1\|1) | (1\|−1\|1), beide Skalarprodukte 0 | ✔ |
+| k10-065 | Mittelpunkt A(1\|3\|5), B(7\|−1\|1) | M(4\|1\|3) | ✔ |
+| k10-066 | AB und DC im Parallelogramm | beide (4\|0\|0) | ✔ |
+| k10-073 | E(X) Würfel | 3,5 | ✔ |
+| k10-074 | V(X), σ bei zwei Münzwürfen | 0,5; 0,7071 | ✔ |
+| k10-075 | E(X) = 4·1/6 − 1·5/6; faire Auszahlung | −1/6 ≈ −0,167; 6 € | ✔ |
+| k10-076 | 0,02 · 5000 | 100 | ✔ |
+
+**Ergebnis:** 53 Teilbeispiele geprüft, 53 ✔, 0 korrigiert.
