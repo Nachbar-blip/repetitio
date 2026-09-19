@@ -2,7 +2,8 @@
 
 *repetitio est mater studiorum*
 
-Repetitio ist ein statischer Karteikarten-Trainer für das Mathematik-Abitur in Sachsen-Anhalt.
+Repetitio ist ein statischer Karteikarten-Trainer für Mathematik in Sachsen-Anhalt — drei Decks
+für das Abitur und ein Deck für die Klasse 10.
 Die Karten sind Methodenkarten („Wie mache ich X?"): Vorderseite Frage, Rückseite Regel,
 Formel und ein durchgerechnetes Beispiel. Abgedeckt sind das grundlegende (gA) und das erhöhte
 Anforderungsniveau (eA). Die Wiederholung steuert ein Spaced-Repetition-Verfahren (SM-2):
@@ -35,8 +36,9 @@ Karten, die schwerfallen, kommen früher wieder, sichere Karten seltener.
 | Analysis (`analysis`) | 32 | 16 | Ableitung, Grenzwerte, Kurvendiskussion, Scharen, Integral, Sonstiges |
 | Analytische Geometrie (`geometrie`) | 23 | 15 | Vektoren, Geraden, Ebenen, Abstände, Kreis, LGS |
 | Stochastik (`stochastik`) | 25 | 12 | Grundlagen, Bedingte Wahrscheinlichkeit, Binomialverteilung, Kenngrößen, Normalverteilung, Statistik |
+| Klasse 10 (`klasse10`) | 76 (kein Niveau) | – | Potenz- & Wurzelfunktionen, Exponential- & Logarithmusfunktionen, Trigonometrische Funktionen, Lineare Gleichungssysteme, Vektoren, Zufallsgrößen |
 
-Insgesamt 123 Karten (80 gA, 43 eA). eA-Karten tragen im Trainer ein Badge „eA"; im gA-Modus
+Insgesamt 199 Karten: 123 Abiturkarten (80 gA, 43 eA) und 76 Karten für die Klasse 10. eA-Karten tragen im Trainer ein Badge „eA"; im gA-Modus
 sind sie nicht sichtbar, im eA-Modus werden gA- und eA-Karten gemeinsam gelernt.
 
 Die eA-Karten decken zusätzlich ab: Grenzwertsätze und rechnerische Grenzwerte, Stetigkeit,
@@ -57,7 +59,8 @@ Repetitio/
 ├── data/
 │   ├── analysis.js
 │   ├── geometrie.js
-│   └── stochastik.js       je ein Deck als window.REPETITIO_DECKS["<id>"]
+│   ├── stochastik.js
+│   └── klasse10.js         je ein Deck als window.REPETITIO_DECKS["<id>"]
 ├── vendor/katex/           KaTeX inkl. auto-render, offline
 ├── tests/
 │   ├── render_check.py     Render-Gate (Playwright)
@@ -136,6 +139,10 @@ Voraussetzungen: Python 3, `pip install playwright pytest`, `playwright install 
 ## Hinweise
 
 - Die gA-Karten wurden einmalig aus den ursprünglichen GK-Trainern übernommen.
+- Das Deck „Klasse 10" folgt dem schulinternen Stoffverteilungsplan Mathematik Klasse 10
+  (Gymnasium Sachsen-Anhalt) mit seinen vier Kompetenzschwerpunkten. Es kennt kein gA/eA:
+  alle Karten tragen `niveau: "ga"` und sind in beiden Modi sichtbar; bei Decks ohne eA-Karten
+  blendet der Trainer den Niveau-Schalter aus.
 - Die Karteninhalte sind eigene Formulierungen. Sie wurden mit KI-Unterstützung
   (Anthropic Claude) erstellt und fachlich geprüft.
 - KaTeX (MIT-Lizenz) liegt unter `vendor/katex/`, es werden keine externen Ressourcen geladen.
