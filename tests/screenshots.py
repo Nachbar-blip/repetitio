@@ -4,7 +4,8 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parent.parent; OUT = ROOT / "tests" / "reports"; OUT.mkdir(exist_ok=True)
 CASES = [("analysis", "scharen"), ("geometrie", "abstand"), ("stochastik", "statistik"),
          ("klasse10", "potenz"), ("klasse10", "explog"), ("klasse10", "trigo"),
-         ("klasse10", "lgs"), ("klasse10", "vektoren"), ("klasse10", "zufall")]
+         ("klasse10", "lgs"), ("klasse10", "vektoren"), ("klasse10", "zufall"),
+         ("klasse9", "trigo"), ("klasse9", "potenz"), ("klasse9", "quadrat"), ("klasse9", "daten")]
 with sync_playwright() as p:
     b = p.chromium.launch()
     for name, w in [("desktop", 1200), ("phone", 400)]:

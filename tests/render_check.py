@@ -6,7 +6,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parent.parent
-DECKS = sys.argv[1:] or ["analysis", "geometrie", "stochastik", "klasse10"]
+DECKS = sys.argv[1:] or ["analysis", "geometrie", "stochastik", "klasse10", "klasse9"]
 # Kürzer als das ist keine Frage, sondern ein leerer/abgeschnittener String (z. B. nur ein "?").
 MIN_QUESTION_CHARS = 3
 
