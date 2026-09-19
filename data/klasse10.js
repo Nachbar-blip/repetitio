@@ -1133,6 +1133,284 @@ window.REPETITIO_DECKS["klasse10"] = {
                 </div>
             </details>
         `
+    },
+    // ── Vektoren ────────────────────────────────────────────────────────────
+    {
+        id: "k10-053", niveau: "ga",
+        category: "vektoren",
+        question: "Wie lese ich Punktkoordinaten im räumlichen Koordinatensystem ab?",
+        answer: `
+            <h4>Raumkoordinaten</h4>
+            <div class="formula-box">
+                $$P(x_1 \\mid x_2 \\mid x_3)$$
+            </div>
+            <p>Die drei Achsen stehen paarweise senkrecht aufeinander. Man geht \\( x_1 \\) nach vorn, \\( x_2 \\) nach rechts und \\( x_3 \\) nach oben.</p>
+            <p>Liegt ein Punkt in der \\( x_1x_2 \\)-Ebene, ist \\( x_3 = 0 \\).</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    Quader mit \\( A(0\\mid0\\mid0) \\), Kantenlängen 4, 3, 2:
+                    $$B(4\\mid0\\mid0), \\; C(4\\mid3\\mid0), \\; G(4\\mid3\\mid2)$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-054", niveau: "ga",
+        category: "vektoren",
+        question: "Was ist ein Vektor und was ist ein Ortsvektor?",
+        answer: `
+            <h4>Vektorbegriff</h4>
+            <p>Ein Vektor beschreibt eine Verschiebung: er hat Richtung und Länge, aber keinen festen Platz. Alle gleich langen, gleich gerichteten Pfeile stellen denselben Vektor dar (Pfeilklasse).</p>
+            <div class="formula-box">
+                $$\\vec{OP} = \\vec{p} = \\begin{pmatrix} p_1 \\\\ p_2 \\\\ p_3 \\end{pmatrix}$$
+            </div>
+            <p>Der <strong>Ortsvektor</strong> führt vom Ursprung zum Punkt; seine Koordinaten sind die Punktkoordinaten. Der <strong>Gegenvektor</strong> \\( -\\vec{a} \\) ist gleich lang und entgegengesetzt gerichtet.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    \\( P(1\\mid4\\mid3) \\):
+                    $$\\vec{p} = \\begin{pmatrix} 1 \\\\ 4 \\\\ 3 \\end{pmatrix}, \\qquad -\\vec{p} = \\begin{pmatrix} -1 \\\\ -4 \\\\ -3 \\end{pmatrix}$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-055", niveau: "ga",
+        category: "vektoren",
+        question: "Wie berechne ich den Verbindungsvektor zweier Punkte?",
+        answer: `
+            <h4>Verbindungsvektor</h4>
+            <div class="formula-box">
+                $$\\vec{AB} = \\vec{b} - \\vec{a}$$
+            </div>
+            <p><strong>Merksatz:</strong> „Spitze minus Fuß". Jede Koordinate einzeln: Endpunkt minus Startpunkt.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    \\( A(2\\mid-5\\mid-4) \\), \\( B(5\\mid3\\mid-6) \\):
+                    $$\\vec{AB} = \\begin{pmatrix} 3 \\\\ 8 \\\\ -2 \\end{pmatrix}, \\quad \\vec{BA} = \\begin{pmatrix} -3 \\\\ -8 \\\\ 2 \\end{pmatrix}$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-056", niveau: "ga",
+        category: "vektoren",
+        question: "Wie berechne ich den Betrag eines Vektors?",
+        answer: `
+            <h4>Betrag (Länge)</h4>
+            <div class="formula-box">
+                $$\\left|\\vec{a}\\right| = \\sqrt{a_1^2 + a_2^2 + a_3^2}$$
+            </div>
+            <p>Der Betrag von \\( \\vec{AB} \\) ist zugleich der Abstand der Punkte \\( A \\) und \\( B \\). Der <strong>Einheitsvektor</strong> hat die Länge 1:</p>
+            <div class="formula-box">
+                $$\\vec{a}_0 = \\frac{1}{\\left|\\vec{a}\\right|} \\cdot \\vec{a}$$
+            </div>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\vec{a} = \\begin{pmatrix} 2 \\\\ 3 \\\\ 6 \\end{pmatrix}, \\quad \\left|\\vec{a}\\right| = \\sqrt{4+9+36} = 7$$
+                    $$\\vec{a}_0 = \\frac{1}{7}\\begin{pmatrix} 2 \\\\ 3 \\\\ 6 \\end{pmatrix}$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-057", niveau: "ga",
+        category: "vektoren",
+        question: "Wie addiere ich Vektoren und wie multipliziere ich mit einer Zahl?",
+        answer: `
+            <h4>Rechenoperationen</h4>
+            <div class="formula-box">
+                $$\\vec{a} + \\vec{b} = \\begin{pmatrix} a_1+b_1 \\\\ a_2+b_2 \\\\ a_3+b_3 \\end{pmatrix}, \\qquad
+                r \\cdot \\vec{a} = \\begin{pmatrix} r a_1 \\\\ r a_2 \\\\ r a_3 \\end{pmatrix}$$
+            </div>
+            <p>Addition heißt: Pfeile aneinanderhängen. Die Multiplikation mit \\( r \\) streckt den Vektor um den Faktor \\( |r| \\); bei \\( r < 0 \\) kehrt sich die Richtung um.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\begin{pmatrix} 1 \\\\ -2 \\\\ 6 \\end{pmatrix} + \\begin{pmatrix} -1 \\\\ 8 \\\\ 9 \\end{pmatrix} = \\begin{pmatrix} 0 \\\\ 6 \\\\ 15 \\end{pmatrix}$$
+                    $$3 \\cdot \\begin{pmatrix} 2 \\\\ 0 \\\\ -1 \\end{pmatrix} = \\begin{pmatrix} 6 \\\\ 0 \\\\ -3 \\end{pmatrix}$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-058", niveau: "ga",
+        category: "vektoren",
+        question: "Wie finde ich den Endpunkt nach einer Verschiebung?",
+        answer: `
+            <h4>Punkt verschieben</h4>
+            <div class="formula-box">
+                $$\\vec{q} = \\vec{p} + \\vec{PQ}$$
+            </div>
+            <p>Ortsvektor des Startpunkts plus Verschiebungsvektor ergibt den Ortsvektor des Zielpunkts. Umgekehrt: \\( \\vec{p} = \\vec{q} - \\vec{PQ} \\).</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    \\( P(-5\\mid2\\mid0) \\), \\( \\vec{PQ} = \\begin{pmatrix} 3 \\\\ -3 \\\\ 7 \\end{pmatrix} \\):
+                    $$\\vec{q} = \\begin{pmatrix} -2 \\\\ -1 \\\\ 7 \\end{pmatrix} \\;\\Rightarrow\\; Q(-2\\mid-1\\mid7)$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-059", niveau: "ga",
+        category: "vektoren",
+        question: "Wie prüfe ich zwei Vektoren auf Kollinearität?",
+        answer: `
+            <h4>Kollinearität</h4>
+            <div class="formula-box">
+                $$\\vec{b} = r \\cdot \\vec{a} \\;\\Rightarrow\\; \\vec{a} \\text{ und } \\vec{b} \\text{ sind kollinear}$$
+            </div>
+            <p>Man prüft koordinatenweise, ob überall derselbe Faktor \\( r \\) herauskommt. Kollineare Vektoren sind linear abhängig und zeigen in dieselbe oder die entgegengesetzte Richtung.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\vec{a} = \\begin{pmatrix} 2 \\\\ -1 \\\\ 4 \\end{pmatrix}, \\; \\vec{b} = \\begin{pmatrix} -4 \\\\ 2 \\\\ -8 \\end{pmatrix}$$
+                    Überall \\( r = -2 \\), also kollinear.<br>
+                    Bei \\( \\vec{c} = \\begin{pmatrix} 4 \\\\ -2 \\\\ 9 \\end{pmatrix} \\) wäre \\( r = 2;\\,2;\\,2{,}25 \\) — nicht kollinear.
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-060", niveau: "ga",
+        category: "vektoren",
+        question: "Was bedeutet lineare Abhängigkeit bei drei Vektoren?",
+        answer: `
+            <h4>Komplanarität</h4>
+            <p>Drei Vektoren heißen <strong>komplanar</strong>, wenn sie in einer gemeinsamen Ebene liegen. Das ist genau dann der Fall, wenn sich einer als Linearkombination der beiden anderen schreiben lässt:</p>
+            <div class="formula-box">
+                $$\\vec{c} = r \\cdot \\vec{a} + s \\cdot \\vec{b}$$
+            </div>
+            <p>Man setzt an, vergleicht koordinatenweise und löst das Gleichungssystem. Gibt es eine Lösung, sind die Vektoren linear abhängig, sonst linear unabhängig.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\vec{a} = \\begin{pmatrix} 1 \\\\ 0 \\\\ 1 \\end{pmatrix}, \\; \\vec{b} = \\begin{pmatrix} 0 \\\\ 1 \\\\ 1 \\end{pmatrix}, \\; \\vec{c} = \\begin{pmatrix} 1 \\\\ 1 \\\\ 2 \\end{pmatrix}$$
+                    \\( \\vec{c} = \\vec{a} + \\vec{b} \\), also komplanar.
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-061", niveau: "ga",
+        category: "vektoren",
+        question: "Wie berechne ich das Skalarprodukt und was bedeutet es?",
+        answer: `
+            <h4>Skalarprodukt</h4>
+            <div class="formula-box">
+                $$\\vec{a} \\circ \\vec{b} = a_1 b_1 + a_2 b_2 + a_3 b_3$$
+                $$\\vec{a} \\circ \\vec{b} = \\left|\\vec{a}\\right| \\cdot \\left|\\vec{b}\\right| \\cdot \\cos \\varphi$$
+            </div>
+            <p>Das Ergebnis ist eine <strong>Zahl</strong>, kein Vektor. Das Vorzeichen verrät den Winkel: positiv heißt spitzer Winkel, negativ stumpfer Winkel, null rechter Winkel.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix} \\circ \\begin{pmatrix} 4 \\\\ -1 \\\\ 2 \\end{pmatrix} = 4 - 2 + 6 = 8$$
+                    Positiv, also schließen die Vektoren einen spitzen Winkel ein.
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-062", niveau: "ga",
+        category: "vektoren",
+        question: "Wie berechne ich den Winkel zwischen zwei Vektoren?",
+        answer: `
+            <h4>Winkel</h4>
+            <div class="formula-box">
+                $$\\cos \\varphi = \\frac{\\vec{a} \\circ \\vec{b}}{\\left|\\vec{a}\\right| \\cdot \\left|\\vec{b}\\right|}$$
+            </div>
+            <p>Erst das Skalarprodukt, dann beide Beträge, dann \\( \\varphi = \\arccos(\\dots) \\).</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\vec{a} = \\begin{pmatrix} 1 \\\\ 1 \\\\ 0 \\end{pmatrix}, \\; \\vec{b} = \\begin{pmatrix} 1 \\\\ 0 \\\\ 0 \\end{pmatrix}$$
+                    $$\\cos \\varphi = \\frac{1}{\\sqrt{2} \\cdot 1} \\;\\Rightarrow\\; \\varphi = 45^\\circ$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-063", niveau: "ga",
+        category: "vektoren",
+        question: "Wie prüfe ich, ob zwei Vektoren senkrecht zueinander stehen?",
+        answer: `
+            <h4>Orthogonalität</h4>
+            <div class="formula-box">
+                $$\\vec{a} \\perp \\vec{b} \\quad \\Longleftrightarrow \\quad \\vec{a} \\circ \\vec{b} = 0$$
+            </div>
+            <p>Grund: \\( \\cos 90^\\circ = 0 \\). Der Nullvektor wird dabei ausgeschlossen.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\begin{pmatrix} 2 \\\\ -3 \\\\ 1 \\end{pmatrix} \\circ \\begin{pmatrix} 1 \\\\ 1 \\\\ 1 \\end{pmatrix} = 2 - 3 + 1 = 0$$
+                    Die Vektoren stehen senkrecht aufeinander.
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-064", niveau: "ga",
+        category: "vektoren",
+        question: "Wie berechne ich einen Normalenvektor mit dem Vektorprodukt?",
+        answer: `
+            <h4>Vektorprodukt</h4>
+            <div class="formula-box">
+                $$\\vec{a} \\times \\vec{b} = \\begin{pmatrix} a_2 b_3 - a_3 b_2 \\\\ a_3 b_1 - a_1 b_3 \\\\ a_1 b_2 - a_2 b_1 \\end{pmatrix}$$
+            </div>
+            <p>Das Ergebnis ist ein <strong>Vektor</strong>, der auf \\( \\vec{a} \\) und \\( \\vec{b} \\) senkrecht steht — ein Normalenvektor. Kontrolle: beide Skalarprodukte müssen null ergeben.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\begin{pmatrix} 1 \\\\ 1 \\\\ 0 \\end{pmatrix} \\times \\begin{pmatrix} 0 \\\\ 1 \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} 1 \\\\ -1 \\\\ 1 \\end{pmatrix}$$
+                    Probe: \\( 1 - 1 + 0 = 0 \\) und \\( 0 - 1 + 1 = 0 \\) ✓
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-065", niveau: "ga",
+        category: "vektoren",
+        question: "Wie berechne ich den Mittelpunkt einer Strecke mit Vektoren?",
+        answer: `
+            <h4>Mittelpunkt</h4>
+            <div class="formula-box">
+                $$\\vec{m} = \\frac{1}{2}\\left(\\vec{a} + \\vec{b}\\right)$$
+            </div>
+            <p>Das ist der Ortsvektor des Mittelpunkts der Strecke \\( AB \\) — koordinatenweise der Durchschnitt.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    \\( A(1\\mid3\\mid5) \\), \\( B(7\\mid-1\\mid1) \\):
+                    $$\\vec{m} = \\frac{1}{2}\\begin{pmatrix} 8 \\\\ 2 \\\\ 6 \\end{pmatrix} = \\begin{pmatrix} 4 \\\\ 1 \\\\ 3 \\end{pmatrix}$$
+                    also \\( M(4\\mid1\\mid3) \\).
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-066", niveau: "ga",
+        category: "vektoren",
+        question: "Wie weise ich nach, dass vier Punkte ein Parallelogramm bilden?",
+        answer: `
+            <h4>Parallelogramm</h4>
+            <div class="formula-box">
+                $$\\vec{AB} = \\vec{DC}$$
+            </div>
+            <p>Zwei gegenüberliegende Seiten müssen durch denselben Vektor beschrieben werden — dann sind sie parallel und gleich lang. Für ein Rechteck zusätzlich \\( \\vec{AB} \\circ \\vec{AD} = 0 \\), für eine Raute zusätzlich \\( |\\vec{AB}| = |\\vec{AD}| \\).</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    \\( A(0\\mid0\\mid0) \\), \\( B(4\\mid0\\mid0) \\), \\( C(5\\mid3\\mid0) \\), \\( D(1\\mid3\\mid0) \\):
+                    $$\\vec{AB} = \\begin{pmatrix} 4 \\\\ 0 \\\\ 0 \\end{pmatrix} = \\vec{DC}$$
+                    also ein Parallelogramm.
+                </div>
+            </details>
+        `
     }
     ]
 };
