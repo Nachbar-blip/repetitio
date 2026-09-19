@@ -1411,6 +1411,221 @@ window.REPETITIO_DECKS["klasse10"] = {
                 </div>
             </details>
         `
+    },
+    // ── Zufallsgrößen ───────────────────────────────────────────────────────
+    {
+        id: "k10-067", niveau: "ga",
+        category: "zufall",
+        question: "Was sind Ergebnis, Ereignis und Ergebnismenge?",
+        answer: `
+            <h4>Grundbegriffe</h4>
+            <ul>
+                <li><strong>Ergebnis</strong>: ein einzelner möglicher Ausgang</li>
+                <li><strong>Ergebnismenge \\( S \\)</strong>: alle möglichen Ergebnisse</li>
+                <li><strong>Ereignis</strong>: eine Teilmenge von \\( S \\)</li>
+            </ul>
+            <div class="formula-box">
+                $$P(E) = \\frac{\\text{Anzahl günstiger Ergebnisse}}{\\text{Anzahl möglicher Ergebnisse}}$$
+            </div>
+            <p>Die Formel von Laplace gilt nur, wenn alle Ergebnisse gleich wahrscheinlich sind.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    Würfel, \\( E \\): „gerade Augenzahl" \\( = \\{2; 4; 6\\} \\)
+                    $$P(E) = \\frac{3}{6} = \\frac{1}{2}$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-068", niveau: "ga",
+        category: "zufall",
+        question: "Wie rechne ich mit einem Baumdiagramm?",
+        answer: `
+            <h4>Pfadregeln</h4>
+            <div class="formula-box">
+                $$\\text{Produktregel: } P(\\text{Pfad}) = p_1 \\cdot p_2 \\cdot \\dots$$
+                $$\\text{Summenregel: } P(E) = \\sum P(\\text{günstige Pfade})$$
+            </div>
+            <p>Entlang eines Pfades wird multipliziert, mehrere Pfade desselben Ereignisses werden addiert. Die Wahrscheinlichkeiten an jeder Verzweigung ergeben zusammen 1.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    Zweimal eine Münze werfen, \\( E \\): „genau einmal Kopf"
+                    $$P(E) = \\tfrac{1}{2} \\cdot \\tfrac{1}{2} + \\tfrac{1}{2} \\cdot \\tfrac{1}{2} = \\tfrac{1}{2}$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-069", niveau: "ga",
+        category: "zufall",
+        question: "Was ist eine Zufallsgröße?",
+        answer: `
+            <h4>Zufallsgröße</h4>
+            <p>Eine Zufallsgröße \\( X \\) ordnet jedem Ergebnis eines Zufallsexperiments eine <strong>Zahl</strong> zu. Sie übersetzt Ergebnisse in Zahlen, mit denen man rechnen kann.</p>
+            <p>Bei endlich vielen möglichen Werten heißt \\( X \\) diskret.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    Zweimal würfeln, \\( X \\) = Augensumme:
+                    $$X \\in \\{2; 3; \\dots; 12\\}$$
+                    Glücksrad mit Gewinn, \\( X \\) = Auszahlung in Euro.
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-070", niveau: "ga",
+        category: "zufall",
+        question: "Was bedeuten die Schreibweisen \\( P(X = k) \\) und \\( P(X \\le k) \\)?",
+        answer: `
+            <h4>Schreibweisen</h4>
+            <ul>
+                <li>\\( P(X = k) \\): genau der Wert \\( k \\)</li>
+                <li>\\( P(X \\le k) \\): höchstens \\( k \\), also \\( k \\) und alles darunter</li>
+                <li>\\( P(X \\ge k) \\): mindestens \\( k \\)</li>
+                <li>\\( P(k_1 \\le X \\le k_2) \\): alle Werte dazwischen, Grenzen eingeschlossen</li>
+            </ul>
+            <div class="formula-box">
+                $$P(X > k) = 1 - P(X \\le k)$$
+            </div>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    Würfel, \\( X \\) = Augenzahl:
+                    $$P(X \\le 2) = \\tfrac{2}{6} = \\tfrac{1}{3}$$
+                    $$P(X > 2) = 1 - \\tfrac{1}{3} = \\tfrac{2}{3}$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-071", niveau: "ga",
+        category: "zufall",
+        question: "Wie stelle ich eine Wahrscheinlichkeitsverteilung auf?",
+        answer: `
+            <h4>Verteilung als Tabelle</h4>
+            <ol>
+                <li>Alle möglichen Werte von \\( X \\) auflisten</li>
+                <li>Zu jedem Wert die Wahrscheinlichkeit \\( P(X = x_i) \\) bestimmen</li>
+                <li>Kontrolle: die Summe aller Wahrscheinlichkeiten ist 1</li>
+            </ol>
+            <div class="formula-box">
+                $$\\sum_{i} P(X = x_i) = 1$$
+            </div>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    Zwei Münzwürfe, \\( X \\) = Anzahl Kopf:
+                    $$P(X=0) = \\tfrac{1}{4}, \\; P(X=1) = \\tfrac{1}{2}, \\; P(X=2) = \\tfrac{1}{4}$$
+                    Summe: \\( \\tfrac{1}{4} + \\tfrac{1}{2} + \\tfrac{1}{4} = 1 \\) ✓
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-072", niveau: "ga",
+        category: "zufall",
+        question: "Wie lese ich ein Stabdiagramm einer Verteilung?",
+        answer: `
+            <h4>Grafische Darstellung</h4>
+            <p>Auf der waagerechten Achse stehen die Werte \\( x_i \\) der Zufallsgröße, die Höhe jedes Stabes ist die Wahrscheinlichkeit \\( P(X = x_i) \\).</p>
+            <ul>
+                <li>Alle Stabhöhen zusammen ergeben 1</li>
+                <li>\\( P(X \\le k) \\) ist die Summe aller Stäbe bis \\( k \\)</li>
+                <li>Symmetrisches Bild heißt: Erwartungswert liegt in der Mitte</li>
+            </ul>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    Stäbe bei 0; 1; 2 mit den Höhen 0,25; 0,5; 0,25:
+                    $$P(X \\le 1) = 0{,}25 + 0{,}5 = 0{,}75$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-073", niveau: "ga",
+        category: "zufall",
+        question: "Wie berechne ich den Erwartungswert?",
+        answer: `
+            <h4>Erwartungswert</h4>
+            <div class="formula-box">
+                $$E(X) = \\mu = \\sum_{i} x_i \\cdot P(X = x_i)$$
+            </div>
+            <p>Jeder Wert wird mit seiner Wahrscheinlichkeit gewichtet. \\( E(X) \\) ist der Durchschnitt, den man auf lange Sicht erwartet — er muss kein möglicher Wert sein.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    Würfel, \\( X \\) = Augenzahl:
+                    $$E(X) = (1+2+3+4+5+6) \\cdot \\tfrac{1}{6} = 3{,}5$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-074", niveau: "ga",
+        category: "zufall",
+        question: "Wie berechne ich Varianz und Standardabweichung?",
+        answer: `
+            <h4>Streuung</h4>
+            <div class="formula-box">
+                $$V(X) = \\sum_{i} \\left(x_i - \\mu\\right)^2 \\cdot P(X = x_i)$$
+                $$\\sigma = \\sqrt{V(X)}$$
+            </div>
+            <p>Die Standardabweichung \\( \\sigma \\) misst, wie weit die Werte im Mittel vom Erwartungswert abweichen. Kleines \\( \\sigma \\) heißt: die Werte liegen dicht beieinander.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    Zwei Münzwürfe, \\( X \\) = Anzahl Kopf, \\( \\mu = 1 \\):
+                    $$V(X) = 1 \\cdot \\tfrac{1}{4} + 0 \\cdot \\tfrac{1}{2} + 1 \\cdot \\tfrac{1}{4} = 0{,}5$$
+                    $$\\sigma = \\sqrt{0{,}5} \\approx 0{,}71$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-075", niveau: "ga",
+        category: "zufall",
+        question: "Wie beurteile ich, ob ein Spiel fair ist?",
+        answer: `
+            <h4>Faires Spiel</h4>
+            <div class="formula-box">
+                $$\\text{fair} \\quad \\Longleftrightarrow \\quad E(X) = 0$$
+            </div>
+            <p>\\( X \\) ist der Gewinn: Auszahlung minus Einsatz. Ist \\( E(X) < 0 \\), verliert man auf Dauer; ist \\( E(X) > 0 \\), ist das Spiel für den Spieler günstig.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    Einsatz 1 €, bei einer Sechs gibt es 5 € ausgezahlt:
+                    $$E(X) = 4 \\cdot \\tfrac{1}{6} + (-1) \\cdot \\tfrac{5}{6} = -\\tfrac{1}{6}$$
+                    Rund 17 Cent Verlust je Spiel — nicht fair. Fair wäre eine Auszahlung von 6 €.
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-076", niveau: "ga",
+        category: "zufall",
+        question: "Wie nutze ich den Erwartungswert in einer Sachaufgabe?",
+        answer: `
+            <h4>Vorgehen</h4>
+            <ol>
+                <li>Zufallsgröße \\( X \\) in Worten festlegen (was wird gezählt oder gemessen?)</li>
+                <li>Verteilung als Tabelle aufstellen</li>
+                <li>\\( E(X) \\) berechnen</li>
+                <li>Ergebnis im Sachzusammenhang deuten und einen Antwortsatz schreiben</li>
+            </ol>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    Eine Versicherung zahlt mit \\( P = 0{,}02 \\) einen Schaden von 5000 €:
+                    $$E(X) = 0{,}02 \\cdot 5000 = 100 \\text{ €}$$
+                    Die erwartete Auszahlung je Vertrag beträgt 100 €; der Beitrag muss darüber liegen.
+                </div>
+            </details>
+        `
     }
     ]
 };
