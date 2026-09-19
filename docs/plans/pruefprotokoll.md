@@ -144,3 +144,8 @@ Status: ✔ = Kartenwert stimmt mit Wolfram überein.
 | k10-076 | 0,02 · 5000 | 100 | ✔ |
 
 **Ergebnis:** 53 Teilbeispiele geprüft, 53 ✔, 0 korrigiert.
+
+- 2026-09-19: Deck „Klasse 10" veröffentlicht (76 Karten, sechs Kategorien).
+  Kartenbestand gesamt 199. Live-Sichtprüfung auf https://nachbar-blip.github.io/repetitio/:
+  vier Kacheln auf der Startseite, Deck lädt mit 76 Karten, Niveau-Schalter im Klasse-10-Deck
+  korrekt ausgeblendet, KaTeX gerendert, keine Konsolen- oder Request-Fehler.
