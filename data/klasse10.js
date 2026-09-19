@@ -400,6 +400,307 @@ window.REPETITIO_DECKS["klasse10"] = {
                 </div>
             </details>
         `
+    },
+    // ── Exponential- & Logarithmusfunktionen ────────────────────────────────
+    {
+        id: "k10-019", niveau: "ga",
+        category: "explog",
+        question: "Was bedeutet der Logarithmus?",
+        answer: `
+            <h4>Definition</h4>
+            <div class="formula-box">
+                $$\\log_a c = x \\quad \\Longleftrightarrow \\quad a^x = c$$
+            </div>
+            <p>Der Logarithmus fragt: „Mit welchem Exponenten muss ich \\( a \\) potenzieren, um \\( c \\) zu erhalten?" Es gilt \\( a > 0 \\), \\( a \\neq 1 \\), \\( c > 0 \\).</p>
+            <p>Schreibweisen: \\( \\lg \\) für Basis 10, \\( \\ln \\) für Basis \\( e \\).</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\log_2 8 = 3, \\quad \\text{denn } 2^3 = 8$$
+                    $$\\lg 1000 = 3, \\qquad \\log_5 1 = 0$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-020", niveau: "ga",
+        category: "explog",
+        question: "Wie fasse ich Logarithmen von Produkt und Quotient zusammen?",
+        answer: `
+            <h4>Logarithmusgesetze I</h4>
+            <div class="formula-box">
+                $$\\log_a (u \\cdot v) = \\log_a u + \\log_a v$$
+                $$\\log_a \\frac{u}{v} = \\log_a u - \\log_a v$$
+            </div>
+            <p>Aus Mal wird Plus, aus Geteilt wird Minus — die Umkehrung der Potenzgesetze.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\log_2 8 + \\log_2 4 = \\log_2 32 = 5$$
+                    $$\\lg 500 - \\lg 5 = \\lg 100 = 2$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-021", niveau: "ga",
+        category: "explog",
+        question: "Wie ziehe ich einen Exponenten aus dem Logarithmus heraus?",
+        answer: `
+            <h4>Logarithmusgesetze II</h4>
+            <div class="formula-box">
+                $$\\log_a \\left(u^r\\right) = r \\cdot \\log_a u$$
+            </div>
+            <p>Dieses Gesetz ist der Schlüssel zum Lösen von Exponentialgleichungen: die Unbekannte im Exponenten wird zum Faktor.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\lg \\left(10^{2x}\\right) = 2x$$
+                    $$\\log_3 81 = \\log_3 \\left(3^4\\right) = 4$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-022", niveau: "ga",
+        category: "explog",
+        question: "Wie berechne ich einen Logarithmus zu einer Basis, die der Taschenrechner nicht kennt?",
+        answer: `
+            <h4>Basiswechsel</h4>
+            <div class="formula-box">
+                $$\\log_a c = \\frac{\\lg c}{\\lg a} = \\frac{\\ln c}{\\ln a}$$
+            </div>
+            <p>Beliebige Basis, gerechnet wird mit \\( \\lg \\) oder \\( \\ln \\).</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\log_2 20 = \\frac{\\lg 20}{\\lg 2} \\approx \\frac{1{,}3010}{0{,}3010} \\approx 4{,}32$$
+                    Probe: \\( 2^{4{,}32} \\approx 20 \\).
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-023", niveau: "ga",
+        category: "explog",
+        question: "Wie löse ich eine Exponentialgleichung \\( a^x = c \\)?",
+        answer: `
+            <h4>Exponentialgleichung</h4>
+            <ol>
+                <li>Potenz isolieren</li>
+                <li>Auf beiden Seiten logarithmieren</li>
+                <li>Exponenten als Faktor nach vorn ziehen und nach \\( x \\) auflösen</li>
+            </ol>
+            <div class="formula-box">
+                $$a^x = c \\;\\Rightarrow\\; x = \\frac{\\lg c}{\\lg a}$$
+            </div>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$3 \\cdot 2^x = 96 \\;\\Rightarrow\\; 2^x = 32$$
+                    $$x \\cdot \\lg 2 = \\lg 32 \\;\\Rightarrow\\; x = 5$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-024", niveau: "ga",
+        category: "explog",
+        question: "Wie löse ich eine Exponentialgleichung durch Substitution?",
+        answer: `
+            <h4>Substitution</h4>
+            <p>Kommt dieselbe Potenz zweimal vor, einmal quadriert, setzt man \\( u = a^x \\) und löst eine quadratische Gleichung. Danach rücksubstituieren.</p>
+            <div class="formula-box">
+                $$a^{2x} = \\left(a^x\\right)^2 = u^2$$
+            </div>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$2^{2x} - 6 \\cdot 2^x + 8 = 0, \\quad u = 2^x$$
+                    $$u^2 - 6u + 8 = 0 \\;\\Rightarrow\\; u_1 = 4,\\; u_2 = 2$$
+                    $$2^x = 4 \\Rightarrow x = 2; \\quad 2^x = 2 \\Rightarrow x = 1$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-025", niveau: "ga",
+        category: "explog",
+        question: "Wie löse ich eine Logarithmusgleichung?",
+        answer: `
+            <h4>Logarithmusgleichung</h4>
+            <ol>
+                <li>Definitionsbereich bestimmen (Argumente müssen positiv sein)</li>
+                <li>Mit den Logarithmusgesetzen zu einem einzigen Logarithmus zusammenfassen</li>
+                <li>Die Definition anwenden: \\( \\log_a u = k \\Rightarrow u = a^k \\)</li>
+                <li>Lösungen mit dem Definitionsbereich abgleichen</li>
+            </ol>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\lg x + \\lg(x-3) = 1, \\quad D: x > 3$$
+                    $$\\lg\\left(x(x-3)\\right) = 1 \\;\\Rightarrow\\; x^2 - 3x = 10$$
+                    $$x_1 = 5,\\; x_2 = -2 \\;\\Rightarrow\\; \\mathbb{L} = \\{5\\}$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-026", niveau: "ga",
+        category: "explog",
+        question: "Welche Eigenschaften hat die Exponentialfunktion \\( f(x) = c \\cdot a^x \\)?",
+        answer: `
+            <h4>Exponentialfunktion</h4>
+            <div class="formula-box">
+                $$f(x) = c \\cdot a^x, \\quad a > 0,\\; a \\neq 1$$
+            </div>
+            <ul>
+                <li>\\( f(0) = c \\) — der \\( y \\)-Achsenabschnitt ist \\( c \\)</li>
+                <li>Für \\( c > 0 \\) verläuft der Graph ganz oberhalb der \\( x \\)-Achse</li>
+                <li>Keine Nullstelle, waagerechte Asymptote \\( y = 0 \\)</li>
+                <li>\\( a > 1 \\): Wachstum; \\( 0 < a < 1 \\): Zerfall</li>
+            </ul>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    \\( f(x) = 3 \\cdot 2^x \\):
+                    $$f(0) = 3, \\quad f(1) = 6, \\quad f(-2) = 0{,}75$$
+                    Pro Schritt nach rechts verdoppelt sich der Wert.
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-027", niveau: "ga",
+        category: "explog",
+        question: "Wie bestimme ich die Gleichung \\( f(x) = c \\cdot a^x \\) aus zwei Punkten?",
+        answer: `
+            <h4>Exponentialfunktion aufstellen</h4>
+            <ol>
+                <li>Beide Punkte einsetzen — zwei Gleichungen</li>
+                <li>Gleichungen dividieren, dadurch fällt \\( c \\) weg und \\( a \\) bleibt</li>
+                <li>\\( a \\) in eine Gleichung einsetzen und \\( c \\) berechnen</li>
+            </ol>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    \\( P(1|12) \\), \\( Q(3|48) \\):
+                    $$\\frac{c \\cdot a^3}{c \\cdot a^1} = \\frac{48}{12} \\;\\Rightarrow\\; a^2 = 4 \\;\\Rightarrow\\; a = 2$$
+                    $$c \\cdot 2 = 12 \\;\\Rightarrow\\; c = 6$$
+                    $$f(x) = 6 \\cdot 2^x$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-028", niveau: "ga",
+        category: "explog",
+        question: "Welche Eigenschaften hat die Logarithmusfunktion?",
+        answer: `
+            <h4>Logarithmusfunktion</h4>
+            <div class="formula-box">
+                $$f(x) = \\log_a x, \\quad D = \\{x \\in \\mathbb{R} \\mid x > 0\\}$$
+            </div>
+            <ul>
+                <li>Umkehrfunktion von \\( a^x \\), Spiegelung an \\( y = x \\)</li>
+                <li>Senkrechte Asymptote \\( x = 0 \\)</li>
+                <li>Einzige Nullstelle bei \\( x = 1 \\)</li>
+                <li>\\( a > 1 \\): steigt, wird immer flacher</li>
+            </ul>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    \\( f(x) = \\log_2 x \\):
+                    $$f(1) = 0, \\quad f(2) = 1, \\quad f(8) = 3, \\quad f(0{,}5) = -1$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-029", niveau: "ga",
+        category: "explog",
+        question: "Wie stelle ich einen Wachstums- oder Zerfallsprozess als Funktion dar?",
+        answer: `
+            <h4>Wachstumsfaktor</h4>
+            <div class="formula-box">
+                $$B(t) = B_0 \\cdot q^{\\,t}, \\qquad q = 1 + \\frac{p}{100}$$
+            </div>
+            <p>\\( B_0 \\) ist der Anfangsbestand, \\( q > 1 \\) bedeutet Zunahme, \\( q < 1 \\) Abnahme. Bei \\( p\\,\\% \\) Abnahme ist \\( q = 1 - \\frac{p}{100} \\).</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    100 g Substanz, stündlich 5 % Abnahme:
+                    $$B(t) = 100 \\cdot 0{,}95^{\\,t}$$
+                    $$B(10) = 100 \\cdot 0{,}95^{10} \\approx 59{,}9 \\text{ g}$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-030", niveau: "ga",
+        category: "explog",
+        question: "Wie berechne ich Verdopplungs- und Halbwertszeit?",
+        answer: `
+            <h4>Verdopplungs- und Halbwertszeit</h4>
+            <div class="formula-box">
+                $$q^{\\,t} = 2 \\;\\Rightarrow\\; t_V = \\frac{\\lg 2}{\\lg q}$$
+                $$q^{\\,t} = 0{,}5 \\;\\Rightarrow\\; t_H = \\frac{\\lg 0{,}5}{\\lg q}$$
+            </div>
+            <p>Der Anfangsbestand \\( B_0 \\) kürzt sich heraus, die Zeit hängt nur von \\( q \\) ab.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    \\( q = 0{,}95 \\):
+                    $$t_H = \\frac{\\lg 0{,}5}{\\lg 0{,}95} \\approx 13{,}5 \\text{ Stunden}$$
+                    \\( q = 1{,}08 \\): \\( t_V = \\frac{\\lg 2}{\\lg 1{,}08} \\approx 9{,}0 \\) Jahre.
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-031", niveau: "ga",
+        category: "explog",
+        question: "Wie berechne ich, wann ein Bestand einen bestimmten Wert erreicht?",
+        answer: `
+            <h4>Zeitpunkt bestimmen</h4>
+            <ol>
+                <li>Ansatz \\( B_0 \\cdot q^{\\,t} = B \\)</li>
+                <li>Durch \\( B_0 \\) teilen</li>
+                <li>Logarithmieren und nach \\( t \\) auflösen</li>
+            </ol>
+            <div class="formula-box">
+                $$t = \\frac{\\lg\\left(\\frac{B}{B_0}\\right)}{\\lg q}$$
+            </div>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    100 g, 5 % Abnahme pro Stunde, gesucht: wann 20 g?
+                    $$t = \\frac{\\lg 0{,}2}{\\lg 0{,}95} \\approx 31{,}4$$
+                    also nach rund 31 Stunden.
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-032", niveau: "ga",
+        category: "explog",
+        question: "Woran unterscheide ich lineares von exponentiellem Wachstum?",
+        answer: `
+            <h4>Linear oder exponentiell?</h4>
+            <div class="formula-box">
+                $$\\text{linear}: B(t) = B_0 + m \\cdot t \\quad (\\text{gleiche Differenz})$$
+                $$\\text{exponentiell}: B(t) = B_0 \\cdot q^{\\,t} \\quad (\\text{gleicher Quotient})$$
+            </div>
+            <p>Test an einer Wertetabelle mit gleichen Zeitschritten: konstante Differenz heißt linear, konstanter Quotient heißt exponentiell.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    A: 100, 120, 140, 160 — Differenz stets 20, also linear.<br>
+                    B: 100, 120, 144, 172,8 — Quotient stets 1,2, also exponentiell:
+                    $$B(t) = 100 \\cdot 1{,}2^{\\,t}$$
+                </div>
+            </details>
+        `
     }
     ]
 };
