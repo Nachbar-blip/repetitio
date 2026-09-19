@@ -94,7 +94,8 @@ def test_index_niveau_links(page):
     page.goto(URL.replace("trainer.html", "index.html"))
     page.click("#niveauSwitch button[data-niveau=ea]")
     hrefs = page.evaluate("[...document.querySelectorAll('.deck-card')].map(a => a.getAttribute('href'))")
-    assert len(hrefs) == 3 and all("niveau=ea" in h for h in hrefs)
+    # Deckzahl waechst mit neuen Decks; entscheidend ist, dass jede Kachel das Niveau mitnimmt.
+    assert len(hrefs) >= 3 and all("niveau=ea" in h for h in hrefs)
     assert page.evaluate("localStorage.getItem('repetitio:niveau')") == "ea"
 
 
