@@ -958,6 +958,181 @@ window.REPETITIO_DECKS["klasse10"] = {
                 </div>
             </details>
         `
+    },
+    // ── Lineare Gleichungssysteme ───────────────────────────────────────────
+    {
+        id: "k10-045", niveau: "ga",
+        category: "lgs",
+        question: "Was ist ein lineares Gleichungssystem und was ist seine Lösung?",
+        answer: `
+            <h4>Begriff</h4>
+            <div class="formula-box">
+                $$\\begin{aligned} a_1 x + b_1 y &= c_1 \\\\ a_2 x + b_2 y &= c_2 \\end{aligned}$$
+            </div>
+            <p>Gesucht sind Werte, die <strong>beide</strong> Gleichungen zugleich erfüllen. Die Lösung ist ein geordnetes Zahlenpaar \\( (x \\mid y) \\), bei drei Variablen ein Zahlentripel.</p>
+            <p>Geometrisch: der Schnittpunkt zweier Geraden.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\begin{aligned} x + y &= 5 \\\\ x - y &= 1 \\end{aligned}$$
+                    Probe mit \\( (3 \\mid 2) \\): \\( 3+2 = 5 \\) ✓ und \\( 3-2 = 1 \\) ✓
+                    $$\\mathbb{L} = \\{(3 \\mid 2)\\}$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-046", niveau: "ga",
+        category: "lgs",
+        question: "Wie löse ich ein Gleichungssystem grafisch?",
+        answer: `
+            <h4>Grafisches Lösen</h4>
+            <ol>
+                <li>Beide Gleichungen nach \\( y \\) umstellen</li>
+                <li>Beide Geraden in ein Koordinatensystem zeichnen</li>
+                <li>Schnittpunkt ablesen</li>
+                <li>Probe durch Einsetzen — abgelesene Werte sind nur so genau wie die Zeichnung</li>
+            </ol>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$2x + y = 8 \\;\\Rightarrow\\; y = -2x + 8$$
+                    $$x - y = 1 \\;\\Rightarrow\\; y = x - 1$$
+                    Schnittpunkt \\( (3 \\mid 2) \\).
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-047", niveau: "ga",
+        category: "lgs",
+        question: "Wie funktionieren Einsetzungs- und Gleichsetzungsverfahren?",
+        answer: `
+            <h4>Einsetzen und Gleichsetzen</h4>
+            <p><strong>Einsetzungsverfahren:</strong> eine Gleichung nach einer Variablen umstellen und diesen Term in die andere Gleichung einsetzen.</p>
+            <p><strong>Gleichsetzungsverfahren:</strong> beide Gleichungen nach derselben Variablen umstellen und die Terme gleichsetzen.</p>
+            <p>Gut geeignet, wenn eine Variable schon allein steht oder den Koeffizienten 1 hat.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\begin{aligned} y &= 2x - 1 \\\\ 3x + y &= 9 \\end{aligned}$$
+                    $$3x + (2x-1) = 9 \\;\\Rightarrow\\; 5x = 10 \\;\\Rightarrow\\; x = 2$$
+                    $$y = 2 \\cdot 2 - 1 = 3 \\;\\Rightarrow\\; \\mathbb{L} = \\{(2 \\mid 3)\\}$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-048", niveau: "ga",
+        category: "lgs",
+        question: "Wie funktioniert das Additionsverfahren?",
+        answer: `
+            <h4>Additionsverfahren</h4>
+            <ol>
+                <li>Eine oder beide Gleichungen so multiplizieren, dass die Koeffizienten einer Variablen entgegengesetzt gleich sind</li>
+                <li>Gleichungen addieren — diese Variable fällt weg</li>
+                <li>Die verbleibende Gleichung lösen und rückwärts einsetzen</li>
+            </ol>
+            <p>Erste Wahl, wenn keine Variable bequem isoliert ist.</p>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\begin{aligned} 3x + 2y &= 16 \\quad | \\cdot 3 \\\\ 2x - 3y &= 2 \\quad | \\cdot 2 \\end{aligned}$$
+                    $$9x + 6y = 48, \\quad 4x - 6y = 4$$
+                    $$13x = 52 \\;\\Rightarrow\\; x = 4, \\quad y = 2$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-049", niveau: "ga",
+        category: "lgs",
+        question: "Welches Lösungsverfahren wähle ich wann?",
+        answer: `
+            <h4>Verfahren auswählen</h4>
+            <ul>
+                <li><strong>Einsetzen</strong>: eine Variable steht bereits allein oder hat den Koeffizienten 1</li>
+                <li><strong>Gleichsetzen</strong>: beide Gleichungen sind schon nach \\( y \\) aufgelöst</li>
+                <li><strong>Addition</strong>: alle Variablen stehen mit Koeffizienten da, besonders bei drei Variablen</li>
+                <li><strong>Grafisch</strong>: nur zum Veranschaulichen oder zur Kontrolle</li>
+            </ul>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    \\( y = 3x+1 \\) und \\( y = -x+9 \\): gleichsetzen.
+                    $$3x+1 = -x+9 \\;\\Rightarrow\\; x = 2,\\; y = 7$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-050", niveau: "ga",
+        category: "lgs",
+        question: "Woran erkenne ich, wie viele Lösungen ein Gleichungssystem hat?",
+        answer: `
+            <h4>Lösbarkeitsfälle</h4>
+            <ul>
+                <li><strong>Genau eine Lösung</strong>: man erhält \\( x = \\) Zahl — die Geraden schneiden sich</li>
+                <li><strong>Keine Lösung</strong>: eine falsche Aussage wie \\( 0 = 5 \\) — die Geraden sind parallel</li>
+                <li><strong>Unendlich viele Lösungen</strong>: eine wahre Aussage wie \\( 0 = 0 \\) — die Geraden sind identisch</li>
+            </ul>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\begin{aligned} 2x + y &= 4 \\\\ 4x + 2y &= 7 \\end{aligned}$$
+                    Erste Gleichung mal \\( -2 \\) und addieren:
+                    $$0 = -1 \\;\\Rightarrow\\; \\mathbb{L} = \\{\\}$$
+                    Mit \\( 4x+2y = 8 \\) stattdessen: \\( 0 = 0 \\), unendlich viele Lösungen.
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-051", niveau: "ga",
+        category: "lgs",
+        question: "Wie löse ich ein Gleichungssystem mit drei Variablen?",
+        answer: `
+            <h4>Stufenform</h4>
+            <ol>
+                <li>Mit der ersten Gleichung \\( x \\) aus der zweiten und dritten Gleichung entfernen</li>
+                <li>Mit der neuen zweiten Gleichung \\( y \\) aus der dritten entfernen</li>
+                <li>Unten steht nur noch eine Variable — lösen</li>
+                <li>Rückwärts einsetzen und Probe machen</li>
+            </ol>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    $$\\begin{aligned} x + y + z &= 6 \\\\ 2x - y + z &= 3 \\\\ x + 2y - z &= 2 \\end{aligned}$$
+                    (II) \\( - \\) 2·(I): \\( -3y - z = -9 \\)<br>
+                    (III) \\( - \\) (I): \\( y - 2z = -4 \\)<br>
+                    Daraus \\( z = 3 \\), \\( y = 2 \\), \\( x = 1 \\).
+                    $$\\mathbb{L} = \\{(1 \\mid 2 \\mid 3)\\}$$
+                </div>
+            </details>
+        `
+    },
+    {
+        id: "k10-052", niveau: "ga",
+        category: "lgs",
+        question: "Wie übersetze ich eine Sachaufgabe in ein Gleichungssystem?",
+        answer: `
+            <h4>Modellieren</h4>
+            <ol>
+                <li>Variablen festlegen und in Worten benennen</li>
+                <li>Für jede Bedingung im Text eine Gleichung aufstellen</li>
+                <li>System lösen</li>
+                <li>Ergebnis im Sachzusammenhang prüfen und einen Antwortsatz schreiben</li>
+            </ol>
+            <details class="example">
+                <summary>Beispiel anzeigen</summary>
+                <div class="example-content">
+                    3 Hefte und 2 Stifte kosten 11 €, 1 Heft und 4 Stifte kosten 12 €.
+                    $$\\begin{aligned} 3h + 2s &= 11 \\\\ h + 4s &= 12 \\end{aligned}$$
+                    $$h = 2, \\quad s = 2{,}50$$
+                    Ein Heft kostet 2 €, ein Stift 2,50 €.
+                </div>
+            </details>
+        `
     }
     ]
 };
