@@ -503,6 +503,8 @@ details.example[open] summary::before {
 .deck-card { display:block; background:white; border-radius:16px; padding:24px; text-decoration:none; color:#1f2937; box-shadow:0 10px 30px rgba(0,0,0,0.15), inset 0 8px 0 var(--accent-ink); padding-top:32px; transition:transform .2s; }
 .deck-card:hover { transform:translateY(-4px); }
 .deck-card h2 { margin-bottom:6px; }
+/* Kennzeichnung der Abitur-Decks, damit die Klassenstufen-Decks unterscheidbar bleiben */
+.deck-tag { display:inline-block; vertical-align:middle; margin-left:8px; padding:2px 8px; border-radius:10px; background:var(--accent-ink); color:white; font-size:0.65rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; }
 .deck-card p { color:#6b7280; font-size:0.95rem; }
 .error-box { background:white; border-radius:16px; padding:30px; text-align:center; }
 footer { text-align:center; color:rgba(255,255,255,0.8); font-size:0.8rem; margin-top:30px; }
