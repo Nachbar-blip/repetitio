@@ -46,6 +46,9 @@ function loadProgress() {
 
 function applyNiveau() {
     cards = deck.cards.filter(c => niveau === "ea" || c.niveau !== "ea");
+    // Decks ohne eA-Karten (z. B. Klasse 10): der Schalter haette keine Wirkung, also ausblenden.
+    const sw = document.getElementById("niveauSwitch");
+    if (sw) sw.hidden = !deck.cards.some(c => c.niveau === "ea");
     document.querySelectorAll("#niveauSwitch button").forEach(b => {
         const on = b.dataset.niveau === niveau;
         b.setAttribute("aria-pressed", on);

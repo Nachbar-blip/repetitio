@@ -493,6 +493,8 @@ details.example[open] summary::before {
 }
 /* Niveau */
 .niveau-switch { display:flex; justify-content:center; gap:6px; margin-bottom:14px; }
+/* display:flex wuerde das hidden-Attribut aushebeln -> ausdruecklich ausblenden */
+.niveau-switch[hidden] { display:none; }
 .niveau-switch button { padding:6px 14px; border-radius:16px; border:2px solid rgba(255,255,255,0.7); background:transparent; color:white; cursor:pointer; font-weight:600; }
 .niveau-switch button[aria-pressed="true"] { background:white; color:var(--accent-ink); }
 .badge-ea { display:inline-block; margin-left:8px; padding:2px 8px; border-radius:10px; background:var(--accent-ink); color:white; font-size:0.7rem; font-weight:700; vertical-align:middle; }
