@@ -237,3 +237,20 @@ Schalter und sein Erklärsatz sind entfallen. Die zuletzt gewählte Stufe bleibt
 bestimmt, wohin der Hauptbereich der Abitur-Kacheln führt. `test_index_niveau_links` prüft das
 jetzt entsprechend: drei Kacheln mit Niveau-Wahl, keine bei den Klassenstufen-Decks, und die
 gespeicherte Wahl wirkt beim nächsten Besuch.
+
+### Sichtprüfung Rechengrundlagen bei 400 px (2026-09-19)
+
+Alle 24 Karten einzeln bei Handybreite gerendert und als Bild angesehen. Das Render-Gate meldete
+0 Mängel — die folgenden sieben Punkte sind reine Satzfehler, die nur im Bild auffallen:
+
+- g-004: Merksatz stand als `\text{…}` in der Formelbox und damit in Mathe-Schrift; jetzt kursiv
+  im Fließtext, wie im Deck Klasse 8.
+- g-011: Zwei Formeln nebeneinander füllten die Box bis an den Rand; jetzt zwei Zeilen.
+- g-014: Die Taschenrechner-Eingabe war als Formel gesetzt (`e^{\wedge}(…)`) und dadurch
+  missverständlich; jetzt `<code>`-Klartext, Beispiel auf drei Zeilen.
+- g-015: Preis ohne Währung („kosten 21,00"); Einheit im Text ergänzt, Antwortsatz angefügt.
+- g-017: Formelbox brach zwischen `p %` und dem Bruch um; jetzt zwei getrennte Formelzeilen.
+- g-018: Die Umrechnungsfaktoren brachen mitten in „Flächen : 100" um; jetzt drei Zeilen.
+- g-023: Die Schlussrechnung stand inline und war dadurch winzig; jetzt abgesetzt.
+
+Danach erneut gerendert und geprüft: 8 Decks, 379 Karten, 0 Mängel, 8 Tests grün.

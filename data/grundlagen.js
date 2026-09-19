@@ -83,7 +83,7 @@ window.REPETITIO_DECKS["grundlagen"] = {
             <h4>Kürzen</h4>
             <p>Gekürzt wird nur, was in Zähler <em>und</em> Nenner <strong>Faktor</strong> ist. Steht oben oder unten eine Summe, muss man sie zuerst in ein Produkt verwandeln.</p>
             <div class="formula-box">
-                $$\\text{Aus Summen kürzen nur die Dummen.}$$
+                <em>„Aus Summen kürzen nur die Dummen.“</em>
             </div>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -223,7 +223,8 @@ window.REPETITIO_DECKS["grundlagen"] = {
         answer: `
             <h4>Addieren und Subtrahieren</h4>
             <div class="formula-box">
-                $$a - (-b) = a + b, \\qquad a + (-b) = a - b$$
+                $$a - (-b) = a + b$$
+                $$a + (-b) = a - b$$
             </div>
             <p>Zwei Minuszeichen direkt hintereinander werden zu einem Plus. Nützlich als Bild: Minus heißt Richtungswechsel auf der Zahlengeraden.</p>
             <details class="example">
@@ -288,9 +289,9 @@ window.REPETITIO_DECKS["grundlagen"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    \\( \\dfrac{3+5}{2 \\cdot 4} \\) eingeben als \\( (3+5)/(2 \\cdot 4) = 1 \\);
-                    ohne Klammern rechnet der Rechner \\( 3 + \\frac{5}{2} \\cdot 4 = 13 \\).<br>
-                    \\( e^{-0{,}5 \\cdot 4} \\) eingeben als \\( e^{\\wedge}(-0{,}5 \\cdot 4) \\).
+                    \\( \\dfrac{3+5}{2 \\cdot 4} \\) eingeben als <code>(3+5)/(2*4)</code> — ergibt 1.<br>
+                    Ohne Klammern rechnet der Rechner \\( 3 + \\dfrac{5}{2} \\cdot 4 = 13 \\).<br>
+                    \\( e^{-0{,}5 \\cdot 4} \\) eingeben als <code>e^(-0.5*4)</code>.
                 </div>
             </details>
         `
@@ -309,8 +310,9 @@ window.REPETITIO_DECKS["grundlagen"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    7 Stück kosten 21,00, gesucht sind 12 Stück:
-                    $$1 \\text{ Stück}: 3{,}00 \\;\\Rightarrow\\; 12 \\text{ Stück}: 36{,}00$$
+                    7 Stück kosten 21,00 €, gesucht sind 12 Stück:
+                    $$1 \\text{ Stück}: 3{,}00 \\quad \\Rightarrow \\quad 12 \\text{ Stück}: 36{,}00$$
+                    Zwölf Stück kosten also 36,00 €.
                 </div>
             </details>
         `
@@ -342,7 +344,8 @@ window.REPETITIO_DECKS["grundlagen"] = {
         answer: `
             <h4>Anteil, Ganzes, Prozentsatz</h4>
             <div class="formula-box">
-                $$\\text{Anteil} = \\text{Ganzes} \\cdot \\frac{p}{100}, \\qquad p\\,\\% = \\frac{\\text{Anteil}}{\\text{Ganzes}} \\cdot 100\\,\\%$$
+                $$\\text{Anteil} = \\text{Ganzes} \\cdot \\frac{p}{100}$$
+                $$p\\,\\% = \\frac{\\text{Anteil}}{\\text{Ganzes}} \\cdot 100\\,\\%$$
             </div>
             <p>Zuerst klären, was das Ganze ist — in der Stochastik ist das die entscheidende Frage, etwa bei bedingten Wahrscheinlichkeiten.</p>
             <details class="example">
@@ -363,7 +366,9 @@ window.REPETITIO_DECKS["grundlagen"] = {
         answer: `
             <h4>Umrechnungsfaktoren</h4>
             <div class="formula-box">
-                $$\\text{Längen}: 10 \\qquad \\text{Flächen}: 100 \\qquad \\text{Volumen}: 1000$$
+                $$\\text{Längen}: 10$$
+                $$\\text{Flächen}: 100$$
+                $$\\text{Volumen}: 1000$$
             </div>
             <p>Der Faktor der Länge geht quadriert in die Fläche und kubiert in das Volumen ein.</p>
             <details class="example">
@@ -469,7 +474,8 @@ window.REPETITIO_DECKS["grundlagen"] = {
                 <div class="example-content">
                     $$12 = 2^2 \\cdot 3, \\qquad 18 = 2 \\cdot 3^2$$
                     $$\\text{ggT} = 6, \\qquad \\text{kgV} = 36$$
-                    Damit: \\( \\frac{1}{12} + \\frac{1}{18} = \\frac{3}{36} + \\frac{2}{36} = \\frac{5}{36} \\).
+                    Damit:
+                    $$\\frac{1}{12} + \\frac{1}{18} = \\frac{3}{36} + \\frac{2}{36} = \\frac{5}{36}$$
                 </div>
             </details>
         `
