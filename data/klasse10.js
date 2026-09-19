@@ -1621,7 +1621,7 @@ window.REPETITIO_DECKS["klasse10"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     Eine Versicherung zahlt mit \\( P = 0{,}02 \\) einen Schaden von 5000 €:
-                    $$E(X) = 0{,}02 \\cdot 5000 = 100 \\text{ €}$$
+                    $$E(X) = 0{,}02 \\cdot 5000 = 100$$ €
                     Die erwartete Auszahlung je Vertrag beträgt 100 €; der Beitrag muss darüber liegen.
                 </div>
             </details>

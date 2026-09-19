@@ -187,6 +187,8 @@ header p {
     margin-left: 20px;
     color: #374151;
     line-height: 1.8;
+    /* Ohne Abstand klebt ein folgender Absatz am letzten Listenpunkt. */
+    margin-bottom: 12px;
 }
 
 .card-answer p {

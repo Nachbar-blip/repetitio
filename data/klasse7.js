@@ -29,7 +29,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     „12 % von 250 € sind 30 €":
-                    $$G = 250 \\text{ €}, \\quad p\\,\\% = 12\\,\\%, \\quad W = 30 \\text{ €}$$
+                    Grundwert \\( G = 250 \\) €, Prozentsatz \\( p\\,\\% = 12\\,\\% \\), Prozentwert \\( W = 30 \\) €
                 </div>
             </details>
         `
@@ -67,7 +67,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     18 % von 450 €:
-                    $$W = 450 \\cdot 0{,}18 = 81 \\text{ €}$$
+                    $$W = 450 \\cdot 0{,}18 = 81$$ €
                 </div>
             </details>
         `
@@ -86,7 +86,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     60 € sind 15 % des Preises:
-                    $$G = \\frac{60 \\cdot 100}{15} = 400 \\text{ €}$$
+                    $$G = \\frac{60 \\cdot 100}{15} = 400$$ €
                 </div>
             </details>
         `
@@ -125,7 +125,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     80 € um 20 % reduziert:
-                    $$80 \\cdot 0{,}8 = 64 \\text{ €}$$
+                    $$80 \\cdot 0{,}8 = 64$$ €
                     64 € um 25 % erhöht ergibt wieder 80 €.
                 </div>
             </details>
@@ -145,7 +145,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     Nach 15 % Rabatt kostet die Jacke 68 €:
-                    $$G = \\frac{68 \\cdot 100}{85} = 80 \\text{ €}$$
+                    $$G = \\frac{68 \\cdot 100}{85} = 80$$ €
                 </div>
             </details>
         `
@@ -160,13 +160,13 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <li><strong>Netto</strong>: Preis ohne Mehrwertsteuer</li>
                 <li><strong>Brutto</strong>: Preis mit Mehrwertsteuer, also Netto mal \\( 1{,}19 \\) (bzw. \\( 1{,}07 \\))</li>
                 <li><strong>Skonto</strong>: Nachlass bei schneller Zahlung</li>
-                <li><strong>Promille</strong>: Anteil von tausend, \\( 1\\,‰ = \\frac{1}{1000} \\)</li>
+                <li><strong>Promille</strong>: Anteil von tausend, 1 ‰ entspricht \\( \\frac{1}{1000} \\)</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     Netto 200 €:
-                    $$\\text{Brutto} = 200 \\cdot 1{,}19 = 238 \\text{ €}$$
+                    $$\\text{Brutto} = 200 \\cdot 1{,}19 = 238$$ €
                     Brutto 238 € zurück: \\( 238 : 1{,}19 = 200 \\) €.
                 </div>
             </details>
@@ -205,7 +205,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     2500 € zu 3,2 % für ein Jahr:
-                    $$Z = 2500 \\cdot 0{,}032 = 80 \\text{ €}$$
+                    $$Z = 2500 \\cdot 0{,}032 = 80$$ €
                 </div>
             </details>
         `
@@ -224,7 +224,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     4000 € zu 3 % für 5 Monate:
-                    $$Z = 4000 \\cdot 0{,}03 \\cdot \\frac{5}{12} = 50 \\text{ €}$$
+                    $$Z = 4000 \\cdot 0{,}03 \\cdot \\frac{5}{12} = 50$$ €
                 </div>
             </details>
         `
@@ -243,7 +243,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     1000 € zu 4 % für 3 Jahre:
-                    $$K_3 = 1000 \\cdot 1{,}04^3 \\approx 1124{,}86 \\text{ €}$$
+                    $$K_3 = 1000 \\cdot 1{,}04^3 \\approx 1124{,}86$$ €
                     ohne Zinseszins wären es nur 1120 €.
                 </div>
             </details>

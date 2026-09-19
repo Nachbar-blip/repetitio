@@ -595,7 +595,7 @@ window.REPETITIO_DECKS["stochastik"] = {
                     6 → Gewinn 10€<br>
                     sonst → nichts<br><br>
                     E(Gewinn) = $$\\frac{1}{6} \\cdot 10 + \\frac{5}{6} \\cdot 0$$<br>
-                    $$= \\frac{10}{6} \\approx 1{,}67€$$<br><br>
+                    $$= \\frac{10}{6} \\approx 1{,}67$$<br><br>
                     E(Nettogewinn) = 1,67€ - 2€ = -0,33€<br><br>
                     → Unfair, Spieler verliert im Schnitt 33ct
                 </div>

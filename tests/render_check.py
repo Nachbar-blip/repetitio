@@ -12,10 +12,17 @@ DECKS = sys.argv[1:] or ["analysis", "geometrie", "stochastik", "klasse10", "kla
 MIN_QUESTION_CHARS = 3
 
 
+# KaTeX meldet Zeichen ohne Schriftmetrik (z. B. "€" in einer Formel) nur als Konsolenwarnung;
+# gerendert wird dann eine Ersatzschrift. Solche Zeichen gehoeren in den Text, nicht in die Formel.
+KATEX_WARN = ("No character metrics", "Unrecognized Unicode character")
+
+
 def check_deck(page, deck):
     errors = []
     handler = lambda e: errors.append(f"{deck}: JS-Fehler: {e}")
     page.on("pageerror", handler)
+    page.on("console", lambda m: errors.append(f"{deck}: KaTeX-Warnung: {m.text[:120]}")
+            if m.type == "warning" and any(w in m.text for w in KATEX_WARN) else None)
     page.goto(f"file:///{ROOT.as_posix()}/trainer.html?deck={deck}&niveau=ea")
     try:
         page.wait_for_function("window.REPETITIO && window.REPETITIO.state !== 'loading'", timeout=10000)

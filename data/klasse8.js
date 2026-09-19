@@ -182,7 +182,7 @@ window.REPETITIO_DECKS["klasse8"] = {
             <h4>Kürzen</h4>
             <p>Gekürzt wird nur, was <strong>Faktor</strong> von Zähler und Nenner ist. Dazu müssen beide zuerst als Produkt geschrieben werden.</p>
             <div class="formula-box">
-                $$\\text{„Aus Summen kürzen nur die Dummen."}$$
+                <em>„Aus Summen kürzen nur die Dummen.“</em>
             </div>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>

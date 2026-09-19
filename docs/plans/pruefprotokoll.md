@@ -200,3 +200,19 @@ Laplace (1/3 ≈ 33,3 %), Gegenereignis (5/6). Alle ✔.
 - `render_check.py` meldet ein nicht ladendes Deck jetzt als Mangel („Syntaxfehler … node --check"),
   statt in einen Playwright-Timeout zu laufen. Auslöser: ein ASCII-Anführungszeichen hatte in
   klasse8.js einen `question`-String vorzeitig geschlossen.
+
+### Nachbesserungen aus der Sichtprüfung (2026-09-19)
+
+- **Euro-, Promille- und Anführungszeichen in Formeln.** KaTeX hat für diese Zeichen keine
+  Schriftmetrik und setzt sie in einer Ersatzschrift; sichtbar war das erst in der
+  Konsolenausgabe der Live-Prüfung. Die Zeichen stehen jetzt im Text statt in der Formel.
+  `render_check.py` meldet solche KaTeX-Warnungen („No character metrics", „Unrecognized
+  Unicode character") jetzt als Mangel — beim ersten Lauf fand das Gate damit sofort zwei
+  weitere Stellen (klasse8, klasse7).
+- **Rohtext statt Formel in k7-001.** Beim Korrigieren waren die Backslashes einfach statt
+  doppelt geraten; im JavaScript-Template-String verschwinden sie dann samt Delimiter, sodass
+  kein Gate anschlägt. Gefunden allein im Screenshot, behoben.
+- **Absatzabstand nach Listen.** Ein Absatz klebte am letzten Listenpunkt; eine CSS-Zeile
+  (`margin-bottom` bei `.card-answer ol, ul`) behebt das für alle sieben Decks.
+- **Farben der Kacheln.** Klasse 8 lag farblich zu nah an der Geometrie, Klasse 7 zu nah an
+  Klasse 9; beide bekamen eigene Akzentfarben.
