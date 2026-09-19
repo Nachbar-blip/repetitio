@@ -91,12 +91,27 @@ def test_empty_category_state(page):
 
 
 def test_index_niveau_links(page):
-    page.goto(URL.replace("trainer.html", "index.html"))
-    page.click("#niveauSwitch button[data-niveau=ea]")
-    hrefs = page.evaluate("[...document.querySelectorAll('.deck-card')].map(a => a.getAttribute('href'))")
-    # Deckzahl waechst mit neuen Decks; entscheidend ist, dass jede Kachel das Niveau mitnimmt.
-    assert len(hrefs) >= 3 and all("niveau=ea" in h for h in hrefs)
-    assert page.evaluate("localStorage.getItem('repetitio:niveau')") == "ea"
+    """Die Niveau-Wahl sitzt in den Abitur-Kacheln: ein Klick auf eA merkt sich das Niveau,
+    beim naechsten Besuch zeigen die Hauptlinks der Abitur-Kacheln darauf."""
+    index = URL.replace("trainer.html", "index.html")
+    page.goto(index)
+    abi = page.evaluate("[...document.querySelectorAll('.deck-niveau')].length")
+    assert abi == 3, f"erwartet 3 Abitur-Kacheln mit Niveau-Wahl, gefunden {abi}"
+    # Klassenstufen-Decks haben keine Niveau-Wahl
+    assert page.evaluate("""!![...document.querySelectorAll('.deck-card')]
+        .filter(c => c.dataset.deck.startsWith('klasse'))
+        .every(c => !c.querySelector('.deck-niveau'))""")
+    page.evaluate("localStorage.setItem('repetitio:niveau', 'ga')")
+    page.goto(index)
+    assert page.evaluate("""document.querySelector('.deck-card[data-deck=analysis] .deck-link')
+        .getAttribute('href')""").endswith("niveau=ga")
+    page.click(".deck-card[data-deck=analysis] .deck-niveau a[data-niveau=ea]")
+    page.wait_for_function("window.REPETITIO && window.REPETITIO.state === 'ready'")
+    assert page.evaluate("window.REPETITIO.niveau") == "ea"
+    page.goto(index)
+    hrefs = page.evaluate("""[...document.querySelectorAll('.deck-niveau')]
+        .map(g => g.closest('.deck-card').querySelector('.deck-link').getAttribute('href'))""")
+    assert all("niveau=ea" in h for h in hrefs), hrefs
 
 
 def test_flipped_card_no_overlap(page):

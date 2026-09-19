@@ -216,3 +216,24 @@ Laplace (1/3 ≈ 33,3 %), Gegenereignis (5/6). Alle ✔.
   (`margin-bottom` bei `.card-answer ol, ul`) behebt das für alle sieben Decks.
 - **Farben der Kacheln.** Klasse 8 lag farblich zu nah an der Geometrie, Klasse 7 zu nah an
   Klasse 9; beide bekamen eigene Akzentfarben.
+
+## Deck „Rechengrundlagen" (g-001 … g-024)
+
+Fachprüfung mit Wolfram Language, Stand 2026-09-19. 30 Teilbeispiele geprüft — Bruchaddition
+(11/12; (x+1)/x²), Multiplikation und Division (2/3; 5/4), Doppelbruch (3/2; x^(-3)), Kürzen
+(x+3), gliedweises Teilen (3x+2; x − 1/x), Bruchgleichung (12), Umwandlungen (0,75; 0,625),
+Vorzeichenregeln (−24; 4), Klammer-Minus (5), Potenz und Vorzeichen (16; −16; 24), Subtraktion
+negativer Zahlen (4; 8), Vorrangregeln (19; 4), Taschenrechnereingabe (1 gegen 13), Dreisatz
+(36), antiproportional (8), Anteile (0,16; 3200), Einheitenfaktoren (10 000; 1 000 000),
+Geschwindigkeit und Zeit (20 m/s; 0,75 h), Einheiten im Sachkontext (45 l), Rundungsfehler
+(4,84 gegen 5), Überschlag (81,18), Primfaktoren mit ggT und kgV (6; 36; 5/36), geratene
+Nullstelle (f(−1) = 0). Alle ✔.
+
+### Umbau der Niveau-Wahl (2026-09-19)
+
+Der globale gA/eA-Schalter über allen Kacheln passte nicht mehr zu acht Decks, von denen nur
+drei Niveaustufen kennen. Die Wahl sitzt jetzt **in** den drei Abitur-Kacheln; der globale
+Schalter und sein Erklärsatz sind entfallen. Die zuletzt gewählte Stufe bleibt gespeichert und
+bestimmt, wohin der Hauptbereich der Abitur-Kacheln führt. `test_index_niveau_links` prüft das
+jetzt entsprechend: drei Kacheln mit Niveau-Wahl, keine bei den Klassenstufen-Decks, und die
+gespeicherte Wahl wirkt beim nächsten Besuch.

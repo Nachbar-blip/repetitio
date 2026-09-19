@@ -3,8 +3,8 @@
 *repetitio est mater studiorum*
 
 Repetitio ist ein statischer Karteikarten-Trainer für Mathematik in Sachsen-Anhalt — drei Decks
-für das Abitur (auf der Startseite mit „Abi" gekennzeichnet) und vier Decks für die
-Klassenstufen 7 bis 10.
+für das Abitur (auf der Startseite mit „Abi" gekennzeichnet), vier Decks für die
+Klassenstufen 7 bis 10 und ein Deck „Rechengrundlagen".
 Die Karten sind Methodenkarten („Wie mache ich X?"): Vorderseite Frage, Rückseite Regel,
 Formel und ein durchgerechnetes Beispiel. Abgedeckt sind das grundlegende (gA) und das erhöhte
 Anforderungsniveau (eA). Die Wiederholung steuert ein Spaced-Repetition-Verfahren (SM-2):
@@ -15,7 +15,8 @@ Karten, die schwerfallen, kommen früher wieder, sichere Karten seltener.
 - **Öffnen:** `index.html` im Browser öffnen — ein Doppelklick auf die Datei genügt, ein
   Webserver ist nicht nötig. Alternativ über GitHub Pages:
   `https://nachbar-blip.github.io/repetitio/` (Platzhalter, bis die Seite eingerichtet ist).
-- **Niveau wählen:** Auf der Startseite gA oder eA. Im gA-Modus werden die eA-Karten
+- **Niveau wählen:** In den drei Abitur-Kacheln selbst (gA oder eA) — die Klassenstufen-Decks
+  und die Rechengrundlagen haben keine Niveaustufen und zeigen immer alle Karten. Im gA-Modus werden die eA-Karten
   ausgeblendet. Die Wahl wird gespeichert (`localStorage["repetitio:niveau"]`).
 - **Deck wählen:** Analysis, Analytische Geometrie oder Stochastik. Der Trainer wird als
   `trainer.html?deck=<id>&niveau=<ga|ea>` aufgerufen. Innerhalb eines Decks lässt sich
@@ -41,8 +42,9 @@ Karten, die schwerfallen, kommen früher wieder, sichere Karten seltener.
 | Klasse 9 (`klasse9`) | 52 (kein Niveau) | – | Trigonometrie, Potenzen/Wurzeln/Logarithmen, Quadratische Gleichungen & Funktionen, Häufigkeitsverteilungen |
 | Klasse 8 (`klasse8`) | 57 (kein Niveau) | – | Terme & Variablen, Ähnlichkeit, Satzgruppe des Pythagoras, Lineare Funktionen, Körperberechnung, Mehrstufige Zufallsversuche |
 | Klasse 7 (`klasse7`) | 47 (kein Niveau) | – | Prozent- & Zinsrechnung, Gleichungen & Ungleichungen, Kreis, Körperdarstellung, Häufigkeiten & Wahrscheinlichkeit |
+| Rechengrundlagen (`grundlagen`) | 24 (kein Niveau) | – | Bruchrechnung, Vorzeichen & Klammern, Termstruktur & Vorrang, Dreisatz & Anteile, Größen & Einheiten, Runden & Überschlag, Teiler & Faktorisieren |
 
-Insgesamt 355 Karten: 123 Abiturkarten (80 gA, 43 eA) und 232 Karten für die Klassenstufen 7 bis 10. eA-Karten tragen im Trainer ein Badge „eA"; im gA-Modus
+Insgesamt 379 Karten: 123 Abiturkarten (80 gA, 43 eA), 232 Karten für die Klassenstufen 7 bis 10 und 24 Karten Rechengrundlagen. eA-Karten tragen im Trainer ein Badge „eA"; im gA-Modus
 sind sie nicht sichtbar, im eA-Modus werden gA- und eA-Karten gemeinsam gelernt.
 
 Die eA-Karten decken zusätzlich ab: Grenzwertsätze und rechnerische Grenzwerte, Stetigkeit,
@@ -67,7 +69,8 @@ Repetitio/
 │   ├── klasse10.js
 │   ├── klasse9.js
 │   ├── klasse8.js
-│   └── klasse7.js          je ein Deck als window.REPETITIO_DECKS["<id>"]
+│   ├── klasse7.js
+│   └── grundlagen.js       je ein Deck als window.REPETITIO_DECKS["<id>"]
 ├── vendor/katex/           KaTeX inkl. auto-render, offline
 ├── tests/
 │   ├── render_check.py     Render-Gate (Playwright)
@@ -150,7 +153,11 @@ Voraussetzungen: Python 3, `pip install playwright pytest`, `playwright install 
   Mathematik (Gymnasium Sachsen-Anhalt, Stand 01.08.2022) mit ihren Kompetenzschwerpunkten.
   Sie kennen kein gA/eA: alle Karten tragen `niveau: "ga"` und sind in beiden Modi sichtbar.
   Bei Decks ohne eA-Karten blendet der Trainer den Niveau-Schalter aus; auf der Startseite
-  weist ein Satz unter dem Schalter darauf hin, dass das Niveau nur die Abitur-Decks betrifft.
+  tragen nur die drei Abitur-Kacheln die Wahl gA/eA.
+- Das Deck „Rechengrundlagen" ist kein Klassenstufen-Deck, sondern ein Reparatur-Deck: Stoff
+  aus Klasse 5 bis 7, Beispiele aber aus Oberstufen-Zusammenhängen (Ableitungen, Integrale,
+  Stochastik). Klasse 5 und 6 sind bewusst nicht als eigene Decks abgebildet — was daraus
+  in der Oberstufe wirklich gebraucht wird, steht in diesem Deck.
 - Die Karteninhalte sind eigene Formulierungen. Sie wurden mit KI-Unterstützung
   (Anthropic Claude) erstellt und fachlich geprüft.
 - KaTeX (MIT-Lizenz) liegt unter `vendor/katex/`, es werden keine externen Ressourcen geladen.

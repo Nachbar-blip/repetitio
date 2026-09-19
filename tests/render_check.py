@@ -7,7 +7,7 @@ from playwright.sync_api import sync_playwright
 from playwright.sync_api import TimeoutError as PWTimeout
 
 ROOT = Path(__file__).resolve().parent.parent
-DECKS = sys.argv[1:] or ["analysis", "geometrie", "stochastik", "klasse10", "klasse9", "klasse8", "klasse7"]
+DECKS = sys.argv[1:] or ["analysis", "geometrie", "stochastik", "klasse10", "klasse9", "klasse8", "klasse7", "grundlagen"]
 # Kürzer als das ist keine Frage, sondern ein leerer/abgeschnittener String (z. B. nur ein "?").
 MIN_QUESTION_CHARS = 3
 

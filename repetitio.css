@@ -504,9 +504,16 @@ details.example[open] summary::before {
 .deck-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
 .deck-card { display:block; background:white; border-radius:16px; padding:24px; text-decoration:none; color:#1f2937; box-shadow:0 10px 30px rgba(0,0,0,0.15), inset 0 8px 0 var(--accent-ink); padding-top:32px; transition:transform .2s; }
 .deck-card:hover { transform:translateY(-4px); }
+/* Abitur-Kacheln: Hauptbereich als Link, darunter die Niveau-Wahl der Kachel. */
+.deck-link { display:block; text-decoration:none; color:inherit; }
+.deck-niveau { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+.deck-niveau a { flex:1 1 0; text-align:center; padding:6px 10px; border-radius:14px;
+    border:2px solid var(--accent-ink); color:var(--accent-ink); background:transparent;
+    text-decoration:none; font-weight:600; font-size:0.82rem; white-space:nowrap; }
+.deck-niveau a[aria-pressed="true"] { background:var(--accent-ink); color:white; }
+.deck-niveau a:hover { filter:brightness(1.15); }
 .deck-card h2 { margin-bottom:6px; }
 /* Kennzeichnung der Abitur-Decks, damit die Klassenstufen-Decks unterscheidbar bleiben */
-.niveau-hinweis { text-align:center; color:rgba(255,255,255,0.8); font-size:0.8rem; margin:-8px 0 14px; }
 .deck-tag { display:inline-block; vertical-align:middle; margin-left:8px; padding:2px 8px; border-radius:10px; background:var(--accent-ink); color:white; font-size:0.65rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; }
 .deck-card p { color:#6b7280; font-size:0.95rem; }
 .error-box { background:white; border-radius:16px; padding:30px; text-align:center; }
