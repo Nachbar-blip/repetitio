@@ -7,7 +7,9 @@ CASES = [("analysis", "scharen"), ("geometrie", "abstand"), ("stochastik", "stat
          ("klasse10", "lgs"), ("klasse10", "vektoren"), ("klasse10", "zufall"),
          ("klasse9", "trigo"), ("klasse9", "potenz"), ("klasse9", "quadrat"), ("klasse9", "daten"),
          ("klasse8", "terme"), ("klasse8", "aehnlich"), ("klasse8", "pythagoras"),
-         ("klasse8", "linear"), ("klasse8", "koerper"), ("klasse8", "zufall")]
+         ("klasse8", "linear"), ("klasse8", "koerper"), ("klasse8", "zufall"),
+         ("klasse7", "prozent"), ("klasse7", "gleichung"), ("klasse7", "kreis"),
+         ("klasse7", "koerper"), ("klasse7", "zufall")]
 with sync_playwright() as p:
     b = p.chromium.launch()
     for name, w in [("desktop", 1200), ("phone", 400)]:

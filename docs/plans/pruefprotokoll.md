@@ -149,3 +149,54 @@ Status: ✔ = Kartenwert stimmt mit Wolfram überein.
   Kartenbestand gesamt 199. Live-Sichtprüfung auf https://nachbar-blip.github.io/repetitio/:
   vier Kacheln auf der Startseite, Deck lädt mit 76 Karten, Niveau-Schalter im Klasse-10-Deck
   korrekt ausgeblendet, KaTeX gerendert, keine Konsolen- oder Request-Fehler.
+
+## Klassenstufen-Decks 9, 8 und 7
+
+Fachprüfung der Zahlenbeispiele mit Wolfram Language, Stand 2026-09-19.
+
+**Klasse 9 (k9-001 … k9-052):** 23 Teilbeispiele geprüft — Seitenverhältnisse und Winkel im
+rechtwinkligen Dreieck (5,74; 35,7°; 36,9°), Sinussatz (11,04), Kosinussatz (√39 ≈ 6,24),
+Flächeninhaltssatz (17,36), Anstiegswinkel (63,4°; 4,6°), Turmhöhe (31,2 m), Pyramidenwinkel
+(53,1°), 8^(2/3) = 4, teilweises Wurzelziehen, p-q-Formel (1; 3), Mitternachtsformel (0,5; 3),
+Substitution (±2; ±3), quadratische Ergänzung, Scheitel (2 | −3), Nullstellen (4; −2),
+Parabel durch S und P (a = 1), Schnittpunkte (2 | 3) und (−1 | 0), Mittelwert/Median (6; 3),
+Spannweite und Standardabweichung (4; √2). Alle ✔.
+
+Anmerkung zu k9-052: Die Quartile sind nach der in der Schule üblichen Methode bestimmt
+(Median der unteren bzw. oberen Hälfte ohne den Gesamtmedian): Q₁ = 3, Q₃ = 9. Wolfram nutzt
+eine andere Quantildefinition und liefert 3,25 und 8,5 — kein Fehler der Karte, sondern eine
+andere Konvention.
+
+**Klasse 8 (k8-001 … k8-057):** 31 Teilbeispiele geprüft — Termwert (16), binomische Formeln,
+Maßstab (1 km), zentrische Streckung (12; 45), Verhältnisgleichung (10), Strahlensatz (15),
+Baumhöhe (13,5 m), Streckungsfaktor bei Fläche und Volumen (216; 216), Pythagoras (10; 12),
+Umkehrung (5;12;13 rechtwinklig, 4;6;8 stumpfwinklig), Zahlentripel (12;16;20), Höhensatz (6),
+Kathetensatz (7,21), Raumdiagonale (13), Leiter (4,8 m), Anstieg (2), Geradengleichung (3; 2),
+Schnittpunkt (2 | 5), Tarifvergleich (50), Zylinder (942,5 cm³; 534,1 cm²), Pyramide
+(48 cm³; 96 cm²), Kegel (37,7 cm³; 75,4 cm²), Kugel (904,8 cm³; 452,4 cm²), Radius aus Volumen
+(3,99 cm), zusammengesetzter Körper (339,3 cm³), Pfadregeln (1/36; 0,36; 0,3), Gegenereignis
+(91/216 ≈ 42,1 %), ungeordnete Auswahl (0,6). Alle ✔.
+
+**Klasse 7 (k7-001 … k7-047):** 26 Teilbeispiele geprüft — Prozentwert (30 €; 81 €),
+Grundwert (400 €), Prozentsatz (15 %), Rabatt und Aufschlag (64 €; 80 €), Rückrechnung
+nach Rabatt (80 €), Brutto und Netto (238 €; 200 €), Kreisdiagramm (90°; 144°; 126°),
+Jahreszinsen (80 €), Monatszinsen (50 €), Zinseszins (1124,86 € gegen 1120 €),
+Gleichung mit Klammern (7), Verhältnisgleichung (15), Ungleichung (x > −3), Sachaufgabe (12),
+Betragsgleichung (8; −2), Kreisring (50,3 cm²), Tangentenlänge (4 cm), Umfang und Fläche
+(44,0 cm; 153,9 cm²), Kreisausschnitt (6,28 cm; 18,85 cm²), Radius aus Umfang und Fläche
+(je 5 cm), Restfläche (21,5 cm²), Mantelbreite (18,85 cm), relative Häufigkeit (0,2),
+Laplace (1/3 ≈ 33,3 %), Gegenereignis (5/6). Alle ✔.
+
+**Ergebnis:** 80 Teilbeispiele geprüft, 80 ✔, 0 korrigiert.
+
+### Veröffentlichung 2026-09-19 (zweite Erweiterung)
+
+- Abitur-Kacheln tragen jetzt das Kennzeichen „Abi", damit Abitur- und Klassenstufen-Decks
+  auf einen Blick unterscheidbar sind.
+- Neue Decks: Klasse 9 (52 Karten), Klasse 8 (57), Klasse 7 (47).
+- Kartenbestand gesamt: 355 Karten in sieben Decks.
+- Der Niveau-Schalter der Startseite gilt nur für die Abitur-Decks; ein Hinweis unter dem
+  Schalter sagt das, und in den Klassenstufen-Decks blendet der Trainer ihn ganz aus.
+- `render_check.py` meldet ein nicht ladendes Deck jetzt als Mangel („Syntaxfehler … node --check"),
+  statt in einen Playwright-Timeout zu laufen. Auslöser: ein ASCII-Anführungszeichen hatte in
+  klasse8.js einen `question`-String vorzeitig geschlossen.

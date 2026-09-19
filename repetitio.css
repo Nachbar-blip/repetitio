@@ -504,6 +504,7 @@ details.example[open] summary::before {
 .deck-card:hover { transform:translateY(-4px); }
 .deck-card h2 { margin-bottom:6px; }
 /* Kennzeichnung der Abitur-Decks, damit die Klassenstufen-Decks unterscheidbar bleiben */
+.niveau-hinweis { text-align:center; color:rgba(255,255,255,0.8); font-size:0.8rem; margin:-8px 0 14px; }
 .deck-tag { display:inline-block; vertical-align:middle; margin-left:8px; padding:2px 8px; border-radius:10px; background:var(--accent-ink); color:white; font-size:0.65rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; }
 .deck-card p { color:#6b7280; font-size:0.95rem; }
 .error-box { background:white; border-radius:16px; padding:30px; text-align:center; }
