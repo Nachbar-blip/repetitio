@@ -166,13 +166,14 @@ window.REPETITIO_DECKS["klasse10"] = {
             <ul>
                 <li>Steigt überall, von links unten nach rechts oben</li>
                 <li>Punktsymmetrisch zum Ursprung: \\( f(-x) = -f(x) \\)</li>
-                <li>Wertebereich alle reellen Zahlen, Sattelpunkt im Ursprung</li>
+                <li>Wertebereich alle reellen Zahlen</li>
+                <li>Am Ursprung verläuft der Graph ganz flach an der x-Achse entlang und wechselt dort die Seite</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     \\( f(x) = x^3 \\): $$f(-2) = -8, \\quad f(2) = 8$$
-                    Alle Graphen gehen durch \\( (0|0) \\), \\( (1|1) \\) und \\( (-1|-1) \\).
+                    Alle Graphen gehen durch \\( (0|0) \\), \\( (1|1) \\) und \\( (-1|{-}1) \\).
                 </div>
             </details>
         `
@@ -184,9 +185,10 @@ window.REPETITIO_DECKS["klasse10"] = {
         answer: `
             <h4>Symmetrie prüfen</h4>
             <div class="formula-box">
-                $$f(-x) = f(x) \\;\\Rightarrow\\; \\text{achsensymmetrisch zur } y\\text{-Achse}$$
-                $$f(-x) = -f(x) \\;\\Rightarrow\\; \\text{punktsymmetrisch zum Ursprung}$$
+                $$f(-x) = f(x)$$ $$\\Rightarrow\\; \\text{achsensymmetrisch zur } y\\text{-Achse}$$
+                $$f(-x) = -f(x)$$ $$\\Rightarrow\\; \\text{punktsymmetrisch zum Ursprung}$$
             </div>
+            <p>Eine Funktion mit \\( f(-x) = f(x) \\) heißt <strong>gerade</strong>, eine mit \\( f(-x) = -f(x) \\) <strong>ungerade</strong>.</p>
             <p>Bei ganzrationalen Funktionen: nur gerade Exponenten heißt achsensymmetrisch, nur ungerade heißt punktsymmetrisch. Gemischt: keine dieser Symmetrien.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -323,7 +325,7 @@ window.REPETITIO_DECKS["klasse10"] = {
                 $$n \\text{ ungerade}: \\quad x = \\sqrt[n]{c} \\quad \\text{(eine Lösung)}$$
                 $$n \\text{ gerade}, c > 0: \\quad x = \\pm\\sqrt[n]{c} \\quad \\text{(zwei Lösungen)}$$
             </div>
-            <p>Bei geradem \\( n \\) und \\( c < 0 \\) gibt es keine Lösung.</p>
+            <p>Bei geradem \\( n \\) und \\( c < 0 \\) gibt es keine Lösung, bei \\( c = 0 \\) nur \\( x = 0 \\).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -411,7 +413,7 @@ window.REPETITIO_DECKS["klasse10"] = {
             <div class="formula-box">
                 $$\\log_a c = x \\quad \\Longleftrightarrow \\quad a^x = c$$
             </div>
-            <p>Der Logarithmus fragt: „Mit welchem Exponenten muss ich \\( a \\) potenzieren, um \\( c \\) zu erhalten?" Es gilt \\( a > 0 \\), \\( a \\neq 1 \\), \\( c > 0 \\).</p>
+            <p>Der Logarithmus fragt: „Mit welchem Exponenten muss ich \\( a \\) potenzieren, um \\( c \\) zu erhalten?“ Es gilt \\( a > 0 \\), \\( a \\neq 1 \\), \\( c > 0 \\).</p>
             <p>Schreibweisen: \\( \\lg \\) für Basis 10, \\( \\ln \\) für Basis \\( e \\).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -689,7 +691,7 @@ window.REPETITIO_DECKS["klasse10"] = {
             <h4>Linear oder exponentiell?</h4>
             <div class="formula-box">
                 $$\\text{linear}: B(t) = B_0 + m \\cdot t \\quad (\\text{gleiche Differenz})$$
-                $$\\text{exponentiell}: B(t) = B_0 \\cdot q^{\\,t} \\quad (\\text{gleicher Quotient})$$
+                $$\\text{exponentiell}: B(t) = B_0 \\cdot q^{\\,t}$$ $$(\\text{gleicher Quotient})$$
             </div>
             <p>Test an einer Wertetabelle mit gleichen Zeitschritten: konstante Differenz heißt linear, konstanter Quotient heißt exponentiell.</p>
             <details class="example">
@@ -770,11 +772,11 @@ window.REPETITIO_DECKS["klasse10"] = {
         answer: `
             <h4>Quadranten</h4>
             <div class="formula-box">
-                $$\\text{I}: +\\,/\\,+ \\qquad \\text{II}: +\\,/\\,- \\qquad \\text{III}: -\\,/\\,- \\qquad \\text{IV}: -\\,/\\,+$$
+                $$\\text{I}: +\\,/\\,+ \\qquad \\text{II}: +\\,/\\,-$$ $$\\text{III}: -\\,/\\,- \\qquad \\text{IV}: -\\,/\\,+$$
             </div>
             <p>Erst der Sinus (\\( y \\)-Koordinate), dann der Kosinus (\\( x \\)-Koordinate). Beziehungen:</p>
             <div class="formula-box">
-                $$\\sin(180^\\circ - \\alpha) = \\sin \\alpha, \\qquad \\cos(360^\\circ - \\alpha) = \\cos \\alpha$$
+                $$\\sin(180^\\circ - \\alpha) = \\sin \\alpha$$ $$\\cos(360^\\circ - \\alpha) = \\cos \\alpha$$
             </div>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -926,12 +928,12 @@ window.REPETITIO_DECKS["klasse10"] = {
                 <li>Mittellinie ablesen: \\( e = \\frac{y_{\\max} + y_{\\min}}{2} \\)</li>
                 <li>Amplitude: \\( a = \\frac{y_{\\max} - y_{\\min}}{2} \\)</li>
                 <li>Periode \\( p \\) ablesen, daraus \\( b = \\frac{2\\pi}{p} \\)</li>
-                <li>Verschiebung \\( d \\) am ersten aufsteigenden Nulldurchgang der Mittellinie ablesen</li>
+                <li>Stelle \\( x_0 \\) ablesen, an der der Graph die Mittellinie steigend schneidet: \\( d = -x_0 \\)</li>
             </ol>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    \\( y_{\\max} = 7 \\), \\( y_{\\min} = 1 \\), Periode \\( 4 \\):
+                    \\( y_{\\max} = 7 \\), \\( y_{\\min} = 1 \\), Periode \\( 4 \\), steigend durch die Mittellinie bei \\( x_0 = 0 \\), also \\( d = 0 \\):
                     $$e = 4, \\quad a = 3, \\quad b = \\frac{2\\pi}{4} = \\frac{\\pi}{2}$$
                     $$y = 3\\sin\\left(\\tfrac{\\pi}{2}x\\right) + 4$$
                 </div>
@@ -1105,6 +1107,7 @@ window.REPETITIO_DECKS["klasse10"] = {
                     $$\\begin{aligned} x + y + z &= 6 \\\\ 2x - y + z &= 3 \\\\ x + 2y - z &= 2 \\end{aligned}$$
                     (II) \\( - \\) 2·(I): \\( -3y - z = -9 \\)<br>
                     (III) \\( - \\) (I): \\( y - 2z = -4 \\)<br>
+                    3·(neue III) \\( + \\) (neue II): \\( -7z = -21 \\)<br>
                     Daraus \\( z = 3 \\), \\( y = 2 \\), \\( x = 1 \\).
                     $$\\mathbb{L} = \\{(1 \\mid 2 \\mid 3)\\}$$
                 </div>
@@ -1163,7 +1166,7 @@ window.REPETITIO_DECKS["klasse10"] = {
             <h4>Vektorbegriff</h4>
             <p>Ein Vektor beschreibt eine Verschiebung: er hat Richtung und Länge, aber keinen festen Platz. Alle gleich langen, gleich gerichteten Pfeile stellen denselben Vektor dar (Pfeilklasse).</p>
             <div class="formula-box">
-                $$\\vec{OP} = \\vec{p} = \\begin{pmatrix} p_1 \\\\ p_2 \\\\ p_3 \\end{pmatrix}$$
+                $$\\overrightarrow{OP} = \\vec{p} = \\begin{pmatrix} p_1 \\\\ p_2 \\\\ p_3 \\end{pmatrix}$$
             </div>
             <p>Der <strong>Ortsvektor</strong> führt vom Ursprung zum Punkt; seine Koordinaten sind die Punktkoordinaten. Der <strong>Gegenvektor</strong> \\( -\\vec{a} \\) ist gleich lang und entgegengesetzt gerichtet.</p>
             <details class="example">
@@ -1182,14 +1185,14 @@ window.REPETITIO_DECKS["klasse10"] = {
         answer: `
             <h4>Verbindungsvektor</h4>
             <div class="formula-box">
-                $$\\vec{AB} = \\vec{b} - \\vec{a}$$
+                $$\\overrightarrow{AB} = \\vec{b} - \\vec{a}$$
             </div>
-            <p><strong>Merksatz:</strong> „Spitze minus Fuß". Jede Koordinate einzeln: Endpunkt minus Startpunkt.</p>
+            <p><strong>Merksatz:</strong> „Spitze minus Fuß“. Jede Koordinate einzeln: Endpunkt minus Startpunkt.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     \\( A(2\\mid-5\\mid-4) \\), \\( B(5\\mid3\\mid-6) \\):
-                    $$\\vec{AB} = \\begin{pmatrix} 3 \\\\ 8 \\\\ -2 \\end{pmatrix}, \\quad \\vec{BA} = \\begin{pmatrix} -3 \\\\ -8 \\\\ 2 \\end{pmatrix}$$
+                    $$\\overrightarrow{AB} = \\begin{pmatrix} 3 \\\\ 8 \\\\ -2 \\end{pmatrix}, \\quad \\overrightarrow{BA} = \\begin{pmatrix} -3 \\\\ -8 \\\\ 2 \\end{pmatrix}$$
                 </div>
             </details>
         `
@@ -1203,7 +1206,7 @@ window.REPETITIO_DECKS["klasse10"] = {
             <div class="formula-box">
                 $$\\left|\\vec{a}\\right| = \\sqrt{a_1^2 + a_2^2 + a_3^2}$$
             </div>
-            <p>Der Betrag von \\( \\vec{AB} \\) ist zugleich der Abstand der Punkte \\( A \\) und \\( B \\). Der <strong>Einheitsvektor</strong> hat die Länge 1:</p>
+            <p>Der Betrag von \\( \\overrightarrow{AB} \\) ist zugleich der Abstand der Punkte \\( A \\) und \\( B \\). Der <strong>Einheitsvektor</strong> hat die Länge 1:</p>
             <div class="formula-box">
                 $$\\vec{a}_0 = \\frac{1}{\\left|\\vec{a}\\right|} \\cdot \\vec{a}$$
             </div>
@@ -1243,13 +1246,13 @@ window.REPETITIO_DECKS["klasse10"] = {
         answer: `
             <h4>Punkt verschieben</h4>
             <div class="formula-box">
-                $$\\vec{q} = \\vec{p} + \\vec{PQ}$$
+                $$\\vec{q} = \\vec{p} + \\overrightarrow{PQ}$$
             </div>
-            <p>Ortsvektor des Startpunkts plus Verschiebungsvektor ergibt den Ortsvektor des Zielpunkts. Umgekehrt: \\( \\vec{p} = \\vec{q} - \\vec{PQ} \\).</p>
+            <p>Ortsvektor des Startpunkts plus Verschiebungsvektor ergibt den Ortsvektor des Zielpunkts. Umgekehrt: \\( \\vec{p} = \\vec{q} - \\overrightarrow{PQ} \\).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    \\( P(-5\\mid2\\mid0) \\), \\( \\vec{PQ} = \\begin{pmatrix} 3 \\\\ -3 \\\\ 7 \\end{pmatrix} \\):
+                    \\( P(-5\\mid2\\mid0) \\), \\( \\overrightarrow{PQ} = \\begin{pmatrix} 3 \\\\ -3 \\\\ 7 \\end{pmatrix} \\):
                     $$\\vec{q} = \\begin{pmatrix} -2 \\\\ -1 \\\\ 7 \\end{pmatrix} \\;\\Rightarrow\\; Q(-2\\mid-1\\mid7)$$
                 </div>
             </details>
@@ -1285,7 +1288,7 @@ window.REPETITIO_DECKS["klasse10"] = {
             <div class="formula-box">
                 $$\\vec{c} = r \\cdot \\vec{a} + s \\cdot \\vec{b}$$
             </div>
-            <p>Man setzt an, vergleicht koordinatenweise und löst das Gleichungssystem. Gibt es eine Lösung, sind die Vektoren linear abhängig, sonst linear unabhängig.</p>
+            <p>Man setzt an, vergleicht koordinatenweise und löst das Gleichungssystem. Gibt es eine Lösung, sind die Vektoren linear abhängig. Gibt es keine, sind sie linear unabhängig — vorausgesetzt, \\( \\vec{a} \\) und \\( \\vec{b} \\) sind nicht kollinear (sonst sind die drei Vektoren immer linear abhängig).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -1399,14 +1402,14 @@ window.REPETITIO_DECKS["klasse10"] = {
         answer: `
             <h4>Parallelogramm</h4>
             <div class="formula-box">
-                $$\\vec{AB} = \\vec{DC}$$
+                $$\\overrightarrow{AB} = \\overrightarrow{DC}$$
             </div>
-            <p>Zwei gegenüberliegende Seiten müssen durch denselben Vektor beschrieben werden — dann sind sie parallel und gleich lang. Für ein Rechteck zusätzlich \\( \\vec{AB} \\circ \\vec{AD} = 0 \\), für eine Raute zusätzlich \\( |\\vec{AB}| = |\\vec{AD}| \\).</p>
+            <p>Zwei gegenüberliegende Seiten müssen durch denselben Vektor beschrieben werden — dann sind sie parallel und gleich lang. Für ein Rechteck zusätzlich \\( \\overrightarrow{AB} \\circ \\overrightarrow{AD} = 0 \\), für eine Raute zusätzlich \\( |\\overrightarrow{AB}| = |\\overrightarrow{AD}| \\).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     \\( A(0\\mid0\\mid0) \\), \\( B(4\\mid0\\mid0) \\), \\( C(5\\mid3\\mid0) \\), \\( D(1\\mid3\\mid0) \\):
-                    $$\\vec{AB} = \\begin{pmatrix} 4 \\\\ 0 \\\\ 0 \\end{pmatrix} = \\vec{DC}$$
+                    $$\\overrightarrow{AB} = \\begin{pmatrix} 4 \\\\ 0 \\\\ 0 \\end{pmatrix} = \\overrightarrow{DC}$$
                     also ein Parallelogramm.
                 </div>
             </details>
@@ -1421,8 +1424,8 @@ window.REPETITIO_DECKS["klasse10"] = {
             <h4>Grundbegriffe</h4>
             <ul>
                 <li><strong>Ergebnis</strong>: ein einzelner möglicher Ausgang</li>
-                <li><strong>Ergebnismenge \\( S \\)</strong>: alle möglichen Ergebnisse</li>
-                <li><strong>Ereignis</strong>: eine Teilmenge von \\( S \\)</li>
+                <li><strong>Ergebnismenge \\( \\Omega \\)</strong>: alle möglichen Ergebnisse</li>
+                <li><strong>Ereignis</strong>: eine Teilmenge von \\( \\Omega \\)</li>
             </ul>
             <div class="formula-box">
                 $$P(E) = \\frac{\\text{Anzahl günstiger Ergebnisse}}{\\text{Anzahl möglicher Ergebnisse}}$$
@@ -1431,7 +1434,7 @@ window.REPETITIO_DECKS["klasse10"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Würfel, \\( E \\): „gerade Augenzahl" \\( = \\{2; 4; 6\\} \\)
+                    Würfel, \\( E \\): „gerade Augenzahl“ \\( = \\{2; 4; 6\\} \\)
                     $$P(E) = \\frac{3}{6} = \\frac{1}{2}$$
                 </div>
             </details>
@@ -1451,7 +1454,7 @@ window.REPETITIO_DECKS["klasse10"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Zweimal eine Münze werfen, \\( E \\): „genau einmal Kopf"
+                    Zweimal eine Münze werfen, \\( E \\): „genau einmal Kopf“
                     $$P(E) = \\tfrac{1}{2} \\cdot \\tfrac{1}{2} + \\tfrac{1}{2} \\cdot \\tfrac{1}{2} = \\tfrac{1}{2}$$
                 </div>
             </details>
@@ -1620,8 +1623,9 @@ window.REPETITIO_DECKS["klasse10"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Eine Versicherung zahlt mit \\( P = 0{,}02 \\) einen Schaden von 5000 €:
-                    $$E(X) = 0{,}02 \\cdot 5000 = 100$$ €
+                    Eine Versicherung zahlt mit der Wahrscheinlichkeit 0,02 einen Schaden von 5000 €, sonst nichts.<br>
+                    \\( X \\) = Auszahlung je Vertrag in €: \\( P(X = 5000) = 0{,}02 \\), \\( P(X = 0) = 0{,}98 \\)
+                    $$E(X) = 0 \\cdot 0{,}98 + 5000 \\cdot 0{,}02 = 100$$
                     Die erwartete Auszahlung je Vertrag beträgt 100 €; der Beitrag muss darüber liegen.
                 </div>
             </details>

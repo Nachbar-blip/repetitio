@@ -14,11 +14,11 @@ Karten, die schwerfallen, kommen früher wieder, sichere Karten seltener.
 
 - **Öffnen:** `index.html` im Browser öffnen — ein Doppelklick auf die Datei genügt, ein
   Webserver ist nicht nötig. Alternativ über GitHub Pages:
-  `https://nachbar-blip.github.io/repetitio/` (Platzhalter, bis die Seite eingerichtet ist).
+  `https://nachbar-blip.github.io/repetitio/`.
 - **Niveau wählen:** In den drei Abitur-Kacheln selbst (gA oder eA) — die Klassenstufen-Decks
   und die Rechengrundlagen haben keine Niveaustufen und zeigen immer alle Karten. Im gA-Modus werden die eA-Karten
   ausgeblendet. Die Wahl wird gespeichert (`localStorage["repetitio:niveau"]`).
-- **Deck wählen:** Analysis, Analytische Geometrie oder Stochastik. Der Trainer wird als
+- **Deck wählen:** eine der acht Kacheln (drei Abitur-Decks, Klasse 7 bis 10, Rechengrundlagen). Der Trainer wird als
   `trainer.html?deck=<id>&niveau=<ga|ea>` aufgerufen. Innerhalb eines Decks lässt sich
   nach Kategorie filtern.
 - **Karte aufdecken:** Klick auf die Karte oder Leertaste/Enter.
@@ -26,6 +26,8 @@ Karten, die schwerfallen, kommen früher wieder, sichere Karten seltener.
   ein: „Nochmal" setzt die Karte auf Intervall 1 Tag zurück, „Schwer/Gut/Leicht" zählen als
   bestanden (1 Tag → 3 Tage → Intervall × Leichtigkeitsfaktor) und passen den
   Leichtigkeitsfaktor an. Nach drei erfolgreichen Wiederholungen gilt eine Karte als gemeistert.
+- **Reihenfolge:** Fällige und neue Karten kommen zuerst (in Deck-Reihenfolge), danach die
+  noch nicht fälligen, die am frühesten fällige zuerst. Der Zähler zeigt, wie viele Karten fällig sind.
 - **Tastatur:** `←`/`→` blättern, `Leertaste`/`Enter` aufdecken, `1` = Nochmal, `2` = Gut.
 - **Fortschritt:** bleibt im Browser, pro Deck unter `localStorage["repetitio:<deck>"]`.
   Es gibt keinen Server und kein Konto; ein anderer Browser oder ein anderes Gerät startet
@@ -35,24 +37,29 @@ Karten, die schwerfallen, kommen früher wieder, sichere Karten seltener.
 
 | Deck | gA-Karten | eA-Karten | Kategorien |
 |---|---|---|---|
-| Analysis (`analysis`) | 32 | 16 | Ableitung, Grenzwerte, Kurvendiskussion, Scharen, Integral, Sonstiges |
-| Analytische Geometrie (`geometrie`) | 23 | 15 | Vektoren, Geraden, Ebenen, Abstände, Kreis, LGS |
-| Stochastik (`stochastik`) | 25 | 12 | Grundlagen, Bedingte Wahrscheinlichkeit, Binomialverteilung, Kenngrößen, Normalverteilung, Statistik |
+| Analysis (`analysis`) | 33 | 15 | Ableitung, Grenzwerte, Kurvendiskussion, Scharen, Integral, Sonstiges |
+| Analytische Geometrie (`geometrie`) | 27 | 11 | Vektoren, Geraden, Ebenen, Abstände, Kreis, LGS |
+| Stochastik (`stochastik`) | 27 | 10 | Grundlagen, Bedingte Wahrscheinlichkeit, Binomialverteilung, Kenngrößen, Normalverteilung, Statistik |
 | Klasse 10 (`klasse10`) | 76 (kein Niveau) | – | Potenz- & Wurzelfunktionen, Exponential- & Logarithmusfunktionen, Trigonometrische Funktionen, Lineare Gleichungssysteme, Vektoren, Zufallsgrößen |
 | Klasse 9 (`klasse9`) | 52 (kein Niveau) | – | Trigonometrie, Potenzen/Wurzeln/Logarithmen, Quadratische Gleichungen & Funktionen, Häufigkeitsverteilungen |
 | Klasse 8 (`klasse8`) | 57 (kein Niveau) | – | Terme & Variablen, Ähnlichkeit, Satzgruppe des Pythagoras, Lineare Funktionen, Körperberechnung, Mehrstufige Zufallsversuche |
 | Klasse 7 (`klasse7`) | 47 (kein Niveau) | – | Prozent- & Zinsrechnung, Gleichungen & Ungleichungen, Kreis, Körperdarstellung, Häufigkeiten & Wahrscheinlichkeit |
 | Rechengrundlagen (`grundlagen`) | 24 (kein Niveau) | – | Bruchrechnung, Vorzeichen & Klammern, Termstruktur & Vorrang, Dreisatz & Anteile, Größen & Einheiten, Runden & Überschlag, Teiler & Faktorisieren |
 
-Insgesamt 379 Karten: 123 Abiturkarten (80 gA, 43 eA), 232 Karten für die Klassenstufen 7 bis 10 und 24 Karten Rechengrundlagen. eA-Karten tragen im Trainer ein Badge „eA"; im gA-Modus
+Insgesamt 379 Karten: 123 Abiturkarten (87 gA, 36 eA), 232 Karten für die Klassenstufen 7 bis 10 und 24 Karten Rechengrundlagen. eA-Karten tragen im Trainer ein Badge „eA“; im gA-Modus
 sind sie nicht sichtbar, im eA-Modus werden gA- und eA-Karten gemeinsam gelernt.
 
-Die eA-Karten decken zusätzlich ab: Grenzwertsätze und rechnerische Grenzwerte, Stetigkeit,
-Newton-Verfahren, Funktionsscharen und Ortskurven, Normalengleichung, Ableitung und
-Integration des Logarithmus, lineare Substitution, Integralfunktion und Rekonstruktion
-von Beständen; Lage Ebene–Ebene mit Schnittgerade und Schnittwinkel, Hessesche Normalform,
-Abstände Punkt–Gerade und Gerade–Gerade (windschief), Kreisgleichung und Lagebeziehungen am
-Kreis; Normalverteilung, Sigma-Regeln, Konfidenz- und Prognoseintervalle.
+Die eA-Karten decken zusätzlich ab: Kettenregel und verkettete Funktionen, Grenzwertsätze und
+Polstellen/Lücken, Quotientenregel, Ableitung der Umkehrfunktion, Newton-Verfahren, Funktionsscharen
+und Ortskurven, Ableitung und Integration des Logarithmus, lineare Substitution, uneigentliche
+Integrale; Kollinearität/Komplanarität, Lage Ebene–Ebene mit Schnittgerade und Schnittwinkel,
+Abstände Punkt–Gerade im Raum, windschiefe Geraden und parallele Objekte, Lage zweier Kreise,
+Kreistangenten, LGS mit Parameter; Normalverteilung, Grundgesamtheit/Stichprobe,
+Prognoseintervall, Laplace-Bedingung, Stichprobenumfang für Konfidenzintervalle.
+Die Zuordnung gA/eA folgt dem Fachlehrplan Sachsen-Anhalt (Stand 01.08.2022), Kap. 3.6.1/3.6.2.
+Quotientenregel, Ableitung der Umkehrfunktion und uneigentliche Integrale stehen nicht im
+Fachlehrplan. Sie bleiben im Deck, tragen aber das Badge „Zusatz“ und einen Hinweis auf der
+Rückseite (Feld `zusatz: true` in der Karte).
 
 ## Aufbau
 
@@ -134,12 +141,12 @@ Voraussetzungen: Python 3, `pip install playwright pytest`, `playwright install 
 
 - `python tests/render_check.py` — rendert jede Karte im Chromium-Browser und meldet
   KaTeX-Fehler, unbekannte Makros, übrig gebliebene Delimiter, doppelte IDs, unbekannte
-  Kategorien sowie Formeln, die bei 1000 px oder 400 px Breite über die Karte hinauslaufen.
+  Kategorien sowie Formeln, die bei 1000 px oder 360 px Breite über die Karte hinauslaufen (am Handy verkleinert die Engine zu breite Formeln bis auf 75 %; was dann noch nicht passt, muss im Deck geteilt werden).
   Ziel: 0 Mängel pro Deck.
-- `python -m pytest tests -q` — acht Playwright-Tests: gA blendet eA-Karten aus, eA zeigt
+- `python -m pytest tests -q` — neun Playwright-Tests: gA blendet eA-Karten aus, eA zeigt
   alle Karten und bleibt gespeichert, Bewertung schreibt Fortschritt in `localStorage`,
   unbekanntes Deck zeigt die Fehlerseite, leere Kategorie, Niveau-Links der Startseite,
-  aufgedeckte Karte ohne Überlappung, Tastatur nach Button-Klick.
+  aufgedeckte Karte ohne Überlappung, Tastatur nach Button-Klick, fällige Karten zuerst.
 - `python tests/screenshots.py` — erzeugt Screenshots unter `tests/reports/` (Startseite und
   Karten, Desktop und Phone) für die Sichtprüfung. Screenshots werden angesehen, nicht nur
   erzeugt.

@@ -146,8 +146,9 @@ function formatInterval(days) {
     if (days < 1) return 'heute';
     if (days === 1) return 'morgen';
     if (days < 7) return `in ${days} Tagen`;
-    if (days < 30) return `in ${Math.round(days / 7)} Wochen`;
-    return `in ${Math.round(days / 30)} Monaten`;
+    if (days < 30) { const w = Math.round(days / 7); return w === 1 ? 'in 1 Woche' : `in ${w} Wochen`; }
+    const m = Math.round(days / 30);
+    return m === 1 ? 'in 1 Monat' : `in ${m} Monaten`;
 }
 
 // Save progress to localStorage
@@ -163,6 +164,54 @@ function renderMath() {
             {left: '\\(', right: '\\)', display: false}
         ],
         throwOnError: false
+    });
+    klebeSatzzeichen(document.getElementById('flashcard'));
+    passeFormelnAn();
+}
+
+// Zu breite abgesetzte Formeln (Handy) verkleinern statt sie mitten in Klammern umbrechen zu lassen.
+// Zugeklappte Beispiele kurz oeffnen, damit auch deren Formeln eine Breite haben.
+const MIN_FORMEL_SKALA = 0.75;
+function passeFormelnAn() {
+    const card = document.getElementById('flashcard');
+    if (!card) return;
+    const zu = [...card.querySelectorAll('details:not([open])')];
+    zu.forEach(d => { d.open = true; });
+    card.querySelectorAll('.katex-display > .katex').forEach(k => { k.style.fontSize = ''; });
+    card.querySelectorAll('.katex-display > .katex').forEach(k => {
+        const box = k.parentElement;
+        if (!box.clientWidth || box.scrollWidth <= box.clientWidth + 1) return;
+        const skala = Math.max(MIN_FORMEL_SKALA, (box.clientWidth / box.scrollWidth) * 0.97);
+        k.style.fontSize = (parseFloat(getComputedStyle(k).fontSize) * skala) + 'px';
+    });
+    zu.forEach(d => { d.open = false; });
+}
+
+let resizeTimer = null;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => { if (deck && filteredCards.length) passeFormelnAn(); }, 150);
+});
+
+// Satzzeichen direkt nach einer Formel (", . ; : ) !?") und "(" direkt davor
+// umbrechen sonst allein in die naechste bzw. vorige Zeile - mit der Formel verbinden.
+function klebeSatzzeichen(container) {
+    container.querySelectorAll('.katex').forEach(k => {
+        if (k.closest('.katex-display') || k.parentElement.classList.contains('rep-nowrap')) return;
+        const node = (k.parentElement.tagName === 'SPAN' && k.parentElement.childNodes.length === 1) ? k.parentElement : k;
+        const next = node.nextSibling, prev = node.previousSibling;
+        const nach = next && next.nodeType === 3 ? (next.textContent.match(/^[,.;:!?)\]]+/) || [''])[0] : '';
+        const vor = prev && prev.nodeType === 3 ? (prev.textContent.match(/[(\[„]+$/) || [''])[0] : '';
+        if (!nach && !vor) return;
+        // nur kurze Formeln: lange sollen innerhalb umbrechen duerfen
+        if (k.offsetWidth > 160 || (k.offsetWidth === 0 && k.textContent.length > 40)) return;
+        const w = document.createElement('span');
+        w.className = 'rep-nowrap';
+        w.style.whiteSpace = 'nowrap';
+        node.parentNode.insertBefore(w, node);
+        if (vor) { prev.textContent = prev.textContent.slice(0, -vor.length); w.appendChild(document.createTextNode(vor)); }
+        w.appendChild(node);
+        if (nach) { next.textContent = next.textContent.slice(nach.length); w.appendChild(document.createTextNode(nach)); }
     });
 }
 
@@ -188,8 +237,12 @@ function displayCard() {
     const card = filteredCards[currentIndex];
     const label = deck.categories[categoryOf(card)] || "Sonstiges";
     // Wrapper-Span: Frage, Formeln und Badge bleiben ein Textfluss (kein Flex-Item pro Knoten)
-    document.getElementById('cardQuestion').innerHTML = '<span>' + card.question + (card.niveau === 'ea' ? ' <span class="badge-ea">eA</span>' : '') + '</span>';
-    document.getElementById('cardAnswer').innerHTML = card.answer;
+    // zusatz: true = Stoff, der nicht im Fachlehrplan steht (bleibt drin, wird aber gekennzeichnet)
+    document.getElementById('cardQuestion').innerHTML = '<span>' + card.question
+        + (card.niveau === 'ea' ? ' <span class="badge-ea">eA</span>' : '')
+        + (card.zusatz ? ' <span class="badge-zusatz">Zusatz</span>' : '') + '</span>';
+    document.getElementById('cardAnswer').innerHTML = (card.zusatz
+        ? '<p class="hinweis-zusatz">Zusatzstoff: steht nicht im Fachlehrplan.</p>' : '') + card.answer;
     document.getElementById('cardCategory').textContent = label;
     document.getElementById('cardCategoryBack').textContent = label;
 
@@ -266,6 +319,24 @@ function markCard(known) {
     rateCard(known ? 4 : 1);
 }
 
+// Spaced Repetition wirksam machen: faellige und neue Karten zuerst (in Deck-Reihenfolge),
+// danach die noch nicht faelligen, die am fruehesten faellige zuerst.
+function isDue(card, now = Date.now()) {
+    const p = progress[card.id];
+    return !p || !p.nextReview || p.nextReview <= now;
+}
+
+function sortByDue(list) {
+    const now = Date.now();
+    const order = new Map(list.map((c, i) => [c.id, i]));
+    list.sort((a, b) => {
+        const da = isDue(a, now), db = isDue(b, now);
+        if (da !== db) return da ? -1 : 1;
+        if (!da) return progress[a.id].nextReview - progress[b.id].nextReview;
+        return order.get(a.id) - order.get(b.id);
+    });
+}
+
 // Filter by category
 function filterByCategory(category) {
     activeCategory = category;
@@ -278,6 +349,7 @@ function filterByCategory(category) {
     } else {
         filteredCards = cards.filter(c => categoryOf(c) === category);
     }
+    sortByDue(filteredCards);
 
     currentIndex = 0;
     displayCard();
@@ -306,8 +378,9 @@ function resetProgress() {
 
 // Update counter display
 function updateCounter() {
+    const due = filteredCards.filter(c => isDue(c)).length;
     document.getElementById('cardCounter').textContent =
-        `Karte ${currentIndex + 1} von ${filteredCards.length}`;
+        `Karte ${currentIndex + 1} von ${filteredCards.length} · ${due} fällig`;
 
     document.getElementById('prevBtn').disabled = currentIndex === 0;
     document.getElementById('nextBtn').disabled = currentIndex === filteredCards.length - 1;

@@ -235,7 +235,7 @@ window.REPETITIO_DECKS["klasse9"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     Gegeben \\( a = 7 \\), \\( b = 9 \\), \\( \\gamma = 50^\\circ \\) (SWS) → Kosinussatz für \\( c \\).<br>
-                    Gegeben \\( a = 7 \\), \\( \\alpha = 40^\\circ \\), \\( \\beta = 65^\\circ \\) (WSW) → Sinussatz für \\( b \\).
+                    Gegeben \\( a = 7 \\), \\( \\alpha = 40^\\circ \\), \\( \\beta = 65^\\circ \\) (SWW) → Sinussatz für \\( b \\).
                 </div>
             </details>
         `
@@ -566,7 +566,7 @@ window.REPETITIO_DECKS["klasse9"] = {
         answer: `
             <h4>Normalform</h4>
             <div class="formula-box">
-                $$ax^2 + bx + c = 0 \\; (a \\neq 0) \\quad \\text{bzw.} \\quad x^2 + px + q = 0$$
+                $$ax^2 + bx + c = 0 \\; (a \\neq 0)$$ $$\\text{bzw.} \\quad x^2 + px + q = 0$$
             </div>
             <p>Die höchste Potenz der Unbekannten ist 2. Vor dem Lösen alles auf eine Seite bringen und ordnen; für die p-q-Formel muss vor \\( x^2 \\) eine 1 stehen — sonst durch \\( a \\) teilen.</p>
             <details class="example">
@@ -585,7 +585,7 @@ window.REPETITIO_DECKS["klasse9"] = {
         answer: `
             <h4>Form \\( x^2 = c \\)</h4>
             <div class="formula-box">
-                $$c > 0: \\; x = \\pm\\sqrt{c} \\qquad c = 0: \\; x = 0 \\qquad c < 0: \\; \\mathbb{L} = \\{\\}$$
+                $$c > 0: \\; x = \\pm\\sqrt{c} \\qquad c = 0: \\; x = 0$$ $$c < 0: \\; \\mathbb{L} = \\{\\}$$
             </div>
             <p>Das \\( \\pm \\) nicht vergessen — es gibt zwei Lösungen.</p>
             <details class="example">
@@ -667,7 +667,7 @@ window.REPETITIO_DECKS["klasse9"] = {
         question: "Wie nutze ich die Lösungsformel bei \\( ax^2+bx+c=0 \\)?",
         answer: `
             <h4>Zwei Wege</h4>
-            <p>Entweder durch \\( a \\) teilen und die p-q-Formel nehmen oder direkt die Mitternachtsformel:</p>
+            <p>Entweder durch \\( a \\) teilen und die p-q-Formel nehmen oder direkt die allgemeine Lösungsformel:</p>
             <div class="formula-box">
                 $$x_{1,2} = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$
             </div>
@@ -684,7 +684,7 @@ window.REPETITIO_DECKS["klasse9"] = {
     {
         id: "k9-034", niveau: "ga",
         category: "quadrat",
-        question: "Was besagt der Satz von Vieta und die Linearfaktorzerlegung?",
+        question: "Was besagen der Satz von Vieta und die Linearfaktorzerlegung?",
         answer: `
             <h4>Vieta und Linearfaktoren</h4>
             <div class="formula-box">
@@ -977,7 +977,7 @@ window.REPETITIO_DECKS["klasse9"] = {
             <ul>
                 <li>Alle Klassen gleich breit, lückenlos, ohne Überschneidung</li>
                 <li>Faustregel: 5 bis 10 Klassen</li>
-                <li>Eindeutige Grenzen festlegen (z. B. „von 10 bis unter 20")</li>
+                <li>Eindeutige Grenzen festlegen (z. B. „von 10 bis unter 20“)</li>
             </ul>
             <p>Zu wenige Klassen verwischen das Bild, zu viele zerfasern es.</p>
             <details class="example">

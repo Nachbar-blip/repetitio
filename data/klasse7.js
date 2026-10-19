@@ -24,11 +24,11 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <li><strong>Prozentwert \\( W \\)</strong>: der Anteil davon, in derselben Einheit</li>
                 <li><strong>Prozentsatz \\( p\\,\\% \\)</strong>: wie groß der Anteil ist</li>
             </ul>
-            <p>Im Text steht der Grundwert meist nach „von" oder „von … aus".</p>
+            <p>Im Text steht der Grundwert meist nach „von“ oder „von … aus“.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    „12 % von 250 € sind 30 €":
+                    „12 % von 250 € sind 30 €“:
                     Grundwert \\( G = 250 \\) €, Prozentsatz \\( p\\,\\% = 12\\,\\% \\), Prozentwert \\( W = 30 \\) €
                 </div>
             </details>
@@ -67,7 +67,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     18 % von 450 €:
-                    $$W = 450 \\cdot 0{,}18 = 81$$ €
+                    <div>\\( \\displaystyle W = 450 \\cdot 0{,}18 = 81 \\) €</div>
                 </div>
             </details>
         `
@@ -81,12 +81,12 @@ window.REPETITIO_DECKS["klasse7"] = {
             <div class="formula-box">
                 $$G = \\frac{W \\cdot 100}{p}$$
             </div>
-            <p>Gesucht ist das Ganze. Typische Formulierung: „… sind 15 % — wie viel ist das Ganze?"</p>
+            <p>Gesucht ist das Ganze. Typische Formulierung: „… sind 15 % — wie viel ist das Ganze?“</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     60 € sind 15 % des Preises:
-                    $$G = \\frac{60 \\cdot 100}{15} = 400$$ €
+                    <div>\\( \\displaystyle G = \\frac{60 \\cdot 100}{15} = 400 \\) €</div>
                 </div>
             </details>
         `
@@ -115,17 +115,17 @@ window.REPETITIO_DECKS["klasse7"] = {
         category: "prozent",
         question: "Wie rechne ich mit vermindertem und vermehrtem Grundwert?",
         answer: `
-            <h4>„um" und „auf"</h4>
+            <h4>„um“ und „auf“</h4>
             <div class="formula-box">
                 $$\\text{Rabatt } p\\,\\%: \\quad \\text{neuer Wert} = G \\cdot \\left(1 - \\tfrac{p}{100}\\right)$$
                 $$\\text{Aufschlag } p\\,\\%: \\quad \\text{neuer Wert} = G \\cdot \\left(1 + \\tfrac{p}{100}\\right)$$
             </div>
-            <p>Achtung auf die Sprache: „um 20 % reduziert" heißt mal 0,8; „auf 20 % reduziert" heißt mal 0,2.</p>
+            <p>Achtung auf die Sprache: „um 20 % reduziert“ heißt mal 0,8; „auf 20 % reduziert“ heißt mal 0,2.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     80 € um 20 % reduziert:
-                    $$80 \\cdot 0{,}8 = 64$$ €
+                    <div>\\( \\displaystyle 80 \\cdot 0{,}8 = 64 \\) €</div>
                     64 € um 25 % erhöht ergibt wieder 80 €.
                 </div>
             </details>
@@ -145,7 +145,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     Nach 15 % Rabatt kostet die Jacke 68 €:
-                    $$G = \\frac{68 \\cdot 100}{85} = 80$$ €
+                    <div>\\( \\displaystyle G = \\frac{68 \\cdot 100}{85} = 80 \\) €</div>
                 </div>
             </details>
         `
@@ -166,7 +166,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     Netto 200 €:
-                    $$\\text{Brutto} = 200 \\cdot 1{,}19 = 238$$ €
+                    <div>\\( \\displaystyle \\text{Brutto} = 200 \\cdot 1{,}19 = 238 \\) €</div>
                     Brutto 238 € zurück: \\( 238 : 1{,}19 = 200 \\) €.
                 </div>
             </details>
@@ -186,7 +186,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     25 % → \\( 90^\\circ \\); 40 % → \\( 144^\\circ \\); 35 % → \\( 126^\\circ \\)
-                    $$90 + 144 + 126 = 360 \\; ✓$$
+                    $$90^\\circ + 144^\\circ + 126^\\circ = 360^\\circ \\; ✓$$
                 </div>
             </details>
         `
@@ -205,7 +205,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     2500 € zu 3,2 % für ein Jahr:
-                    $$Z = 2500 \\cdot 0{,}032 = 80$$ €
+                    <div>\\( \\displaystyle Z = 2500 \\cdot 0{,}032 = 80 \\) €</div>
                 </div>
             </details>
         `
@@ -224,7 +224,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     4000 € zu 3 % für 5 Monate:
-                    $$Z = 4000 \\cdot 0{,}03 \\cdot \\frac{5}{12} = 50$$ €
+                    <div>\\( \\displaystyle Z = 4000 \\cdot 0{,}03 \\cdot \\frac{5}{12} = 50 \\) €</div>
                 </div>
             </details>
         `
@@ -243,8 +243,8 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     1000 € zu 4 % für 3 Jahre:
-                    $$K_3 = 1000 \\cdot 1{,}04^3 \\approx 1124{,}86$$ €
-                    ohne Zinseszins wären es nur 1120 €.
+                    <div>\\( \\displaystyle K_3 = 1000 \\cdot 1{,}04^3 \\approx 1124{,}86 \\) €</div>
+                    Ohne Zinseszins wären es nur 1120 €.
                 </div>
             </details>
         `
@@ -282,7 +282,7 @@ window.REPETITIO_DECKS["klasse7"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$3x + 7 = 22 \\quad | -7$$
+                    $$3x + 7 = 22 \\quad | {-}7$$
                     $$3x = 15 \\quad | : 3$$
                     $$x = 5$$
                 </div>
@@ -306,7 +306,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$4(x-2) = 2(x+3)$$
-                    $$4x - 8 = 2x + 6 \\quad | -2x +8$$
+                    $$4x - 8 = 2x + 6 \\quad | {-}2x +8$$
                     $$2x = 14 \\;\\Rightarrow\\; x = 7$$
                     Probe: \\( 4 \\cdot 5 = 20 = 2 \\cdot 10 \\) ✓
                 </div>
@@ -387,7 +387,7 @@ window.REPETITIO_DECKS["klasse7"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$-3x + 5 < 14 \\quad | -5$$
+                    $$-3x + 5 < 14 \\quad | {-}5$$
                     $$-3x < 9 \\quad | : (-3)$$
                     $$x > -3$$
                 </div>
@@ -467,15 +467,15 @@ window.REPETITIO_DECKS["klasse7"] = {
             <ul>
                 <li><strong>Radius \\( r \\)</strong>: Mittelpunkt bis Kreislinie</li>
                 <li><strong>Durchmesser \\( d = 2r \\)</strong></li>
-                <li><strong>Kreisausschnitt</strong> (Sektor): von zwei Radien begrenzt — ein „Tortenstück"</li>
-                <li><strong>Kreissegment</strong> (Abschnitt): von einer Sehne begrenzt</li>
+                <li><strong>Kreisausschnitt</strong> (Sektor): von zwei Radien und dem Kreisbogen begrenzt — ein „Tortenstück“</li>
+                <li><strong>Kreissegment</strong> (Abschnitt): von einer Sehne und dem Kreisbogen begrenzt</li>
                 <li><strong>Kreisring</strong>: Fläche zwischen zwei Kreisen mit gleichem Mittelpunkt</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     \\( r = 4 \\) cm → \\( d = 8 \\) cm.<br>
-                    Kreisring mit \\( r_a = 5 \\), \\( r_i = 3 \\):
+                    Kreisring mit \\( r_a = 5 \\) cm, \\( r_i = 3 \\) cm:
                     $$A = \\pi (25 - 9) = 16\\pi \\approx 50{,}3 \\text{ cm}^2$$
                 </div>
             </details>
@@ -518,8 +518,13 @@ window.REPETITIO_DECKS["klasse7"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    \\( r = 3 \\) cm, \\( \\overline{MP} = 5 \\) cm. Die Tangentenlänge ist
-                    $$\\sqrt{25-9} = 4 \\text{ cm}$$
+                    \\( r = 3 \\) cm, \\( \\overline{MP} = 5 \\) cm:
+                    <ol>
+                        <li>Mitte \\( H \\) von \\( \\overline{MP} \\) bestimmen (2,5 cm von \\( M \\))</li>
+                        <li>Kreis um \\( H \\) mit Radius 2,5 cm zeichnen — er schneidet den Kreis in \\( B_1 \\) und \\( B_2 \\)</li>
+                        <li>\\( P \\) mit \\( B_1 \\) und mit \\( B_2 \\) verbinden: das sind die beiden Tangenten</li>
+                    </ol>
+                    Nach dem Satz des Thales ist der Winkel bei \\( B_1 \\) ein rechter — die Tangente steht senkrecht auf dem Radius.
                 </div>
             </details>
         `
@@ -588,20 +593,21 @@ window.REPETITIO_DECKS["klasse7"] = {
     {
         id: "k7-029", niveau: "ga",
         category: "kreis",
-        question: "Wie berechne ich Bogenlänge und Ausschnittsfläche?",
+        question: "Wie berechne ich Bogen und Fläche eines Kreisausschnitts?",
         answer: `
-            <h4>Kreisausschnitt</h4>
-            <div class="formula-box">
-                $$b = 2\\pi r \\cdot \\frac{\\alpha}{360^\\circ}$$
-                $$A = \\pi r^2 \\cdot \\frac{\\alpha}{360^\\circ}$$
-            </div>
-            <p>Der Ausschnitt ist derselbe Bruchteil des Kreises, den der Mittelpunktswinkel von \\( 360^\\circ \\) ausmacht.</p>
+            <h4>Kreisausschnitt als Bruchteil</h4>
+            <p>Keine neue Formel nötig: Der Ausschnitt ist derselbe Bruchteil des Kreises, den der Mittelpunktswinkel von \\( 360^\\circ \\) ausmacht.</p>
+            <ol>
+                <li>Anteil bestimmen: \\( \\frac{\\alpha}{360^\\circ} \\)</li>
+                <li>Bogen = Anteil vom Umfang \\( 2\\pi r \\)</li>
+                <li>Fläche = Anteil vom Flächeninhalt \\( \\pi r^2 \\)</li>
+            </ol>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     \\( r = 6 \\) cm, \\( \\alpha = 60^\\circ \\), also ein Sechstel:
-                    $$b = 2\\pi \\;\\approx 6{,}28 \\text{ cm}$$
-                    $$A = 6\\pi \\approx 18{,}85 \\text{ cm}^2$$
+                    $$b = \\tfrac{1}{6} \\cdot 12\\pi = 2\\pi \\approx 6{,}28 \\text{ cm}$$
+                    $$A = \\tfrac{1}{6} \\cdot 36\\pi = 6\\pi \\approx 18{,}85 \\text{ cm}^2$$
                 </div>
             </details>
         `
@@ -656,7 +662,7 @@ window.REPETITIO_DECKS["klasse7"] = {
             <ul>
                 <li><strong>Prisma</strong>: zwei gleiche, parallele Vielecke als Grund- und Deckfläche</li>
                 <li><strong>Pyramide</strong>: ein Vieleck als Grundfläche, alle Seitenkanten treffen sich in der Spitze</li>
-                <li><strong>Zylinder</strong>: zwei gleiche Kreise, gerade Mantelfläche</li>
+                <li><strong>Zylinder</strong>: zwei gleiche, parallele Kreise, gekrümmte Mantelfläche</li>
                 <li><strong>Kegel</strong>: ein Kreis und eine Spitze</li>
                 <li><strong>Kugel</strong>: alle Punkte haben denselben Abstand vom Mittelpunkt</li>
             </ul>
@@ -699,7 +705,7 @@ window.REPETITIO_DECKS["klasse7"] = {
             <h4>Netz</h4>
             <p>Das Netz ist der aufgeklappte Körper in der Ebene. Alle Flächen kommen in wahrer Größe vor und müssen an den richtigen Kanten zusammenhängen.</p>
             <ul>
-                <li>Prisma: zwei Grundflächen plus ein Rechteck der Länge \\( u \\)</li>
+                <li>Prisma: zwei Grundflächen plus ein Rechteck, dessen Länge der Umfang \\( u \\) der Grundfläche ist</li>
                 <li>Zylinder: zwei Kreise plus ein Rechteck mit der Breite \\( 2\\pi r \\)</li>
                 <li>Pyramide: Grundfläche plus Dreiecke mit der Seitenhöhe</li>
             </ul>
@@ -740,7 +746,7 @@ window.REPETITIO_DECKS["klasse7"] = {
         answer: `
             <h4>Zweitafelbild</h4>
             <p>Zwei Ansichten desselben Körpers: der <strong>Grundriss</strong> von oben und der <strong>Aufriss</strong> von vorn, genau übereinander gezeichnet.</p>
-            <p>Beide Bilder zeigen wahre Längen; zusammen legen sie den Körper eindeutig fest — anders als ein einzelnes Bild.</p>
+            <p>Strecken, die parallel zur jeweiligen Bildebene liegen, erscheinen in wahrer Länge (schräge Kanten wie die Seitenkanten einer Pyramide dagegen verkürzt). Zusammen legen beide Bilder den Körper fest — anders als ein einzelnes Bild.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -781,7 +787,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     Haus-Modell: Quader als Erdgeschoss, aufgesetztes dreiseitiges Prisma als Dach.
-                    Im Aufriss ein Rechteck mit Dreieck darüber.
+                    Steht der Giebel vorn, zeigt der Aufriss ein Rechteck mit Dreieck darüber.
                 </div>
             </details>
         `
@@ -802,7 +808,7 @@ window.REPETITIO_DECKS["klasse7"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     Würfelwurf: \\( S = \\{1;2;3;4;5;6\\} \\)<br>
-                    Ereignis „ungerade Zahl": \\( E = \\{1;3;5\\} \\)
+                    Ereignis „ungerade Zahl“: \\( E = \\{1;3;5\\} \\)
                 </div>
             </details>
         `
@@ -893,7 +899,7 @@ window.REPETITIO_DECKS["klasse7"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Würfel, „Augenzahl größer als 4": \\( E = \\{5;6\\} \\)
+                    Würfel, „Augenzahl größer als 4“: \\( E = \\{5;6\\} \\)
                     $$P(E) = \\frac{2}{6} = \\frac{1}{3} \\approx 33{,}3\\,\\%$$
                 </div>
             </details>
@@ -913,8 +919,8 @@ window.REPETITIO_DECKS["klasse7"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Würfel: „Augenzahl kleiner als 7" ist sicher, \\( P = 1 \\).<br>
-                    „Augenzahl 7" ist unmöglich, \\( P = 0 \\).
+                    Würfel: „Augenzahl kleiner als 7“ ist sicher, \\( P = 1 \\).<br>
+                    „Augenzahl 7“ ist unmöglich, \\( P = 0 \\).
                 </div>
             </details>
         `
@@ -928,11 +934,11 @@ window.REPETITIO_DECKS["klasse7"] = {
             <div class="formula-box">
                 $$P(E) + P(\\overline{E}) = 1 \\;\\Rightarrow\\; P(\\overline{E}) = 1 - P(E)$$
             </div>
-            <p>Das Gegenereignis \\( \\overline{E} \\) enthält alle Ergebnisse, die nicht zu \\( E \\) gehören. Bei „mindestens"-Aufgaben ist der Umweg über das Gegenereignis oft der kürzere Weg.</p>
+            <p>Das Gegenereignis \\( \\overline{E} \\) enthält alle Ergebnisse, die nicht zu \\( E \\) gehören. Ist das Gegenereignis leichter zu zählen, rechnet man es aus und zieht seine Wahrscheinlichkeit von 1 ab.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Würfel, \\( E = \\) „eine Sechs": \\( P(E) = \\frac{1}{6} \\)
+                    Würfel, \\( E = \\) „eine Sechs“: \\( P(E) = \\frac{1}{6} \\)
                     $$P(\\overline{E}) = 1 - \\frac{1}{6} = \\frac{5}{6}$$
                 </div>
             </details>
@@ -953,7 +959,7 @@ window.REPETITIO_DECKS["klasse7"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    „Jede dritte Packung enthält eine Figur" wird zum Würfeln:
+                    „Jede dritte Packung enthält eine Figur“ wird zum Würfeln:
                     1 und 2 bedeuten Figur, 3 bis 6 keine.
                 </div>
             </details>

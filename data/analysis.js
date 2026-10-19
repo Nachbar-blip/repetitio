@@ -1,4 +1,4 @@
-// Repetitio-Deck: Analysis — gA-Karten aus dem GK-Trainer, eA-Karten ana-101 bis ana-116
+// Repetitio-Deck: Analysis — Karten ana-001 bis ana-032 und ana-101 bis ana-116; Niveau (gA/eA) nach FLP Sachsen-Anhalt steht je Karte
 window.REPETITIO_DECKS = window.REPETITIO_DECKS || {};
 window.REPETITIO_DECKS["analysis"] = {
     title: "Analysis",
@@ -77,18 +77,18 @@ window.REPETITIO_DECKS["analysis"] = {
         `
     },
     {
-        id: "ana-004", niveau: "ga",
+        id: "ana-004", niveau: "ea",
         category: "ableitung",
         question: "Wie wende ich die Kettenregel an?",
         answer: `
             <h4>Kettenregel</h4>
-            <div class="formula-box">$$f(g(x))' = f'(g(x)) \\cdot g'(x)$$</div>
+            <div class="formula-box">$$\\big(f(g(x))\\big)' = f'(g(x)) \\cdot g'(x)$$</div>
             <p>Äußere Ableitung (innere Funktion bleibt) mal innere Ableitung.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$f(x) = (3x + 1)^4$$<br>
-                    Äußere: $$()^4$$, Innere: $$3x + 1$$<br><br>
+                    Äußere: \\( ()^4 \\), Innere: \\( 3x + 1 \\)<br><br>
                     $$f'(x) = 4(3x + 1)^3 \\cdot 3$$<br>
                     $$f'(x) = 12(3x + 1)^3$$
                 </div>
@@ -103,8 +103,8 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Nullstellen berechnen</h4>
             <ol>
-                <li>Setze $$f(x) = 0$$</li>
-                <li>Löse nach $$x$$ auf</li>
+                <li>Setze \\( f(x) = 0 \\)</li>
+                <li>Löse nach \\( x \\) auf</li>
             </ol>
             <p><strong>Methoden:</strong> Ausklammern, pq-Formel, Substitution</p>
             <details class="example">
@@ -126,12 +126,13 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Extremstellen berechnen</h4>
             <ol>
-                <li>Setze $$f'(x) = 0$$</li>
-                <li>Löse nach $$x$$ (Kandidaten)</li>
-                <li>Prüfe mit $$f''(x)$$:<br>
-                    $$f''(x) < 0$$ → Hochpunkt<br>
-                    $$f''(x) > 0$$ → Tiefpunkt</li>
-                <li>Berechne $$y$$-Werte mit $$f(x)$$</li>
+                <li>Setze \\( f'(x) = 0 \\)</li>
+                <li>Löse nach \\( x \\) (Kandidaten)</li>
+                <li>Prüfe mit \\( f''(x) \\):<br>
+                    \\( f''(x) < 0 \\) → Hochpunkt<br>
+                    \\( f''(x) > 0 \\) → Tiefpunkt<br>
+                    \\( f''(x) = 0 \\) → keine Aussage, Vorzeichenwechsel von \\( f' \\) prüfen</li>
+                <li>Berechne \\( y \\)-Werte mit \\( f(x) \\)</li>
             </ol>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -140,8 +141,8 @@ window.REPETITIO_DECKS["analysis"] = {
                     $$f'(x) = 3x^2 - 3 = 0$$<br>
                     $$x^2 = 1 \\Rightarrow x = \\pm 1$$<br><br>
                     $$f''(x) = 6x$$<br>
-                    $$f''(1) = 6 > 0$$ → TP<br>
-                    $$f''(-1) = -6 < 0$$ → HP<br><br>
+                    \\( f''(1) = 6 > 0 \\) → TP<br>
+                    \\( f''(-1) = -6 < 0 \\) → HP<br><br>
                     $$f(1) = -2, \\quad f(-1) = 2$$<br>
                     <strong>HP(-1|2), TP(1|-2)</strong>
                 </div>
@@ -155,10 +156,10 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Wendepunkte berechnen</h4>
             <ol>
-                <li>Setze $$f''(x) = 0$$</li>
-                <li>Löse nach $$x$$</li>
-                <li>Prüfe VZW von $$f''(x)$$ (oder $$f'''(x) \\neq 0$$)</li>
-                <li>Berechne $$y$$-Werte mit $$f(x)$$</li>
+                <li>Setze \\( f''(x) = 0 \\)</li>
+                <li>Löse nach \\( x \\)</li>
+                <li>Prüfe VZW von \\( f''(x) \\) (oder \\( f'''(x) \\neq 0 \\))</li>
+                <li>Berechne \\( y \\)-Werte mit \\( f(x) \\)</li>
             </ol>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -167,8 +168,8 @@ window.REPETITIO_DECKS["analysis"] = {
                     $$f''(x) = 6x = 0$$<br>
                     $$x = 0$$<br><br>
                     VZW prüfen:<br>
-                    $$f''(-1) = -6 < 0$$ (rechtsgekrümmt)<br>
-                    $$f''(1) = 6 > 0$$ (linksgekrümmt)<br>
+                    \\( f''(-1) = -6 < 0 \\) (rechtsgekrümmt)<br>
+                    \\( f''(1) = 6 > 0 \\) (linksgekrümmt)<br>
                     → VZW vorhanden ✓<br><br>
                     $$f(0) = 0$$<br>
                     <strong>WP(0|0)</strong>
@@ -183,10 +184,10 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Tangentengleichung aufstellen</h4>
             <ol>
-                <li>Steigung berechnen: $$m = f'(x_0)$$</li>
-                <li>y-Wert berechnen: $$y_0 = f(x_0)$$</li>
-                <li>In lineare Funktion einsetzen: $$y = mx + n$$</li>
-                <li>Mit Punkt $$(x_0|y_0)$$ den y-Achsenabschnitt n berechnen</li>
+                <li>Steigung berechnen: \\( m = f'(x_0) \\)</li>
+                <li>y-Wert berechnen: \\( y_0 = f(x_0) \\)</li>
+                <li>In lineare Funktion einsetzen: \\( y = mx + n \\)</li>
+                <li>Mit Punkt \\( (x_0|y_0) \\) den y-Achsenabschnitt n berechnen</li>
             </ol>
             <div class="formula-box">
                 $$y_0 = m \\cdot x_0 + n \\Rightarrow n = y_0 - m \\cdot x_0$$
@@ -194,17 +195,17 @@ window.REPETITIO_DECKS["analysis"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$f(x) = x^2$$ an der Stelle $$x_0 = 2$$<br><br>
+                    \\( f(x) = x^2 \\) an der Stelle \\( x_0 = 2 \\)<br><br>
                     <strong>1. Steigung:</strong><br>
                     $$f'(x) = 2x$$<br>
                     $$m = f'(2) = 4$$<br><br>
                     <strong>2. Berührpunkt:</strong><br>
-                    $$f(2) = 4$$ → Punkt $$(2|4)$$<br><br>
+                    \\( f(2) = 4 \\) → Punkt \\( (2|4) \\)<br><br>
                     <strong>3. n berechnen:</strong><br>
                     $$4 = 4 \\cdot 2 + n$$<br>
                     $$4 = 8 + n$$<br>
                     $$n = -4$$<br><br>
-                    <strong>Tangentengleichung:</strong> $$t(x) = 4x - 4$$
+                    <strong>Tangentengleichung:</strong> \\( t(x) = 4x - 4 \\)
                 </div>
             </details>
         `
@@ -216,20 +217,20 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Monotonieverhalten</h4>
             <ul>
-                <li>$$f'(x) > 0$$ → streng monoton steigend</li>
-                <li>$$f'(x) < 0$$ → streng monoton fallend</li>
+                <li>\\( f'(x) > 0 \\) → streng monoton steigend</li>
+                <li>\\( f'(x) < 0 \\) → streng monoton fallend</li>
             </ul>
-            <p>Untersuche das Vorzeichen von $$f'(x)$$ in den Intervallen zwischen den Nullstellen von $$f'(x)$$.</p>
+            <p>Untersuche das Vorzeichen von \\( f'(x) \\) in den Intervallen zwischen den Nullstellen von \\( f'(x) \\).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$f(x) = x^3 - 3x$$<br>
                     $$f'(x) = 3x^2 - 3 = 3(x^2 - 1)$$<br>
-                    $$f'(x) = 0$$ bei $$x = \\pm 1$$<br><br>
+                    \\( f'(x) = 0 \\) bei \\( x = \\pm 1 \\)<br><br>
                     Intervalle prüfen:<br>
-                    $$x < -1$$: $$f'(-2) = 9 > 0$$ ↗<br>
-                    $$-1 < x < 1$$: $$f'(0) = -3 < 0$$ ↘<br>
-                    $$x > 1$$: $$f'(2) = 9 > 0$$ ↗
+                    \\( x < -1 \\): \\( f'(-2) = 9 > 0 \\) ↗<br>
+                    \\( -1 < x < 1 \\): \\( f'(0) = -3 < 0 \\) ↘<br>
+                    \\( x > 1 \\): \\( f'(2) = 9 > 0 \\) ↗
                 </div>
             </details>
         `
@@ -241,8 +242,8 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Krümmungsverhalten</h4>
             <ul>
-                <li>$$f''(x) > 0$$ → linksgekrümmt (konvex, "Tal")</li>
-                <li>$$f''(x) < 0$$ → rechtsgekrümmt (konkav, "Berg")</li>
+                <li>\\( f''(x) > 0 \\) → linksgekrümmt (konvex, "Tal")</li>
+                <li>\\( f''(x) < 0 \\) → rechtsgekrümmt (konkav, "Berg")</li>
             </ul>
             <p>Wendepunkte liegen dort, wo sich die Krümmung ändert.</p>
             <details class="example">
@@ -250,9 +251,9 @@ window.REPETITIO_DECKS["analysis"] = {
                 <div class="example-content">
                     $$f(x) = x^3$$<br>
                     $$f''(x) = 6x$$<br><br>
-                    $$x < 0$$: $$f''(x) < 0$$ → rechtsgekrümmt<br>
-                    $$x > 0$$: $$f''(x) > 0$$ → linksgekrümmt<br><br>
-                    Wendepunkt bei $$x = 0$$
+                    \\( x < 0 \\): \\( f''(x) < 0 \\) → rechtsgekrümmt<br>
+                    \\( x > 0 \\): \\( f''(x) > 0 \\) → linksgekrümmt<br><br>
+                    Wendepunkt bei \\( x = 0 \\)
                 </div>
             </details>
         `
@@ -267,16 +268,16 @@ window.REPETITIO_DECKS["analysis"] = {
             <ul>
                 <li>Gerade Potenz: beide Grenzwerte gleich</li>
                 <li>Ungerade Potenz: Grenzwerte unterschiedlich</li>
-                <li>Positiver Koeffizient: $$\\to +\\infty$$</li>
-                <li>Negativer Koeffizient: $$\\to -\\infty$$</li>
+                <li>Positiver Koeffizient: für \\( x \\to +\\infty \\) gilt \\( f(x) \\to +\\infty \\)</li>
+                <li>Negativer Koeffizient: für \\( x \\to +\\infty \\) gilt \\( f(x) \\to -\\infty \\)</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$f(x) = -2x^3 + 5x$$<br><br>
-                    Führender Term: $$-2x^3$$<br><br>
-                    $$x \\to +\\infty$$: $$f(x) \\to -\\infty$$<br>
-                    $$x \\to -\\infty$$: $$f(x) \\to +\\infty$$
+                    Führender Term: \\( -2x^3 \\)<br><br>
+                    \\( x \\to +\\infty \\): \\( f(x) \\to -\\infty \\)<br>
+                    \\( x \\to -\\infty \\): \\( f(x) \\to +\\infty \\)
                 </div>
             </details>
         `
@@ -290,15 +291,16 @@ window.REPETITIO_DECKS["analysis"] = {
             <div class="formula-box">$$\\tan(\\alpha) = \\left|\\frac{m_1 - m_2}{1 + m_1 \\cdot m_2}\\right|$$</div>
             <ol>
                 <li>Schnittpunkt berechnen</li>
-                <li>Steigungen $$m_1, m_2$$ an diesem Punkt berechnen</li>
+                <li>Steigungen \\( m_1, m_2 \\) an diesem Punkt berechnen</li>
                 <li>In Formel einsetzen</li>
             </ol>
+            <p>Ist \\( m_1 \\cdot m_2 = -1 \\), schneiden sich die Graphen senkrecht: \\( \\alpha = 90° \\).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$f(x) = x^2$$, $$g(x) = x$$<br>
-                    Schnitt bei $$x = 1$$<br><br>
-                    $$f'(1) = 2$$, $$g'(1) = 1$$<br><br>
+                    \\( f(x) = x^2 \\), \\( g(x) = x \\)<br>
+                    Schnittstellen: \\( x^2 = x \\Rightarrow x = 0 \\) oder \\( x = 1 \\); hier für \\( x = 1 \\):<br><br>
+                    \\( f'(1) = 2 \\), \\( g'(1) = 1 \\)<br><br>
                     $$\\tan(\\alpha) = \\left|\\frac{2 - 1}{1 + 2 \\cdot 1}\\right| = \\frac{1}{3}$$<br><br>
                     $$\\alpha = \\arctan\\left(\\frac{1}{3}\\right) \\approx 18{,}4°$$
                 </div>
@@ -352,14 +354,15 @@ window.REPETITIO_DECKS["analysis"] = {
             <h4>Flächenberechnung</h4>
             <div class="formula-box">$$A = \\left|\\int_a^b f(x) \\, dx\\right|$$</div>
             <ol>
-                <li>Stammfunktion $$F(x)$$ bilden</li>
-                <li>$$F(b) - F(a)$$ berechnen</li>
+                <li>Stammfunktion \\( F(x) \\) bilden</li>
+                <li>\\( F(b) - F(a) \\) berechnen</li>
                 <li>Bei negativen Werten: Betrag nehmen!</li>
+                <li>Wechselt \\( f \\) zwischen \\( a \\) und \\( b \\) das Vorzeichen: an den Nullstellen aufteilen, Beträge addieren</li>
             </ol>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$f(x) = x^2$$ von $$x = 0$$ bis $$x = 3$$<br><br>
+                    \\( f(x) = x^2 \\) von \\( x = 0 \\) bis \\( x = 3 \\)<br><br>
                     $$F(x) = \\frac{x^3}{3}$$<br><br>
                     $$A = F(3) - F(0) = \\frac{27}{3} - 0 = 9$$
                 </div>
@@ -375,14 +378,15 @@ window.REPETITIO_DECKS["analysis"] = {
             <div class="formula-box">$$A = \\left|\\int_a^b (f(x) - g(x)) \\, dx\\right|$$</div>
             <ol>
                 <li>Schnittpunkte bestimmen (= Grenzen)</li>
-                <li>Differenz $$f(x) - g(x)$$ bilden</li>
+                <li>Differenz \\( f(x) - g(x) \\) bilden</li>
                 <li>Integrieren und Betrag nehmen</li>
+                <li>Mehr als zwei Schnittstellen: zwischen je zwei benachbarten einzeln integrieren, Beträge addieren</li>
             </ol>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$f(x) = 4 - x^2$$, $$g(x) = x^2$$<br>
-                    Schnitt: $$4 - x^2 = x^2 \\Rightarrow x = \\pm\\sqrt{2}$$<br><br>
+                    \\( f(x) = 4 - x^2 \\), \\( g(x) = x^2 \\)<br>
+                    Schnitt: \\( 4 - x^2 = x^2 \\Rightarrow x = \\pm\\sqrt{2} \\)<br><br>
                     $$A = \\int_{-\\sqrt{2}}^{\\sqrt{2}} (4 - 2x^2) \\, dx$$<br>
                     $$= \\left[4x - \\frac{2x^3}{3}\\right]_{-\\sqrt{2}}^{\\sqrt{2}}$$<br>
                     $$= \\frac{16\\sqrt{2}}{3} \\approx 7{,}54$$
@@ -402,7 +406,7 @@ window.REPETITIO_DECKS["analysis"] = {
                 <li>Fläche über x-Achse: positiv</li>
                 <li>Fläche unter x-Achse: negativ</li>
             </ol>
-            <p><strong>Tipp:</strong> Bei Stammfunktion F: $$\\int_a^b f(x)\\,dx = F(b) - F(a)$$</p>
+            <p><strong>Tipp:</strong> Bei Stammfunktion F: \\( \\int_a^b f(x)\\,dx = F(b) - F(a) \\)</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -421,7 +425,7 @@ window.REPETITIO_DECKS["analysis"] = {
         question: "Wann muss ich beim Integrieren aufteilen?",
         answer: `
             <h4>Nullstellen beachten!</h4>
-            <p>Wenn $$f(x)$$ im Intervall $$[a,b]$$ das Vorzeichen wechselt:</p>
+            <p>Wenn \\( f(x) \\) im Intervall \\( [a,b] \\) das Vorzeichen wechselt:</p>
             <ol>
                 <li>Nullstellen im Intervall finden</li>
                 <li>Integral an Nullstellen aufteilen</li>
@@ -431,11 +435,11 @@ window.REPETITIO_DECKS["analysis"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$f(x) = x$$ von $$-2$$ bis $$3$$<br>
-                    Nullstelle bei $$x = 0$$<br><br>
+                    \\( f(x) = x \\) von \\( -2 \\) bis \\( 3 \\)<br>
+                    Nullstelle bei \\( x = 0 \\)<br><br>
                     $$A_1 = \\left|\\int_{-2}^{0} x \\, dx\\right| = |-2| = 2$$<br>
                     $$A_2 = \\left|\\int_{0}^{3} x \\, dx\\right| = |4{,}5| = 4{,}5$$<br><br>
-                    Gesamtfläche: $$A = 2 + 4{,}5 = 6{,}5$$
+                    Gesamtfläche: \\( A = 2 + 4{,}5 = 6{,}5 \\)
                 </div>
             </details>
         `
@@ -448,10 +452,10 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Gleichungen mit e-Funktion</h4>
             <ol>
-                <li>$$e^{...}$$ isolieren</li>
-                <li>Logarithmieren: $$\\ln(e^x) = x$$</li>
+                <li>\\( e^{...} \\) isolieren</li>
+                <li>Logarithmieren: \\( \\ln(e^x) = x \\)</li>
             </ol>
-            <p><strong>Wichtig:</strong> $$e^x > 0$$ für alle x!</p>
+            <p><strong>Wichtig:</strong> \\( e^x > 0 \\) für alle x!</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -468,22 +472,22 @@ window.REPETITIO_DECKS["analysis"] = {
         category: "sonstiges",
         question: "Wie beeinflusst ein Parameter den Graphen?",
         answer: `
-            <h4>Parameterfunktionen $$f_a(x)$$</h4>
+            <h4>Parameterfunktionen \\( f_a(x) \\)</h4>
             <ul>
-                <li>$$f(x) + a$$: Verschiebung in y-Richtung</li>
-                <li>$$f(x - a)$$: Verschiebung in x-Richtung (entgegen!)</li>
-                <li>$$a \\cdot f(x)$$: Streckung/Stauchung in y-Richtung</li>
-                <li>$$f(a \\cdot x)$$: Stauchung/Streckung in x-Richtung</li>
-                <li>$$-f(x)$$: Spiegelung an x-Achse</li>
+                <li>\\( f(x) + a \\): Verschiebung in y-Richtung</li>
+                <li>\\( f(x - a) \\): Verschiebung in x-Richtung (entgegen!)</li>
+                <li>\\( a \\cdot f(x) \\): Streckung/Stauchung in y-Richtung</li>
+                <li>\\( f(a \\cdot x) \\): Stauchung/Streckung in x-Richtung</li>
+                <li>\\( -f(x) \\): Spiegelung an x-Achse</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$f_a(x) = (x - a)^2$$<br><br>
-                    Scheitelpunkt bei $$(a|0)$$<br>
-                    → Verschiebung nach rechts um $$a$$<br><br>
-                    $$a = 2$$: Scheitelpunkt bei $$(2|0)$$<br>
-                    $$a = -1$$: Scheitelpunkt bei $$(-1|0)$$
+                    Scheitelpunkt bei \\( (a|0) \\)<br>
+                    → Verschiebung nach rechts um \\( a \\)<br><br>
+                    \\( a = 2 \\): Scheitelpunkt bei \\( (2|0) \\)<br>
+                    \\( a = -1 \\): Scheitelpunkt bei \\( (-1|0) \\)
                 </div>
             </details>
         `
@@ -495,25 +499,25 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Steckbriefaufgaben</h4>
             <ol>
-                <li>Allgemeinen Ansatz wählen (z.B. $$ax^3 + bx^2 + cx + d$$)</li>
+                <li>Allgemeinen Ansatz wählen (z. B. \\( ax^3 + bx^2 + cx + d \\))</li>
                 <li>Bedingungen in Gleichungen übersetzen</li>
                 <li>Gleichungssystem aufstellen und lösen</li>
             </ol>
             <p><strong>Typische Bedingungen:</strong></p>
             <ul>
-                <li>"geht durch P(x|y)" → $$f(x) = y$$</li>
-                <li>"Extremum bei x" → $$f'(x) = 0$$</li>
-                <li>"Wendepunkt bei x" → $$f''(x) = 0$$</li>
+                <li>"geht durch P(x|y)" → \\( f(x) = y \\)</li>
+                <li>"Extremum bei x" → \\( f'(x) = 0 \\)</li>
+                <li>"Wendepunkt bei x" → \\( f''(x) = 0 \\)</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     Gesucht: Parabel durch (0|1), (1|0), (2|1)<br>
-                    Ansatz: $$f(x) = ax^2 + bx + c$$<br><br>
-                    $$f(0) = 1$$: $$c = 1$$<br>
-                    $$f(1) = 0$$: $$a + b + 1 = 0$$<br>
-                    $$f(2) = 1$$: $$4a + 2b + 1 = 1$$<br><br>
-                    Lösung: $$a = 1, b = -2, c = 1$$<br>
+                    Ansatz: \\( f(x) = ax^2 + bx + c \\)<br><br>
+                    \\( f(0) = 1 \\): \\( c = 1 \\)<br>
+                    \\( f(1) = 0 \\): \\( a + b + 1 = 0 \\)<br>
+                    \\( f(2) = 1 \\): \\( 4a + 2b + 1 = 1 \\)<br><br>
+                    Lösung: \\( a = 1, b = -2, c = 1 \\)<br>
                     $$f(x) = x^2 - 2x + 1$$
                 </div>
             </details>
@@ -526,7 +530,7 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Punktprobe</h4>
             <ol>
-                <li>x-Koordinate in $$f(x)$$ einsetzen</li>
+                <li>x-Koordinate in \\( f(x) \\) einsetzen</li>
                 <li>Ergebnis mit y-Koordinate vergleichen</li>
                 <li>Gleich? → Punkt liegt auf Graph</li>
             </ol>
@@ -535,10 +539,10 @@ window.REPETITIO_DECKS["analysis"] = {
                 <div class="example-content">
                     $$f(x) = x^2 - 4$$<br>
                     Liegt P(3|5) auf dem Graphen?<br><br>
-                    $$f(3) = 9 - 4 = 5$$ ✓<br>
+                    \\( f(3) = 9 - 4 = 5 \\) ✓<br>
                     Ja, P liegt auf dem Graphen.<br><br>
                     Liegt Q(2|1) auf dem Graphen?<br>
-                    $$f(2) = 4 - 4 = 0 \\neq 1$$ ✗<br>
+                    \\( f(2) = 4 - 4 = 0 \\neq 1 \\) ✗<br>
                     Nein.
                 </div>
             </details>
@@ -551,12 +555,12 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Differenzenquotient (Mittlere Änderungsrate)</h4>
             <div class="formula-box">$$\\frac{f(b) - f(a)}{b - a} = \\frac{\\Delta y}{\\Delta x}$$</div>
-            <p>Durchschnittliche Steigung im Intervall $$[a,b]$$ = Sekantensteigung</p>
+            <p>Durchschnittliche Steigung im Intervall \\( [a,b] \\) = Sekantensteigung</p>
             <p><strong>Anwendung:</strong> "Wie stark ändert sich f im Durchschnitt?"</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Bevölkerung: $$f(0) = 1000$$, $$f(10) = 1500$$<br><br>
+                    Bevölkerung (x in Jahren): \\( f(0) = 1000 \\), \\( f(10) = 1500 \\)<br><br>
                     Mittlere Änderungsrate:<br>
                     $$\\frac{1500 - 1000}{10 - 0} = 50$$<br><br>
                     → Im Durchschnitt 50 Personen pro Jahr
@@ -570,18 +574,18 @@ window.REPETITIO_DECKS["analysis"] = {
         question: "Was bedeutet \\( f'(x_0) \\) im Sachzusammenhang?",
         answer: `
             <h4>Momentane Änderungsrate</h4>
-            <p>$$f'(x_0)$$ gibt an, wie schnell sich $$f$$ an der Stelle $$x_0$$ ändert.</p>
+            <p>\\( f'(x_0) \\) gibt an, wie schnell sich \\( f \\) an der Stelle \\( x_0 \\) ändert.</p>
             <ul>
                 <li>Einheit: [y-Einheit] pro [x-Einheit]</li>
-                <li>$$f'(x_0) > 0$$: f wächst</li>
-                <li>$$f'(x_0) < 0$$: f nimmt ab</li>
-                <li>$$f'(x_0) = 0$$: momentan keine Änderung</li>
+                <li>\\( f'(x_0) > 0 \\): f wächst</li>
+                <li>\\( f'(x_0) < 0 \\): f nimmt ab</li>
+                <li>\\( f'(x_0) = 0 \\): momentan keine Änderung</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     h(t) = Höhe in Metern nach t Sekunden<br>
-                    $$h'(3) = 5$$ m/s<br><br>
+                    \\( h'(3) = 5 \\) m/s<br><br>
                     → Nach 3 Sekunden steigt die Höhe<br>
                     mit 5 Metern pro Sekunde.
                 </div>
@@ -624,8 +628,8 @@ window.REPETITIO_DECKS["analysis"] = {
             </div>
             <p><strong>Mit Kettenregel:</strong></p>
             <ul>
-                <li>$$\\sin(kx) \\rightarrow k \\cdot \\cos(kx)$$</li>
-                <li>$$\\cos(kx) \\rightarrow -k \\cdot \\sin(kx)$$</li>
+                <li>\\( \\sin(kx) \\rightarrow k \\cdot \\cos(kx) \\)</li>
+                <li>\\( \\cos(kx) \\rightarrow -k \\cdot \\sin(kx) \\)</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -645,23 +649,21 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Umkehrfunktionen e und ln</h4>
             <div class="formula-box">
-                $$e^{\\ln(x)} = x \\quad \\text{und} \\quad \\ln(e^x) = x$$
+                $$e^{\\ln(x)} = x \\; (x > 0) \\quad \\text{und} \\quad \\ln(e^x) = x$$
             </div>
-            <p><strong>Wichtige Regeln:</strong></p>
+            <p><strong>Wichtige Regeln</strong> (für \\( a, b > 0 \\)):</p>
             <ul>
-                <li>$$\\ln(a \\cdot b) = \\ln(a) + \\ln(b)$$</li>
-                <li>$$\\ln\\left(\\frac{a}{b}\\right) = \\ln(a) - \\ln(b)$$</li>
-                <li>$$\\ln(a^n) = n \\cdot \\ln(a)$$</li>
+                <li>\\( \\ln(a \\cdot b) = \\ln(a) + \\ln(b) \\)</li>
+                <li>\\( \\ln\\left(\\frac{a}{b}\\right) = \\ln(a) - \\ln(b) \\)</li>
+                <li>\\( \\ln(a^n) = n \\cdot \\ln(a) \\)</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Löse: $$e^{2x} = 5$$<br><br>
+                    Löse: \\( e^{2x} = 5 \\)<br><br>
                     $$\\ln(e^{2x}) = \\ln(5)$$<br>
                     $$2x = \\ln(5)$$<br>
-                    $$x = \\frac{\\ln(5)}{2} \\approx 0{,}805$$<br><br>
-                    Ableitung von $$\\ln(x)$$:<br>
-                    $$(\\ln(x))' = \\frac{1}{x}$$
+                    $$x = \\frac{\\ln(5)}{2} \\approx 0{,}805$$
                 </div>
             </details>
         `
@@ -674,22 +676,22 @@ window.REPETITIO_DECKS["analysis"] = {
             <h4>Parallele Tangenten finden</h4>
             <p>Tangenten sind parallel, wenn sie die gleiche Steigung haben.</p>
             <ol>
-                <li>Setze $$f'(x) = m$$ (gegebene Steigung)</li>
-                <li>Löse die Gleichung nach $$x$$</li>
+                <li>Setze \\( f'(x) = m \\) (gegebene Steigung)</li>
+                <li>Löse die Gleichung nach \\( x \\)</li>
                 <li>Jede Lösung gibt einen Berührpunkt</li>
             </ol>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$f(x) = x^3 - 3x$$<br>
-                    Gesucht: Tangente parallel zur Geraden $$y = 9x$$<br><br>
+                    Gesucht: Tangente parallel zur Geraden \\( y = 9x \\)<br><br>
                     $$f'(x) = 3x^2 - 3 = 9$$<br>
                     $$3x^2 = 12$$<br>
                     $$x^2 = 4$$<br>
                     $$x = \\pm 2$$<br><br>
                     → Zwei Stellen mit Steigung 9:<br>
-                    Bei $$x = 2$$: Punkt $$(2|2)$$<br>
-                    Bei $$x = -2$$: Punkt $$(-2|-2)$$
+                    Bei \\( x = 2 \\): Punkt \\( (2|2) \\)<br>
+                    Bei \\( x = -2 \\): Punkt \\( (-2|{-}2) \\)
                 </div>
             </details>
         `
@@ -701,20 +703,20 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Fläche zwischen Funktion und Tangente</h4>
             <ol>
-                <li>Tangentengleichung $$t(x)$$ aufstellen</li>
-                <li>Schnittpunkte von $$f(x)$$ und $$t(x)$$ berechnen</li>
-                <li>Differenz integrieren: $$\\int_a^b |f(x) - t(x)|\\,dx$$</li>
+                <li>Tangentengleichung \\( t(x) \\) aufstellen</li>
+                <li>Schnittpunkte von \\( f(x) \\) und \\( t(x) \\) berechnen</li>
+                <li>Differenz integrieren: \\( \\int_a^b |f(x) - t(x)|\\,dx \\)</li>
             </ol>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$f(x) = x^2$$, Tangente an $$x_0 = 1$$<br><br>
-                    Tangente: $$t(x) = 2x - 1$$<br><br>
-                    Schnittpunkte: $$x^2 = 2x - 1$$<br>
+                    \\( f(x) = x^2 \\), Tangente an \\( x_0 = 1 \\)<br><br>
+                    Tangente: \\( t(x) = 2x - 1 \\)<br><br>
+                    Schnittpunkte: \\( x^2 = 2x - 1 \\)<br>
                     $$x^2 - 2x + 1 = 0$$<br>
-                    $$(x-1)^2 = 0 \\Rightarrow x = 1$$ (doppelt)<br><br>
+                    \\( (x-1)^2 = 0 \\Rightarrow x = 1 \\) (doppelt)<br><br>
                     → Nur Berührpunkt, keine eingeschlossene Fläche!<br><br>
-                    Bei echter Schnittfläche (z.B. mit einer anderen Tangente):<br>
+                    Bei echter Schnittfläche (z. B. mit einer anderen Tangente):<br>
                     $$A = \\int_a^b |f(x) - t(x)|\\,dx$$
                 </div>
             </details>
@@ -728,7 +730,7 @@ window.REPETITIO_DECKS["analysis"] = {
             <h4>Hochpunkt im Sachzusammenhang</h4>
             <p>Ein <strong>Hochpunkt</strong> bedeutet:</p>
             <ul>
-                <li>Die Funktion erreicht dort ein <strong>Maximum</strong></li>
+                <li>Die Funktion erreicht dort ein <strong>lokales Maximum</strong> (für das größte Maximum insgesamt auch die Randwerte prüfen)</li>
                 <li>Die Änderungsrate wechselt von positiv zu negativ</li>
                 <li>x-Koordinate: Zeitpunkt/Stelle des Maximums</li>
                 <li>y-Koordinate: Maximaler Wert</li>
@@ -747,7 +749,7 @@ window.REPETITIO_DECKS["analysis"] = {
         `
     },
     {
-        id: "ana-031", niveau: "ga",
+        id: "ana-031", niveau: "ea",
         category: "ableitung",
         question: "Wie leite ich \\( \\ln(x) \\) ab?",
         answer: `
@@ -769,14 +771,14 @@ window.REPETITIO_DECKS["analysis"] = {
         `
     },
     {
-        id: "ana-032", niveau: "ga",
+        id: "ana-032", niveau: "ea",
         category: "integral",
         question: "Wie bilde ich die Stammfunktion von \\( \\frac{1}{x} \\)?",
         answer: `
             <h4>Stammfunktion von 1/x</h4>
             <div class="formula-box">$$\\int \\frac{1}{x}\\,dx = \\ln|x| + C$$</div>
             <p><strong>Wichtig:</strong> Betrag beachten!</p>
-            <p>Allgemein für $$\\frac{g'(x)}{g(x)}$$:</p>
+            <p>Allgemein für \\( \\frac{g'(x)}{g(x)} \\):</p>
             <div class="formula-box">$$\\int \\frac{g'(x)}{g(x)}\\,dx = \\ln|g(x)| + C$$</div>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -784,7 +786,7 @@ window.REPETITIO_DECKS["analysis"] = {
                     $$\\int_1^e \\frac{1}{x}\\,dx = [\\ln(x)]_1^e$$<br>
                     $$= \\ln(e) - \\ln(1) = 1 - 0 = 1$$<br><br>
                     $$\\int \\frac{2x}{x^2+1}\\,dx = \\ln(x^2+1) + C$$<br>
-                    (weil $$\\frac{d}{dx}(x^2+1) = 2x$$)
+                    (weil \\( \\frac{d}{dx}(x^2+1) = 2x \\))
                 </div>
             </details>
         `
@@ -798,15 +800,15 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Grenzwertsätze</h4>
             <div class="formula-box">
-                $$\\lim (f \\pm g) = \\lim f \\pm \\lim g, \\quad \\lim (f \\cdot g) = \\lim f \\cdot \\lim g$$<br><br>
+                $$\\lim (f \\pm g) = \\lim f \\pm \\lim g$$ $$\\lim (f \\cdot g) = \\lim f \\cdot \\lim g$$<br><br>
                 $$\\lim \\frac{f}{g} = \\frac{\\lim f}{\\lim g} \\quad (\\lim g \\neq 0)$$
             </div>
-            <p><strong>Merksatz:</strong> Grenzwerte dürfen gliedweise gebildet werden, solange alle Einzelgrenzwerte existieren und kein Nenner gegen 0 geht. Beim Typ „0/0" zuerst kürzen, bei \\( x \\to \\pm\\infty \\) Zähler und Nenner durch die höchste Potenz teilen.</p>
+            <p><strong>Merksatz:</strong> Grenzwerte dürfen gliedweise gebildet werden, solange alle Einzelgrenzwerte existieren und kein Nenner gegen 0 geht. Beim Typ „0/0“ zuerst kürzen, bei \\( x \\to \\pm\\infty \\) Zähler und Nenner durch die höchste Potenz teilen.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    <strong>Beispiel 1 (Typ „0/0", kürzen):</strong><br>
-                    $$\\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1} = \\lim_{x \\to 1} \\frac{(x-1)(x+1)}{x-1} = \\lim_{x \\to 1} (x+1) = 2$$<br><br>
+                    <strong>Beispiel 1 (Typ „0/0“, kürzen):</strong><br>
+                    $$\\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1}$$ $$= \\lim_{x \\to 1} \\frac{(x-1)(x+1)}{x-1} = \\lim_{x \\to 1} (x+1) = 2$$<br><br>
                     <strong>Beispiel 2 (Verhalten im Unendlichen):</strong><br>
                     $$\\lim_{x \\to \\infty} \\frac{3x^2 + 1}{x^2 - 4} = \\lim_{x \\to \\infty} \\frac{3 + \\frac{1}{x^2}}{1 - \\frac{4}{x^2}} = \\frac{3 + 0}{1 - 0} = 3$$
                 </div>
@@ -821,13 +823,14 @@ window.REPETITIO_DECKS["analysis"] = {
             <h4>Definitionslücken gebrochenrationaler Funktionen</h4>
             <div class="formula-box">
                 $$f(x) = \\frac{z(x)}{n(x)}, \\quad n(x_0) = 0$$<br><br>
-                $$z(x_0) \\neq 0 \\Rightarrow \\text{Polstelle} \\qquad z(x_0) = 0 \\text{ und kürzbar} \\Rightarrow \\text{hebbare Lücke}$$
+                $$z(x_0) \\neq 0 \\Rightarrow \\text{Polstelle}$$<br>
+                $$z(x_0) = 0 \\text{ und vollständig kürzbar}$$ $$\\Rightarrow \\text{hebbare Lücke}$$
             </div>
             <p><strong>Vorgehen:</strong> Zähler und Nenner faktorisieren. Kürzt sich der Faktor \\( (x - x_0) \\) vollständig weg, ist \\( x_0 \\) eine hebbare Lücke (Grenzwert der gekürzten Funktion einsetzen). Bleibt er im Nenner, liegt eine Polstelle vor; das Vorzeichen links und rechts entscheidet über einen Vorzeichenwechsel.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$f(x) = \\frac{x^2 - 4}{x^2 - 2x} = \\frac{(x-2)(x+2)}{x(x-2)}, \\quad D = \\mathbb{R} \\setminus \\{0;\\, 2\\}$$<br><br>
+                    $$f(x) = \\frac{x^2 - 4}{x^2 - 2x} = \\frac{(x-2)(x+2)}{x(x-2)}$$ $$D = \\mathbb{R} \\setminus \\{0;\\, 2\\}$$<br><br>
                     <strong>Stelle \\( x = 2 \\):</strong> Faktor kürzt sich:
                     $$\\lim_{x \\to 2} \\frac{x+2}{x} = \\frac{4}{2} = 2$$
                     → hebbare Lücke bei \\( (2 \\,|\\, 2) \\).<br><br>
@@ -839,7 +842,7 @@ window.REPETITIO_DECKS["analysis"] = {
         `
     },
     {
-        id: "ana-103", niveau: "ea",
+        id: "ana-103", niveau: "ga",
         category: "grenzwerte",
         question: "Wie prüfe ich Stetigkeit an einer Stelle?",
         answer: `
@@ -870,37 +873,37 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Kettenregel</h4>
             <div class="formula-box">$$f(x) = u(v(x)) \\Rightarrow f'(x) = u'(v(x)) \\cdot v'(x)$$</div>
-            <p><strong>Merksatz:</strong> „Äußere Ableitung mal innere Ableitung." Zuerst die äußere Funktion ableiten und die innere unverändert einsetzen, dann mit der Ableitung der inneren Funktion multiplizieren.</p>
+            <p><strong>Merksatz:</strong> „Äußere Ableitung mal innere Ableitung.“ Zuerst die äußere Funktion ableiten und die innere unverändert einsetzen, dann mit der Ableitung der inneren Funktion multiplizieren.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$f(x) = \\sin(x^2): \\quad f'(x) = \\cos(x^2) \\cdot 2x = 2x \\cos(x^2)$$<br><br>
+                    $$f(x) = \\sin(x^2):$$ $$f'(x) = \\cos(x^2) \\cdot 2x = 2x \\cos(x^2)$$<br><br>
                     $$g(x) = e^{-x^2}: \\quad g'(x) = e^{-x^2} \\cdot (-2x) = -2x \\, e^{-x^2}$$<br><br>
-                    $$h(x) = (2x + 1)^5: \\quad h'(x) = 5(2x+1)^4 \\cdot 2 = 10(2x+1)^4$$
+                    $$h(x) = (2x + 1)^5:$$ $$h'(x) = 5(2x+1)^4 \\cdot 2 = 10(2x+1)^4$$
                 </div>
             </details>
         `
     },
     {
-        id: "ana-105", niveau: "ea",
+        id: "ana-105", niveau: "ea", zusatz: true,
         category: "ableitung",
         question: "Wie wende ich die Quotientenregel an?",
         answer: `
             <h4>Quotientenregel</h4>
-            <div class="formula-box">$$f(x) = \\frac{u(x)}{v(x)} \\Rightarrow f'(x) = \\frac{u'(x) \\cdot v(x) - u(x) \\cdot v'(x)}{[v(x)]^2}$$</div>
-            <p><strong>Merksatz:</strong> „NAZ minus ZAN durch Nenner-Quadrat" (Nenner · Ableitung Zähler − Zähler · Ableitung Nenner). Die Reihenfolge im Zähler ist wichtig, da subtrahiert wird. Nach dem Ableiten den Zähler vereinfachen, den Nenner meist faktorisiert lassen.</p>
+            <div class="formula-box">$$f(x) = \\frac{u(x)}{v(x)}$$ $$\\Rightarrow f'(x) = \\frac{u'(x) \\cdot v(x) - u(x) \\cdot v'(x)}{[v(x)]^2}$$</div>
+            <p><strong>Merksatz:</strong> „NAZ minus ZAN durch Nenner-Quadrat“ (Nenner · Ableitung Zähler − Zähler · Ableitung Nenner). Die Reihenfolge im Zähler ist wichtig, da subtrahiert wird. Nach dem Ableiten den Zähler vereinfachen, den Nenner meist faktorisiert lassen.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$f(x) = \\frac{x^2}{x + 1}, \\quad u = x^2,\\ u' = 2x,\\ v = x + 1,\\ v' = 1$$<br>
+                    $$f(x) = \\frac{x^2}{x + 1}$$ $$u = x^2,\\ u' = 2x,\\ v = x + 1,\\ v' = 1$$<br>
                     $$f'(x) = \\frac{2x(x+1) - x^2 \\cdot 1}{(x+1)^2} = \\frac{x^2 + 2x}{(x+1)^2}$$<br><br>
-                    $$g(x) = \\frac{e^x}{x}: \\quad g'(x) = \\frac{e^x \\cdot x - e^x \\cdot 1}{x^2} = \\frac{e^x (x - 1)}{x^2}$$
+                    $$g(x) = \\frac{e^x}{x}:$$ $$g'(x) = \\frac{e^x \\cdot x - e^x \\cdot 1}{x^2} = \\frac{e^x (x - 1)}{x^2}$$
                 </div>
             </details>
         `
     },
     {
-        id: "ana-106", niveau: "ea",
+        id: "ana-106", niveau: "ea", zusatz: true,
         category: "ableitung",
         question: "Wie leite ich die Umkehrfunktion ab (einfache Fälle)?",
         answer: `
@@ -940,12 +943,12 @@ window.REPETITIO_DECKS["analysis"] = {
         `
     },
     {
-        id: "ana-108", niveau: "ea",
+        id: "ana-108", niveau: "ga",
         category: "kurvendiskussion",
         question: "Wie stelle ich eine Normalengleichung auf?",
         answer: `
             <h4>Normale im Punkt \\( P(x_0 \\,|\\, f(x_0)) \\)</h4>
-            <div class="formula-box">$$n(x) = -\\frac{1}{f'(x_0)} \\cdot (x - x_0) + f(x_0) \\quad (f'(x_0) \\neq 0)$$</div>
+            <div class="formula-box">$$n(x) = -\\frac{1}{f'(x_0)} \\cdot (x - x_0) + f(x_0)$$ $$(f'(x_0) \\neq 0)$$</div>
             <p><strong>Merksatz:</strong> Die Normale steht senkrecht auf der Tangente. Für senkrechte Geraden gilt \\( m_t \\cdot m_n = -1 \\), also ist die Normalensteigung der negative Kehrwert der Tangentensteigung. Danach wie bei der Tangente den Punkt einsetzen (Punkt-Steigungs-Form).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -989,7 +992,7 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Ortskurve (Ortslinie) der Extrempunkte</h4>
             <div class="formula-box">
-                $$E_a\\big(x(a) \\,|\\, y(a)\\big): \\quad x = x(a) \\text{ nach } a \\text{ auflösen, in } y(a) \\text{ einsetzen}$$
+                $$E_a\\big(x(a) \\,|\\, y(a)\\big):$$ $$x = x(a) \\text{ nach } a \\text{ auflösen, in } y(a) \\text{ einsetzen}$$
             </div>
             <p><strong>Merksatz:</strong> Die Ortskurve ist die Kurve, auf der alle Extrempunkte der Schar liegen. Man eliminiert den Parameter: aus der x-Koordinate \\( a \\) ausdrücken und in die y-Koordinate einsetzen – so entsteht eine Gleichung \\( y = g(x) \\) ohne \\( a \\).</p>
             <details class="example">
@@ -998,9 +1001,9 @@ window.REPETITIO_DECKS["analysis"] = {
                     $$f_a(x) = x^2 - 2ax + a$$<br>
                     $$f_a'(x) = 2x - 2a = 0 \\Rightarrow x = a$$<br>
                     $$y = f_a(a) = a^2 - 2a^2 + a = -a^2 + a$$<br><br>
-                    Tiefpunkt \\( T_a(a \\,|\\, -a^2 + a) \\). Parameter eliminieren: \\( a = x \\) einsetzen:
+                    Wegen \\( f_a''(x) = 2 > 0 \\) Tiefpunkt \\( T_a(a \\,|\\, -a^2 + a) \\). Parameter eliminieren: \\( a = x \\) einsetzen:
                     $$y = -x^2 + x$$<br>
-                    Alle Tiefpunkte liegen auf der Parabel \\( g(x) = -x^2 + x \\). Probe für \\( a = 2 \\): \\( T_2(2 \\,|\\, -2) \\) und \\( g(2) = -4 + 2 = -2 \\) ✓
+                    Alle Tiefpunkte liegen auf der Parabel \\( g(x) = -x^2 + x \\). Probe für \\( a = 2 \\): \\( T_2(2 \\,|\\, {-}2) \\) und \\( g(2) = -4 + 2 = -2 \\) ✓
                 </div>
             </details>
         `
@@ -1013,7 +1016,7 @@ window.REPETITIO_DECKS["analysis"] = {
             <h4>Gemeinsame Punkte einer Schar</h4>
             <div class="formula-box">
                 $$f_a(x) = a \\cdot T(x) + R(x)$$<br>
-                $$T(x) = 0 \; \\text{ liefert die gemeinsamen Stellen}$$
+                $$T(x) = 0 \\; \\text{ liefert die gemeinsamen Stellen}$$
             </div>
             <p><strong>Merksatz:</strong> Ein Punkt gehört zu allen Kurven, wenn sein Funktionswert nicht von \\( a \\) abhängt. Dazu den Funktionsterm nach dem Parameter ordnen: Der Faktor vor \\( a \\) muss null werden. Alternativ zwei verschiedene Parameterwerte \\( a \\neq b \\) gleichsetzen (\\( f_a(x) = f_b(x) \\)) und die Lösung für beliebige \\( a, b \\) prüfen.</p>
             <details class="example">
@@ -1035,12 +1038,12 @@ window.REPETITIO_DECKS["analysis"] = {
         question: "Wie integriere ich mit linearer Substitution?",
         answer: `
             <h4>Lineare Substitution (innere Funktion \\( mx + n \\))</h4>
-            <div class="formula-box">$$\\int f(mx + n) \\, dx = \\frac{1}{m} \\cdot F(mx + n) + C \\quad (m \\neq 0)$$</div>
+            <div class="formula-box">$$\\int f(mx + n) \\, dx = \\frac{1}{m} \\cdot F(mx + n) + C$$ $$(m \\neq 0)$$</div>
             <p><strong>Merksatz:</strong> Ist die innere Funktion linear, entsteht beim Ableiten der Stammfunktion nach der Kettenregel der Faktor \\( m \\) – deshalb muss man durch \\( m \\) teilen, um ihn auszugleichen. Bei nichtlinearer innerer Funktion funktioniert das nicht!</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$\\int (2x + 3)^4 \\, dx = \\frac{1}{2} \\cdot \\frac{(2x+3)^5}{5} + C = \\frac{(2x+3)^5}{10} + C$$<br><br>
+                    $$\\int (2x + 3)^4 \\, dx = \\frac{1}{2} \\cdot \\frac{(2x+3)^5}{5} + C$$ $$= \\frac{(2x+3)^5}{10} + C$$<br><br>
                     $$\\int \\cos(2x - 1) \\, dx = \\frac{1}{2} \\sin(2x - 1) + C$$<br><br>
                     $$\\int_0^1 e^{3x} \\, dx = \\left[\\frac{1}{3} e^{3x}\\right]_0^1 = \\frac{e^3 - 1}{3} \\approx 6{,}362$$
                 </div>
@@ -1059,20 +1062,20 @@ window.REPETITIO_DECKS["analysis"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$\\int \\frac{1}{2x + 3} \\, dx = \\frac{1}{2} \\ln|2x + 3| + C$$<br><br>
-                    $$\\int_0^1 \\frac{1}{2x + 3} \\, dx = \\frac{1}{2}\\big[\\ln|2x+3|\\big]_0^1 = \\frac{1}{2}\\left(\\ln 5 - \\ln 3\\right) = \\frac{1}{2}\\ln\\frac{5}{3} \\approx 0{,}2554$$<br><br>
-                    $$\\int \\frac{4}{1 - 3x} \\, dx = 4 \\cdot \\frac{1}{-3} \\ln|1 - 3x| + C = -\\frac{4}{3}\\ln|1 - 3x| + C$$
+                    $$\\int_0^1 \\frac{1}{2x + 3} \\, dx = \\frac{1}{2}\\big[\\ln|2x+3|\\big]_0^1$$ $$= \\frac{1}{2}\\left(\\ln 5 - \\ln 3\\right) = \\frac{1}{2}\\ln\\frac{5}{3} \\approx 0{,}2554$$<br><br>
+                    $$\\int \\frac{4}{1 - 3x} \\, dx = 4 \\cdot \\frac{1}{-3} \\ln|1 - 3x| + C$$ $$= -\\frac{4}{3}\\ln|1 - 3x| + C$$
                 </div>
             </details>
         `
     },
     {
-        id: "ana-114", niveau: "ea",
+        id: "ana-114", niveau: "ga",
         category: "integral",
         question: "Was ist eine Integralfunktion \\( I_a(x) \\) und wie leite ich sie ab?",
         answer: `
             <h4>Integralfunktion</h4>
             <div class="formula-box">
-                $$I_a(x) = \\int_a^x f(t) \\, dt \\qquad I_a'(x) = f(x) \\qquad I_a(a) = 0$$
+                $$I_a(x) = \\int_a^x f(t) \\, dt$$ $$I_a'(x) = f(x) \\qquad I_a(a) = 0$$
             </div>
             <p><strong>Merksatz:</strong> Die Integralfunktion ordnet der oberen Grenze \\( x \\) den orientierten Flächeninhalt ab der festen unteren Grenze \\( a \\) zu. Nach dem Hauptsatz ist sie eine Stammfunktion von \\( f \\) – nämlich genau die mit der Nullstelle bei \\( x = a \\). Extrema von \\( I_a \\) liegen also bei Nullstellen von \\( f \\) mit Vorzeichenwechsel.</p>
             <details class="example">
@@ -1087,7 +1090,7 @@ window.REPETITIO_DECKS["analysis"] = {
         `
     },
     {
-        id: "ana-115", niveau: "ea",
+        id: "ana-115", niveau: "ea", zusatz: true,
         category: "integral",
         question: "Wie berechne ich ein uneigentliches Integral?",
         answer: `
@@ -1107,7 +1110,7 @@ window.REPETITIO_DECKS["analysis"] = {
     },
     // Sonstiges (eA)
     {
-        id: "ana-116", niveau: "ea",
+        id: "ana-116", niveau: "ga",
         category: "sonstiges",
         question: "Wie löse ich eine Extremwertaufgabe mit Nebenbedingung?",
         answer: `
@@ -1129,7 +1132,7 @@ window.REPETITIO_DECKS["analysis"] = {
                     Ein rechteckiges Gehege wird an einer Mauer mit 40 m Zaun eingezäunt (drei Seiten). Wann ist die Fläche maximal?<br><br>
                     Hauptbedingung: \\( A = x \\cdot y \\), Nebenbedingung: \\( 2x + y = 40 \\Rightarrow y = 40 - 2x \\)<br>
                     $$Z(x) = x(40 - 2x) = 40x - 2x^2, \\quad 0 < x < 20$$<br>
-                    $$Z'(x) = 40 - 4x = 0 \\Rightarrow x = 10, \\qquad Z''(x) = -4 < 0 \\Rightarrow \\text{Maximum}$$<br><br>
+                    $$Z'(x) = 40 - 4x = 0 \\Rightarrow x = 10$$ $$Z''(x) = -4 < 0 \\Rightarrow \\text{Maximum}$$<br><br>
                     \\( y = 40 - 20 = 20 \\), also \\( A_{\\max} = 10 \\cdot 20 = 200\\ \\text{m}^2 \\). An den Rändern (\\( x \\to 0 \\), \\( x \\to 20 \\)) geht \\( A \\to 0 \\).
                 </div>
             </details>

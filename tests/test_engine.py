@@ -139,3 +139,14 @@ def test_keyboard_after_button_click(page):
     assert page.inner_text("#cardCounter").startswith("Karte 3 von")
     page.keyboard.press("1")
     assert page.evaluate("localStorage.getItem('repetitio:analysis')") is None
+
+
+def test_due_cards_first(page):
+    """Spaced Repetition: eine erst morgen faellige Karte rueckt ans Ende, faellige/neue kommen zuerst."""
+    page.goto(URL + "?deck=geometrie"); ready(page)
+    first, second = page.evaluate("[window.REPETITIO.filteredCards[0].id, window.REPETITIO.filteredCards[1].id]")
+    page.click("#flipBtn"); page.click(".btn-good")
+    page.goto(URL + "?deck=geometrie"); ready(page)
+    ids = page.evaluate("window.REPETITIO.filteredCards.map(c => c.id)")
+    assert ids[0] == second and ids[-1] == first
+    assert "fällig" in page.inner_text("#cardCounter")

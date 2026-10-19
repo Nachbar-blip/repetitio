@@ -1,4 +1,4 @@
-// Repetitio-Deck: Analytische Geometrie — gA-Karten aus dem GK-Trainer, eA-Karten geo-101 bis geo-115
+// Repetitio-Deck: Analytische Geometrie — gA-Karten aus dem GK-Trainer, Zusatzkarten geo-101 bis geo-115 (überwiegend eA; geo-105, -106, -110, -111 sind laut Fachlehrplan gA)
 window.REPETITIO_DECKS = window.REPETITIO_DECKS || {};
 window.REPETITIO_DECKS["geometrie"] = {
     title: "Analytische Geometrie",
@@ -16,19 +16,19 @@ window.REPETITIO_DECKS["geometrie"] = {
     {
         id: "geo-001", niveau: "ga",
         category: "vektoren",
-        question: "Wie berechne ich den Vektor \\( \\vec{AB} \\)?",
+        question: "Wie berechne ich den Vektor \\( \\overrightarrow{AB} \\)?",
         answer: `
             <h4>Verbindungsvektor</h4>
             <div class="formula-box">
-                $$\\vec{AB} = B - A$$
+                $$\\overrightarrow{AB} = \\vec{b} - \\vec{a}$$
             </div>
-            <p><strong>Merksatz:</strong> "Spitze minus Fuß"</p>
+            <p><strong>Merksatz:</strong> „Spitze minus Fuß“</p>
             <p>Jede Koordinate einzeln: Endpunkt minus Startpunkt</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Gegeben: $$A(1|2|3)$$ und $$B(4|6|5)$$<br><br>
-                    $$\\vec{AB} = B - A$$<br><br>
+                    Gegeben: \\( A(1 \\,|\\, 2 \\,|\\, 3) \\) und \\( B(4 \\,|\\, 6 \\,|\\, 5) \\)<br><br>
+                    $$\\overrightarrow{AB} = \\vec{b} - \\vec{a}$$<br><br>
                     $$= \\begin{pmatrix} 4-1 \\\\ 6-2 \\\\ 5-3 \\end{pmatrix} = \\begin{pmatrix} 3 \\\\ 4 \\\\ 2 \\end{pmatrix}$$
                 </div>
             </details>
@@ -123,9 +123,9 @@ window.REPETITIO_DECKS["geometrie"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$A(2|4|6), \\quad B(8|2|4)$$<br><br>
+                    $$A(2 \\,|\\, 4 \\,|\\, 6), \\quad B(8 \\,|\\, 2 \\,|\\, 4)$$<br><br>
                     $$M = \\begin{pmatrix} \\frac{2+8}{2} \\\\ \\frac{4+2}{2} \\\\ \\frac{6+4}{2} \\end{pmatrix} = \\begin{pmatrix} 5 \\\\ 3 \\\\ 5 \\end{pmatrix}$$<br><br>
-                    $$M(5|3|5)$$
+                    $$M(5 \\,|\\, 3 \\,|\\, 5)$$
                 </div>
             </details>
         `
@@ -138,13 +138,13 @@ window.REPETITIO_DECKS["geometrie"] = {
         answer: `
             <h4>Geradengleichung in Parameterform</h4>
             <div class="formula-box">$$g: \\vec{x} = \\vec{p} + t \\cdot \\vec{v}$$</div>
-            <p><strong>Stützvektor</strong> $$\\vec{p}$$: ein Punkt auf der Geraden<br>
-            <strong>Richtungsvektor</strong> $$\\vec{v}$$: gibt die Richtung an</p>
+            <p><strong>Stützvektor</strong> \\( \\vec{p} \\): Ortsvektor eines Punktes der Geraden<br>
+            <strong>Richtungsvektor</strong> \\( \\vec{v} \\): gibt die Richtung an</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Gerade durch A(1|2|3) und B(4|6|5):<br><br>
-                    $$\\vec{v} = \\vec{AB} = \\begin{pmatrix} 3 \\\\ 4 \\\\ 2 \\end{pmatrix}$$<br><br>
+                    Gerade durch \\( A(1 \\,|\\, 2 \\,|\\, 3) \\) und \\( B(4 \\,|\\, 6 \\,|\\, 5) \\):<br><br>
+                    $$\\vec{v} = \\overrightarrow{AB} =\\begin{pmatrix} 3 \\\\ 4 \\\\ 2 \\end{pmatrix}$$<br><br>
                     $$g: \\vec{x} = \\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix} + t \\cdot \\begin{pmatrix} 3 \\\\ 4 \\\\ 2 \\end{pmatrix}$$
                 </div>
             </details>
@@ -165,10 +165,10 @@ window.REPETITIO_DECKS["geometrie"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$g: \\vec{x} = \\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix} + t \\begin{pmatrix} 2 \\\\ 1 \\\\ 1 \\end{pmatrix}$$<br>
-                    Liegt P(5|4|5) auf g?<br><br>
+                    Liegt \\( P(5 \\,|\\, 4 \\,|\\, 5) \\) auf g?<br><br>
                     $$5 = 1 + 2t \\Rightarrow t = 2$$<br>
-                    $$4 = 2 + 1t \\Rightarrow t = 2$$ ✓<br>
-                    $$5 = 3 + 1t \\Rightarrow t = 2$$ ✓<br><br>
+                    $$4 = 2 + t \\Rightarrow t = 2$$ ✓<br>
+                    $$5 = 3 + t \\Rightarrow t = 2$$ ✓<br><br>
                     → Ja, P liegt auf g.
                 </div>
             </details>
@@ -182,18 +182,20 @@ window.REPETITIO_DECKS["geometrie"] = {
             <h4>Spurpunkte</h4>
             <p>Schnittpunkte mit den Koordinatenebenen:</p>
             <ul>
-                <li><strong>$$S_{xy}$$</strong>: Setze $$z = 0$$, löse nach t</li>
-                <li><strong>$$S_{xz}$$</strong>: Setze $$y = 0$$, löse nach t</li>
-                <li><strong>$$S_{yz}$$</strong>: Setze $$x = 0$$, löse nach t</li>
+                <li>\\( S_{xy} \\): Setze \\( z = 0 \\), löse nach t</li>
+                <li>\\( S_{xz} \\): Setze \\( y = 0 \\), löse nach t</li>
+                <li>\\( S_{yz} \\): Setze \\( x = 0 \\), löse nach t</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$g: \\vec{x} = \\begin{pmatrix} 2 \\\\ 4 \\\\ 6 \\end{pmatrix} + t \\begin{pmatrix} 1 \\\\ 2 \\\\ -2 \\end{pmatrix}$$<br><br>
-                    $$S_{xy}$$ (z=0): $$6 - 2t = 0 \\Rightarrow t = 3$$<br>
-                    $$S_{xy}(5|10|0)$$<br><br>
-                    $$S_{xz}$$ (y=0): $$4 + 2t = 0 \\Rightarrow t = -2$$<br>
-                    $$S_{xz}(0|0|10)$$
+                    \\( S_{xy} \\) (\\( z = 0 \\)): \\( 6 - 2t = 0 \\Rightarrow t = 3 \\)<br>
+                    \\( S_{xy}(5 \\,|\\, 10 \\,|\\, 0) \\)<br><br>
+                    \\( S_{xz} \\) (\\( y = 0 \\)): \\( 4 + 2t = 0 \\Rightarrow t = -2 \\)<br>
+                    \\( S_{xz}(0 \\,|\\, 0 \\,|\\, 10) \\)<br><br>
+                    \\( S_{yz} \\) (\\( x = 0 \\)): \\( 2 + t = 0 \\Rightarrow t = -2 \\)<br>
+                    \\( S_{yz}(0 \\,|\\, 0 \\,|\\, 10) = S_{xz} \\) – g schneidet die \\( z \\)-Achse.
                 </div>
             </details>
         `
@@ -219,9 +221,9 @@ window.REPETITIO_DECKS["geometrie"] = {
                     $$g: \\vec{x} = \\begin{pmatrix} 1 \\\\ 0 \\\\ 0 \\end{pmatrix} + s \\begin{pmatrix} 1 \\\\ 1 \\\\ 0 \\end{pmatrix}$$<br>
                     $$h: \\vec{x} = \\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix} + t \\begin{pmatrix} 0 \\\\ 1 \\\\ 1 \\end{pmatrix}$$<br><br>
                     Nicht parallel → Gleichsetzen:<br>
-                    $$1 + s = 0 \\Rightarrow s = -1$$<br>
-                    $$s = 1 + t \\Rightarrow t = -2$$<br>
-                    Probe: $$0 = 0 + t \\cdot 1 = -2 \\neq 0$$ ✗<br><br>
+                    I: \\( 1 + s = 0 \\Rightarrow s = -1 \\)<br>
+                    II: \\( s = 1 + t \\Rightarrow t = -2 \\)<br>
+                    Probe in III: \\( 0 = 0 + t \\), also \\( t = 0 \\neq -2 \\) ✗ (Widerspruch)<br><br>
                     → Geraden sind windschief.
                 </div>
             </details>
@@ -234,7 +236,7 @@ window.REPETITIO_DECKS["geometrie"] = {
         question: "Wie stelle ich eine Ebenengleichung aus 3 Punkten auf?",
         answer: `
             <h4>Ebene in Parameterform</h4>
-            <div class="formula-box">$$E: \\vec{x} = \\vec{a} + s \\cdot \\vec{AB} + t \\cdot \\vec{AC}$$</div>
+            <div class="formula-box">$$E: \\vec{x} = \\vec{a} + s \\cdot \\overrightarrow{AB} + t \\cdot \\overrightarrow{AC}$$</div>
             <ol>
                 <li>Einen Punkt als Stützvektor wählen</li>
                 <li>Zwei Spannvektoren berechnen (zu den anderen Punkten)</li>
@@ -242,8 +244,8 @@ window.REPETITIO_DECKS["geometrie"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$A(1|0|0), B(0|2|0), C(0|0|3)$$<br><br>
-                    $$\\vec{AB} = \\begin{pmatrix} -1 \\\\ 2 \\\\ 0 \\end{pmatrix}, \\quad \\vec{AC} = \\begin{pmatrix} -1 \\\\ 0 \\\\ 3 \\end{pmatrix}$$<br><br>
+                    $$A(1 \\,|\\, 0 \\,|\\, 0), \\; B(0 \\,|\\, 2 \\,|\\, 0), \\; C(0 \\,|\\, 0 \\,|\\, 3)$$<br><br>
+                    $$\\overrightarrow{AB} = \\begin{pmatrix} -1 \\\\ 2 \\\\ 0 \\end{pmatrix}, \\quad \\overrightarrow{AC} =\\begin{pmatrix} -1 \\\\ 0 \\\\ 3 \\end{pmatrix}$$<br><br>
                     $$E: \\vec{x} = \\begin{pmatrix} 1 \\\\ 0 \\\\ 0 \\end{pmatrix} + s \\begin{pmatrix} -1 \\\\ 2 \\\\ 0 \\end{pmatrix} + t \\begin{pmatrix} -1 \\\\ 0 \\\\ 3 \\end{pmatrix}$$
                 </div>
             </details>
@@ -257,15 +259,16 @@ window.REPETITIO_DECKS["geometrie"] = {
             <h4>Koordinatenform der Ebene</h4>
             <div class="formula-box">$$E: n_1 x_1 + n_2 x_2 + n_3 x_3 = d$$</div>
             <ol>
-                <li>Normalenvektor $$\\vec{n}$$ bestimmen (senkrecht zu beiden Spannvektoren)</li>
+                <li>Normalenvektor \\( \\vec{n} \\) bestimmen (senkrecht zu beiden Spannvektoren)</li>
                 <li>Einen Punkt einsetzen, um d zu berechnen</li>
             </ol>
-            <p><strong>Tipp:</strong> $$\\vec{n}$$ aus Koordinatenform ablesen oder gegeben.</p>
+            <p><strong>Tipp:</strong> \\( \\vec{n} \\) als Vektorprodukt der beiden Spannvektoren berechnen.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$\\vec{n} = \\begin{pmatrix} 6 \\\\ 3 \\\\ 2 \\end{pmatrix}$$ (gegeben)<br>
-                    Punkt A(1|0|0) liegt auf E.<br><br>
+                    Ebene durch \\( A(1 \\,|\\, 0 \\,|\\, 0) \\), \\( B(0 \\,|\\, 2 \\,|\\, 0) \\), \\( C(0 \\,|\\, 0 \\,|\\, 3) \\):<br>
+                    $$\\vec{n} = \\begin{pmatrix} -1 \\\\ 2 \\\\ 0 \\end{pmatrix} \\times \\begin{pmatrix} -1 \\\\ 0 \\\\ 3 \\end{pmatrix} = \\begin{pmatrix} 6 \\\\ 3 \\\\ 2 \\end{pmatrix}$$<br>
+                    Punkt \\( A(1 \\,|\\, 0 \\,|\\, 0) \\) liegt auf E.<br><br>
                     $$6 \\cdot 1 + 3 \\cdot 0 + 2 \\cdot 0 = d$$<br>
                     $$d = 6$$<br><br>
                     $$E: 6x_1 + 3x_2 + 2x_3 = 6$$
@@ -285,7 +288,7 @@ window.REPETITIO_DECKS["geometrie"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$E: 2x_1 + 3x_2 - x_3 = 7$$<br>
-                    Liegt P(1|2|1) auf E?<br><br>
+                    Liegt \\( P(1 \\,|\\, 2 \\,|\\, 1) \\) auf E?<br><br>
                     $$2 \\cdot 1 + 3 \\cdot 2 - 1 \\cdot 1$$<br>
                     $$= 2 + 6 - 1 = 7$$ ✓<br><br>
                     → Ja, P liegt auf E.
@@ -319,11 +322,11 @@ window.REPETITIO_DECKS["geometrie"] = {
     },
     {
         id: "geo-015", niveau: "ga",
-        category: "ebenen",
+        category: "abstand",
         question: "Wie berechne ich den Abstand Punkt-Ebene?",
         answer: `
             <h4>Abstand Punkt-Ebene (Hesse-Normalform)</h4>
-            <div class="formula-box">$$d = \\frac{|n_1 p_1 + n_2 p_2 + n_3 p_3 - d|}{|\\vec{n}|}$$</div>
+            <div class="formula-box">$$d(P, E) = \\frac{|n_1 p_1 + n_2 p_2 + n_3 p_3 - d|}{|\\vec{n}|}$$</div>
             <ol>
                 <li>Ebene in Koordinatenform bringen</li>
                 <li>Punkt P in linke Seite einsetzen</li>
@@ -334,9 +337,9 @@ window.REPETITIO_DECKS["geometrie"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$E: 2x_1 + 2x_2 + x_3 = 6$$<br>
-                    $$P(1|1|1)$$<br><br>
+                    $$P(1 \\,|\\, 1 \\,|\\, 1)$$<br><br>
                     $$|\\vec{n}| = \\sqrt{4+4+1} = 3$$<br><br>
-                    $$d = \\frac{|2 \\cdot 1 + 2 \\cdot 1 + 1 \\cdot 1 - 6|}{3}$$<br>
+                    $$d(P, E) = \\frac{|2 \\cdot 1 + 2 \\cdot 1 + 1 \\cdot 1 - 6|}{3}$$<br>
                     $$= \\frac{|5 - 6|}{3} = \\frac{1}{3}$$
                 </div>
             </details>
@@ -350,7 +353,7 @@ window.REPETITIO_DECKS["geometrie"] = {
             <h4>Schnittwinkel Gerade-Ebene</h4>
             <div class="formula-box">$$\\sin(\\alpha) = \\frac{|\\vec{n} \\cdot \\vec{v}|}{|\\vec{n}| \\cdot |\\vec{v}|}$$</div>
             <p><strong>Achtung:</strong> Hier Sinus, nicht Kosinus!<br>
-            (Der Winkel wird zum Normalenvektor gemessen.)</p>
+            (Der Winkel zwischen \\( \\vec{n} \\) und \\( \\vec{v} \\) ist \\( 90^\\circ - \\alpha \\), und \\( \\cos(90^\\circ - \\alpha) = \\sin \\alpha \\).)</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -372,9 +375,9 @@ window.REPETITIO_DECKS["geometrie"] = {
             <div class="formula-box">$$g \\parallel E \\Leftrightarrow \\vec{n} \\cdot \\vec{v} = 0$$</div>
             <p>Richtungsvektor der Geraden steht senkrecht zum Normalenvektor der Ebene.</p>
             <ul>
-                <li>$$\\vec{n} \\cdot \\vec{v} = 0$$: parallel</li>
-                <li>Zusätzlich Punkt auf E: g liegt in E</li>
-                <li>$$\\vec{n} \\cdot \\vec{v} \\neq 0$$: Schnittpunkt existiert</li>
+                <li>\\( \\vec{n} \\cdot \\vec{v} = 0 \\): parallel</li>
+                <li>Zusätzlich Stützpunkt von g auf E: g liegt in E</li>
+                <li>\\( \\vec{n} \\cdot \\vec{v} \\neq 0 \\): genau ein Schnittpunkt</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -421,11 +424,11 @@ window.REPETITIO_DECKS["geometrie"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    I: $$2x + y = 5$$<br>
-                    II: $$x - y = 1$$<br><br>
-                    I + II: $$3x = 6 \\Rightarrow x = 2$$<br><br>
-                    In II: $$2 - y = 1 \\Rightarrow y = 1$$<br><br>
-                    Lösung: $$(2|1)$$
+                    I: \\( 2x + y = 5 \\)<br>
+                    II: \\( x - y = 1 \\)<br><br>
+                    I + II: \\( 3x = 6 \\Rightarrow x = 2 \\)<br><br>
+                    In II: \\( 2 - y = 1 \\Rightarrow y = 1 \\)<br><br>
+                    Lösung: \\( (2 \\,|\\, 1) \\)
                 </div>
             </details>
         `
@@ -450,9 +453,9 @@ window.REPETITIO_DECKS["geometrie"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$\\begin{pmatrix} 1 & 1 & | & 3 \\\\ 2 & -1 & | & 0 \\end{pmatrix}$$<br><br>
-                    II - 2·I:<br>
-                    $$\\begin{pmatrix} 1 & 1 & | & 3 \\\\ 0 & -3 & | & -6 \\end{pmatrix}$$<br><br>
+                    $$\\left(\\begin{array}{rr|r} 1 & 1 & 3 \\\\ 2 & -1 & 0 \\end{array}\\right)$$<br><br>
+                    II − 2·I:<br>
+                    $$\\left(\\begin{array}{rr|r} 1 & 1 & 3 \\\\ 0 & -3 & -6 \\end{array}\\right)$$<br><br>
                     $$-3y = -6 \\Rightarrow y = 2$$<br>
                     $$x + 2 = 3 \\Rightarrow x = 1$$
                 </div>
@@ -467,8 +470,8 @@ window.REPETITIO_DECKS["geometrie"] = {
             <h4>Lösungsfälle</h4>
             <ul>
                 <li><strong>Eindeutige Lösung:</strong> Genau ein Schnittpunkt</li>
-                <li><strong>Keine Lösung:</strong> Widerspruch (z.B. 0 = 5)<br>
-                → Geraden/Ebenen parallel</li>
+                <li><strong>Keine Lösung:</strong> Widerspruch (z. B. 0 = 5)<br>
+                → kein gemeinsamer Punkt (z. B. Geraden echt parallel oder windschief, Ebenen echt parallel)</li>
                 <li><strong>Unendlich viele Lösungen:</strong> Freie Variable<br>
                 → Schnittgerade oder identisch</li>
             </ul>
@@ -499,7 +502,7 @@ window.REPETITIO_DECKS["geometrie"] = {
             </div>
             <p>Zwei Geraden sind parallel, wenn ihre Richtungsvektoren Vielfache voneinander sind.</p>
             <ol>
-                <li>Prüfe: Ist $$\\vec{v}_1 = k \\cdot \\vec{v}_2$$ für ein k ∈ ℝ?</li>
+                <li>Prüfe: Ist \\( \\vec{v}_1 = k \\cdot \\vec{v}_2 \\) für ein \\( k \\in \\mathbb{R} \\)?</li>
                 <li>Wenn ja: Punktprobe → identisch oder echt parallel</li>
                 <li>Wenn nein: nicht parallel</li>
             </ol>
@@ -547,7 +550,7 @@ window.REPETITIO_DECKS["geometrie"] = {
             <h4>Kollinear und komplanar</h4>
             <div class="formula-box">
                 $$\\vec{a}, \\vec{b} \\text{ kollinear} \\Leftrightarrow \\vec{b} = k \\cdot \\vec{a}$$<br><br>
-                $$\\vec{a}, \\vec{b}, \\vec{c} \\text{ komplanar} \\Leftrightarrow \\vec{c} = r \\cdot \\vec{a} + s \\cdot \\vec{b} \\quad (\\vec{a}, \\vec{b} \\text{ nicht kollinear})$$
+                $$\\vec{a}, \\vec{b}, \\vec{c} \\text{ komplanar} \\Leftrightarrow \\vec{c} = r \\cdot \\vec{a} + s \\cdot \\vec{b}$$ $$(\\vec{a}, \\vec{b} \\text{ nicht kollinear})$$
             </div>
             <p><strong>Merksatz:</strong> Kollineare Vektoren liegen auf einer Geraden (Vielfache voneinander), komplanare Vektoren in einer Ebene (einer ist Linearkombination der anderen). Ist das LGS für \\( r, s \\) lösbar, sind die Vektoren komplanar; alternativ: Spatprodukt \\( (\\vec{a} \\times \\vec{b}) \\cdot \\vec{c} = 0 \\).</p>
             <details class="example">
@@ -572,14 +575,14 @@ window.REPETITIO_DECKS["geometrie"] = {
         answer: `
             <h4>Lagebeziehung Ebene–Ebene</h4>
             <div class="formula-box">
-                $$\\vec{n}_1 = k \\cdot \\vec{n}_2 \\;\\Rightarrow\\; \\text{parallel (identisch oder echt parallel)}$$<br><br>
+                $$\\vec{n}_1 = k \\cdot \\vec{n}_2$$ $$\\Rightarrow\\; \\text{parallel (identisch oder echt parallel)}$$<br><br>
                 $$\\vec{n}_1 \\neq k \\cdot \\vec{n}_2 \\;\\Rightarrow\\; \\text{Schnittgerade}$$
             </div>
             <p><strong>Merksatz:</strong> Zuerst die Normalenvektoren vergleichen. Sind sie kollinear, entscheidet ein Punkt der einen Ebene durch Einsetzen in die andere: erfüllt er die Gleichung, sind die Ebenen identisch, sonst echt parallel.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$E_1: 2x_1 - x_2 + 2x_3 = 4, \\quad E_2: -4x_1 + 2x_2 - 4x_3 = 6$$<br>
+                    $$E_1: 2x_1 - x_2 + 2x_3 = 4$$ $$E_2: -4x_1 + 2x_2 - 4x_3 = 6$$<br>
                     $$\\vec{n}_2 = \\begin{pmatrix} -4 \\\\ 2 \\\\ -4 \\end{pmatrix} = -2 \\cdot \\begin{pmatrix} 2 \\\\ -1 \\\\ 2 \\end{pmatrix} = -2 \\vec{n}_1$$<br>
                     → parallel. Punktprobe: \\( P(2 \\,|\\, 0 \\,|\\, 0) \\in E_1 \\), in \\( E_2 \\): \\( -8 \\neq 6 \\)<br>
                     → \\( E_1 \\) und \\( E_2 \\) sind <strong>echt parallel</strong>.<br><br>
@@ -603,7 +606,7 @@ window.REPETITIO_DECKS["geometrie"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$E_1: x_1 + x_2 + x_3 = 3, \\quad E_2: x_1 - x_2 + 2x_3 = 2$$<br>
-                    $$\\vec{u} = \\begin{pmatrix} 1 \\\\ 1 \\\\ 1 \\end{pmatrix} \\times \\begin{pmatrix} 1 \\\\ -1 \\\\ 2 \\end{pmatrix} = \\begin{pmatrix} 1 \\cdot 2 - 1 \\cdot (-1) \\\\ 1 \\cdot 1 - 1 \\cdot 2 \\\\ 1 \\cdot (-1) - 1 \\cdot 1 \\end{pmatrix} = \\begin{pmatrix} 3 \\\\ -1 \\\\ -2 \\end{pmatrix}$$<br>
+                    $$\\vec{u} = \\begin{pmatrix} 1 \\\\ 1 \\\\ 1 \\end{pmatrix} \\times \\begin{pmatrix} 1 \\\\ -1 \\\\ 2 \\end{pmatrix}$$ $$= \\begin{pmatrix} 1 \\cdot 2 - 1 \\cdot (-1) \\\\ 1 \\cdot 1 - 1 \\cdot 2 \\\\ 1 \\cdot (-1) - 1 \\cdot 1 \\end{pmatrix} = \\begin{pmatrix} 3 \\\\ -1 \\\\ -2 \\end{pmatrix}$$<br>
                     Stützpunkt: \\( x_2 = 0 \\) setzen → \\( x_1 + x_3 = 3 \\) und \\( x_1 + 2x_3 = 2 \\) → \\( x_3 = -1, \\; x_1 = 4 \\)<br>
                     $$g: \\vec{x} = \\begin{pmatrix} 4 \\\\ 0 \\\\ -1 \\end{pmatrix} + t \\cdot \\begin{pmatrix} 3 \\\\ -1 \\\\ -2 \\end{pmatrix}$$<br>
                     Probe mit \\( t = 1 \\): \\( (7 \\,|\\, {-1} \\,|\\, {-3}) \\): \\( 7 - 1 - 3 = 3 \\) ✓ und \\( 7 + 1 - 6 = 2 \\) ✓
@@ -634,7 +637,7 @@ window.REPETITIO_DECKS["geometrie"] = {
     },
     // Geraden (eA)
     {
-        id: "geo-105", niveau: "ea",
+        id: "geo-105", niveau: "ga",
         category: "geraden",
         question: "Wie berechne ich den Schnittwinkel zweier Geraden?",
         answer: `
@@ -655,13 +658,13 @@ window.REPETITIO_DECKS["geometrie"] = {
     },
     // Abstände (eA)
     {
-        id: "geo-106", niveau: "ea",
+        id: "geo-106", niveau: "ga",
         category: "abstand",
         question: "Was ist die Hessesche Normalform und wie nutze ich sie?",
         answer: `
             <h4>Hessesche Normalform (HNF)</h4>
             <div class="formula-box">
-                $$E: \\frac{a x_1 + b x_2 + c x_3 - d}{|\\vec{n}|} = 0 \\quad \\text{mit } |\\vec{n}| = \\sqrt{a^2 + b^2 + c^2}$$<br><br>
+                $$E: \\frac{a x_1 + b x_2 + c x_3 - d}{|\\vec{n}|} = 0$$ $$\\text{mit } |\\vec{n}| = \\sqrt{a^2 + b^2 + c^2}$$<br><br>
                 $$d(P, E) = \\frac{|a p_1 + b p_2 + c p_3 - d|}{|\\vec{n}|}$$
             </div>
             <p><strong>Merksatz:</strong> Die HNF ist die Koordinatenform, geteilt durch die Länge des Normalenvektors. Setzt man einen Punkt ein, erhält man direkt seinen Abstand zur Ebene (Betrag!). In der Ebene gilt dasselbe für Geraden \\( g: ax + by = c \\) mit \\( |\\vec{n}| = \\sqrt{a^2 + b^2} \\). Fehlt \\( \\vec{n} \\), liefert das Kreuzprodukt der Spannvektoren einen Normalenvektor.</p>
@@ -687,17 +690,17 @@ window.REPETITIO_DECKS["geometrie"] = {
         answer: `
             <h4>Abstand Punkt–Gerade über den Lotfußpunkt</h4>
             <div class="formula-box">
-                $$F = \\vec{a} + t \\cdot \\vec{u} \\quad \\text{mit} \\quad \\vec{PF} \\cdot \\vec{u} = 0$$<br><br>
-                $$d(P, g) = |\\vec{PF}|$$
+                $$F = \\vec{a} + t \\cdot \\vec{u} \\quad \\text{mit} \\quad \\overrightarrow{PF} \\cdot \\vec{u} = 0$$<br><br>
+                $$d(P, g) = |\\overrightarrow{PF}|$$
             </div>
-            <p><strong>Merksatz:</strong> Der Lotfußpunkt \\( F \\) ist der Punkt der Geraden, für den \\( \\vec{PF} \\) senkrecht auf dem Richtungsvektor steht. Die Orthogonalitätsbedingung liefert eine Gleichung für \\( t \\); der Abstand ist die Länge des Lotvektors. Gleichwertig: Hilfsebene durch \\( P \\) mit Normalenvektor \\( \\vec{u} \\) mit \\( g \\) schneiden.</p>
+            <p><strong>Merksatz:</strong> Der Lotfußpunkt \\( F \\) ist der Punkt der Geraden, für den \\( \\overrightarrow{PF} \\) senkrecht auf dem Richtungsvektor steht. Die Orthogonalitätsbedingung liefert eine Gleichung für \\( t \\); der Abstand ist die Länge des Lotvektors. Gleichwertig: Hilfsebene durch \\( P \\) mit Normalenvektor \\( \\vec{u} \\) mit \\( g \\) schneiden.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$g: \\vec{x} = \\begin{pmatrix} 1 \\\\ 0 \\\\ 2 \\end{pmatrix} + t \\cdot \\begin{pmatrix} 2 \\\\ 1 \\\\ -2 \\end{pmatrix}, \\quad P(4 \\,|\\, 1 \\,|\\, 1)$$<br>
-                    $$\\vec{PF} = \\begin{pmatrix} 1 + 2t - 4 \\\\ t - 1 \\\\ 2 - 2t - 1 \\end{pmatrix} = \\begin{pmatrix} 2t - 3 \\\\ t - 1 \\\\ 1 - 2t \\end{pmatrix}$$<br>
-                    $$\\vec{PF} \\cdot \\vec{u} = 2(2t - 3) + (t - 1) - 2(1 - 2t) = 9t - 9 = 0 \\;\\Rightarrow\\; t = 1$$<br>
-                    $$F(3 \\,|\\, 1 \\,|\\, 0), \\quad \\vec{PF} = \\begin{pmatrix} -1 \\\\ 0 \\\\ -1 \\end{pmatrix}, \\quad d(P, g) = \\sqrt{2} \\approx 1{,}41$$
+                    $$\\overrightarrow{PF} = \\begin{pmatrix} 1 + 2t - 4 \\\\ t - 1 \\\\ 2 - 2t - 1 \\end{pmatrix} = \\begin{pmatrix} 2t - 3 \\\\ t - 1 \\\\ 1 - 2t \\end{pmatrix}$$<br>
+                    $$\\overrightarrow{PF} \\cdot \\vec{u} = 2(2t - 3) + (t - 1) - 2(1 - 2t)$$ $$= 9t - 9 = 0 \\;\\Rightarrow\\; t = 1$$<br>
+                    $$F(3 \\,|\\, 1 \\,|\\, 0), \\quad \\overrightarrow{PF} = \\begin{pmatrix} -1 \\\\ 0 \\\\ -1 \\end{pmatrix}$$ $$d(P, g) = \\sqrt{2} \\approx 1{,}41$$
                 </div>
             </details>
         `
@@ -715,9 +718,9 @@ window.REPETITIO_DECKS["geometrie"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$g: \\vec{x} = \\begin{pmatrix} 1 \\\\ 2 \\\\ 0 \\end{pmatrix} + s \\cdot \\begin{pmatrix} 1 \\\\ 0 \\\\ 1 \\end{pmatrix}, \\quad h: \\vec{x} = \\begin{pmatrix} 0 \\\\ 1 \\\\ 3 \\end{pmatrix} + t \\cdot \\begin{pmatrix} 0 \\\\ 1 \\\\ 1 \\end{pmatrix}$$<br>
+                    $$g: \\vec{x} = \\begin{pmatrix} 1 \\\\ 2 \\\\ 0 \\end{pmatrix} + s \\cdot \\begin{pmatrix} 1 \\\\ 0 \\\\ 1 \\end{pmatrix}$$ $$h: \\vec{x} = \\begin{pmatrix} 0 \\\\ 1 \\\\ 3 \\end{pmatrix} + t \\cdot \\begin{pmatrix} 0 \\\\ 1 \\\\ 1 \\end{pmatrix}$$<br>
                     Richtungsvektoren nicht kollinear → nicht parallel.<br>
-                    $$\\vec{n} = \\begin{pmatrix} 1 \\\\ 0 \\\\ 1 \\end{pmatrix} \\times \\begin{pmatrix} 0 \\\\ 1 \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} 0 \\cdot 1 - 1 \\cdot 1 \\\\ 1 \\cdot 0 - 1 \\cdot 1 \\\\ 1 \\cdot 1 - 0 \\cdot 0 \\end{pmatrix} = \\begin{pmatrix} -1 \\\\ -1 \\\\ 1 \\end{pmatrix}, \\quad |\\vec{n}| = \\sqrt{3}$$<br>
+                    $$\\vec{n} = \\begin{pmatrix} 1 \\\\ 0 \\\\ 1 \\end{pmatrix} \\times \\begin{pmatrix} 0 \\\\ 1 \\\\ 1 \\end{pmatrix}$$ $$= \\begin{pmatrix} 0 \\cdot 1 - 1 \\cdot 1 \\\\ 1 \\cdot 0 - 1 \\cdot 1 \\\\ 1 \\cdot 1 - 0 \\cdot 0 \\end{pmatrix} = \\begin{pmatrix} -1 \\\\ -1 \\\\ 1 \\end{pmatrix}, \\quad |\\vec{n}| = \\sqrt{3}$$<br>
                     $$\\vec{b} - \\vec{a} = \\begin{pmatrix} -1 \\\\ -1 \\\\ 3 \\end{pmatrix}, \\quad (\\vec{b} - \\vec{a}) \\cdot \\vec{n} = 1 + 1 + 3 = 5$$<br>
                     $$d(g, h) = \\frac{5}{\\sqrt{3}} \\approx 2{,}89$$<br>
                     Da \\( d > 0 \\) und nicht parallel: \\( g \\) und \\( h \\) sind windschief.
@@ -751,15 +754,15 @@ window.REPETITIO_DECKS["geometrie"] = {
     },
     // Kreis (eA)
     {
-        id: "geo-110", niveau: "ea",
+        id: "geo-110", niveau: "ga",
         category: "kreis",
         question: "Wie stelle ich die Kreisgleichung auf und lese Mittelpunkt/Radius ab?",
         answer: `
             <h4>Kreisgleichung in der Ebene</h4>
             <div class="formula-box">
-                $$k: (x - m_1)^2 + (y - m_2)^2 = r^2 \\quad \\text{mit } M(m_1 \\,|\\, m_2)$$
+                $$k: (x - m_1)^2 + (y - m_2)^2 = r^2$$ $$\\text{mit } M(m_1 \\,|\\, m_2)$$
             </div>
-            <p><strong>Merksatz:</strong> Ein Kreis ist die Menge aller Punkte mit Abstand \\( r \\) vom Mittelpunkt – die Gleichung ist der Satz des Pythagoras für \\( |\\vec{MX}| = r \\). Liegt die Gleichung ausmultipliziert vor, bringt quadratische Ergänzung sie in die Mittelpunktsform.</p>
+            <p><strong>Merksatz:</strong> Ein Kreis ist die Menge aller Punkte mit Abstand \\( r \\) vom Mittelpunkt – die Gleichung ist der Satz des Pythagoras für \\( |\\overrightarrow{MX}| = r \\). Liegt die Gleichung ausmultipliziert vor, bringt quadratische Ergänzung sie in die Mittelpunktsform.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -775,14 +778,14 @@ window.REPETITIO_DECKS["geometrie"] = {
         `
     },
     {
-        id: "geo-111", niveau: "ea",
+        id: "geo-111", niveau: "ga",
         category: "kreis",
         question: "Wie untersuche ich die Lage Punkt–Kreis und Gerade–Kreis?",
         answer: `
             <h4>Lage Punkt–Kreis und Gerade–Kreis</h4>
             <div class="formula-box">
-                $$|\\vec{MP}| < r,\\; = r,\\; > r \\;:\\; \\text{innen} \\;/\\; \\text{auf } k \\;/\\; \\text{außen}$$<br><br>
-                $$d(M, g) < r,\\; = r,\\; > r \\;:\\; \\text{Sekante} \\;/\\; \\text{Tangente} \\;/\\; \\text{Passante}$$
+                $$|\\overrightarrow{MP}| < r,\\; = r,\\; > r \\;:\\; \\text{innen} \\;/\\; \\text{auf } k \\;/\\; \\text{außen}$$<br><br>
+                $$d(M, g) < r,\\; = r,\\; > r \\;:$$ $$\\text{Sekante} \\;/\\; \\text{Tangente} \\;/\\; \\text{Passante}$$
             </div>
             <p><strong>Merksatz:</strong> Beide Fragen entscheidet ein Abstandsvergleich mit dem Radius. Die Schnittpunkte von Gerade und Kreis erhält man durch Einsetzen der Geradengleichung in die Kreisgleichung – die Anzahl der Lösungen (2, 1, 0) bestätigt den Lagefall.</p>
             <details class="example">
@@ -792,9 +795,9 @@ window.REPETITIO_DECKS["geometrie"] = {
                     <strong>Punkte:</strong> \\( P(6 \\,|\\, 2) \\): \\( 3^2 + 4^2 = 25 \\) → auf dem Kreis.<br>
                     \\( Q(0 \\,|\\, 0) \\): \\( (-3)^2 + 2^2 = 13 < 25 \\) → innerhalb.<br><br>
                     <strong>Gerade</strong> \\( g: y = x + 2 \\), also \\( x - y + 2 = 0 \\):
-                    $$d(M, g) = \\frac{|3 - (-2) + 2|}{\\sqrt{2}} = \\frac{7}{\\sqrt{2}} \\approx 4{,}95 < 5 \\;\\Rightarrow\\; \\text{Sekante}$$<br>
+                    $$d(M, g) = \\frac{|3 - (-2) + 2|}{\\sqrt{2}} = \\frac{7}{\\sqrt{2}} \\approx 4{,}95 < 5$$ $$\\;\\Rightarrow\\; \\text{Sekante}$$<br>
                     Schnittpunkte: \\( (x - 3)^2 + (x + 4)^2 = 25 \\)
-                    $$2x^2 + 2x + 25 = 25 \\;\\Rightarrow\\; 2x(x + 1) = 0 \\;\\Rightarrow\\; x = 0 \\text{ oder } x = -1$$<br>
+                    $$2x^2 + 2x + 25 = 25 \\;\\Rightarrow\\; 2x(x + 1) = 0$$ $$\\;\\Rightarrow\\; x = 0 \\text{ oder } x = -1$$<br>
                     → \\( S_1(0 \\,|\\, 2) \\), \\( S_2({-1} \\,|\\, 1) \\)
                 </div>
             </details>
@@ -807,7 +810,7 @@ window.REPETITIO_DECKS["geometrie"] = {
         answer: `
             <h4>Lage Kreis–Kreis</h4>
             <div class="formula-box">
-                $$d = |\\vec{M_1 M_2}| \\quad \\text{vergleichen mit } r_1 + r_2 \\text{ und } |r_1 - r_2|$$
+                $$d = |\\overrightarrow{M_1 M_2}|$$ $$\\text{vergleichen mit } r_1 + r_2 \\text{ und } |r_1 - r_2|$$
             </div>
             <ul>
                 <li>\\( d > r_1 + r_2 \\): getrennt (außerhalb voneinander)</li>
@@ -837,15 +840,15 @@ window.REPETITIO_DECKS["geometrie"] = {
         answer: `
             <h4>Tangente im Kreispunkt B</h4>
             <div class="formula-box">
-                $$t: \\vec{MB} \\cdot \\left( \\vec{x} - \\vec{b} \\right) = 0 \\quad \\Leftrightarrow \\quad \\vec{MB} \\cdot \\vec{x} = \\vec{MB} \\cdot \\vec{b}$$
+                $$t: \\overrightarrow{MB} \\cdot \\left( \\vec{x} - \\vec{b} \\right) = 0 \\quad \\Leftrightarrow \\quad \\overrightarrow{MB} \\cdot \\vec{x} = \\overrightarrow{MB} \\cdot \\vec{b}$$
             </div>
-            <p><strong>Merksatz:</strong> Die Tangente steht senkrecht auf dem Berührradius. Deshalb ist \\( \\vec{MB} \\) ein Normalenvektor der Tangente, und \\( B \\) ist ein Punkt darauf – die Normalenform ist sofort hinschreibbar. Probe: \\( d(M, t) = r \\).</p>
+            <p><strong>Merksatz:</strong> Die Tangente steht senkrecht auf dem Berührradius. Deshalb ist \\( \\overrightarrow{MB} \\) ein Normalenvektor der Tangente, und \\( B \\) ist ein Punkt darauf – die Normalenform ist sofort hinschreibbar. Probe: \\( d(M, t) = r \\).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     \\( k: (x - 3)^2 + (y + 2)^2 = 25 \\), \\( B(6 \\,|\\, 2) \\) (liegt auf \\( k \\): \\( 9 + 16 = 25 \\) ✓)<br>
-                    $$\\vec{MB} = \\begin{pmatrix} 6 - 3 \\\\ 2 - (-2) \\end{pmatrix} = \\begin{pmatrix} 3 \\\\ 4 \\end{pmatrix}$$<br>
-                    $$t: 3x + 4y = 3 \\cdot 6 + 4 \\cdot 2 = 26 \\quad \\Leftrightarrow \\quad y = -\\frac{3}{4}x + \\frac{13}{2}$$<br>
+                    $$\\overrightarrow{MB} = \\begin{pmatrix} 6 - 3 \\\\ 2 - (-2) \\end{pmatrix} = \\begin{pmatrix} 3 \\\\ 4 \\end{pmatrix}$$<br>
+                    $$t: 3x + 4y = 3 \\cdot 6 + 4 \\cdot 2 = 26$$ $$\\Leftrightarrow \\quad y = -\\frac{3}{4}x + \\frac{13}{2}$$<br>
                     Probe: \\( d(M, t) = \\frac{|3 \\cdot 3 + 4 \\cdot (-2) - 26|}{5} = \\frac{25}{5} = 5 = r \\) ✓
                 </div>
             </details>
@@ -860,16 +863,16 @@ window.REPETITIO_DECKS["geometrie"] = {
             <div class="formula-box">
                 $$t: y = m(x - p_1) + p_2 \\quad \\text{und} \\quad d(M, t) = r$$
             </div>
-            <p><strong>Merksatz:</strong> Zuerst prüfen: \\( |\\vec{MP}| > r \\), sonst gibt es 0 (innen) bzw. 1 Tangente (auf dem Kreis). Ansatz: Geradenbüschel durch \\( P \\) mit unbekannter Steigung \\( m \\). Die Berührbedingung „Abstand des Mittelpunkts von der Geraden gleich Radius" (HNF) liefert eine quadratische Gleichung in \\( m \\) mit zwei Lösungen – den beiden Tangenten. Senkrechte Tangenten (\\( x = \\text{const} \\)) müssen gesondert geprüft werden.</p>
+            <p><strong>Merksatz:</strong> Zuerst prüfen: \\( |\\overrightarrow{MP}| > r \\), sonst gibt es 0 (innen) bzw. 1 Tangente (auf dem Kreis). Ansatz: Geradenbüschel durch \\( P \\) mit unbekannter Steigung \\( m \\). Die Berührbedingung „Abstand des Mittelpunkts von der Geraden gleich Radius“ (HNF) liefert eine quadratische Gleichung in \\( m \\) mit zwei Lösungen – den beiden Tangenten. Senkrechte Tangenten (\\( x = \\text{const} \\)) müssen gesondert geprüft werden.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     \\( k: x^2 + y^2 = 25 \\) (\\( M(0 \\,|\\, 0) \\), \\( r = 5 \\)), \\( P(7 \\,|\\, 1) \\)<br>
-                    Außen-Check: \\( |\\vec{MP}|^2 = 7^2 + 1^2 = 50 > 25 = r^2 \\) → \\( P \\) liegt außerhalb, zwei Tangenten.<br>
+                    Außen-Check: \\( |\\overrightarrow{MP}|^2 = 7^2 + 1^2 = 50 > 25 = r^2 \\) → \\( P \\) liegt außerhalb, zwei Tangenten.<br>
                     Ansatz: \\( t: y = m(x - 7) + 1 \\), also \\( mx - y + (1 - 7m) = 0 \\)<br>
                     $$d(M, t) = \\frac{|1 - 7m|}{\\sqrt{m^2 + 1}} = 5$$<br>
-                    $$(1 - 7m)^2 = 25(m^2 + 1) \\;\\Rightarrow\\; 24m^2 - 14m - 24 = 0 \\;\\Rightarrow\\; 12m^2 - 7m - 12 = 0$$<br>
-                    $$m = \\frac{7 \\pm \\sqrt{49 + 576}}{24} = \\frac{7 \\pm 25}{24} \\;\\Rightarrow\\; m_1 = \\frac{4}{3}, \\; m_2 = -\\frac{3}{4}$$<br>
+                    $$(1 - 7m)^2 = 25(m^2 + 1)$$ $$\\Rightarrow\\; 24m^2 - 14m - 24 = 0$$ $$\\;\\Rightarrow\\; 12m^2 - 7m - 12 = 0$$<br>
+                    $$m = \\frac{7 \\pm \\sqrt{49 + 576}}{24} = \\frac{7 \\pm 25}{24}$$ $$\\Rightarrow\\; m_1 = \\frac{4}{3}, \\; m_2 = -\\frac{3}{4}$$<br>
                     $$t_1: y = \\frac{4}{3}x - \\frac{25}{3}, \\quad t_2: y = -\\frac{3}{4}x + \\frac{25}{4}$$<br>
                     Berührpunkte (Einsetzen in \\( k \\), jeweils Doppellösung): \\( B_1(4 \\,|\\, {-3}) \\), \\( B_2(3 \\,|\\, 4) \\)
                 </div>

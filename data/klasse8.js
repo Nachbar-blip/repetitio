@@ -188,7 +188,7 @@ window.REPETITIO_DECKS["klasse8"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$\\frac{3x+6}{x+2} = \\frac{3(x+2)}{x+2} = 3, \\quad x \\neq -2$$
-                    $$\\frac{x^2-9}{x-3} = \\frac{(x+3)(x-3)}{x-3} = x+3$$
+                    $$\\frac{x^2-9}{x-3} = \\frac{(x+3)(x-3)}{x-3} = x+3, \\quad x \\neq 3$$
                 </div>
             </details>
         `
@@ -229,7 +229,7 @@ window.REPETITIO_DECKS["klasse8"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Behauptung: Die Summe dreier aufeinanderfolgender Zahlen ist durch 3 teilbar.
+                    Behauptung: Die Summe dreier aufeinanderfolgender natürlicher Zahlen ist durch 3 teilbar.
                     $$n + (n+1) + (n+2) = 3n + 3 = 3(n+1)$$
                     Das Ergebnis ist ein Vielfaches von 3. ∎
                 </div>
@@ -266,7 +266,7 @@ window.REPETITIO_DECKS["klasse8"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    „Das Quadrat einer Zahl ist stets größer als die Zahl selbst."<br>
+                    „Das Quadrat einer Zahl ist stets größer als die Zahl selbst.“<br>
                     Gegenbeispiel \\( x = 0{,}5 \\): \\( 0{,}25 < 0{,}5 \\) — die Aussage ist falsch.
                 </div>
             </details>
@@ -422,7 +422,7 @@ window.REPETITIO_DECKS["klasse8"] = {
             <div class="formula-box">
                 $$\\text{Längen} \\cdot k, \\qquad \\text{Flächen} \\cdot k^2, \\qquad \\text{Volumen} \\cdot k^3$$
             </div>
-            <p>Deshalb wird ein doppelt so großes Modell viermal so schwer zu bemalen und achtmal so schwer zu füllen.</p>
+            <p>Deshalb braucht ein doppelt so großes Modell viermal so viel Farbe und achtmal so viel Füllung.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -513,8 +513,8 @@ window.REPETITIO_DECKS["klasse8"] = {
             <h4>Zahlentripel</h4>
             <p>Drei natürliche Zahlen mit \\( a^2+b^2 = c^2 \\). Jedes Vielfache eines Tripels ist wieder eines.</p>
             <div class="formula-box">
-                $$(3;4;5), \quad (5;12;13)$$
-                $$(8;15;17), \quad (7;24;25)$$
+                $$(3;4;5), \\quad (5;12;13)$$
+                $$(8;15;17), \\quad (7;24;25)$$
             </div>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -619,8 +619,8 @@ window.REPETITIO_DECKS["klasse8"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Zuordnung „Anzahl → Preis" ist eine Funktion.<br>
-                    Zuordnung „Preis → Ware" meist nicht: zu einem Preis kann es mehrere Waren geben.
+                    Zuordnung „Anzahl → Preis“ ist eine Funktion.<br>
+                    Zuordnung „Preis → Ware“ meist nicht: zu einem Preis kann es mehrere Waren geben.
                 </div>
             </details>
         `
@@ -632,7 +632,7 @@ window.REPETITIO_DECKS["klasse8"] = {
         answer: `
             <h4>Vier Darstellungen</h4>
             <ul>
-                <li>Wortvorschrift: „Jedem \\( x \\) wird das Doppelte plus 1 zugeordnet."</li>
+                <li>Wortvorschrift: „Jedem \\( x \\) wird das Doppelte plus 1 zugeordnet.“</li>
                 <li>Gleichung: \\( y = 2x+1 \\)</li>
                 <li>Wertetabelle</li>
                 <li>Graph im Koordinatensystem</li>
@@ -713,7 +713,7 @@ window.REPETITIO_DECKS["klasse8"] = {
         answer: `
             <h4>Nullstelle</h4>
             <div class="formula-box">
-                $$mx + n = 0 \\;\\Rightarrow\\; x = -\\frac{n}{m}$$
+                $$mx + n = 0 \\;\\Rightarrow\\; x = -\\frac{n}{m} \\quad (m \\neq 0)$$
             </div>
             <p>Die Nullstelle ist die Schnittstelle mit der \\( x \\)-Achse; der zugehörige Punkt ist \\( (x \\mid 0) \\).</p>
             <details class="example">
@@ -813,7 +813,7 @@ window.REPETITIO_DECKS["klasse8"] = {
             <h4>Modellieren</h4>
             <ul>
                 <li>Fester Grundbetrag → absolutes Glied \\( n \\)</li>
-                <li>Betrag „je Einheit" → Anstieg \\( m \\)</li>
+                <li>Betrag „je Einheit“ → Anstieg \\( m \\)</li>
                 <li>Variable mit Einheit benennen und den sinnvollen Definitionsbereich angeben</li>
             </ul>
             <details class="example">
@@ -842,7 +842,7 @@ window.REPETITIO_DECKS["klasse8"] = {
                 <div class="example-content">
                     $$A(x) = 0{,}5x + 20, \\quad B(x) = 0{,}9x$$
                     $$0{,}5x + 20 = 0{,}9x \\;\\Rightarrow\\; x = 50$$
-                    Bis 50 Einheiten ist B günstiger, darüber A.
+                    Unter 50 Einheiten ist B günstiger, darüber A; bei 50 kosten beide 45 €.
                 </div>
             </details>
         `
@@ -957,7 +957,7 @@ window.REPETITIO_DECKS["klasse8"] = {
         question: "Wie berechne ich aus dem Volumen eine fehlende Länge?",
         answer: `
             <h4>Rückwärts rechnen</h4>
-            <p>Formel nach der gesuchten Größe umstellen und erst dann einsetzen. Bei \\( r \\) in einer Quadrat- oder Kubikformel steht am Ende eine Wurzel.</p>
+            <p>Formel nach der gesuchten Größe umstellen und erst dann einsetzen. Steht die gesuchte Länge im Quadrat (wie \\( r \\) in \\( \\pi r^2 h \\)), zieht man am Ende die Quadratwurzel.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -981,7 +981,7 @@ window.REPETITIO_DECKS["klasse8"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Zylinder (\\( r=3 \\), \\( h=10 \\)) mit aufgesetzter Halbkugel:
+                    Zylinder (\\( r=3 \\) cm, \\( h=10 \\) cm) mit aufgesetzter Halbkugel:
                     $$V = 90\\pi + \\frac{2}{3}\\pi \\cdot 27 = 108\\pi \\approx 339{,}3 \\text{ cm}^3$$
                 </div>
             </details>
@@ -997,7 +997,7 @@ window.REPETITIO_DECKS["klasse8"] = {
                 $$1 \\text{ dm}^3 = 1000 \\text{ cm}^3 = 1 \\text{ l}$$
                 $$1 \\text{ m}^3 = 1000 \\text{ dm}^3, \\qquad 1 \\text{ cm}^3 = 1 \\text{ ml}$$
             </div>
-            <p>Bei Volumen ist der Umrechnungsfaktor 1000, bei Flächen 100, bei Längen 10.</p>
+            <p>Zwischen benachbarten Einheiten (mm, cm, dm, m) ist der Umrechnungsfaktor bei Volumen 1000, bei Flächen 100, bei Längen 10.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -1057,7 +1057,7 @@ window.REPETITIO_DECKS["klasse8"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Zwei Münzwürfe, „genau einmal Kopf": Pfade KZ und ZK
+                    Zwei Münzwürfe, „genau einmal Kopf“: Pfade KZ und ZK
                     $$P = \\frac{1}{4} + \\frac{1}{4} = \\frac{1}{2}$$
                 </div>
             </details>
@@ -1092,12 +1092,12 @@ window.REPETITIO_DECKS["klasse8"] = {
             <div class="formula-box">
                 $$P(\\text{mindestens einmal}) = 1 - P(\\text{keinmal})$$
             </div>
-            <p>Statt vieler Pfade rechnet man den einen Pfad „keinmal" und zieht ihn von 1 ab.</p>
+            <p>Statt vieler Pfade rechnet man den einen Pfad „keinmal“ und zieht ihn von 1 ab.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     Dreimal würfeln, mindestens eine Sechs:
-                    $$P = 1 - \\left(\\frac{5}{6}\\right)^3 = 1 - \\frac{125}{216} = \\frac{91}{216} \\approx 42{,}1\\,\\%$$
+                    $$P = 1 - \\left(\\frac{5}{6}\\right)^3$$ $$= 1 - \\frac{125}{216} = \\frac{91}{216} \\approx 42{,}1\\,\\%$$
                 </div>
             </details>
         `
@@ -1109,13 +1109,13 @@ window.REPETITIO_DECKS["klasse8"] = {
         answer: `
             <h4>Reihenfolge</h4>
             <ul>
-                <li><strong>Geordnet</strong>: die Reihenfolge zählt, „rot dann blau" ist ein anderer Fall als „blau dann rot"</li>
+                <li><strong>Geordnet</strong>: die Reihenfolge zählt, „rot dann blau“ ist ein anderer Fall als „blau dann rot“</li>
                 <li><strong>Ungeordnet</strong>: nur die Zusammenstellung zählt, beide Pfade gehören zum selben Ereignis und werden addiert</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    3 rote, 2 blaue Kugeln, zwei Züge ohne Zurücklegen, „eine rote und eine blaue":
+                    3 rote, 2 blaue Kugeln, zwei Züge ohne Zurücklegen, „eine rote und eine blaue“:
                     $$P = \\frac{3}{5}\\cdot\\frac{2}{4} + \\frac{2}{5}\\cdot\\frac{3}{4} = \\frac{3}{5} = 0{,}6$$
                 </div>
             </details>
@@ -1132,7 +1132,7 @@ window.REPETITIO_DECKS["klasse8"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    „Ein Viertel der Packungen enthält eine Figur" wird zur Urne mit
+                    „Ein Viertel der Packungen enthält eine Figur“ wird zur Urne mit
                     1 schwarzen und 3 weißen Kugeln, mit Zurücklegen — oder zu Zufallszahlen von 1 bis 4.
                 </div>
             </details>

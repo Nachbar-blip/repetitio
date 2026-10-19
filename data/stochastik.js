@@ -28,9 +28,8 @@ window.REPETITIO_DECKS["stochastik"] = {
                 <div class="example-content">
                     Urne: 3 rote, 2 blaue Kugeln<br>
                     2× ziehen mit Zurücklegen<br><br>
-                    P(rot, rot) = $$\\frac{3}{5} \\cdot \\frac{3}{5} = \\frac{9}{25}$$<br><br>
-                    P(genau 1 rot) = P(rot,blau) + P(blau,rot)<br>
-                    = $$\\frac{3}{5} \\cdot \\frac{2}{5} + \\frac{2}{5} \\cdot \\frac{3}{5} = \\frac{12}{25}$$
+                    $$P(\\text{rot, rot}) = \\frac{3}{5} \\cdot \\frac{3}{5} = \\frac{9}{25}$$
+                    $$P(\\text{genau 1 rot}) = P(\\text{rot, blau}) + P(\\text{blau, rot})$$ $$= \\frac{3}{5} \\cdot \\frac{2}{5} + \\frac{2}{5} \\cdot \\frac{3}{5} = \\frac{12}{25}$$
                 </div>
             </details>
         `
@@ -114,7 +113,7 @@ window.REPETITIO_DECKS["stochastik"] = {
                 <li><strong>Konstante Wahrscheinlichkeit p</strong> für Treffer</li>
                 <li><strong>Unabhängigkeit</strong> der Versuche</li>
             </ol>
-            <p>Notation: $$X \\sim B(n; p)$$</p>
+            <p>Notation: \\( X \\sim B(n; p) \\)</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -136,9 +135,9 @@ window.REPETITIO_DECKS["stochastik"] = {
             <h4>Bernoulli-Formel</h4>
             <div class="formula-box">$$P(X = k) = \\binom{n}{k} \\cdot p^k \\cdot (1-p)^{n-k}$$</div>
             <ul>
-                <li>$$\\binom{n}{k}$$: Anzahl der Anordnungen</li>
-                <li>$$p^k$$: k Treffer</li>
-                <li>$$(1-p)^{n-k}$$: (n-k) Nieten</li>
+                <li>\\( \\binom{n}{k} \\): Anzahl der Anordnungen</li>
+                <li>\\( p^k \\): k Treffer</li>
+                <li>\\( (1-p)^{n-k} \\): (n-k) Nieten</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -219,7 +218,7 @@ window.REPETITIO_DECKS["stochastik"] = {
                     $$X \\sim B(100; 0{,}5)$$<br>
                     $$\\mu = 50, \\quad \\sigma = 5$$<br><br>
                     2σ-Umgebung: [40; 60]<br><br>
-                    → Mit 95% Wahrscheinlichkeit liegt<br>
+                    → Mit etwa 95% Wahrscheinlichkeit liegt<br>
                     die Anzahl der Treffer zwischen 40 und 60.
                 </div>
             </details>
@@ -240,9 +239,9 @@ window.REPETITIO_DECKS["stochastik"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     <strong>Würfeln:</strong><br>
-                    E(X) = $$\\frac{1}{6}(1+2+3+4+5+6) = 3{,}5$$<br><br>
-                    <strong>Binomial B(100; 0,4):</strong><br>
-                    E(X) = 100 · 0,4 = 40<br><br>
+                    $$E(X) = \\frac{1}{6}(1+2+3+4+5+6) = 3{,}5$$
+                    <strong>Binomialverteilung \\( B(100;\\,0{,}4) \\):</strong>
+                    $$E(X) = 100 \\cdot 0{,}4 = 40$$
                     → Im Mittel 40 Treffer erwartet.
                 </div>
             </details>
@@ -346,7 +345,7 @@ window.REPETITIO_DECKS["stochastik"] = {
         answer: `
             <h4>Stochastische Unabhängigkeit</h4>
             <div class="formula-box">$$P(A \\cap B) = P(A) \\cdot P(B)$$</div>
-            <p>Äquivalent: $$P(A|B) = P(A)$$</p>
+            <p>Äquivalent: \\( P(A|B) = P(A) \\)</p>
             <p>Das Eintreten von B hat keinen Einfluss auf die Wahrscheinlichkeit von A.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -392,7 +391,7 @@ window.REPETITIO_DECKS["stochastik"] = {
         answer: `
             <h4>Totale Wahrscheinlichkeit</h4>
             <div class="formula-box">$$P(A) = \\sum_{i} P(A|B_i) \\cdot P(B_i)$$</div>
-            <p>Wenn die $$B_i$$ eine vollständige Zerlegung bilden, addiere die Pfade zu A.</p>
+            <p>Wenn die \\( B_i \\) eine vollständige Zerlegung bilden, addiere die Pfade zu A.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -413,8 +412,8 @@ window.REPETITIO_DECKS["stochastik"] = {
         question: "Wie erkenne ich, ob Ereignisse unabhängig sind?",
         answer: `
             <h4>Unabhängigkeit prüfen</h4>
-            <p><strong>Methode 1:</strong> Prüfe ob $$P(A \\cap B) = P(A) \\cdot P(B)$$</p>
-            <p><strong>Methode 2:</strong> Prüfe ob $$P(A|B) = P(A)$$</p>
+            <p><strong>Methode 1:</strong> Prüfe ob \\( P(A \\cap B) = P(A) \\cdot P(B) \\)</p>
+            <p><strong>Methode 2:</strong> Prüfe ob \\( P(A|B) = P(A) \\)</p>
             <p><strong>Im Kontext:</strong> Beeinflusst das Eintreten von B die Wahrscheinlichkeit von A?</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -446,7 +445,7 @@ window.REPETITIO_DECKS["stochastik"] = {
             <ul>
                 <li>Wahrscheinlichkeiten ändern sich</li>
                 <li>Züge sind abhängig</li>
-                <li>Hypergeometrische Verteilung</li>
+                <li>keine Binomialverteilung (Zusatz, nicht im Fachlehrplan: die passende Verteilung heißt hypergeometrisch)</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -469,9 +468,9 @@ window.REPETITIO_DECKS["stochastik"] = {
         question: "Wie bestimme ich n oder p aus gegebenen Bedingungen?",
         answer: `
             <h4>Parameter bestimmen</h4>
-            <p><strong>n gesucht:</strong> Oft mit $$P(X \\geq 1) \\geq 0{,}95$$</p>
-            <p>→ Umformen: $$1 - P(X=0) \\geq 0{,}95$$<br>
-            → $$P(X=0) = (1-p)^n \\leq 0{,}05$$</p>
+            <p><strong>n gesucht:</strong> Oft mit \\( P(X \\geq 1) \\geq 0{,}95 \\)</p>
+            <p>→ Umformen: \\( 1 - P(X=0) \\geq 0{,}95 \\)<br>
+            → \\( P(X=0) = (1-p)^n \\leq 0{,}05 \\)</p>
             <p><strong>p gesucht:</strong> Gleichung aufstellen und lösen</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -497,7 +496,7 @@ window.REPETITIO_DECKS["stochastik"] = {
             <ul>
                 <li><strong>Stufen:</strong> Jede Verzweigung = ein Zufallsexperiment</li>
                 <li><strong>Zweige:</strong> Mögliche Ausgänge mit Wahrscheinlichkeiten</li>
-                <li><strong>Pfade:</strong> Kombination von Ausgängen (Blatt zu Blatt)</li>
+                <li><strong>Pfade:</strong> Kombination von Ausgängen (vom Startpunkt bis zu einem Endpunkt)</li>
             </ul>
             <p><strong>Ablesen:</strong></p>
             <ul>
@@ -525,12 +524,12 @@ window.REPETITIO_DECKS["stochastik"] = {
         answer: `
             <h4>Gegenereignis</h4>
             <div class="formula-box">$$P(\\bar{A}) = 1 - P(A)$$</div>
-            <p>Das Gegenereignis $$\\bar{A}$$ ("nicht A") enthält alle Ergebnisse, die nicht in A liegen.</p>
+            <p>Das Gegenereignis \\( \\bar{A} \\) ("nicht A") enthält alle Ergebnisse, die nicht in A liegen.</p>
             <p><strong>Typische Umformungen:</strong></p>
             <ul>
-                <li>$$P(X \\geq 1) = 1 - P(X = 0)$$</li>
-                <li>$$P(X > k) = 1 - P(X \\leq k)$$</li>
-                <li>$$P(X < k) = 1 - P(X \\geq k)$$</li>
+                <li>\\( P(X \\geq 1) = 1 - P(X = 0) \\)</li>
+                <li>\\( P(X > k) = 1 - P(X \\leq k) \\)</li>
+                <li>\\( P(X < k) = 1 - P(X \\geq k) \\)</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -557,9 +556,9 @@ window.REPETITIO_DECKS["stochastik"] = {
             </div>
             <p><strong>Typische Formulierungen:</strong></p>
             <ul>
-                <li>"mindestens einer" = $$X \\geq 1$$</li>
-                <li>"mindestens 3" = $$X \\geq 3$$</li>
-                <li>"nicht alle" = $$X < n$$</li>
+                <li>"mindestens einer" = \\( X \\geq 1 \\)</li>
+                <li>"mindestens 3" = \\( X \\geq 3 \\)</li>
+                <li>"nicht alle" = \\( X < n \\)</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -583,21 +582,21 @@ window.REPETITIO_DECKS["stochastik"] = {
             <h4>Erwartungswert im Glücksspiel</h4>
             <p>Der Erwartungswert gibt den durchschnittlichen Gewinn/Verlust pro Spiel an.</p>
             <div class="formula-box">$$E(X) = \\sum_{i} (\\text{Gewinn}_i \\cdot P_i)$$</div>
+            <p>X = Reingewinn: Auszahlung minus Einsatz.</p>
             <ul>
-                <li>$$E(X) > 0$$: Spiel ist günstig für Spieler</li>
-                <li>$$E(X) < 0$$: Spiel ist ungünstig für Spieler</li>
-                <li>$$E(X) = 0$$: Spiel ist fair</li>
+                <li>\\( E(X) > 0 \\): Spiel ist günstig für Spieler</li>
+                <li>\\( E(X) < 0 \\): Spiel ist ungünstig für Spieler</li>
+                <li>\\( E(X) = 0 \\): Spiel ist fair</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Würfelspiel: Einsatz 2€<br>
-                    6 → Gewinn 10€<br>
-                    sonst → nichts<br><br>
-                    E(Gewinn) = $$\\frac{1}{6} \\cdot 10 + \\frac{5}{6} \\cdot 0$$<br>
-                    $$= \\frac{10}{6} \\approx 1{,}67$$<br><br>
-                    E(Nettogewinn) = 1,67€ - 2€ = -0,33€<br><br>
-                    → Unfair, Spieler verliert im Schnitt 33ct
+                    Würfelspiel: Einsatz 2 €<br>
+                    6 → Auszahlung 10 €<br>
+                    sonst → nichts
+                    $$E(\\text{Auszahlung}) = \\frac{1}{6} \\cdot 10 + \\frac{5}{6} \\cdot 0 = \\frac{10}{6} \\approx 1{,}67$$
+                    $$E(X) = E(\\text{Reingewinn}) \\approx 1{,}67 - 2 = -0{,}33$$
+                    → \\( E(X) < 0 \\): unfair, der Spieler verliert im Schnitt etwa 33 ct pro Spiel.
                 </div>
             </details>
         `
@@ -610,7 +609,7 @@ window.REPETITIO_DECKS["stochastik"] = {
             <h4>Vierfeldertafel erstellen</h4>
             <ol>
                 <li>Bekannte Werte eintragen</li>
-                <li>Randsummen ergänzen (Zeilen/Spalten = 1)</li>
+                <li>Randsummen ergänzen (\\( P(A) + P(\\bar{A}) = 1 \\), \\( P(B) + P(\\bar{B}) = 1 \\))</li>
                 <li>Fehlende Werte durch Subtraktion</li>
             </ol>
             <details class="example">
@@ -629,16 +628,16 @@ window.REPETITIO_DECKS["stochastik"] = {
             </details>
         `
     },
-    // ===== eA-Karten =====
+    // ===== Karten 101–112: überwiegend eA; sto-101 und sto-109 sind laut FLP gA =====
     // Grundlagen (eA)
     {
-        id: "sto-101", niveau: "ea",
+        id: "sto-101", niveau: "ga",
         category: "grundlagen",
         question: "Wie schreibe ich Ereignisse in Mengenschreibweise (∪, ∩, ∖)?",
         answer: `
             <h4>Ereignisse als Teilmengen von Ω</h4>
             <div class="formula-box">
-                $$A \\cup B = \\{x \\,|\\, x \\in A \\;\\lor\\; x \\in B\\} \\qquad A \\cap B = \\{x \\,|\\, x \\in A \\;\\land\\; x \\in B\\}$$<br><br>
+                $$A \\cup B = \\{x \\,|\\, x \\in A \\;\\lor\\; x \\in B\\}$$ $$A \\cap B = \\{x \\,|\\, x \\in A \\;\\land\\; x \\in B\\}$$<br><br>
                 $$A \\setminus B = \\{x \\,|\\, x \\in A \\;\\land\\; x \\notin B\\} \\qquad \\bar{A} = \\Omega \\setminus A$$
             </div>
             <table>
@@ -648,11 +647,11 @@ window.REPETITIO_DECKS["stochastik"] = {
                 <tr><td>\\( A \\setminus B \\)</td><td>A, aber <em>nicht</em> B</td><td>\\( P(A) - P(A \\cap B) \\)</td></tr>
                 <tr><td>\\( \\bar{A} \\)</td><td><em>nicht</em> A (Gegenereignis)</td><td>\\( 1 - P(A) \\)</td></tr>
             </table>
-            <p><strong>Merksatz:</strong> Ein Ereignis ist eine Teilmenge der Ergebnismenge Ω; „oder" wird zur Vereinigung, „und" zum Schnitt. Die Formel für \\( A \\cup B \\) braucht das Minus, weil die Ergebnisse im Schnitt sonst doppelt gezählt würden.</p>
+            <p><strong>Merksatz:</strong> Ein Ereignis ist eine Teilmenge der Ergebnismenge Ω; „oder“ wird zur Vereinigung, „und“ zum Schnitt. Die Formel für \\( A \\cup B \\) braucht das Minus, weil die Ergebnisse im Schnitt sonst doppelt gezählt würden.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Würfel: \\( \\Omega = \\{1; 2; 3; 4; 5; 6\\} \\), A: „gerade Zahl", B: „höchstens 3"<br>
+                    Würfel: \\( \\Omega = \\{1; 2; 3; 4; 5; 6\\} \\), A: „gerade Zahl“, B: „höchstens 3“<br>
                     $$A = \\{2; 4; 6\\}, \\quad B = \\{x \\,|\\, x \\leq 3\\} = \\{1; 2; 3\\}$$<br>
                     $$A \\cup B = \\{1; 2; 3; 4; 6\\} \\Rightarrow P(A \\cup B) = \\frac{5}{6}$$<br>
                     $$A \\cap B = \\{2\\} \\Rightarrow P(A \\cap B) = \\frac{1}{6}$$<br>
@@ -687,7 +686,7 @@ window.REPETITIO_DECKS["stochastik"] = {
                 <div class="example-content">
                     Füllmenge einer Abfüllanlage: \\( X \\sim N(500, 20^2) \\), also \\( \\mu = 500 \\) ml, \\( \\sigma = 20 \\) ml.<br><br>
                     Wahrscheinlichkeit, dass eine Flasche zwischen 480 ml und 520 ml enthält:
-                    $$P(480 \\leq X \\leq 520) = P(\\mu - \\sigma \\leq X \\leq \\mu + \\sigma) \\approx 0{,}683$$<br>
+                    $$P(480 \\leq X \\leq 520)$$ $$= P(\\mu - \\sigma \\leq X \\leq \\mu + \\sigma) \\approx 0{,}683$$<br>
                     Zwischen 460 ml und 540 ml (\\( \\mu \\pm 2\\sigma \\)): ≈ 0,954<br>
                     Zwischen 440 ml und 560 ml (\\( \\mu \\pm 3\\sigma \\)): ≈ 0,997<br><br>
                     → Nur etwa 0,3 % aller Flaschen weichen um mehr als 60 ml vom Sollwert ab.
@@ -703,13 +702,13 @@ window.REPETITIO_DECKS["stochastik"] = {
             <h4>Standardisieren und Φ-Tabelle</h4>
             <div class="formula-box">
                 $$P(X \\leq a) = \\Phi\\!\\left(\\frac{a - \\mu}{\\sigma}\\right) = \\Phi(z)$$<br><br>
-                $$P(a \\leq X \\leq b) = \\Phi\\!\\left(\\frac{b - \\mu}{\\sigma}\\right) - \\Phi\\!\\left(\\frac{a - \\mu}{\\sigma}\\right), \\qquad \\Phi(-z) = 1 - \\Phi(z)$$
+                $$P(a \\leq X \\leq b) = \\Phi\\!\\left(\\frac{b - \\mu}{\\sigma}\\right) - \\Phi\\!\\left(\\frac{a - \\mu}{\\sigma}\\right)$$ $$\\Phi(-z) = 1 - \\Phi(z)$$
             </div>
             <p><strong>Vorgehen:</strong></p>
             <ol>
                 <li>Grenze standardisieren: \\( z = \\dfrac{a - \\mu}{\\sigma} \\) (Abstand von μ in Einheiten von σ).</li>
                 <li>\\( \\Phi(z) \\) aus der Tabelle der Standardnormalverteilung ablesen (oder CAS/GTR).</li>
-                <li>Bei „größer als": Gegenwahrscheinlichkeit \\( 1 - \\Phi(z) \\); bei negativem z die Symmetrie nutzen.</li>
+                <li>Bei „größer als“: Gegenwahrscheinlichkeit \\( 1 - \\Phi(z) \\); bei negativem z die Symmetrie nutzen.</li>
             </ol>
             <p><strong>Merksatz:</strong> Die Tabelle enthält nur \\( N(0, 1) \\). Durch Standardisieren wird jede Normalverteilung darauf zurückgeführt. Weil die Dichte symmetrisch ist, liegt links von \\( -z \\) genauso viel Fläche wie rechts von \\( z \\) – daher \\( \\Phi(-z) = 1 - \\Phi(z) \\).</p>
             <details class="example">
@@ -717,11 +716,11 @@ window.REPETITIO_DECKS["stochastik"] = {
                 <div class="example-content">
                     \\( X \\sim N(500, 20^2) \\), Tabellenwert: \\( \\Phi(1{,}5) = 0{,}9332 \\)<br><br>
                     <strong>a) \\( P(X \\leq 530) \\):</strong>
-                    $$z = \\frac{530 - 500}{20} = 1{,}5 \\Rightarrow P(X \\leq 530) = \\Phi(1{,}5) = 0{,}9332$$<br>
+                    $$z = \\frac{530 - 500}{20} = 1{,}5$$ $$\\Rightarrow P(X \\leq 530) = \\Phi(1{,}5) = 0{,}9332$$<br>
                     <strong>b) \\( P(X > 530) \\):</strong>
                     $$1 - \\Phi(1{,}5) = 1 - 0{,}9332 = 0{,}0668$$<br>
                     <strong>c) \\( P(X \\leq 470) \\)</strong> (negatives z, Symmetrie):
-                    $$z = \\frac{470 - 500}{20} = -1{,}5 \\Rightarrow \\Phi(-1{,}5) = 1 - \\Phi(1{,}5) = 0{,}0668$$<br>
+                    $$z = \\frac{470 - 500}{20} = -1{,}5$$ $$\\Rightarrow \\Phi(-1{,}5) = 1 - \\Phi(1{,}5) = 0{,}0668$$<br>
                     <strong>d) \\( P(470 \\leq X \\leq 530) \\):</strong>
                     $$\\Phi(1{,}5) - \\Phi(-1{,}5) = 0{,}9332 - 0{,}0668 = 0{,}8664$$
                 </div>
@@ -747,15 +746,15 @@ window.REPETITIO_DECKS["stochastik"] = {
                 $$\\text{diskret: } P(a \\leq X \\leq b) = \\sum_{k=a}^{b} P(X = k)$$<br>
                 $$\\text{stetig: } P(a \\leq X \\leq b) = \\int_a^b \\varphi(x)\\,dx$$
             </div>
-            <p><strong>Merksatz:</strong> Bei stetigen Zufallsgrößen sind Wahrscheinlichkeiten Flächen unter der Dichte. Ein einzelner Punkt hat keine Fläche, deshalb ist \\( P(X = a) = 0 \\) – die Dichte \\( \\varphi(a) \\) selbst ist <em>keine</em> Wahrscheinlichkeit, sondern nur „Wahrscheinlichkeit pro Längeneinheit".</p>
+            <p><strong>Merksatz:</strong> Bei stetigen Zufallsgrößen sind Wahrscheinlichkeiten Flächen unter der Dichte. Ein einzelner Punkt hat keine Fläche, deshalb ist \\( P(X = a) = 0 \\) – die Dichte \\( \\varphi(a) \\) selbst ist <em>keine</em> Wahrscheinlichkeit, sondern nur „Wahrscheinlichkeit pro Längeneinheit“.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     <strong>Diskret:</strong> 1000 Münzwürfe, \\( X \\sim B(1000; 0{,}5) \\):
                     $$P(X = 500) = \\binom{1000}{500} \\cdot 0{,}5^{1000} \\approx 0{,}0252$$
-                    → „genau 500 Treffer" hat eine positive (kleine) Wahrscheinlichkeit.<br><br>
+                    → „genau 500 Treffer“ hat eine positive (kleine) Wahrscheinlichkeit.<br><br>
                     <strong>Stetig:</strong> Passende Normalverteilung \\( Y \\sim N(500, 250) \\) mit \\( \\mu = np = 500 \\), \\( \\sigma^2 = np(1-p) = 250 \\), also \\( \\sigma \\approx 15{,}81 \\):
-                    $$P(Y = 500) = 0, \\quad \\text{aber} \\quad P(499{,}5 \\leq Y \\leq 500{,}5) \\approx 0{,}0252$$
+                    $$P(Y = 500) = 0, \\quad \\text{aber}$$ $$P(499{,}5 \\leq Y \\leq 500{,}5) \\approx 0{,}0252$$
                     → Nur ein Intervall um 500 hat eine Wahrscheinlichkeit; sie entspricht etwa \\( \\varphi(500) \\cdot 1 \\) (Dichte mal Intervallbreite) und stimmt mit dem Binomialwert überein. Das ist die <strong>Stetigkeitskorrektur</strong>: \\( P(X = k) \\approx P(k - 0{,}5 \\leq Y \\leq k + 0{,}5) \\)
                 </div>
             </details>
@@ -769,7 +768,7 @@ window.REPETITIO_DECKS["stochastik"] = {
             <h4>Gaußsche Glockenkurve</h4>
             <div class="formula-box">
                 $$\\varphi_{\\mu;\\sigma}(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} \\cdot e^{-\\frac{1}{2}\\left(\\frac{x - \\mu}{\\sigma}\\right)^2}$$<br><br>
-                $$\\text{standardisiert } (\\mu = 0,\\ \\sigma = 1): \\quad \\varphi(x) = \\frac{1}{\\sqrt{2\\pi}} \\cdot e^{-\\frac{x^2}{2}}$$
+                $$\\text{standardisiert } (\\mu = 0,\\ \\sigma = 1):$$ $$\\varphi(x) = \\frac{1}{\\sqrt{2\\pi}} \\cdot e^{-\\frac{x^2}{2}}$$
             </div>
             <p><strong>Eigenschaften:</strong></p>
             <ul>
@@ -787,7 +786,7 @@ window.REPETITIO_DECKS["stochastik"] = {
                     Maximum bei \\( x = 500 \\):
                     $$\\varphi(500) = \\frac{1}{20\\sqrt{2\\pi}} \\approx 0{,}0199$$<br>
                     Wendepunkte bei \\( 500 \\pm 20 \\), also bei 480 und 520; dort gilt
-                    $$\\varphi(520) = \\frac{1}{20\\sqrt{2\\pi}} \\cdot e^{-\\frac{1}{2}} \\approx 0{,}0199 \\cdot 0{,}6065 \\approx 0{,}0121$$<br>
+                    $$\\varphi(520) = \\frac{1}{20\\sqrt{2\\pi}} \\cdot e^{-\\frac{1}{2}}$$ $$\\approx 0{,}0199 \\cdot 0{,}6065 \\approx 0{,}0121$$<br>
                     Zum Vergleich standardisiert: \\( \\varphi(0) = \\frac{1}{\\sqrt{2\\pi}} \\approx 0{,}3989 \\) – die Kurve für σ = 20 ist 20-mal flacher, dafür 20-mal breiter.
                 </div>
             </details>
@@ -800,11 +799,11 @@ window.REPETITIO_DECKS["stochastik"] = {
         answer: `
             <h4>Rückwärts durch die Φ-Tabelle</h4>
             <div class="formula-box">
-                $$P(X \\leq a) = p \\;\\Rightarrow\\; \\Phi(z) = p \\;\\Rightarrow\\; z = \\Phi^{-1}(p) \\;\\Rightarrow\\; \\frac{a - \\mu}{\\sigma} = z$$
+                $$P(X \\leq a) = p \\;\\Rightarrow\\; \\Phi(z) = p$$ $$\\Rightarrow\\; z = \\Phi^{-1}(p) \\;\\Rightarrow\\; \\frac{a - \\mu}{\\sigma} = z$$
             </div>
             <p><strong>Vorgehen:</strong></p>
             <ol>
-                <li>Bedingung als \\( P(X \\leq a) = p \\) schreiben (bei „größer" oder „zwischen" zuerst in „kleiner-gleich" umformen).</li>
+                <li>Bedingung als \\( P(X \\leq a) = p \\) schreiben (bei „größer“ oder „zwischen“ zuerst in „kleiner-gleich“ umformen).</li>
                 <li>z zu p in der Tabelle <em>rückwärts</em> suchen: welche Zeile liefert Φ(z) = p? (oder \\( \\Phi^{-1} \\) mit CAS/GTR)</li>
                 <li>Gleichung \\( \\dfrac{a - \\mu}{\\sigma} = z \\) nach der gesuchten Größe auflösen.</li>
             </ol>
@@ -818,7 +817,7 @@ window.REPETITIO_DECKS["stochastik"] = {
                 <div class="example-content">
                     Vorgabe: 90 % aller Flaschen enthalten höchstens 530 ml, also \\( P(X \\leq 530) = 0{,}9 \\). Tabelle rückwärts: \\( \\Phi(z) = 0{,}9 \\Rightarrow z \\approx 1{,}2816 \\).<br><br>
                     <strong>a) σ = 20 bekannt, μ gesucht:</strong>
-                    $$\\frac{530 - \\mu}{20} = 1{,}2816 \\Rightarrow \\mu = 530 - 20 \\cdot 1{,}2816 \\approx 504{,}37$$<br>
+                    $$\\frac{530 - \\mu}{20} = 1{,}2816$$ $$\\Rightarrow \\mu = 530 - 20 \\cdot 1{,}2816 \\approx 504{,}37$$<br>
                     <strong>b) μ = 500 bekannt, σ gesucht:</strong>
                     $$\\frac{530 - 500}{\\sigma} = 1{,}2816 \\Rightarrow \\sigma = \\frac{30}{1{,}2816} \\approx 23{,}41$$<br>
                     Probe zu b): \\( z = 30 / 23{,}41 \\approx 1{,}28 \\), \\( \\Phi(1{,}28) \\approx 0{,}90 \\) ✓
@@ -840,7 +839,7 @@ window.REPETITIO_DECKS["stochastik"] = {
                 <tr><td>repräsentativ</td><td>Stichprobe spiegelt die Grundgesamtheit in den relevanten Merkmalen wider</td><td>h ist ein guter Schätzwert für p</td></tr>
             </table>
             <div class="formula-box">
-                $$h = \\frac{k}{n} \\approx p \\qquad \\text{(Schätzung: } p \\approx h \\text{, Hochrechnung: } N \\cdot h\\text{)}$$
+                $$h = \\frac{k}{n} \\approx p$$ $$\\text{(Schätzung: } p \\approx h \\text{, Hochrechnung: } N \\cdot h\\text{)}$$
             </div>
             <p><strong>Repräsentativ</strong> wird eine Stichprobe durch <em>zufällige</em> Auswahl (jedes Element gleiche Chance) und ausreichenden Umfang. Nicht repräsentativ: Befragung nur in einer Klasse, nur Freiwillige, nur Internetnutzer – hier ist die Auswahl systematisch verzerrt.</p>
             <p><strong>Merksatz:</strong> Die Stichprobe ersetzt die Vollerhebung, weil diese zu teuer, zu langsam oder unmöglich ist (zerstörende Prüfung). Der Preis dafür ist Unsicherheit: h schwankt von Stichprobe zu Stichprobe um p – wie stark, sagen Prognose- und Konfidenzintervall.</p>
@@ -850,7 +849,7 @@ window.REPETITIO_DECKS["stochastik"] = {
                     Schule mit N = 500 Schülerinnen und Schülern. Aus der Schülerliste werden n = 50 per Zufallszahlen ausgewählt und befragt; k = 12 fahren mit dem Rad.<br><br>
                     $$h = \\frac{12}{50} = 0{,}24 \\Rightarrow p \\approx 0{,}24$$<br>
                     Hochrechnung: \\( 500 \\cdot 0{,}24 = 120 \\) Radfahrende an der Schule (Schätzwert).<br><br>
-                    Hätte man nur die 25 Mitglieder der Fahrrad-AG befragt, wäre h nahe 1 – die Stichprobe wäre nicht repräsentativ, obwohl sie fast genauso groß ist.
+                    Hätte man stattdessen 50 Schülerinnen und Schüler am Fahrradständer befragt, wäre h nahe 1 – die Stichprobe wäre nicht repräsentativ, obwohl sie genauso groß ist.
                 </div>
             </details>
         `
@@ -862,8 +861,8 @@ window.REPETITIO_DECKS["stochastik"] = {
         answer: `
             <h4>Prognoseintervall (p bekannt → Stichprobe vorhersagen)</h4>
             <div class="formula-box">
-                $$\\text{Trefferzahl: } \\quad \\mu - c \\cdot \\sigma \\leq X \\leq \\mu + c \\cdot \\sigma, \\qquad \\mu = np, \\; \\sigma = \\sqrt{np(1-p)}$$<br><br>
-                $$\\text{Anteil: } \\quad p - c \\cdot \\sqrt{\\frac{p(1-p)}{n}} \\leq \\frac{X}{n} \\leq p + c \\cdot \\sqrt{\\frac{p(1-p)}{n}}$$
+                $$\\text{Trefferzahl: } \\quad \\mu - c \\cdot \\sigma \\leq X \\leq \\mu + c \\cdot \\sigma$$ $$\\mu = np, \\; \\sigma = \\sqrt{np(1-p)}$$<br><br>
+                $$\\text{Anteil: } \\quad p - c \\cdot \\sqrt{\\frac{p(1-p)}{n}} \\leq \\frac{X}{n}$$ $$\\leq p + c \\cdot \\sqrt{\\frac{p(1-p)}{n}}$$
             </div>
             <table>
                 <tr><th>Sicherheit</th><th>90 %</th><th>95 %</th><th>99 %</th></tr>
@@ -876,10 +875,10 @@ window.REPETITIO_DECKS["stochastik"] = {
                 <div class="example-content">
                     Ein Bauteil ist mit p = 0,3 fehlerhaft; n = 200 Bauteile werden geprüft. 95-%-Prognoseintervall?<br><br>
                     <strong>Trefferzahl:</strong>
-                    $$\\mu = 200 \\cdot 0{,}3 = 60, \\qquad \\sigma = \\sqrt{200 \\cdot 0{,}3 \\cdot 0{,}7} = \\sqrt{42} \\approx 6{,}48 > 3 \\; \\checkmark$$
-                    $$60 \\pm 1{,}96 \\cdot 6{,}48 = 60 \\pm 12{,}70 \\Rightarrow [47{,}3;\\, 72{,}7] \\Rightarrow 48 \\leq X \\leq 72$$<br>
+                    $$\\mu = 200 \\cdot 0{,}3 = 60$$ $$\\sigma = \\sqrt{200 \\cdot 0{,}3 \\cdot 0{,}7} = \\sqrt{42} \\approx 6{,}48 > 3 \\; \\checkmark$$
+                    $$60 \\pm 1{,}96 \\cdot 6{,}48 = 60 \\pm 12{,}70$$ $$\\Rightarrow [47{,}3;\\, 72{,}7] \\Rightarrow 48 \\leq X \\leq 72$$<br>
                     <strong>Anteil:</strong>
-                    $$0{,}3 \\pm 1{,}96 \\cdot \\sqrt{\\frac{0{,}3 \\cdot 0{,}7}{200}} = 0{,}3 \\pm 1{,}96 \\cdot 0{,}0324 = 0{,}3 \\pm 0{,}0635$$
+                    $$0{,}3 \\pm 1{,}96 \\cdot \\sqrt{\\frac{0{,}3 \\cdot 0{,}7}{200}}$$ $$= 0{,}3 \\pm 1{,}96 \\cdot 0{,}0324 = 0{,}3 \\pm 0{,}0635$$
                     $$\\Rightarrow 0{,}2365 \\leq \\frac{X}{n} \\leq 0{,}3635$$<br>
                     Kontrolle mit der exakten Binomialverteilung: \\( P(48 \\leq X \\leq 72) \\approx 0{,}947 \\) – passt zu 95 %.
                 </div>
@@ -887,7 +886,7 @@ window.REPETITIO_DECKS["stochastik"] = {
         `
     },
     {
-        id: "sto-109", niveau: "ea",
+        id: "sto-109", niveau: "ga",
         category: "statistik",
         question: "Wie berechne ich ein Konfidenzintervall für p?",
         answer: `
@@ -902,14 +901,14 @@ window.REPETITIO_DECKS["stochastik"] = {
                 <li>Standardfehler \\( \\sqrt{h(1-h)/n} \\) bestimmen, mit c multiplizieren.</li>
                 <li>Intervall \\( [h - c \\cdot \\ldots;\\, h + c \\cdot \\ldots] \\) angeben und interpretieren.</li>
             </ol>
-            <p><strong>Merksatz:</strong> Das Konfidenzintervall ist die Umkehrung des Prognoseintervalls: Statt des unbekannten p wird h in die Wurzel eingesetzt. Interpretation: Das Verfahren liefert in etwa 95 % aller Stichproben ein Intervall, das das wahre p enthält – nicht „p liegt mit 95 % Wahrscheinlichkeit im Intervall" (p ist fest, das Intervall ist zufällig).</p>
+            <p><strong>Merksatz:</strong> Weil p unbekannt ist, wird die relative Häufigkeit h in die Wurzel eingesetzt (eA: Das Konfidenzintervall ist die Umkehrung des Prognoseintervalls). Interpretation: Das Verfahren liefert in etwa 95 % aller Stichproben ein Intervall, das das wahre p enthält – nicht „p liegt mit 95 % Wahrscheinlichkeit im Intervall“ (p ist fest, das Intervall ist zufällig).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     Umfrage: Von n = 400 Befragten geben k = 120 an, das Produkt zu kennen. 95-%-Konfidenzintervall für den Bekanntheitsgrad p?<br><br>
                     $$h = \\frac{120}{400} = 0{,}3$$
-                    $$\\sqrt{\\frac{0{,}3 \\cdot 0{,}7}{400}} = \\sqrt{0{,}000525} \\approx 0{,}0229, \\qquad 1{,}96 \\cdot 0{,}0229 \\approx 0{,}0449$$
-                    $$0{,}3 - 0{,}0449 \\leq p \\leq 0{,}3 + 0{,}0449 \\Rightarrow 0{,}255 \\leq p \\leq 0{,}345$$<br>
+                    $$\\sqrt{\\frac{0{,}3 \\cdot 0{,}7}{400}} = \\sqrt{0{,}000525} \\approx 0{,}0229$$ $$1{,}96 \\cdot 0{,}0229 \\approx 0{,}0449$$
+                    $$0{,}3 - 0{,}0449 \\leq p \\leq 0{,}3 + 0{,}0449$$ $$\\Rightarrow 0{,}255 \\leq p \\leq 0{,}345$$<br>
                     → Der Bekanntheitsgrad liegt (bei 95 % Konfidenz) zwischen 25,5 % und 34,5 %.
                 </div>
             </details>
@@ -922,7 +921,7 @@ window.REPETITIO_DECKS["stochastik"] = {
         answer: `
             <h4>Laplace-Bedingung und σ-Regeln</h4>
             <div class="formula-box">
-                $$\\text{Laplace-Bedingung (Faustregel): } \\quad \\sigma = \\sqrt{np(1-p)} > 3$$
+                $$\\text{Laplace-Bedingung (Faustregel): }$$ $$\\sigma = \\sqrt{np(1-p)} > 3$$
             </div>
             <p>Ist sie erfüllt, darf \\( B(n; p) \\) durch die Normalverteilung \\( N(\\mu, \\sigma^2) \\) genähert werden, und die <strong>σ-Regeln</strong> gelten:</p>
             <table>
@@ -955,7 +954,7 @@ window.REPETITIO_DECKS["stochastik"] = {
             <h4>Schluss von h auf p</h4>
             <div class="formula-box">
                 $$\\text{Punktschätzung: } p \\approx h$$<br>
-                $$\\text{Konfidenzintervall für } p: \\; \\left[h - c\\sqrt{\\tfrac{h(1-h)}{n}};\\; h + c\\sqrt{\\tfrac{h(1-h)}{n}}\\right]$$
+                $$\\text{Konfidenzintervall für } p:$$ $$\\left[h - c\\sqrt{\\tfrac{h(1-h)}{n}};\\; h + c\\sqrt{\\tfrac{h(1-h)}{n}}\\right]$$
             </div>
             <p><strong>Die beiden Richtungen:</strong></p>
             <table>
@@ -972,7 +971,7 @@ window.REPETITIO_DECKS["stochastik"] = {
                     $$\\sqrt{\\frac{0{,}4 \\cdot 0{,}6}{500}} \\approx 0{,}0219, \\qquad 1{,}96 \\cdot 0{,}0219 \\approx 0{,}0429$$
                     $$0{,}357 \\leq p \\leq 0{,}443$$<br>
                     Hochrechnung: \\( 20\\,000 \\cdot 0{,}357 \\approx 7140 \\) bis \\( 20\\,000 \\cdot 0{,}443 \\approx 8860 \\) Haushalte mit Solaranlage (95 % Konfidenz).<br><br>
-                    Behauptung der Stadtverwaltung „35 % haben eine Solaranlage": \\( p_0 = 0{,}35 \\) liegt <em>nicht</em> im Intervall → die Stichprobe spricht gegen die Behauptung. Bei \\( p_0 = 0{,}42 \\) dagegen: verträglich.
+                    Behauptung der Stadtverwaltung „35 % haben eine Solaranlage“: \\( p_0 = 0{,}35 \\) liegt <em>nicht</em> im Intervall → die Stichprobe spricht gegen die Behauptung. Bei \\( p_0 = 0{,}42 \\) dagegen: verträglich.
                 </div>
             </details>
         `
@@ -984,7 +983,7 @@ window.REPETITIO_DECKS["stochastik"] = {
         answer: `
             <h4>Stichprobenumfang aus der Intervallbreite</h4>
             <div class="formula-box">
-                $$\\text{halbe Breite } d = c \\cdot \\sqrt{\\frac{h(1-h)}{n}} \\;\\Rightarrow\\; n = \\left(\\frac{c}{d}\\right)^2 \\cdot h(1-h)$$<br><br>
+                $$\\text{halbe Breite } d = c \\cdot \\sqrt{\\frac{h(1-h)}{n}}$$ $$\\;\\Rightarrow\\; n = \\left(\\frac{c}{d}\\right)^2 \\cdot h(1-h)$$<br><br>
                 $$\\text{ungünstigster Fall } h = 0{,}5: \\quad n = \\left(\\frac{c}{d}\\right)^2 \\cdot \\frac{1}{4}$$
             </div>
             <p><strong>Vorgehen:</strong></p>
@@ -998,10 +997,10 @@ window.REPETITIO_DECKS["stochastik"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     Ein 95-%-Konfidenzintervall soll höchstens 4 Prozentpunkte breit sein, also \\( d = 0{,}02 \\); h ist vorab unbekannt.<br><br>
-                    $$1{,}96 \\cdot \\sqrt{\\frac{0{,}25}{n}} \\leq 0{,}02 \\;\\Rightarrow\\; \\sqrt{n} \\geq \\frac{1{,}96 \\cdot 0{,}5}{0{,}02} = 49 \\;\\Rightarrow\\; n \\geq 49^2 = 2401$$<br>
+                    $$1{,}96 \\cdot \\sqrt{\\frac{0{,}25}{n}} \\leq 0{,}02$$ $$\\Rightarrow\\; \\sqrt{n} \\geq \\frac{1{,}96 \\cdot 0{,}5}{0{,}02} = 49 \\;\\Rightarrow\\; n \\geq 49^2 = 2401$$<br>
                     Probe: \\( 1{,}96 \\cdot \\sqrt{0{,}25 / 2401} = 0{,}02 \\) ✓<br><br>
                     Ist aus einer Vorstudie h ≈ 0,3 bekannt, reicht
-                    $$n \\geq \\left(\\frac{1{,}96}{0{,}02}\\right)^2 \\cdot 0{,}3 \\cdot 0{,}7 = 9604 \\cdot 0{,}21 \\approx 2016{,}8 \\;\\Rightarrow\\; n = 2017$$
+                    $$n \\geq \\left(\\frac{1{,}96}{0{,}02}\\right)^2 \\cdot 0{,}3 \\cdot 0{,}7 = 9604 \\cdot 0{,}21 \\approx 2016{,}8$$ $$\\;\\Rightarrow\\; n = 2017$$
                 </div>
             </details>
         `

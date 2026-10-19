@@ -69,7 +69,7 @@ window.REPETITIO_DECKS["grundlagen"] = {
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$\\frac{\\;\\frac{3}{4}\\;}{\\frac{1}{2}} = \\frac{3}{4} \\cdot 2 = \\frac{3}{2}$$
-                    Typisch bei der Quotientenregel:
+                    Typisch beim Vereinfachen von Ableitungen:
                     $$\\frac{\\;\\frac{1}{x}\\;}{x^2} = \\frac{1}{x^3}$$
                 </div>
             </details>
@@ -245,7 +245,7 @@ window.REPETITIO_DECKS["grundlagen"] = {
         answer: `
             <h4>Vorrangregeln</h4>
             <div class="formula-box">
-                $$\\text{Klammer} \\to \\text{Potenz und Wurzel} \\to \\text{Punkt} \\to \\text{Strich}$$
+                $$\\text{Klammer} \\to \\text{Potenz und Wurzel}$$ $$\\to \\text{Punkt} \\to \\text{Strich}$$
             </div>
             <p>Bruchstrich und Wurzelzeichen wirken wie eine Klammer: was darunter steht, wird zuerst ausgerechnet.</p>
             <details class="example">
@@ -264,7 +264,7 @@ window.REPETITIO_DECKS["grundlagen"] = {
         answer: `
             <h4>Der letzte Rechenschritt entscheidet</h4>
             <p>Welche Operation würde man <strong>zuletzt</strong> ausführen? Danach heißt der Term Summe, Produkt, Quotient oder Potenz.</p>
-            <p>Das bestimmt in der Oberstufe die Ableitungsregel: Produkt heißt Produktregel, Quotient Quotientenregel, Verkettung Kettenregel.</p>
+            <p>Das bestimmt in der Oberstufe die Ableitungsregel: Produkt heißt Produktregel, Verkettung Kettenregel.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -353,7 +353,7 @@ window.REPETITIO_DECKS["grundlagen"] = {
                 <div class="example-content">
                     Von 250 Befragten antworten 40 mit Ja:
                     $$\\frac{40}{250} = 0{,}16 = 16\\,\\%$$
-                    Hochrechnung auf 20000: \\( 0{,}16 \\cdot 20000 = 3200 \\).
+                    Hochrechnung auf 20&nbsp;000: \\( 0{,}16 \\cdot 20\\,000 = 3200 \\).
                 </div>
             </details>
         `
@@ -370,7 +370,7 @@ window.REPETITIO_DECKS["grundlagen"] = {
                 $$\\text{Flächen}: 100$$
                 $$\\text{Volumen}: 1000$$
             </div>
-            <p>Der Faktor der Länge geht quadriert in die Fläche und kubiert in das Volumen ein.</p>
+            <p>Die Faktoren gelten zwischen benachbarten Einheiten (mm, cm, dm, m). Der Faktor der Länge geht quadriert in die Fläche und kubiert in das Volumen ein.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -391,7 +391,7 @@ window.REPETITIO_DECKS["grundlagen"] = {
                 $$1 \\text{ h} = 60 \\text{ min} = 3600 \\text{ s}$$
                 $$1 \\;\\frac{\\text{m}}{\\text{s}} = 3{,}6 \\;\\frac{\\text{km}}{\\text{h}}$$
             </div>
-            <p>Zeitangaben sind nicht dezimal: 1,5 h sind 90 min, aber 1 h 30 min sind nicht „1,30 h".</p>
+            <p>Zeitangaben sind nicht dezimal: 1,5 h sind 90 min, aber 1 h 30 min sind nicht „1,30 h“.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">

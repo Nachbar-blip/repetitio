@@ -87,7 +87,7 @@ def check_deck(page, deck):
     return errors
 
 
-PHONE_WIDTH = 400
+PHONE_WIDTH = 360  # kleine Android-Handys; Formeln werden bis 75 % verkleinert (passeFormelnAn)
 
 
 def check_phone(page, deck):

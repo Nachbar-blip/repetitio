@@ -490,8 +490,8 @@ details.example[open] summary::before {
 
     .card-answer .katex { font-size: 1.05em; }
     .formula-box { font-size: 1rem; padding: 12px 10px; }
-    /* Display-Formeln dürfen an KaTeX-Basisgruppen umbrechen statt abgeschnitten zu werden */
-    .card-answer .katex-display > .katex { white-space: normal; }
+    /* Zu breite Display-Formeln verkleinert repetitio-engine.js (passeFormelnAn) - kein Umbruch
+       mitten in Klammern wie frueher mit white-space: normal. */
 }
 /* Niveau */
 .niveau-switch { display:flex; justify-content:center; gap:6px; margin-bottom:14px; }
@@ -500,6 +500,8 @@ details.example[open] summary::before {
 .niveau-switch button { padding:6px 14px; border-radius:16px; border:2px solid rgba(255,255,255,0.7); background:transparent; color:white; cursor:pointer; font-weight:600; }
 .niveau-switch button[aria-pressed="true"] { background:white; color:var(--accent-ink); }
 .badge-ea { display:inline-block; margin-left:8px; padding:2px 8px; border-radius:10px; background:var(--accent-ink); color:white; font-size:0.7rem; font-weight:700; vertical-align:middle; }
+.badge-zusatz { display:inline-block; margin-left:8px; padding:1px 7px; border-radius:10px; border:1.5px dashed #6b7280; color:#4b5563; font-size:0.7rem; font-weight:700; vertical-align:middle; }
+.hinweis-zusatz { margin:0 0 10px; padding:6px 10px; border-left:3px dashed #6b7280; color:#4b5563; font-size:0.85rem; }
 /* Startseite */
 .deck-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
 .deck-card { display:block; background:white; border-radius:16px; padding:24px; text-decoration:none; color:#1f2937; box-shadow:0 10px 30px rgba(0,0,0,0.15), inset 0 8px 0 var(--accent-ink); padding-top:32px; transition:transform .2s; }
