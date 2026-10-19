@@ -37,16 +37,16 @@ Karten, die schwerfallen, kommen früher wieder, sichere Karten seltener.
 
 | Deck | gA-Karten | eA-Karten | Kategorien |
 |---|---|---|---|
-| Analysis (`analysis`) | 33 | 15 | Ableitung, Grenzwerte, Kurvendiskussion, Scharen, Integral, Sonstiges |
-| Analytische Geometrie (`geometrie`) | 27 | 11 | Vektoren, Geraden, Ebenen, Abstände, Kreis, LGS |
-| Stochastik (`stochastik`) | 27 | 10 | Grundlagen, Bedingte Wahrscheinlichkeit, Binomialverteilung, Kenngrößen, Normalverteilung, Statistik |
+| Analysis (`analysis`) | 33 | 14 | Ableitung, Grenzwerte, Kurvendiskussion, Scharen, Integral, Sonstiges |
+| Analytische Geometrie (`geometrie`) | 26 | 11 | Vektoren, Geraden, Ebenen, Abstände, Kreis, LGS |
+| Stochastik (`stochastik`) | 24 | 10 | Grundlagen, Bedingte Wahrscheinlichkeit, Binomialverteilung, Kenngrößen, Normalverteilung, Statistik |
 | Klasse 10 (`klasse10`) | 76 (kein Niveau) | – | Potenz- & Wurzelfunktionen, Exponential- & Logarithmusfunktionen, Trigonometrische Funktionen, Lineare Gleichungssysteme, Vektoren, Zufallsgrößen |
 | Klasse 9 (`klasse9`) | 52 (kein Niveau) | – | Trigonometrie, Potenzen/Wurzeln/Logarithmen, Quadratische Gleichungen & Funktionen, Häufigkeitsverteilungen |
 | Klasse 8 (`klasse8`) | 57 (kein Niveau) | – | Terme & Variablen, Ähnlichkeit, Satzgruppe des Pythagoras, Lineare Funktionen, Körperberechnung, Mehrstufige Zufallsversuche |
 | Klasse 7 (`klasse7`) | 47 (kein Niveau) | – | Prozent- & Zinsrechnung, Gleichungen & Ungleichungen, Kreis, Körperdarstellung, Häufigkeiten & Wahrscheinlichkeit |
 | Rechengrundlagen (`grundlagen`) | 24 (kein Niveau) | – | Bruchrechnung, Vorzeichen & Klammern, Termstruktur & Vorrang, Dreisatz & Anteile, Größen & Einheiten, Runden & Überschlag, Teiler & Faktorisieren |
 
-Insgesamt 379 Karten: 123 Abiturkarten (87 gA, 36 eA), 232 Karten für die Klassenstufen 7 bis 10 und 24 Karten Rechengrundlagen. eA-Karten tragen im Trainer ein Badge „eA“; im gA-Modus
+Insgesamt 374 Karten: 118 Abiturkarten (83 gA, 35 eA), 232 Karten für die Klassenstufen 7 bis 10 und 24 Karten Rechengrundlagen. eA-Karten tragen im Trainer ein Badge „eA“; im gA-Modus
 sind sie nicht sichtbar, im eA-Modus werden gA- und eA-Karten gemeinsam gelernt.
 
 Die eA-Karten decken zusätzlich ab: Kettenregel und verkettete Funktionen, Grenzwertsätze und
@@ -143,10 +143,11 @@ Voraussetzungen: Python 3, `pip install playwright pytest`, `playwright install 
   KaTeX-Fehler, unbekannte Makros, übrig gebliebene Delimiter, doppelte IDs, unbekannte
   Kategorien sowie Formeln, die bei 1000 px oder 360 px Breite über die Karte hinauslaufen (am Handy verkleinert die Engine zu breite Formeln bis auf 75 %; was dann noch nicht passt, muss im Deck geteilt werden).
   Ziel: 0 Mängel pro Deck.
-- `python -m pytest tests -q` — neun Playwright-Tests: gA blendet eA-Karten aus, eA zeigt
+- `python -m pytest tests -q` — 17 Playwright-Tests: gA blendet eA-Karten aus, eA zeigt
   alle Karten und bleibt gespeichert, Bewertung schreibt Fortschritt in `localStorage`,
   unbekanntes Deck zeigt die Fehlerseite, leere Kategorie, Niveau-Links der Startseite,
-  aufgedeckte Karte ohne Überlappung, Tastatur nach Button-Klick, fällige Karten zuerst.
+  aufgedeckte Karte ohne Überlappung, Tastatur nach Button-Klick, fällige Karten zuerst; je Deck ein Datentest (keine Lücke im
+  Kartenarray, eindeutige IDs, gültiges Niveau und Kategorie).
 - `python tests/screenshots.py` — erzeugt Screenshots unter `tests/reports/` (Startseite und
   Karten, Desktop und Phone) für die Sichtprüfung. Screenshots werden angesehen, nicht nur
   erzeugt.

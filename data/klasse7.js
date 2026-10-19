@@ -840,14 +840,14 @@ window.REPETITIO_DECKS["klasse7"] = {
             <h4>Diagramme</h4>
             <ul>
                 <li><strong>Säulendiagramm</strong>: Höhe zeigt die Häufigkeit, gut zum Vergleichen</li>
-                <li><strong>Kreisdiagramm</strong>: Anteile am Ganzen, \\( \\alpha = \\frac{p}{100} \\cdot 360^\\circ \\)</li>
+                <li><strong>Kreisdiagramm</strong>: Anteile am Ganzen, alle Sektoren ergeben 100 %</li>
                 <li>Achsen beschriften und die Skala bei null beginnen lassen — sonst täuscht das Bild</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    30 von 120 Befragten (25 %) im Kreisdiagramm:
-                    $$\\alpha = 0{,}25 \\cdot 360^\\circ = 90^\\circ$$
+                    Klasse A hat 48 Stimmen, Klasse B 52. Beginnt die Achse erst bei 40, sind die Säulen 8 und 12 Einheiten hoch:
+                    B sieht um die Hälfte größer aus, ist aber nur um \\( \\frac{4}{48} \\approx 8 \\) % größer.
                 </div>
             </details>
         `

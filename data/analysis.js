@@ -76,25 +76,6 @@ window.REPETITIO_DECKS["analysis"] = {
             </details>
         `
     },
-    {
-        id: "ana-004", niveau: "ea",
-        category: "ableitung",
-        question: "Wie wende ich die Kettenregel an?",
-        answer: `
-            <h4>Kettenregel</h4>
-            <div class="formula-box">$$\\big(f(g(x))\\big)' = f'(g(x)) \\cdot g'(x)$$</div>
-            <p>Äußere Ableitung (innere Funktion bleibt) mal innere Ableitung.</p>
-            <details class="example">
-                <summary>Beispiel anzeigen</summary>
-                <div class="example-content">
-                    $$f(x) = (3x + 1)^4$$<br>
-                    Äußere: \\( ()^4 \\), Innere: \\( 3x + 1 \\)<br><br>
-                    $$f'(x) = 4(3x + 1)^3 \\cdot 3$$<br>
-                    $$f'(x) = 12(3x + 1)^3$$
-                </div>
-            </details>
-        `
-    },
     // Kurvendiskussion
     {
         id: "ana-005", niveau: "ga",
@@ -242,8 +223,8 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Krümmungsverhalten</h4>
             <ul>
-                <li>\\( f''(x) > 0 \\) → linksgekrümmt (konvex, "Tal")</li>
-                <li>\\( f''(x) < 0 \\) → rechtsgekrümmt (konkav, "Berg")</li>
+                <li>\\( f''(x) > 0 \\) → linksgekrümmt (konvex, „Tal“)</li>
+                <li>\\( f''(x) < 0 \\) → rechtsgekrümmt (konkav, „Berg“)</li>
             </ul>
             <p>Wendepunkte liegen dort, wo sich die Krümmung ändert.</p>
             <details class="example">
@@ -315,7 +296,7 @@ window.REPETITIO_DECKS["analysis"] = {
         answer: `
             <h4>Stammfunktion (Integral)</h4>
             <div class="formula-box">$$\\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C$$</div>
-            <p>Potenzregel "rückwärts": Exponent erhöhen, durch neuen Exponenten teilen.</p>
+            <p>Potenzregel „rückwärts“: Exponent erhöhen, durch neuen Exponenten teilen.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -505,9 +486,9 @@ window.REPETITIO_DECKS["analysis"] = {
             </ol>
             <p><strong>Typische Bedingungen:</strong></p>
             <ul>
-                <li>"geht durch P(x|y)" → \\( f(x) = y \\)</li>
-                <li>"Extremum bei x" → \\( f'(x) = 0 \\)</li>
-                <li>"Wendepunkt bei x" → \\( f''(x) = 0 \\)</li>
+                <li>„geht durch P(x|y)“ → \\( f(x) = y \\)</li>
+                <li>„Extremum bei x“ → \\( f'(x) = 0 \\)</li>
+                <li>„Wendepunkt bei x“ → \\( f''(x) = 0 \\)</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -556,7 +537,7 @@ window.REPETITIO_DECKS["analysis"] = {
             <h4>Differenzenquotient (Mittlere Änderungsrate)</h4>
             <div class="formula-box">$$\\frac{f(b) - f(a)}{b - a} = \\frac{\\Delta y}{\\Delta x}$$</div>
             <p>Durchschnittliche Steigung im Intervall \\( [a,b] \\) = Sekantensteigung</p>
-            <p><strong>Anwendung:</strong> "Wie stark ändert sich f im Durchschnitt?"</p>
+            <p><strong>Anwendung:</strong> „Wie stark ändert sich f im Durchschnitt?“</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">

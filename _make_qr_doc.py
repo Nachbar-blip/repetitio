@@ -56,7 +56,7 @@ def main() -> None:
     info = doc.add_paragraph()
     info.alignment = WD_ALIGN_PARAGRAPH.CENTER
     ir = info.add_run(
-        "123 Karteikarten: Analysis, Analytische Geometrie, Stochastik.\n"
+        "118 Karteikarten: Analysis, Analytische Geometrie, Stochastik.\n"
         "Wie mache ich X? — Formel, Merksatz, Beispiel. Grundkurs und Leistungskurs.\n"
         "Laeuft direkt im Browser — keine Anmeldung, keine App noetig."
     )

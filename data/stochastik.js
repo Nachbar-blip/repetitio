@@ -70,6 +70,7 @@ window.REPETITIO_DECKS["stochastik"] = {
             <div class="formula-box">$$\\frac{n!}{(n-k)!}$$</div>
             <p><strong>Ohne Reihenfolge (Kombination):</strong></p>
             <div class="formula-box">$$\\binom{n}{k} = \\frac{n!}{k! \\cdot (n-k)!}$$</div>
+            <p>\\( \\binom{n}{k} \\) heißt Binomialkoeffizient, gesprochen „n über k“. Beim Ausrechnen vorher kürzen.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -77,25 +78,7 @@ window.REPETITIO_DECKS["stochastik"] = {
                     <strong>Mit Reihenfolge</strong> (1., 2., 3. Platz):<br>
                     $$\\frac{6!}{3!} = 6 \\cdot 5 \\cdot 4 = 120$$<br><br>
                     <strong>Ohne Reihenfolge</strong> (Gruppe bilden):<br>
-                    $$\\binom{6}{3} = \\frac{6!}{3! \\cdot 3!} = 20$$
-                </div>
-            </details>
-        `
-    },
-    {
-        id: "sto-004", niveau: "ga",
-        category: "grundlagen",
-        question: "Wie berechne ich den Binomialkoeffizienten \\( \\binom{n}{k} \\)?",
-        answer: `
-            <h4>Binomialkoeffizient</h4>
-            <div class="formula-box">$$\\binom{n}{k} = \\frac{n!}{k! \\cdot (n-k)!}$$</div>
-            <p>"n über k" = Anzahl der Möglichkeiten, k Elemente aus n auszuwählen (ohne Reihenfolge).</p>
-            <details class="example">
-                <summary>Beispiel anzeigen</summary>
-                <div class="example-content">
-                    $$\\binom{5}{2} = \\frac{5!}{2! \\cdot 3!}$$<br><br>
-                    $$= \\frac{5 \\cdot 4 \\cdot 3!}{2 \\cdot 1 \\cdot 3!}$$<br><br>
-                    $$= \\frac{20}{2} = 10$$
+                    $$\\binom{6}{3} = \\frac{6 \\cdot 5 \\cdot 4}{3 \\cdot 2 \\cdot 1} = 20$$
                 </div>
             </details>
         `
@@ -117,7 +100,7 @@ window.REPETITIO_DECKS["stochastik"] = {
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Würfeln, ob "6" kommt (10× würfeln):<br><br>
+                    Würfeln, ob „6“ kommt (10× würfeln):<br><br>
                     ✓ n = 10 Versuche<br>
                     ✓ 2 Ausgänge: 6 oder nicht 6<br>
                     ✓ p = 1/6 konstant<br>
@@ -175,7 +158,7 @@ window.REPETITIO_DECKS["stochastik"] = {
     {
         id: "sto-008", niveau: "ga",
         category: "binomial",
-        question: "Wie rechne ich \"mindestens\" und \"höchstens\" um?",
+        question: "Wie rechne ich „mindestens“, „mehr als“ und „weniger als“ aus?",
         answer: `
             <h4>Umrechnungsformeln</h4>
             <div class="formula-box">
@@ -183,16 +166,17 @@ window.REPETITIO_DECKS["stochastik"] = {
                 $$P(X > k) = 1 - P(X \\leq k)$$<br><br>
                 $$P(X < k) = P(X \\leq k-1)$$
             </div>
+            <p>Strategie: auf \\( P(X \\leq \\dots) \\) zurückführen, oft über das Gegenereignis. „mindestens einer“ heißt \\( X \\geq 1 \\), „nicht alle“ heißt \\( X < n \\).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    $$X \\sim B(10; 0{,}4)$$<br><br>
-                    <strong>P(mindestens 3)</strong> = P(X ≥ 3)<br>
-                    = 1 - P(X ≤ 2)<br><br>
-                    <strong>P(mehr als 5)</strong> = P(X > 5)<br>
-                    = 1 - P(X ≤ 5)<br><br>
-                    <strong>P(weniger als 4)</strong> = P(X < 4)<br>
-                    = P(X ≤ 3)
+                    \\( X \\sim B(5; 0{,}3) \\), P(mindestens 2 Treffer):
+                    $$P(X \\geq 2) = 1 - P(X \\leq 1)$$
+                    $$= 1 - [P(X=0) + P(X=1)]$$
+                    $$P(X=0) = 0{,}7^5 \\approx 0{,}168$$
+                    $$P(X=1) = 5 \\cdot 0{,}3 \\cdot 0{,}7^4 \\approx 0{,}360$$
+                    $$P(X \\geq 2) \\approx 1 - 0{,}528 = 0{,}472$$
+                    Ebenso: P(mehr als 3) = 1 − P(X ≤ 3), P(weniger als 2) = P(X ≤ 1).
                 </div>
             </details>
         `
@@ -297,7 +281,7 @@ window.REPETITIO_DECKS["stochastik"] = {
         answer: `
             <h4>Interpretation</h4>
             <p><strong>Erwartungswert μ:</strong><br>
-            Der "durchschnittliche" Wert, der bei vielen Wiederholungen erreicht wird.</p>
+            Der „durchschnittliche“ Wert, der bei vielen Wiederholungen erreicht wird.</p>
             <p><strong>Standardabweichung σ:</strong><br>
             Wie stark die Werte typischerweise um μ streuen.</p>
             <ul>
@@ -324,7 +308,7 @@ window.REPETITIO_DECKS["stochastik"] = {
         answer: `
             <h4>Bedingte Wahrscheinlichkeit</h4>
             <div class="formula-box">$$P(A|B) = \\frac{P(A \\cap B)}{P(B)}$$</div>
-            <p>"Wahrscheinlichkeit für A, wenn B bereits eingetreten ist"</p>
+            <p>„Wahrscheinlichkeit für A, wenn B bereits eingetreten ist“</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -346,7 +330,7 @@ window.REPETITIO_DECKS["stochastik"] = {
             <h4>Stochastische Unabhängigkeit</h4>
             <div class="formula-box">$$P(A \\cap B) = P(A) \\cdot P(B)$$</div>
             <p>Äquivalent: \\( P(A|B) = P(A) \\)</p>
-            <p>Das Eintreten von B hat keinen Einfluss auf die Wahrscheinlichkeit von A.</p>
+            <p>Das Eintreten von B hat keinen Einfluss auf die Wahrscheinlichkeit von A. Typisch unabhängig: Ziehen mit Zurücklegen, Würfel und Münze. Typisch abhängig: Ziehen ohne Zurücklegen.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -402,29 +386,6 @@ window.REPETITIO_DECKS["stochastik"] = {
                     = 0,02·0,6 + 0,05·0,4<br>
                     = 0,012 + 0,02<br>
                     = 0,032 = 3,2%
-                </div>
-            </details>
-        `
-    },
-    {
-        id: "sto-018", niveau: "ga",
-        category: "bedingt",
-        question: "Wie erkenne ich, ob Ereignisse unabhängig sind?",
-        answer: `
-            <h4>Unabhängigkeit prüfen</h4>
-            <p><strong>Methode 1:</strong> Prüfe ob \\( P(A \\cap B) = P(A) \\cdot P(B) \\)</p>
-            <p><strong>Methode 2:</strong> Prüfe ob \\( P(A|B) = P(A) \\)</p>
-            <p><strong>Im Kontext:</strong> Beeinflusst das Eintreten von B die Wahrscheinlichkeit von A?</p>
-            <details class="example">
-                <summary>Beispiel anzeigen</summary>
-                <div class="example-content">
-                    <strong>Unabhängig:</strong><br>
-                    - Würfeln + Münzwurf<br>
-                    - Ziehen MIT Zurücklegen<br><br>
-                    <strong>Abhängig:</strong><br>
-                    - Ziehen OHNE Zurücklegen<br>
-                    - Zusammenhängende Ereignisse<br>
-                    (z.B. Regen → Straße nass)
                 </div>
             </details>
         `
@@ -490,7 +451,7 @@ window.REPETITIO_DECKS["stochastik"] = {
     {
         id: "sto-021", niveau: "ga",
         category: "grundlagen",
-        question: "Wie interpretiere ich ein Baumdiagramm?",
+        question: "Was steht an den Zweigen eines Baumdiagramms?",
         answer: `
             <h4>Baumdiagramm verstehen</h4>
             <ul>
@@ -498,21 +459,20 @@ window.REPETITIO_DECKS["stochastik"] = {
                 <li><strong>Zweige:</strong> Mögliche Ausgänge mit Wahrscheinlichkeiten</li>
                 <li><strong>Pfade:</strong> Kombination von Ausgängen (vom Startpunkt bis zu einem Endpunkt)</li>
             </ul>
-            <p><strong>Ablesen:</strong></p>
             <ul>
-                <li>Summe aller Zweige einer Stufe = 1</li>
-                <li>Pfadwahrscheinlichkeit = Produkt der Zweige</li>
+                <li>An den Zweigen der 1. Stufe: \\( P(A) \\), \\( P(\\bar{A}) \\)</li>
+                <li>An den Zweigen der 2. Stufe: <strong>bedingte</strong> Wahrscheinlichkeiten wie \\( P(B|A) \\)</li>
+                <li>Die Zweige aus einem Verzweigungspunkt ergeben zusammen 1 — damit ergänzt man fehlende Werte.</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    Baumdiagramm mit 2 Stufen:<br>
-                    1. Stufe: A (0,6) oder Ā (0,4)<br>
-                    2. Stufe: B|A (0,3), B|Ā (0,5)<br><br>
-                    Pfad "A und B":<br>
-                    P(A∩B) = 0,6 · 0,3 = 0,18<br><br>
-                    Pfad "Ā und B":<br>
-                    P(Ā∩B) = 0,4 · 0,5 = 0,20
+                    Gegeben: \\( P(A) = 0{,}6 \\), \\( P(B|A) = 0{,}3 \\), \\( P(B|\\bar{A}) = 0{,}5 \\).<br>
+                    Fehlende Zweige ergänzen:
+                    $$P(\\bar{A}) = 0{,}4$$
+                    $$P(\\bar{B}|A) = 0{,}7, \\quad P(\\bar{B}|\\bar{A}) = 0{,}5$$
+                    Kontrolle: Die vier Pfade ergeben zusammen
+                    $$0{,}18 + 0{,}42 + 0{,}20 + 0{,}20 = 1$$
                 </div>
             </details>
         `
@@ -524,52 +484,14 @@ window.REPETITIO_DECKS["stochastik"] = {
         answer: `
             <h4>Gegenereignis</h4>
             <div class="formula-box">$$P(\\bar{A}) = 1 - P(A)$$</div>
-            <p>Das Gegenereignis \\( \\bar{A} \\) ("nicht A") enthält alle Ergebnisse, die nicht in A liegen.</p>
-            <p><strong>Typische Umformungen:</strong></p>
-            <ul>
-                <li>\\( P(X \\geq 1) = 1 - P(X = 0) \\)</li>
-                <li>\\( P(X > k) = 1 - P(X \\leq k) \\)</li>
-                <li>\\( P(X < k) = 1 - P(X \\geq k) \\)</li>
-            </ul>
+            <p>Das Gegenereignis \\( \\bar{A} \\) („nicht A“) enthält alle Ergebnisse, die nicht in A liegen. Es lohnt sich, wenn \\( \\bar{A} \\) aus weniger Pfaden besteht als A — typisch bei „mindestens einmal“.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
-                    P(mindestens einmal Treffer) = ?<br><br>
-                    Gegenereignis: "kein Treffer"<br>
-                    P(X = 0) = 0,2<br><br>
-                    $$P(X \\geq 1) = 1 - P(X = 0)$$<br>
-                    $$= 1 - 0{,}2 = 0{,}8$$
-                </div>
-            </details>
-        `
-    },
-    {
-        id: "sto-023", niveau: "ga",
-        category: "binomial",
-        question: "Wie löse ich \"Mindestens\"-Aufgaben?",
-        answer: `
-            <h4>Mindestens-Aufgaben</h4>
-            <p><strong>Strategie:</strong> Gegenereignis nutzen!</p>
-            <div class="formula-box">
-                $$P(X \\geq k) = 1 - P(X \\leq k-1)$$<br><br>
-                $$P(X \\geq 1) = 1 - P(X = 0)$$
-            </div>
-            <p><strong>Typische Formulierungen:</strong></p>
-            <ul>
-                <li>"mindestens einer" = \\( X \\geq 1 \\)</li>
-                <li>"mindestens 3" = \\( X \\geq 3 \\)</li>
-                <li>"nicht alle" = \\( X < n \\)</li>
-            </ul>
-            <details class="example">
-                <summary>Beispiel anzeigen</summary>
-                <div class="example-content">
-                    $$X \\sim B(5; 0{,}3)$$<br>
-                    P(mindestens 2 Treffer) = ?<br><br>
-                    $$P(X \\geq 2) = 1 - P(X \\leq 1)$$<br>
-                    $$= 1 - [P(X=0) + P(X=1)]$$<br><br>
-                    $$P(X=0) = 0{,}7^5 \\approx 0{,}168$$<br>
-                    $$P(X=1) = 5 \\cdot 0{,}3 \\cdot 0{,}7^4 \\approx 0{,}360$$<br><br>
-                    $$P(X \\geq 2) = 1 - 0{,}528 \\approx 0{,}472$$
+                    Zweimal würfeln, A = „mindestens eine Sechs“.<br>
+                    Gegenereignis: „keine Sechs“, nur ein Pfad:
+                    $$P(\\bar{A}) = \\frac{5}{6} \\cdot \\frac{5}{6} = \\frac{25}{36}$$
+                    $$P(A) = 1 - \\frac{25}{36} = \\frac{11}{36}$$
                 </div>
             </details>
         `

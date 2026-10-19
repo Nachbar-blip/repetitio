@@ -397,7 +397,7 @@ window.REPETITIO_DECKS["geometrie"] = {
             <h4>Normalenvektor bestimmen</h4>
             <p><strong>Aus Koordinatenform:</strong> Koeffizienten ablesen</p>
             <p>$$ax_1 + bx_2 + cx_3 = d \\Rightarrow \\vec{n} = \\begin{pmatrix} a \\\\ b \\\\ c \\end{pmatrix}$$</p>
-            <p><strong>Im GK:</strong> Normalenvektor wird oft gegeben oder aus Koordinatenform abgelesen.</p>
+            <p>Fehlt eine Variable, ist ihr Koeffizient 0: \\( E: x_1 + 2x_3 = 4 \\) hat \\( \\vec{n} = \\begin{pmatrix} 1 \\\\ 0 \\\\ 2 \\end{pmatrix} \\).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -517,29 +517,6 @@ window.REPETITIO_DECKS["geometrie"] = {
             </details>
         `
     },
-    {
-        id: "geo-023", niveau: "ga",
-        category: "ebenen",
-        question: "Wie lese ich den Normalenvektor aus der Koordinatenform ab?",
-        answer: `
-            <h4>Normalenvektor aus Koordinatenform</h4>
-            <p>Bei einer Ebene in Koordinatenform:</p>
-            <div class="formula-box">
-                $$E: ax_1 + bx_2 + cx_3 = d$$<br><br>
-                $$\\Rightarrow \\vec{n} = \\begin{pmatrix} a \\\\ b \\\\ c \\end{pmatrix}$$
-            </div>
-            <p>Die Koeffizienten vor den Variablen bilden direkt den Normalenvektor!</p>
-            <details class="example">
-                <summary>Beispiel anzeigen</summary>
-                <div class="example-content">
-                    $$E: 2x_1 - 3x_2 + 5x_3 = 7$$<br><br>
-                    $$\\vec{n} = \\begin{pmatrix} 2 \\\\ -3 \\\\ 5 \\end{pmatrix}$$<br><br>
-                    Der Normalenvektor steht senkrecht auf der Ebene.
-                </div>
-            </details>
-        `
-    }
-    ,
     // ===== eA-Karten geo-101 bis geo-115 =====
     // Vektoren (eA)
     {

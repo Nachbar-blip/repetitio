@@ -380,10 +380,10 @@ window.REPETITIO_DECKS["klasse8"] = {
     {
         id: "k8-019", niveau: "ga",
         category: "aehnlich",
-        question: "Wie nutze ich die Strahlensätze?",
+        question: "Wie berechne ich Strecken in einer Strahlensatzfigur?",
         answer: `
-            <h4>Strahlensätze</h4>
-            <p>Zwei Strahlen von einem Punkt \\( Z \\) aus werden von zwei parallelen Geraden geschnitten. Dann gilt:</p>
+            <h4>Ähnliche Dreiecke in der Strahlensatzfigur</h4>
+            <p>Zwei Strahlen von einem Punkt \\( Z \\) aus werden von zwei parallelen Geraden geschnitten. Wegen der Parallelen haben die Dreiecke \\( ZAB \\) und \\( ZA'B' \\) dieselben Winkel, sind also <strong>ähnlich</strong>. Entsprechende Seiten stehen deshalb im selben Verhältnis (das sind die Strahlensätze):</p>
             <div class="formula-box">
                 $$\\frac{\\overline{ZA'}}{\\overline{ZA}} = \\frac{\\overline{ZB'}}{\\overline{ZB}} = \\frac{\\overline{A'B'}}{\\overline{AB}}$$
             </div>

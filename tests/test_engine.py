@@ -141,6 +141,28 @@ def test_keyboard_after_button_click(page):
     assert page.evaluate("localStorage.getItem('repetitio:analysis')") is None
 
 
+DECKS = sorted(p.stem for p in (ROOT / "data").glob("*.js"))
+
+
+@pytest.mark.parametrize("deck", DECKS)
+def test_deck_data_sauber(page, deck):
+    """Datenbestand: keine Lücke im Kartenarray (z. B. übrig gebliebenes Komma nach dem Löschen
+    einer Karte), eindeutige IDs, jede Karte mit Niveau ga/ea und bekannter Kategorie."""
+    page.goto(URL + f"?deck={deck}"); ready(page)
+    befund = page.evaluate("""() => {
+        const d = window.REPETITIO.deck, c = d.cards, out = [];
+        for (let i = 0; i < c.length; i++) if (!(i in c) || !c[i]) out.push('Lücke bei Index ' + i);
+        const ids = c.filter(Boolean).map(k => k.id);
+        ids.filter((id, i) => ids.indexOf(id) !== i).forEach(id => out.push('doppelte ID ' + id));
+        c.filter(Boolean).forEach(k => {
+            if (k.niveau !== 'ga' && k.niveau !== 'ea') out.push(k.id + ': Niveau ' + k.niveau);
+            if (!(k.category in d.categories)) out.push(k.id + ': Kategorie ' + k.category);
+        });
+        return out;
+    }""")
+    assert befund == [], befund
+
+
 def test_due_cards_first(page):
     """Spaced Repetition: eine erst morgen faellige Karte rueckt ans Ende, faellige/neue kommen zuerst."""
     page.goto(URL + "?deck=geometrie"); ready(page)

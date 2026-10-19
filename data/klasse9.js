@@ -427,14 +427,16 @@ window.REPETITIO_DECKS["klasse9"] = {
         answer: `
             <h4>Wurzel</h4>
             <div class="formula-box">
-                $$\\sqrt[n]{a} = b \\quad \\Longleftrightarrow \\quad b^n = a, \\; b \\ge 0$$
+                $$\\sqrt[n]{a} = b \\quad \\Longleftrightarrow \\quad b^n = a$$
+                $$\\text{mit } a \\ge 0 \\text{ und } b \\ge 0$$
             </div>
-            <p>\\( a \\) heißt Radikand, \\( n \\) Wurzelexponent. Für gerade \\( n \\) muss \\( a \\ge 0 \\) sein.</p>
+            <p>\\( a \\) heißt Radikand, \\( n \\) Wurzelexponent. Wurzeln werden nur aus nichtnegativen Zahlen gezogen, und das Ergebnis ist nie negativ.</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$\\sqrt{144} = 12, \\qquad \\sqrt[3]{125} = 5$$
                     $$\\sqrt[4]{81} = 3, \\qquad \\sqrt{-9} \\text{ ist nicht definiert}$$
+                    Die Gleichung \\( x^3 = -8 \\) hat trotzdem eine Lösung: \\( x = -\\sqrt[3]{8} = -2 \\).
                 </div>
             </details>
         `
@@ -769,9 +771,9 @@ window.REPETITIO_DECKS["klasse9"] = {
         answer: `
             <h4>Scheitelpunktform</h4>
             <div class="formula-box">
-                $$y = a(x - d)^2 + e \\;\\Rightarrow\\; S(d \\mid e)$$
+                $$y = a(x + d)^2 + e \\;\\Rightarrow\\; S(-d \\mid e)$$
             </div>
-            <p>Vorzeichenfalle: \\( y = (x+3)^2 - 2 \\) hat den Scheitel \\( S(-3 \\mid -2) \\), denn \\( x + 3 = x - (-3) \\).</p>
+            <p>Vorzeichenfalle: Die x-Koordinate des Scheitels ist \\( -d \\). \\( y = (x+3)^2 - 2 \\) hat \\( d = 3 \\), also den Scheitel \\( S(-3 \\mid -2) \\).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -891,7 +893,7 @@ window.REPETITIO_DECKS["klasse9"] = {
         answer: `
             <h4>Gleichung bestimmen</h4>
             <ul>
-                <li>Scheitel \\( S(d \\mid e) \\) und ein Punkt bekannt → Scheitelpunktform ansetzen und \\( a \\) berechnen</li>
+                <li>Scheitel \\( S(-d \\mid e) \\) und ein Punkt bekannt → Scheitelpunktform \\( y = a(x+d)^2 + e \\) ansetzen und \\( a \\) berechnen</li>
                 <li>Drei Punkte bekannt → in \\( y = ax^2+bx+c \\) einsetzen und das Gleichungssystem lösen</li>
                 <li>Nullstellen und ein Punkt bekannt → \\( y = a(x-x_1)(x-x_2) \\)</li>
             </ul>

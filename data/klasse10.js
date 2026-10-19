@@ -254,11 +254,12 @@ window.REPETITIO_DECKS["klasse10"] = {
         category: "potenz",
         question: "Wie lese ich die Asymptoten einer verschobenen Hyperbel ab?",
         answer: `
-            <h4>Asymptoten bei \\( f(x) = \\frac{1}{(x-d)^n} + e \\)</h4>
+            <h4>Asymptoten bei \\( f(x) = \\frac{1}{(x+d)^n} + e \\)</h4>
             <div class="formula-box">
-                $$x = d \\quad \\text{(senkrecht)}, \\qquad y = e \\quad \\text{(waagerecht)}$$
+                $$x = -d \\quad \\text{(senkrecht)}$$
+                $$y = e \\quad \\text{(waagerecht)}$$
             </div>
-            <p>Die Verschiebung nach rechts bzw. nach oben verschiebt die Asymptoten mit.</p>
+            <p>Die Verschiebung nach links/rechts bzw. nach oben/unten verschiebt die Asymptoten mit. Vorzeichen beachten: \\( x - 3 \\) bedeutet \\( d = -3 \\), also senkrechte Asymptote \\( x = 3 \\).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
@@ -281,7 +282,7 @@ window.REPETITIO_DECKS["klasse10"] = {
             <ul>
                 <li>Beginnt im Ursprung, steigt monoton, wird immer flacher</li>
                 <li>Wertebereich \\( y \\ge 0 \\)</li>
-                <li>\\( \\sqrt[3]{x} \\) ist dagegen für alle reellen \\( x \\) definiert</li>
+                <li>Wie jede Wurzel ist auch \\( \\sqrt[3]{x} \\) nur für \\( x \\ge 0 \\) definiert</li>
             </ul>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
@@ -322,15 +323,16 @@ window.REPETITIO_DECKS["klasse10"] = {
         answer: `
             <h4>Potenzgleichung</h4>
             <div class="formula-box">
-                $$n \\text{ ungerade}: \\quad x = \\sqrt[n]{c} \\quad \\text{(eine Lösung)}$$
-                $$n \\text{ gerade}, c > 0: \\quad x = \\pm\\sqrt[n]{c} \\quad \\text{(zwei Lösungen)}$$
+                $$n \\text{ ungerade}, c \\ge 0: \\quad x = \\sqrt[n]{c}$$
+                $$n \\text{ ungerade}, c < 0: \\quad x = -\\sqrt[n]{-c}$$
+                $$n \\text{ gerade}, c > 0: \\quad x = \\pm\\sqrt[n]{c}$$
             </div>
-            <p>Bei geradem \\( n \\) und \\( c < 0 \\) gibt es keine Lösung, bei \\( c = 0 \\) nur \\( x = 0 \\).</p>
+            <p>Bei ungeradem \\( n \\) gibt es immer genau eine Lösung, bei geradem \\( n \\) und \\( c > 0 \\) zwei. Bei geradem \\( n \\) und \\( c < 0 \\) gibt es keine Lösung, bei \\( c = 0 \\) nur \\( x = 0 \\).</p>
             <details class="example">
                 <summary>Beispiel anzeigen</summary>
                 <div class="example-content">
                     $$x^4 = 16 \\;\\Rightarrow\\; x = 2 \\;\\text{oder}\\; x = -2$$
-                    $$x^3 = -27 \\;\\Rightarrow\\; x = -3$$
+                    $$x^3 = -27 \\;\\Rightarrow\\; x = -\\sqrt[3]{27} = -3$$
                     $$x^2 = -9 \\;\\Rightarrow\\; \\mathbb{L} = \\{\\}$$
                 </div>
             </details>
